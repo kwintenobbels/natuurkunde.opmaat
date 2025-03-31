@@ -1092,3 +1092,13 @@ blockquote {
     border-radius: 3px;
     padding: 5px;
 }
+
+/* Voor source Bart Lambregs */
+.xmsource{
+	max-width: 30em;
+	margin-left: auto;
+	color:gray;
+	font-size: smaller;
+	margin-bottom: 1em
+}
+
