@@ -1,0 +1,87 @@
+\documentclass{ximera}
+\input{../preamble}
+
+\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Horizontale worp}{}
+
+
+
+
+	\section{De horizontale worp}
+
+	We bekijken een voorbeeld van een tweedimensionale beweging. Wanneer een object horizontaal met een bepaalde beginsnelheid wordt gecatapulteerd, noemen we die beweging een horizontale worp. Wij beschouwen de worp in het luchtledige.
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{horizontaleworp_tekening}
+	\caption{De snelheid in horizontale richting verandert niet, die in de verticale richting neemt lineair toe in de tijd}
+	\end{figure}
+	\newline
+	In de beschrijving kunnen we de $x$-as horizontaal en de $y$-as verticaal naar beneden nemen. Omdat er volgens de $x$-as geen versnelling is het lichaam volgens de $y$-as valt met de valversnelling $g$, kunnen we de formules voor een ERB en een EVRB (Zie (\ref{x(t)0}) en (\ref{v(t)0})) op de afzonderlijke assen toepassen en zo de volledige beweging beschrijven.%\footnote{Strikt genomen zoeken we hier nog niet naar een verklaring (die voor de horizontale beweging in de wet van de traagheid zit) maar beschrijven we enkel de beweging. Waarom de versnelling nul en $g$ is, vragen we ons dus zogezegd nog even niet af.}.
+	\begin{equation*}
+	\left\{
+	\begin{array}{l}
+	a_x=0\\
+	a_y=g
+	\end{array}
+	\right.
+	\Rightarrow
+	\left\{
+	\begin{array}{l}
+	v_x=v_0\\
+	v_y=gt
+	\end{array}
+	\right.
+	\Rightarrow
+	\left\{
+	\begin{array}{l}
+	x=v_0t\\
+	y=\frac{1}{2}gt^2
+	\end{array}
+	\right.
+	\end{equation*}
+	De baanvergelijking vinden we zoals eerder vermeld, door $t$ in functie van $x$ te schrijven $x=v_0t\Leftrightarrow t=\frac{x}{v_0}$ en dit in $y(t)$ te substitueren:
+	\begin{eqnarray*}
+	%&&x=v_0t\Leftrightarrow t=\frac{x}{v_0}\\
+	y=\frac{1}{2}gt^2=\frac{1}{2}g\left(\frac{x}{v_0}\right)^2=\frac{g}{2v_0^2}x^2
+	\end{eqnarray*}
+	De baan is dus een parabool.
+	
+	\newpage
+	
+	%oefening horizontale worp
+	
+	\begin{enumerate}
+	\item[\textbf{Opdracht}]\textsf{Een vliegtuig vliegt met een snelheid van $450\rm\,km/h$ op een hoogte van $920\rm\,m$.
+	\begin{enumerate}
+	\item Hoever voor het doel moeten de voedselpakketten gelost worden
+	om op het doel terecht te komen?
+	\item Hoeveel tijd hebben de pakketten nodig om het doel te bereiken?
+	\end{enumerate}
+	\item[\textit{gegeven}]$v_0=125\rm\,m/s$\newline$y=920\rm\,m$
+	\item[\textit{gevraagd}]$x$, $t$
+	\item[\textit{oplossing}]De afstand waarover de voedselpakketten in
+	horizontale richting zijn vooruit gegaan, kunnen we vinden met de
+	baanvergelijking. We weten namelijk hoever de pakketten naar beneden
+	zijn gevallen en wat hun beginsnelheid is:
+	\begin{eqnarray*}
+	y&=&\frac{g}{2v_0^2}x^2\\
+	&\Downarrow&\\
+	x&=&v_0\sqrt{\frac{2y}{g}}=1712\rm\,m
+	\end{eqnarray*}
+	De valtijd voor de pakketten vinden we o.a. door naar de verticale
+	valbeweging te kijken. Deze gebeurt onafhankelijk van wat er in de
+	horizontale richting gebeurt, zodat:
+	\begin{eqnarray*}
+	y&=&\frac{1}{2}gt^2\\
+	&\Downarrow&\\
+	t&=&\sqrt{\frac{2y}{g}}=13,7\rm\,s
+	\end{eqnarray*}}
+	\end{enumerate}
+	
+	\cleardoublepage
+	\newpage
+	
+\end{document}

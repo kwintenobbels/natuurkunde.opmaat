@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../preamble}
+
+\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{ERB}{}
+
+
+
+	\section{ERB}
+
+	De \emph{eenparig rechtlijnige beweging} (afgekort ERB) is een specifieke beweging. De snelheid van de beweging is eenparig of gelijkmatig verdeeld wat betekent dat de snelheid steeds gelijk blijft. M.a.w. is de snelheid constant of is de versnelling nul. Omdat de snelheid niet verandert is de ogenblikkelijke snelheid gelijk aan de gemiddelde snelheid en kunnen we gemakkelijk een functie vinden voor de positie in functie van de tijd:
+	\begin{eqnarray*}
+	v=\frac{\Delta x}{\Delta t}&\Leftrightarrow&\Delta x=v\Delta t\\
+	&\Leftrightarrow&x-x_0=v(t-t_0)\\
+	&\Leftrightarrow&x=x_0+v(t-t_0)
+	\end{eqnarray*}
+	Samengevat:
+	
+	\kader{
+	%\vspace{3mm}
+	De plaatsfunctie $x(t)$ van een ERB met snelheid $v$ is gegeven door:
+	\begin{eqnarray}\label{x(t)ERB}
+	x(t)&=&x_0+v(t-t_0)
+	\end{eqnarray}
+	waarbij $x_0=x(t_0)$ de co\"ordinaat op het tijdstip $t_0$ is. Indien $t_0=0$ dan vereenvoudigt de plaatsfunctie (\ref{x(t)ERB}) tot
+	\begin{eqnarray}\label{x(t)ERB0}
+	x(t)&=&x_0+vt
+	\end{eqnarray}
+	%\vspace{0mm}
+	}
+	
+	Aangezien de snelheid van een ERB constant is, is de beginsnelheid $v_0=v(t_0)$ gelijk aan de snelheid $v$, $v_0=v$. De snelheidsfunctie is natuurlijk $v(t)=v$ en de versnellingsfunctie is $a(t)=0$.
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=.7\textwidth]{ERB_grafieken}
+	\caption{Grafieken van een ERB}
+	\end{figure}
+	
+	
+	
+\end{document}

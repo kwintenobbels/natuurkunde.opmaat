@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../preamble}
+
+\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Gravitationele potentiële energie, algemeen}{}
+
+
+	\subsection{Gravitationele potenti\"ele energie, algemeen}\label{gravitationele potentiele energie alg}
+
+	Beschouw een massa onderhevig aan de universele gravitatiekracht. We gaan opnieuw opzoek naar een potenti\"ele energiefunctie geassocieerd aan deze kracht.
+	\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.9\textwidth ,angle=0]{gravitationele_energie_algemeen}
+	\end{center}
+	\end{figure}
+	
+	Kiezen we een $x$-as met de oorsprong op de massa $m$ dan wordt, omdat de kracht steeds naar de oorsprong is gericht, de component van de universele gravitatiekracht op de massa $m'$ gegeven door
+	\begin{eqnarray*}
+	F(x)&=&-G\frac{mm'}{x^2}
+	\end{eqnarray*}
+	De arbeid die door de gravitatiekracht wordt geleverd bij de verplaatsing van de massa $m'$ van $x_a$ naar $x_b$ wordt dan:
+	\begin{eqnarray*}
+	W&=&\int_{x_a}^{x_b}-G\frac{mm'}{x^2}~{\rm d}x\\
+	&=&-Gmm'\int_{x_a}^{x_b}\frac{1}{x^2}~{\rm d}x\\
+	&=&-Gmm'\left[-\frac{1}{x}\right]_{x_a}^{x_b}\\
+	&\Updownarrow&\\
+	W&=&\left(-G\frac{mm'}{x_a}\right)-\left(-G\frac{mm'}{x_b}\right)
+	\end{eqnarray*}
+	De potenti\"ele energie voor een massa $m'$ wordt bijgevolg geven
+	door
+	\begin{eqnarray}
+	E_p&=&-G\frac{mm'}{x}\label{Ep=-Gmm'/x}
+	\end{eqnarray}
+	
+\end{document}
