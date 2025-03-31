@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper,titlepage,twoside]{report}
+\usepackage{graphicx,wrapfig,tikz,comment,tabularx,natbib,amssymb,amsthm,amsmath,hyperref}
+%\usepackage{rawfonts,eucal,braket,float,array,pgf,mathrsfs,pdfpages}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+%\usepackage[export]{adjustbox}
+\usepackage{parskip}
+%\usepackage{coffee4}
+
+%\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage[a4paper,bindingoffset=6mm]{geometry}
+
+\usetikzlibrary{arrows}
+
+%\includepdf[pages={1},scale=.8]{./oplossingen/.pdf}
+
+\graphicspath{{./Figuren/}}
+
+\usepackage{siunitx}
+\sisetup{locale = FR, exponent-product = \cdot}
+
+
+\newcommand{\kader}[1]{\framebox{\begin{minipage}[t]{0.98\textwidth}#1\end{minipage}}}
+\newcommand{\voorbeeld}[2]{\begin{tabular}[t]{p{0.98\textwidth}}\textsf{Voorbeeld: #1}\\\hline\end{tabular}\ \newline\newline#2\ \newline \begin{tabular}[t]{p{0.98\textwidth}}\hline\\\end{tabular}}
+
+%\setlength{\parindent}{0pt} \addtolength{\voffset}{-1cm} \addtolength{\textheight}{2cm}
+%\setlength{\unitlength}{1mm}
+
+%\setlength{\parskip}{1em}
+
+
+\newcommand{\dom}[1]{{\rm dom}\,#1}
+\newcommand{\ber}[1]{{\rm ber}\,#1}
+\newcommand{\bgsin}[1]{{\rm bgsin}\,#1}
+\newcommand{\bgcos}[1]{{\rm bgcos}\,#1}
+\newcommand{\bgtan}[1]{{\rm bgtan}\,#1}
+
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
+\theoremstyle{plain}\newtheorem{eigenschap}{Eigenschap}\newtheorem{definitie}{Definitie}
+%\theoremstyle{remark}\newtheorem*{bewijs}{Bewijs}
+
+% Om de oplossingen te tonen: comment out de \excludecomment
+\specialcomment{oplossing}{\begingroup\color{blue}}{\endgroup}
+\excludecomment{oplossing}
+
+%\includeonly{F_Files/voorblad, F_Files/inhoudspagina,F_Files/inleiding,F_Files/eendimensionalebewegingen,F_Files/oefeningen_1d}
+
+
+
+
+
+
+
+
+\begin{document}
+
+\include{./F_Files/voorblad}
+\include{./F_Files/inhoudspagina}
+\include{./F_Files/inleiding}
+\include{./F_Files/voorblad_kinematica}
+\include{./F_Files/eendimensionalebewegingen}
+\include{./F_Files/tweedimensionalebewegingen}
+\cleardoublepage
+\include{./F_Files/voorblad_dynamica}
+\include{./F_Files/debeginselenvannewton}
+\include{./F_Files/gravitatiekracht}
+%\cleardoublepage
+\include{./F_Files/arbeidenenergie}
+\cleardoublepage
+\include{./F_Files/voorblad_periodiekeverschijnselen}
+\include{./F_Files/harmonischetrillingen}
+%\cleardoublepage
+\include{./F_Files/golven}
+%%%\include{F_Files/geluid}
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{./F_Files/referenties}
+
+\newpage
+
+~\citep{flop}
+~\citep{giancoli}
+~\citep{serway}
+~\citep{fysicavandaag}
+
+\end{document} 
+
