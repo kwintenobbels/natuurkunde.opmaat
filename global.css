@@ -1108,3 +1108,9 @@ blockquote {
 	margin-bottom: 1em
 }
 
+figcaption {
+	display: block;
+	text-align: center;
+	margin-bottom:  1em;
+	font-size: smaller;
+}
