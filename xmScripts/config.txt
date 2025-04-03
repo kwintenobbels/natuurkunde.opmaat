@@ -21,7 +21,8 @@ YOUR_EMAIL="noproblem@dummy.org"
 # !! DO NOT SAVE THE KEY IN THIS config.txt FILE   !!
 #
 
-: "${XIMERA_NAME:=opmaat-natuurkunde}"
+##: "${XIMERA_NAME:=nat}"
+##: "${XIMERA_URL:=http://wiskunde.opmaat.org/}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
 ## : "${XIMERA_URL:=https://ximera.osu.edu/}"
 ## : "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"
@@ -31,8 +32,8 @@ YOUR_EMAIL="noproblem@dummy.org"
 # For a local ximeraserver
 #
 
-# : "${SERVER_PORT:=2000}"
-# : "${SERVER_NAME:=ximeraserver}"
+: "${SERVER_PORT:=2000}"
+: "${SERVER_NAME:=ximeraserver}"
 # : "${SERVER_IMAGE:=registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3_b}"
 
 #
