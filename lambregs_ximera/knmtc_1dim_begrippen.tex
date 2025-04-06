@@ -8,84 +8,142 @@
 	\xmtitle{Basisbegrippen}{}
     \xmsource
 
+
+\begin{remark}
+	Deze open-source cursus is in ontwikkeling. Leerkrachten en leerlingen die van dit materiaal gebruik maken kunnen eenvoudig fouten/verbetering/... melden. 
+
+	\begin{itemize}
+		\item Via de 'wijzig' knop kan je kleine fouten en typo's zelf aanpassen. \href{https://wiskunde.opmaat.org/website/inhoud/welkom/doe-mee}{stappenplan}
+		\item Mailen naar info@wiksunde.opmaat.org 
+		\item Via 
+	\end{itemize}
+\end{remark}
+
+
+\subsection{Positie en plaatsfunctie}
+
+De beweging van een puntmassa kan beschreven worden door de positie in functie van de tijd weer te geven. De \emph{plaatsfunctie} $x(t)$ geeft voor elk tijdstip \(t\) de positie \(x\) waar de puntmassa zich bevindt. Een coördinaatas\footnote{Een coördinaatas is een as van een cartesiaans assenstelsel, met een oorsprong en een oriëntatie.} bepaald de positie \(x\). De variabele \(t\) staat symbool voor de tijd. De notatie voor de positie op tijdstip $t_1$ is: 
+
+\[
+x_1=x(t_1)
+\]
+
+Natuurlijk kan de index 1 ook vervangen worden door andere indices, zo is $x_0=x(t_0)$ en $x_2=x(t_2)$.
+
+Zo zie je onderstaande figuur een auto op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ weer\-ge\-ge\-ven op verschillende posities. Je ziet ook een grafiek van de bijbehorende plaatsfunctie.
+
+\begin{image}
+\hfill
+\includegraphics[width=0.45\textwidth]{Serway2p1(1)}
+\hfill
+\includegraphics[width=0.45\textwidth]{Serway2p1(2)}
+\hfill
+
+\end{image}
+\captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
+
+
+\begin{definition}
+De \emph{verplaatsing} \(\Delta x\) is het verschil tussen twee posities:
+\[
+\Delta x = x_2-x_1
+\]
+\end{definition}
+
+Zo is de verplaatsing van de auto in de figuur tussen de tijdstippen $t_0$ en $t_1$ gelijk aan $\Delta x = x_1-x_0=50\rm\,m-30\rm\,m=20\rm\,m$ en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan $\Delta x=x_4-x_2=-40\rm\,m-40\rm\,m=-80\rm\,m$. Deze laatste verplaatsing is negatief, wat aangeeft dat de auto netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
+%%%\newline
+Let op, de verplaatsing hoeft niet noodzakelijk gelijk te zijn aan de \emph{afgelegde weg} tussen de twee bijbehorende tijdstippen. Als je een rondje hebt gelopen op de atletiekpiste en terug aan start staat is je (netto) verplaatsing nul, maar heb je wel degelijk afstand afgelegd.
+
+\subsection{Gemiddelde snelheid}
+
+% gemiddelde snelheid als je een rondje loopt is nu nul; dat moet miss benoemd worden 
+
+De tijd nodig om een bepaalde afstand af te leggen geeft aanleiding tot de \textit{gemiddelde snelheid}. 
+
+
+\begin{definition}
 	
-	%%%\section{Enkele begrippen}
-	\subsection{Positie en plaatsfunctie}
+De gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen wordt gedefiniëerd als
+\[
+\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
+\]
+De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$. 
+\end{definition}
+
+In de figuur is de gemiddelde snelheid van de auto tussen de tijdstippen $t_1$ en $t_2$ gelijk aan $\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{40\rm\,m-50\rm\,m}{20\rm\,s-10\rm\,s}=-1\rm\,m/s$. Als de snelheid negatief is betekent dit dat de auto achteruit rijdt.
+
+
+
+\subsection{Gemiddelde versnelling}
+
+Ook de snelheid kan veranderen in de tijd. Dit ken je uit het dagelijks leven als versnellen of vertragen.
+
+\begin{definition}
+
+De gemiddelde versnelling \(\overline{a}\) tussen twee tijdstippen wordt gedefiniëerd als
+\[
+\overline{a}=\frac{\Delta v}{\Delta t}=\frac{v_2-v_1}{t_2-t_1}
+\]
+De eenheid van versnelling is meter per seconde, per seconde -- wat meter per seconde in het kwadraat geeft $[a]=\rm\,m/s^2$.
+\end{definition}
+
+\begin{denkvraag}
+Kan je uitleggen wat de eenheid meter per seconde, per seconde betekent? 
+\end{denkvraag}
+
+\subsection{Ogenblikkelijke snelheid}
+
+De plaatsfunctie \(x{t}\) kent op elke tijdstip \(t\) een positie toe aan een voorwerp. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
+
+\begin{denkvraag}
+Aan elk moment een snelheid toekennen is niet evident. Laat ons volgende video bekijken van een raket die opstijgt. Op het lanceerplatform is de snelheid \(0\). Als een raket op weg is naar de ruimte kan de snelheid tot \(100 m/s \) bedragen. \textbf{Wat is volgens jou de snelheid op het moment dat de raket de grond niet meer raakt? Het eerste moment dat hij niet meer op de grond staat.}
+\end{denkvraag}
+
+De eenheid van snelheid is \(m/s\), het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Op \'e\'en bepaald moment, \'e\'en ogenblik, er helemaal geen tijdsverloop is en we bijgevolg ook geen verplaatsing kunnen hebben\ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
+
+\begin{denkvraag}
+Als een raket opstijgt vanuit stilstand lijkt de snelheid in eerste instantie positief. \textbf{Hoe zou je toch beargumenteren dat de raket een positieve snelheid heeft op het eerste moment dat hij van de grond is?}
+
+\end{denkvraag}
+
+`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \emph{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gem\'iddelde snelheid over het \mbox{tijds}\-in\-ter\-val dat het sensortje op je wiel nodig heeft om \'e\'en omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van \'e\'en omwenteling. Als jij plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
+\begin{image}
+
+\includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
+\end{image}
+\captionof{figure}{Stuiterende tennisbal}
+
+Hoe kan dit probleem opgelost worden? Op de stroboscopische foto van de stuiterende tennisbal is te zien dat de bal bovenaan trager beweegt dan wanneer hij de grond nadert. Bovenaan liggen de beelden immers dichter bij elkaar zodat de tennisbal minder afstand aflegt in de tijdsspanne tussen twee opeenvolgende opnames. 
+Deze kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid of een grootte gaat.} informatie die levert echter opnieuw gemiddelde snelheid en niet zomaar de ogenblikkelijke snelheid. De tennisbal verandert immers nog van snelheid tussen twee opeenvolgende opnames. Door de frequentie\footnote{Frequentie is een grootheid die aangeeft hoeveel cyclussen er per seconde worden doorlopen. Hier gaat het dus over het aantal beelden dat per seconde wordt gemaakt. De eenheid van frequentie is $\rm\,s^{-1}$ oftewel Hz (de Hertz).} waarmee de foto's worden genomen op te drijven, krijgen we een accurater beeld van de snelheid die de tennisbal op een gegeven moment heeft. De tijdsintervallen zijn nu immers korter zodat de bal minder van snelheid kan veranderen gedurende de intervallen en zodoende de gemiddelde snelheid een indicatie wordt van de ogenblikkelijke snelheid. De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval. Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \emph{limiet} van de gemiddelde snelheid over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
+
+\begin{definition}
 	
-	De beweging van een puntmassa wordt beschreven door haar positie in de ruimte als functie van de tijd, of dus door een \textit{functie} die de \textbf{plaats} weergeeft in functie van de \textbf{tijd}. Deze functie noemen we de \textbf{plaatsfunctie} $x = x(t)$. 
-	Bij een ééndimensionale beweging is $x$ een getal, namelijk de positie op een co\"ordinaatas
-	\footnote{Een co\"ordinaatas is een as van een cartesiaans assenstelsel, met een oorsprong en een ori\"entatie.} 
-	en $t$ is de variabele die symbool staat voor de tijd
-	\footnote{In de fysica gebruiken we de wiskunde als `taal' om de wetmatigheden van de natuur in uit te drukken. Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. $x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$ maar het symbool $t$ omdat deze symbool moet staan voor de tijd. En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat de beeldwaarden van de functie nu als betekenis een positie op een co\"ordinaatas hebben.}
-	. 
-	Met een welbepaald tijdstip $t_1$ 
-	\footnote{Natuurlijk kan de index 1 ook vervangen worden door andere indices. Voorbeelden zijn $x_0=x(t_0)$ en $x_2=x(t_2)$.} komt de positie $x_1$ op de co\"ordinaatas overeen volgens de formule
-	\begin{eqnarray*}
-	x_1=x(t_1)
-	\end{eqnarray*}
-	In onderstaande figuur (\ref{grafplaatsfunctie}) zie je een auto op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ weer\-ge\-ge\-ven op verschillende posities, met een grafiek van de bijbehorende plaatsfunctie.
-	
-	\begin{image}
-	\includegraphics[width=0.45\textwidth]{Serway2p1(1)}
-	$\qquad$   % hack 
-	\includegraphics[width=0.45\textwidth]{Serway2p1(2)}
-	\end{image}
-	\captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
-	
-	Het verschil tussen twee plaatsen (op twee tijdstippen) noemen we de \textbf{verplaatsing}, genoteerd met een $\Delta$ (Delta, een Griekse hoofdletter D  van het Engelse 'displacement' of het Franse 'déplacement'):
-	\[
-	\Delta x = x_2-x_1
-	\]
-	In de figuur is de verplaatsing van de auto tussen de tijdstippen $t_0$ en $t_1$ gelijk aan $\Delta x = x_1-x_0=50\rm\,m-30\rm\,m=20\rm\,m$ en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan $\Delta x=x_4-x_2=-40\rm\,m-40\rm\,m=-80\rm\,m$. Deze laatste verplaatsing is negatief, wat aangeeft dat de auto netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
-	%%%\newline
-	Let op, de verplaatsing hoeft niet noodzakelijk gelijk te zijn aan de \textbf{afgelegde weg} tussen de twee bijbehorende tijdstippen. Als je op caf\'e na naar het toilet te zijn geweest terug op je oorspronkelijke plaats op het terras gaat zitten, is je (netto) verplaatsing nul maar heb je wel degelijk afstand afgelegd.
-	
-	\subsection{Gemiddelde snelheid}
-	
-	De gemiddelde snelheid $\overline{v}$ \footnote{Als symbool voor de gemiddelde snelheid wordt ook $<v>$ gebruikt.} van een voorwerp tussen twee tijdstippen defini\"eren we als de verplaatsing over het benodigde tijdsinterval.
-	\begin{eqnarray*}
-	\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
-	\end{eqnarray*}
-	De eenheid van snelheid is bijgevolg meter per seconde $[v]=\rm\,m/s$. Als voorbeeld is de gemiddelde snelheid van de auto in figuur (\ref{grafplaatsfunctie}) tussen de tijdstippen $t_1$ en $t_2$ gelijk aan $\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{40\rm\,m-50\rm\,m}{20\rm\,s-10\rm\,s}=-1\rm\,m/s$. Dat de snelheid negatief is, betekent natuurlijk dat de auto achteruit rijdt.
-	
-	\subsection{Gemiddelde versnelling}
-	
-	Zoals we bij snelheid kijken hoe de positie verandert gedurende de tijd, kunnen we ons ook afvragen hoe de snelheid verandert gedurende de tijd. Dit idee ken je al, we noemen het versnellen of vertragen.
-	
-	De gemiddelde versnelling tussen twee tijdstippen defini\"eren we als de verandering van de snelheid in het bijbehorende tijdsinterval.
-	\begin{eqnarray*}
-	\overline{a}=\frac{\Delta v}{\Delta t}=\frac{v_2-v_1}{t_2-t_1}
-	\end{eqnarray*}
-	De eenheid van versnelling is bijgevolg meter per seconde, per seconde -- wat meter per seconde in het kwadraat geeft $[a]=\rm\,m/s^2$.
-	
-	\subsection{Ogenblikkelijke snelheid}
-	
-	Zoals we een voorwerp op een bepaald tijdstip een positie toekennen, willen we het voorwerp ook een snelheid op een bepaald tijdstip toekennen. Dat is echter moeilijker dan je denkt. Want wanneer we het over snelheid hebben, moeten we spreken over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Het probleem is dat op \'e\'en bepaald moment, \'e\'en ogenblik, er helemaal geen tijdsverloop is en we bijgevolg ook geen verplaatsing kunnen hebben\ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \emph{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gem\'iddelde snelheid over het \mbox{tijds}\-in\-ter\-val dat het sensortje op je wiel nodig heeft om \'e\'en omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van \'e\'en omwenteling. Als jij plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
-	\begin{image}
-	
-	\includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
-	\end{image}
-	\captionof{figure}{Stuiterende tennisbal}
-	
-	Hoe lossen we dit probleem nu op? Als we naar de stroboscopische foto (\ref{stuiterendetennisbal}) van de stuiterende tennisbal kij\-ken, zien we dat de bal bovenaan trager beweegt dan wanneer hij de grond nadert. Bovenaan liggen de beelden immers dichter bij elkaar zodat de tennisbal minder afstand aflegt in de tijdsspanne tussen twee opeenvolgende opnames. 
-	De kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid of een grootte gaat.} informatie die we op deze manier uit de beelden kunnen destilleren, levert ons echter opnieuw gemiddelde snelheid en niet zomaar de ogenblikkelijke snelheid. De tennisbal verandert immers nog van snelheid tussen twee opeenvolgende opnames. Door nu echter de frequentie\footnote{Frequentie is een grootheid die aangeeft hoeveel cyclussen er per seconde worden doorlopen. Hier gaat het dus over het aantal beelden dat per seconde wordt gemaakt. De eenheid van frequentie is $\rm\,s^{-1}$ oftewel Hz (de Hertz).} waarmee de foto's worden genomen op te drijven, krijgen we een accurater beeld van de snelheid die de tennisbal op een gegeven moment heeft. De tijdsintervallen zijn nu immers korter zodat de bal minder van snelheid kan veranderen gedurende de intervallen en zodoende de gemiddelde snelheid een indicatie wordt van de ogenblikkelijke snelheid. De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval. Daarom, je raadde het misschien al lang, defini\"eren we de ogenblikkelijke snelheid als de \emph{limiet} van de gemiddelde snelheid over een tijdsinterval waarbij we dat interval naar nul laten gaan. Of m.a.w. wordt de ogenblikkelijke snelheid gedefinieerd \footnote{Dat betekent dus dat als iemand je vraagt wat snelheid is, je moet antwoorden dat het de afgeleide\ldots} als de afgeleide\footnote{De afgeleide is in deze context van het zoeken naar snelheid door Isaak Newton (1643-1727) en Gottfried Wilhelm von Leibniz (1646-1716) onafhankelijk van elkaar ontwikkeld.} van de plaatsfunctie:
-	\begin{eqnarray*}
-	v=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}=\frac{dx}{dt}
-	\end{eqnarray*}
-	We noteren dit ook zoals in de wiskunde met een accent $v(t)=x'(t)$ of $v=x'$. $v(t)$ is opnieuw een functie die op elk moment de snelheid geeft. 
-	
-	Grafisch weet je dat je de afgeleide kan terugvinden als de richtingsco\"effici\"ent van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je dus de snelheid als de richtingsco\"effici\"ent van een raaklijn in het beschouwde punt. 
-	
-	Opmerking: Het woord 'ogenblikkelijk' mag je ook weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
-	
-	\subsection{Ogenblikkelijke versnelling}
-	
-	Voor een ogenblikkelijke verandering van de snelheid maken we eenzelfde redenering als voor de ogenblikkelijke verandering van de positie. De ogenblikkelijke versnelling wordt dus m.a.w. gewoonweg de afgeleide van de snelheid:
-	\begin{eqnarray*}
-	a=\lim_{t\to t_0}\frac{v(t)-v(t_0)}{t-t_0}&=&\frac{dv}{dt}=\frac{d^2x}{dt^2}
-	\end{eqnarray*}
-	Ook hier hanteren we eveneens een notatie m.b.v. accenten $a(t)=v'(t)=x''(t)$ en bedoelen we met versnelling, ogenblikkelijke versnelling.
-	
+De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de plaatsfunctie:
+\[
+v=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}=\frac{dx}{dt}
+\]
+De notatie met een accent $v(t)=x'(t)$ of $v=x'$ wordt op dezelfde manier als in de wiskunde gebruikt. $v(t)$ is een functie die op elk moment de snelheid geeft. 
+\end{definition}
+
+
+Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je  de snelheid als de richtingscoöefficiënt van de raaklijn in het beschouwde punt. 
+
+\begin{remark}
+	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
+\end{remark}
+
+\subsection{Ogenblikkelijke versnelling}
+
+Voor een ogenblikkelijke verandering van de snelheid maken we eenzelfde redenering als voor de ogenblikkelijke verandering van de positie.
+
+\begin{definition}
+De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de snelheidsfunctie \(v(t)\):
+\[
+a=\lim_{t\to t_0}\frac{v(t)-v(t_0)}{t-t_0} = \frac{dv}{dt}=\frac{d^2x}{dt^2}
+\]
+
+De notatie met een accent $a(t)=v'(t)$ of $a=v'$ wordt op dezelfde manier als in de wiskunde gebruikt. $a(t)$ is een functie die op elk moment de snelheid geeft. 
+\end{definition}
 	
 	
 \end{document}
