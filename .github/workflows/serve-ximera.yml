@@ -64,6 +64,7 @@ jobs:
   publish-ximera:
     name: Publish Ximera Courses
     needs: build-ximera # Waits for the build job to complete
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production
     steps:

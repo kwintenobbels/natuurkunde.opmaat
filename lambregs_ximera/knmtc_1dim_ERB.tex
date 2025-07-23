@@ -6,41 +6,43 @@
 \begin{document}
 	\author{Bart Lambregs}
 	\xmtitle{Eenparige rechtlijnige beweging}{}
-    \xmsource
+    \xmsource\xmuitleg
 
 
 
-	%%%\section{ERB}
 
-	De \emph{eenparig rechtlijnige beweging} (afgekort ERB) is een specifieke beweging. De snelheid van de beweging is eenparig of gelijkmatig verdeeld wat betekent dat de snelheid steeds gelijk blijft. M.a.w. is de snelheid constant of is de versnelling nul. Omdat de snelheid niet verandert is de ogenblikkelijke snelheid gelijk aan de gemiddelde snelheid en kunnen we gemakkelijk een functie vinden voor de positie in functie van de tijd:
-	\begin{eqnarray*}
-	v=\frac{\Delta x}{\Delta t}&\Leftrightarrow&\Delta x=v\Delta t\\
-	&\Leftrightarrow&x-x_0=v(t-t_0)\\
-	&\Leftrightarrow&x=x_0+v(t-t_0)
-	\end{eqnarray*}
-	Samengevat:
-	
-	
-	\kader{
-	%\vspace{3mm}
-	De plaatsfunctie $x(t)$ van een ERB met snelheid $v$ is gegeven door:
-	\begin{eqnarray}%
-	x(t)&=&x_0+v(t-t_0)
-	\end{eqnarray}
-	waarbij $x_0=x(t_0)$ de co\"ordinaat op het tijdstip $t_0$ is. Indien $t_0=0$ dan vereenvoudigt de plaatsfunctie (\ref{x(t)ERB}) tot
-	\begin{eqnarray}%
-	x(t)&=&x_0+vt
-	\end{eqnarray}
-	%\vspace{0mm}
-	}
-	
-	Aangezien de snelheid van een ERB constant is, is de beginsnelheid $v_0=v(t_0)$ gelijk aan de snelheid $v$, $v_0=v$. De snelheidsfunctie is natuurlijk $v(t)=v$ en de versnellingsfunctie is $a(t)=0$.
-	\begin{image}
-	
-	\includegraphics[width=.7\textwidth]{ERB_grafieken}
-	\end{image}
-	\captionof{figure}{Grafieken van een ERB}
-	
-	
-	
+Een eenvoudige beweging om te bestuderen is de \emph{eenparig rechtlijnige beweging} (afgekort ERB). De snelheid van de beweging is eenparig of gelijkmatig verdeeld wat betekent dat de snelheid steeds gelijk blijft. M.a.w. is de snelheid constant en dus de versnelling gelijk aan nul. Aangezien de snelheid niet verandert is de ogenblikkelijke snelheid gelijk aan de gemiddelde snelheid. Met deze observatie kan je eenvoudig een functie opstellen voor de plaatsfunctie van deze beweging:
+
+\[
+\begin{array}{rcl}
+
+v=\frac{\Delta x}{\Delta t} & \Leftrightarrow & \Delta x=v\Delta t \\
+&\Leftrightarrow & x-x_0=v(t-t_0) \\
+&\Leftrightarrow & x=x_0+v(t-t_0)
+
+\end{array}
+\]
+
+\begin{theorem}
+De plaatsfunctie $x(t)$ van een ERB met snelheid $v$ is gegeven door:
+
+\[
+x(t)=x_0+v(t-t_0)
+\]
+waarbij $x_0=x(t_0)$ de coördinaat op het tijdstip $t_0$ is. Als $t_0=0$ dan vereenvoudigt de plaatsfunctie tot
+\begin{eqnarray}%
+x(t)&=&x_0+vt
+\end{eqnarray}
+
+\end{theorem}
+
+De snelheid $v$ is gelijk aan de beginsnelheid $v_0=v(t_0)$ omdat in een ERB de snelheid constant is. De snelheidsfunctie is $v(t)=v$ en de versnellingsfunctie is $a(t)=0$.
+
+\begin{image}
+\includegraphics[width=.7\textwidth]{ERB_grafieken}
+\end{image}
+\captionof{figure}{Grafieken van een ERB}
+
+
+
 \end{document}

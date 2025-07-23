@@ -1114,3 +1114,8 @@ figcaption {
 	margin-bottom:  1em;
 	font-size: smaller;
 }
+
+/* geen section numbers */
+h4 span.titlemark {
+    display: none;
+}
