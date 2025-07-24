@@ -2,8 +2,8 @@
 # version of Ximera xake container to use (with xmlatex)
 #
 # : "${XAKE_BASE:=ximeralatex}"
-# : "${XAKE_VERSION:=v2.6.7a}"
- : "${XAKE_VERSION:=v2.6.7a-full}"    # with texlive_full
+# : "${XAKE_VERSION:=v2.7.1}"
+# : "${XAKE_VERSION:=v2.7.1-full}"    # with texlive_full
 #
 # For publishing you'll need a GPG Key
 # To generate a key-pair, fill in your name and email, and run 'xmlatex genKey'
@@ -21,8 +21,7 @@ YOUR_EMAIL="DUMMY_EMAIL_TEST"
 # !! DO NOT SAVE THE KEY IN THIS config.txt FILE   !!
 #
 
-: "${XIMERA_NAME:=nat}"
-##: "${XIMERA_URL:=http://wiskunde.opmaat.org/}"
+## : "${XIMERA_NAME:=myreponame}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
 ## : "${XIMERA_URL:=https://ximera.osu.edu/}"
 ## : "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"
@@ -32,8 +31,8 @@ YOUR_EMAIL="DUMMY_EMAIL_TEST"
 # For a local ximeraserver
 #
 
-: "${SERVER_PORT:=2000}"
-: "${SERVER_NAME:=ximeraserver}"
+# : "${SERVER_PORT:=2000}"
+# : "${SERVER_NAME:=ximeraserver}"
 # : "${SERVER_IMAGE:=registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3_b}"
 
 #
@@ -50,7 +49,7 @@ YOUR_EMAIL="DUMMY_EMAIL_TEST"
 #
 # For use in Actions, and perhaps to adapt the functionality of the PDF/HTML/SERVE buttons
 #
-# export XM_COMPILE_SEQUENCE=draft.html      # which output to generate, eg "handout.pdf,draft.html"
+# export XM_COMPILE_SEQUENCE=html            # which output to generate, eg "pdf,handout.pdf,html"
 # export XM_TO_PROCESS=aFirstXourse.tex      # only build/frost/serve these files/courses
 # export XM_CONFIGFILE=more.cfg              # exotic: if you want to use a different TeX4ht config file
 # export XM_SETTINGSFILE=config.lua          # yet another way to set some options/Settings
