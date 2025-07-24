@@ -16,35 +16,38 @@
 
 \subsection*{Positie en plaatsfunctie}
 
-De beweging van een puntmassa kan beschreven worden door de positie in functie van de tijd weer te geven. De \emph{plaatsfunctie} $x(t)$ geeft voor elk tijdstip \(t\) de positie \(x\) waar de puntmassa zich bevindt. Een coördinaatas\footnote{Een coördinaatas is een as van een cartesiaans assenstelsel, met een oorsprong en een oriëntatie.} bepaald de positie \(x\). De variabele \(t\) staat symbool voor de tijd. De notatie voor de positie op tijdstip $t_1$ is: 
+	De beweging van een puntmassa wordt beschreven door haar positie in de ruimte als functie van de tijd, of dus door een \textit{functie} die de \textbf{plaats} weergeeft in functie van de \textbf{tijd}. Deze functie noemen we de \textbf{plaatsfunctie} $x = x(t)$. 
+	Bij een ééndimensionale beweging is $x$ een getal, namelijk de positie op een coördinaatas
+	% \footnote{Een coördinaatas is een as van een cartesiaans assenstelsel, met een oorsprong en een ori\"entatie.} 
+	en $t$ is de variabele die symbool staat voor de tijd
+	%\footnote{In de fysica gebruiken we de wiskunde als `taal' om de wetmatigheden van de natuur in uit te drukken. Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. $x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$ maar het symbool $t$ omdat deze symbool moet staan voor de tijd. En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat de beeldwaarden van de functie nu als betekenis een positie op een co\"ordinaatas hebben.}
+	. 
+	Met een welbepaald tijdstip $t_1$ 
+	%\footnote{Natuurlijk kan de index 1 ook vervangen worden door andere indices. Voorbeelden zijn $x_0=x(t_0)$ en $x_2=x(t_2)$.} komt de positie $x_1$ op de coördinaatas overeen volgens de formule
+	\begin{eqnarray*}
+	x_1=x(t_1)
+	\end{eqnarray*}
+	In onderstaande figuur (\ref{grafplaatsfunctie}) zie je een auto op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ weer\-ge\-ge\-ven op verschillende posities, met een grafiek van de bijbehorende plaatsfunctie.
+	
+	\begin{image}
+	\includegraphics[width=0.45\textwidth]{Serway2p1(1)}
+	$\qquad$   % hack 
+	\includegraphics[width=0.45\textwidth]{Serway2p1(2)}
+	\end{image}
+	\captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
+	
+	Het verschil tussen de plaatsen op twee tijdstippen $t_1$ en $t_2$ noemen we de \textbf{verplaatsing} tussen $t_1$ en $t_2$, genoteerd met een $\Delta$ (Delta, een Griekse hoofdletter D  van het Engelse 'displacement' of het Franse 'déplacement').
 
-\[
-x_1=x(t_1)
-\]
+	\begin{definition}
+	De \textbf{verplaatsing} \(\Delta x\) is het verschil tussen twee posities:
+	\[
+		\Delta x = x_2-x_1
+	\]
+	\end{definition}
+	% TODO: opmerking toevoegen dat de natatie $\Delta$ *erg* slecht is, omdat ze de indices 1 en 2 niet bevat!
 
-Natuurlijk kan de index 1 ook vervangen worden door andere indices, zo is $x_0=x(t_0)$ en $x_2=x(t_2)$.
+	In de figuur is de verplaatsing van de auto tussen de tijdstippen $t_0$ en $t_1$ gelijk aan $\Delta x = x_1-x_0=50\rm\,m-30\rm\,m=20\rm\,m$ en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan $\Delta x=x_4-x_2=-40\rm\,m-40\rm\,m=-80\rm\,m$. Deze laatste verplaatsing is negatief, wat aangeeft dat de auto netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
 
-Zo zie je onderstaande figuur een auto op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ weer\-ge\-ge\-ven op verschillende posities. Je ziet ook een grafiek van de bijbehorende plaatsfunctie.
-
-\begin{image}
-\hfill
-\includegraphics[width=0.45\textwidth]{Serway2p1(1)}
-\hfill
-\includegraphics[width=0.45\textwidth]{Serway2p1(2)}
-\hfill
-
-\end{image}
-\captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
-
-
-\begin{definition}
-De \emph{verplaatsing} \(\Delta x\) is het verschil tussen twee posities:
-\[
-\Delta x = x_2-x_1
-\]
-\end{definition}
-
-Zo is de verplaatsing van de auto in de figuur tussen de tijdstippen $t_0$ en $t_1$ gelijk aan $\Delta x = x_1-x_0=50\rm\,m-30\rm\,m=20\rm\,m$ en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan $\Delta x=x_4-x_2=-40\rm\,m-40\rm\,m=-80\rm\,m$. Deze laatste verplaatsing is negatief, wat aangeeft dat de auto netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
 %%%\newline
 Let op, de verplaatsing hoeft niet noodzakelijk gelijk te zijn aan de \emph{afgelegde weg} tussen de twee bijbehorende tijdstippen. Als je een rondje hebt gelopen op de atletiekpiste en terug aan start staat is je (netto) verplaatsing nul, maar heb je wel degelijk afstand afgelegd.
 
@@ -81,24 +84,24 @@ De gemiddelde versnelling \(\overline{a}\) tussen twee tijdstippen wordt gedefin
 De eenheid van versnelling is meter per seconde, per seconde -- wat meter per seconde in het kwadraat geeft $[a]=\rm\,m/s^2$.
 \end{definition}
 
-\begin{denkvraag}
+\begin{denkvraag*}{}
 Kan je uitleggen wat de eenheid meter per seconde, per seconde betekent? 
-\end{denkvraag}
+\end{denkvraag*}
 
 \subsection*{Ogenblikkelijke snelheid}
 
 De plaatsfunctie \(x{t}\) kent op elke tijdstip \(t\) een positie toe aan een voorwerp. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
 
-\begin{denkvraag}
+\begin{denkvraag*}{}
 Aan elk moment een snelheid toekennen is niet evident. Laat ons volgende video bekijken van een raket die opstijgt. Op het lanceerplatform is de snelheid \(0\). Als een raket op weg is naar de ruimte kan de snelheid tot \(100 m/s \) bedragen. \textbf{Wat is volgens jou de snelheid op het moment dat de raket de grond niet meer raakt? Het eerste moment dat hij niet meer op de grond staat.}
-\end{denkvraag}
+\end{denkvraag*}
 
 De eenheid van snelheid is \(m/s\), het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Op \'e\'en bepaald moment, \'e\'en ogenblik, er helemaal geen tijdsverloop is en we bijgevolg ook geen verplaatsing kunnen hebben\ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
 
-\begin{denkvraag}
+\begin{denkvraag*}{}
 Als een raket opstijgt vanuit stilstand lijkt de snelheid in eerste instantie positief. \textbf{Hoe zou je toch beargumenteren dat de raket een positieve snelheid heeft op het eerste moment dat hij van de grond is?}
 
-\end{denkvraag}
+\end{denkvraag*}
 
 `Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \emph{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gem\'iddelde snelheid over het \mbox{tijds}\-in\-ter\-val dat het sensortje op je wiel nodig heeft om \'e\'en omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van \'e\'en omwenteling. Als jij plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
 \begin{image}
@@ -112,11 +115,12 @@ Deze kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid
 
 \begin{definition}
 	
-De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de plaatsfunctie:
+De \textbf{ogenblikkelijke snelheid}  is de afgeleide van de plaatsfunctie:
 \[
 v=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}=\frac{dx}{dt}
 \]
-De notatie met een accent $v(t)=x'(t)$ of $v=x'$ wordt op dezelfde manier als in de wiskunde gebruikt. $v(t)$ is een functie die op elk moment de snelheid geeft. 
+De notatie met een accent $v(t)=x'(t)$ of $v=x'$ wordt op dezelfde manier als in de wiskunde gebruikt. 
+De functie $v(t)$ geeft op elk moment $t$ de snelheid $v(t)$. 
 \end{definition}
 
 
