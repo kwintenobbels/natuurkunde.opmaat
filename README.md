@@ -1,5 +1,8 @@
-# Wiskunde Op Maat
+# Natuurkunde Op Maat
 
-Antifragiel open-source project voor cursusmateriaal secundair onderwijs. 
+Cursus Natuurkunde in Ximera.
 
+In eerste instantie Kinematica/Dynamica/... (6de jaar)
+ 
+Geplande [inhoudsopgave](sem1.md)
 
