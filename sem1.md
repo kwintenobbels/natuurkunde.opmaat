@@ -39,7 +39,7 @@
 # Beginselen van Newton (B)
 1. [ ] Inleiding
 2. [ ] Traagheidswet
-3. [ ] 2e wet (F =ma)
+3. [ ] 2e wet ($\vec{F}=m\vec{a}$)
 4. [ ] Actie-Reactie
 5. [ ] Oefeningen
 
