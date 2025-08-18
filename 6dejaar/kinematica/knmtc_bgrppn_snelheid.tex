@@ -9,5 +9,67 @@
     \xmsource\xmuitleg
 
 
+\subsection*{Gemiddelde snelheid}
+
+% gemiddelde snelheid als je een rondje loopt is nu nul; dat moet miss benoemd worden 
+
+De tijd nodig om een bepaalde afstand af te leggen geeft aanleiding tot de \textit{gemiddelde snelheid}. 
+
+
+\begin{definition}
+	
+De gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen wordt gedefiniëerd als
+\[
+\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
+\]
+De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$. 
+\end{definition}
+
+In de figuur is de gemiddelde snelheid van de auto tussen de tijdstippen $t_1$ en $t_2$ gelijk aan $\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{40\rm\,m-50\rm\,m}{20\rm\,s-10\rm\,s}=-1\rm\,m/s$. Als de snelheid negatief is betekent dit dat de auto achteruit rijdt.
+
+
+
+\subsection*{Ogenblikkelijke snelheid}
+
+De plaatsfunctie \(x{t}\) kent op elke tijdstip \(t\) een positie toe aan een voorwerp. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
+
+\begin{denkvraag*}{}
+Aan elk moment een snelheid toekennen is niet evident. Laat ons volgende video bekijken van een raket die opstijgt. Op het lanceerplatform is de snelheid \(0\). Als een raket op weg is naar de ruimte kan de snelheid tot \(100 m/s \) bedragen. \textbf{Wat is volgens jou de snelheid op het moment dat de raket de grond niet meer raakt? Het eerste moment dat hij niet meer op de grond staat.}
+\end{denkvraag*}
+
+De eenheid van snelheid is \(m/s\), het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Op \'e\'en bepaald moment, \'e\'en ogenblik, er helemaal geen tijdsverloop is en we bijgevolg ook geen verplaatsing kunnen hebben\ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
+
+\begin{denkvraag*}{}
+Als een raket opstijgt vanuit stilstand lijkt de snelheid in eerste instantie positief. \textbf{Hoe zou je toch beargumenteren dat de raket een positieve snelheid heeft op het eerste moment dat hij van de grond is?}
+
+\end{denkvraag*}
+
+`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \emph{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gem\'iddelde snelheid over het \mbox{tijds}\-in\-ter\-val dat het sensortje op je wiel nodig heeft om \'e\'en omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van \'e\'en omwenteling. Als jij plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
+\begin{image}
+
+\includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
+\end{image}
+\captionof{figure}{Stuiterende tennisbal}
+
+Hoe kan dit probleem opgelost worden? Op de stroboscopische foto van de stuiterende tennisbal is te zien dat de bal bovenaan trager beweegt dan wanneer hij de grond nadert. Bovenaan liggen de beelden immers dichter bij elkaar zodat de tennisbal minder afstand aflegt in de tijdsspanne tussen twee opeenvolgende opnames. 
+Deze kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid of een grootte gaat.} informatie die levert echter opnieuw gemiddelde snelheid en niet zomaar de ogenblikkelijke snelheid. De tennisbal verandert immers nog van snelheid tussen twee opeenvolgende opnames. Door de frequentie\footnote{Frequentie is een grootheid die aangeeft hoeveel cyclussen er per seconde worden doorlopen. Hier gaat het dus over het aantal beelden dat per seconde wordt gemaakt. De eenheid van frequentie is $\rm\,s^{-1}$ oftewel Hz (de Hertz).} waarmee de foto's worden genomen op te drijven, krijgen we een accurater beeld van de snelheid die de tennisbal op een gegeven moment heeft. De tijdsintervallen zijn nu immers korter zodat de bal minder van snelheid kan veranderen gedurende de intervallen en zodoende de gemiddelde snelheid een indicatie wordt van de ogenblikkelijke snelheid. De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval. Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \emph{limiet} van de gemiddelde snelheid over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
+
+\begin{definition}
+	
+De \textbf{ogenblikkelijke snelheid}  is de afgeleide van de plaatsfunctie:
+\[
+v=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}=\frac{dx}{dt}
+\]
+De notatie met een accent $v(t)=x'(t)$ of $v=x'$ wordt op dezelfde manier als in de wiskunde gebruikt. 
+De functie $v(t)$ geeft op elk moment $t$ de snelheid $v(t)$. 
+\end{definition}
+
+
+Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je  de snelheid als de richtingscoöefficiënt van de raaklijn in het beschouwde punt. 
+
+\begin{remark}
+	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
+\end{remark}
+
 	
 \end{document}

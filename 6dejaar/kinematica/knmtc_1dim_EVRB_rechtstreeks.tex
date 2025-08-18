@@ -10,66 +10,52 @@
 
 
 
-Een eendimensionale beweging waarvan de versnelling constant noemt  \textit{eenparig veranderlijke rechtlijnige be\-we\-ging} (EVRB). Eenparig betekent gelijkmatig; de snelheidsverandering is steeds gelijk. In symbolen: $a(t)=a$ waarbij $a$ een reëel getal is. Ook voor deze beweging kan je de plaatsfunctie en snelheidsfunctie bepalen en zo het verloop van de plaats en snelheid in functie van de tijd kennen. 
+Een eendimensionale beweging met constante versnelling noemt de  \textit{eenparig veranderlijke rechtlijnige beweging} (EVRB). Eenparig betekent gelijkmatig; de snelheidsverandering is steeds gelijk. In symbolen: $a(t)=a$ waarbij $a$ een reëel getal is. Ook voor deze beweging kan je de plaatsfunctie en snelheidsfunctie bepalen en zo het verloop van de plaats en snelheid in functie van de tijd kennen. 
 
 
+Omdat \(a\) constant is geldt \( \bar{a} = a\) . De gemiddelde snelheid en gemiddelde versnelling voor \(t_0 = 0\)worden gegeven door: 
 
-We now examine the situation when the magnitude of the acceleration is constant and the motion is in a straight line. In this case, the instantaneous and average accelerations are equal. We use the definitions of average velocity and acceleration to derive a set of valuable equations that relate \( x, v, a, \) and \( t \) when \( a \) is constant, allowing us to determine any one of these variables if we know the others.
-
-To simplify our notation, let us take the initial time in any discussion to be zero, and we call it \( t_0 \): \( t_1 = t_0 = 0 \). (This is effectively starting a stopwatch at \( t_0 \).) We can then let \( t_2 = t \) be the elapsed time. The initial position (\( x_1 \)) and the initial velocity (\( v_1 \)) of an object will now be represented by \( x_0 \) and \( v_0 \), since they represent \( x \) and \( v \) at \( t = 0 \). At time \( t \), the position and velocity will be called \( x \) and \( v \) (rather than \( x_2 \) and \( v_2 \)).
-
-The average velocity during the time interval \( t - t_0 \) will be (Eq. 2–2)
 \[
 \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x - x_0}{t - t_0} = \frac{x - x_0}{t}
 \]
-
-since we chose \( t_0 = 0 \). The acceleration, assumed constant in time, is (Eq. 2–5)
 
 \[
 a = \frac{v - v_0}{t}
 \]
 
-A common problem is to determine the velocity of an object after any elapsed time \( t \), when we are given the object's constant acceleration. We can solve such problems by solving for \( v \) in the last equation to obtain:
+Deze formules kunnen alsvolgt omgevormt worden naar een eerstegraadsvergelijking in de veranderlijke \(t\): 
 
 \[
 v = v_0 + at \qquad \text{[constant acceleration] (2–7)}
 \]
 
-If an object starts from rest (\( v_0 = 0 \)) and accelerates at \( 4.0\,\mathrm{m/s^2} \), after an elapsed time \( t = 6.0\,\mathrm{s} \) its velocity will be 
-\[
-v = at = (4.0\,\mathrm{m/s^2})(6.0\,\mathrm{s}) = 24\,\mathrm{m/s}.
-\]
-
-Next, let us see how to calculate the position \( x \) of an object after a time \( t \) when it undergoes constant acceleration. The definition of average velocity (Eq. 2–2) is
-\[
-\bar{v} = \frac{x - x_0}{t}
-\]
-which we can rewrite as
-
 \[
 x = x_0 + \bar{v}t \tag{2–8}
 \]
 
-Because the velocity increases at a uniform rate, the average velocity \( \bar{v} \) will be midway between the initial and final velocities:
+
+Omdat de snelheid een lineaire functie is, kunnen we de gemiddelde snelheid ook schrijven als 
 
 \[
 \bar{v} = \frac{v_0 + v}{2} \qquad \text{[constant acceleration] (2–9)}
 \]
 
-(Careful: Equation 2–9 is not necessarily valid if the acceleration is not constant.)
 
-We combine the last two Equations with Eq. 2–7 and find:
+Deze functies invullen (hier de nummering hebben...) levert: 
 
 \begin{align*}
-x &= x_0 + \bar{v}t \\
-  &= x_0 + \left( \frac{v_0 + v}{2} \right)t \\
-  &= x_0 + \left( \frac{v_0 + v_0 + at}{2} \right)t \\
-  &= x_0 + v_0 t + \frac{1}{2} at^2
+	x &= x_0 + \bar{v}t \\
+	  &= x_0 + \left( \frac{v_0 + v}{2} \right)t \\
+	  &= x_0 + \left( \frac{v_0 + v_0 + at}{2} \right)t \\
+	  &= x_0 + v_0 t + \frac{1}{2} at^2
 \end{align*}
 
 \[
 \Rightarrow \quad x = x_0 + v_0 t + \frac{1}{2}at^2 \qquad \text{[constant acceleration] (2–10)}
 \]
+
+
+
 
 
 
@@ -209,7 +195,68 @@ Invullen van de gegevens levert $a=\SI{-198}{m/s^2}$, wat gelijk is aan $20g$.
 \end{exercise}
 
 
-
-	
 	
 \end{document}
+
+
+
+% Giancoli: 
+
+
+
+% We now examine the situation when the magnitude of the acceleration is constant and the motion is in a straight line. In this case, the instantaneous and average accelerations are equal. We use the definitions of average velocity and acceleration to derive a set of valuable equations that relate \( x, v, a, \) and \( t \) when \( a \) is constant, allowing us to determine any one of these variables if we know the others.
+
+% To simplify our notation, let us take the initial time in any discussion to be zero, and we call it \( t_0 \): \( t_1 = t_0 = 0 \). (This is effectively starting a stopwatch at \( t_0 \).) We can then let \( t_2 = t \) be the elapsed time. The initial position (\( x_1 \)) and the initial velocity (\( v_1 \)) of an object will now be represented by \( x_0 \) and \( v_0 \), since they represent \( x \) and \( v \) at \( t = 0 \). At time \( t \), the position and velocity will be called \( x \) and \( v \) (rather than \( x_2 \) and \( v_2 \)).
+
+% The average velocity during the time interval \( t - t_0 \) will be (Eq. 2–2)
+% \[
+% \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x - x_0}{t - t_0} = \frac{x - x_0}{t}
+% \]
+
+% since we chose \( t_0 = 0 \). The acceleration, assumed constant in time, is (Eq. 2–5)
+
+% \[
+% a = \frac{v - v_0}{t}
+% \]
+
+% A common problem is to determine the velocity of an object after any elapsed time \( t \), when we are given the object's constant acceleration. We can solve such problems by solving for \( v \) in the last equation to obtain:
+
+% \[
+% v = v_0 + at \qquad \text{[constant acceleration] (2–7)}
+% \]
+
+% If an object starts from rest (\( v_0 = 0 \)) and accelerates at \( 4.0\,\mathrm{m/s^2} \), after an elapsed time \( t = 6.0\,\mathrm{s} \) its velocity will be 
+% \[
+% v = at = (4.0\,\mathrm{m/s^2})(6.0\,\mathrm{s}) = 24\,\mathrm{m/s}.
+% \]
+
+% Next, let us see how to calculate the position \( x \) of an object after a time \( t \) when it undergoes constant acceleration. The definition of average velocity (Eq. 2–2) is
+% \[
+% \bar{v} = \frac{x - x_0}{t}
+% \]
+% which we can rewrite as
+
+% \[
+% x = x_0 + \bar{v}t \tag{2–8}
+% \]
+
+% Because the velocity increases at a uniform rate, the average velocity \( \bar{v} \) will be midway between the initial and final velocities:
+
+% \[
+% \bar{v} = \frac{v_0 + v}{2} \qquad \text{[constant acceleration] (2–9)}
+% \]
+
+% (Careful: Equation 2–9 is not necessarily valid if the acceleration is not constant.)
+
+% We combine the last two Equations with Eq. 2–7 and find:
+
+% \begin{align*}
+% x &= x_0 + \bar{v}t \\
+%   &= x_0 + \left( \frac{v_0 + v}{2} \right)t \\
+%   &= x_0 + \left( \frac{v_0 + v_0 + at}{2} \right)t \\
+%   &= x_0 + v_0 t + \frac{1}{2} at^2
+% \end{align*}
+
+% \[
+% \Rightarrow \quad x = x_0 + v_0 t + \frac{1}{2}at^2 \qquad \text{[constant acceleration] (2–10)}
+% \]
