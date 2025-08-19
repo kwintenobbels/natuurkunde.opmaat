@@ -13,7 +13,7 @@
 
 % gemiddelde snelheid als je een rondje loopt is nu nul; dat moet miss benoemd worden 
 
-De tijd nodig om een bepaalde afstand af te leggen geeft aanleiding tot de \textit{gemiddelde snelheid}. 
+De tijd nodig voor een bepaalde verplaatsing geeft aanleiding tot de \textit{gemiddelde snelheid}. 
 
 
 \begin{definition}
@@ -31,20 +31,16 @@ In de figuur is de gemiddelde snelheid van de auto tussen de tijdstippen $t_1$ e
 
 \subsection*{Ogenblikkelijke snelheid}
 
-De plaatsfunctie \(x{t}\) kent op elke tijdstip \(t\) een positie toe aan een voorwerp. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
+De gemiddelde snelheid \(\overline{v}\) is enkel gedefinieerd \textit{tussen} twee posities \(x_1\) en \(x_2\). De plaatsfunctie \(x(t)\) kent voor elk tijdstip \(t\) aan een puntmassa een positie \(x\) toe. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
+
+De eenheid van snelheid is \(m/s\), het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Op één bepaald moment \(t\), één ogenblik, is er helemaal geen tijdsverloop en bijgevolg kan er ook geen verplaatsing zijn \ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
 
 \begin{denkvraag*}{}
-Aan elk moment een snelheid toekennen is niet evident. Laat ons volgende video bekijken van een raket die opstijgt. Op het lanceerplatform is de snelheid \(0\). Als een raket op weg is naar de ruimte kan de snelheid tot \(100 m/s \) bedragen. \textbf{Wat is volgens jou de snelheid op het moment dat de raket de grond niet meer raakt? Het eerste moment dat hij niet meer op de grond staat.}
+Als een raket opstijgt vanuit stilstand is de snelheid duidelijk groter dan nul. \textbf{Wat is volgens jou de snelheid op het eerste moment dat een opstijgende raket de grond niet meer raakt?}
 \end{denkvraag*}
 
-De eenheid van snelheid is \(m/s\), het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Op \'e\'en bepaald moment, \'e\'en ogenblik, er helemaal geen tijdsverloop is en we bijgevolg ook geen verplaatsing kunnen hebben\ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
 
-\begin{denkvraag*}{}
-Als een raket opstijgt vanuit stilstand lijkt de snelheid in eerste instantie positief. \textbf{Hoe zou je toch beargumenteren dat de raket een positieve snelheid heeft op het eerste moment dat hij van de grond is?}
-
-\end{denkvraag*}
-
-`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \emph{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gem\'iddelde snelheid over het \mbox{tijds}\-in\-ter\-val dat het sensortje op je wiel nodig heeft om \'e\'en omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van \'e\'en omwenteling. Als jij plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
+`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \textit{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gemiddelde snelheid over het tijdsinterval dat het sensortje op je wiel nodig heeft om één omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van één omwenteling. Als je plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
 \begin{image}
 
 \includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
@@ -70,6 +66,25 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de r
 \begin{remark}
 	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
 \end{remark}
+
+% TODO de plaatsfunctie kan beter voor deze vraag --> eventueel naar tikz iets? 
+\begin{exercise}
+Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van het autotje. Bepaal enkel met de grafiek en zonder te rekenen: 
+\begin{itemize}
+	\item Waar staat de auto stil? 
+	\item Waar heeft de auto een positieve snelheid?
+	\item waar is de snelheid negatief? 
+	\item Op welk moment bewoog de auto het snelst? 
+\end{itemize}
+
+\begin{image}
+	\includegraphics[width=0.45\textwidth]{Serway2p1(1)}
+	$\qquad$   % hack 
+	\includegraphics[width=0.45\textwidth]{Serway2p1(2)}
+	\end{image}
+	\captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
+	
+\end{exercise}
 
 	
 \end{document}
