@@ -1,7 +1,7 @@
 \documentclass{ximera}
-\input{../preamble}
+\input{../../preamble}
 
-\addPrintStyle{..}
+\addPrintStyle{../..}
 
 \begin{document}
 	\author{Bart Lambregs}
@@ -15,6 +15,44 @@ Zonder benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echt
 
 
 % INSERT TIKZ PICTURE RICHTING ZIN GROOTTE VAN VECTOR 
+
+
+% HTML WERKT NIET VOOR DEZE TIKZ PICTURES 
+
+\begin{image}
+\begin{tikzpicture}
+	% Draw the axes with arrows
+	\draw[->] (-1,0) -- (5,0) node[right] {$x$};
+	\draw[->] (0,-0.5) -- (0, 3) node[above] {$y$};
+	
+	\draw[->, thick, blue] (1,1) -- (3,2) node[midway, below right] {\(\vec{z}\)};
+	\fill[blue] (1,1) circle (2pt) node[above left] {};
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+	% Draw the axes with arrows
+	\draw[->] (-1,0) -- (5,0) node[right] {$x$};
+	\draw[->] (0,-0.5) -- (0, 3) node[above] {$y$};
+	
+	% Draw the frame around the graphsp
+	% \draw (0,0) rectangle (3,3);
+	
+	% Draw the vector with magnitude, direction, and point of application
+	\draw[dash pattern=on 5pt off 10pt] (-1,0) -- (5,3) node[pos=0.80, above left] {richting};
+	
+	\draw[blue, -{latex[fill=orange]}] (1,1) -- (3,2) node[pos=0.80, above, orange] {zin};
+	\fill[red] (1,1) circle (2pt) node[below right] {aangrijpingspunt};
+	% \draw[thick, blue] (1,1) -- (3,2) node[midway, below right] {\(\vec{z}\)};
+	
+	
+	% \draw[green, ->] (2.5,2.5) -- (2.75,2.75) node[right] {Magnitude};
+	
+	% Add the sense (arrowhead) in a separate color (e.g., purple)
+	% \draw[thick, blue, -{>[scale=1.5, length=5pt, width=5pt, purple]}] (1,1) -- (2.5,2.5);
+\end{tikzpicture}
+\end{image}
 
 
 Aan de zin van een vector kan wiskundig een teken gekoppeld worden, dit hangt af van de gekozen referentie-as. 
