@@ -10,10 +10,18 @@
 
 
 
-Een eendimensionale beweging met constante versnelling noemt de  \textit{eenparig veranderlijke rechtlijnige beweging} (EVRB). Eenparig betekent gelijkmatig; de snelheidsverandering is steeds gelijk. De grafiek van $a(t)=a$ is een constante functie waarbij $a$ een reëel getal is. Ook voor deze beweging kan je de plaatsfunctie en snelheidsfunctie bepalen en zo het verloop van de plaats en snelheid in functie van de tijd kennen. 
+De ééndimensionale beweging met een constante  versnelling wordt de \textit{eenparig veranderlijke rechtlijnige beweging}, afgekort EVRB, genoemd. 
+Eenparig betekent gelijkmatig; bij een constante versnelling is de \textit{verandering} van de snelheid steeds gelijk.
+De grafiek van $a(t)=a$ is een constante met $a$ een reëel getal is.
+Ook voor deze beweging kan je de plaatsfunctie en snelheidsfunctie bepalen en zo het verloop van de plaats en snelheid in functie van de tijd kennen. 
 
 
-Omdat \(a\) constant is geldt \( \bar{a} = a\). Voor \(t_0 = 0\) worden de gemiddelde snelheid en versnelling gegeven door: 
+% Een eendimensionale beweging met constante versnelling noemt de  \textit{eenparig veranderlijke rechtlijnige beweging} (EVRB). 
+% Eenparig betekent gelijkmatig; de snelheidsverandering is steeds gelijk. De grafiek van $a(t)=a$ is een constante functie waarbij $a$ een reëel getal is. 
+% Ook voor deze beweging kan je de plaatsfunctie en snelheidsfunctie bepalen en zo het verloop van de plaats en snelheid in functie van de tijd kennen. 
+
+
+Voor \(t_0 = 0\) worden de gemiddelde snelheid en versnelling gegeven door: 
 
 \[
 \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x - x_0}{t - t_0} = \frac{x - x_0}{t}
@@ -23,25 +31,33 @@ Omdat \(a\) constant is geldt \( \bar{a} = a\). Voor \(t_0 = 0\) worden de gemid
 a = \frac{\Delta v}{\Delta t} = \frac{v - v_0}{t - t_0} = \frac{v - v_0}{t}
 \]
 
-Deze formules kunnen alsvolgt omgevormt worden naar een eerstegraadsvergelijking in de veranderlijke \(t\): 
+
+\begin{quickquestion*}
+Waarom geldt er dat voor de EVRB dat \( \overline{a} = a\)? 
+\end{quickquestion*}
+
+Deze formules omvormen levert een eerstegraadsvergelijking in de veranderlijke \(t\): 
 
 \[
-v = v_0 + at \qquad \text{[constant acceleration] (2–7)}
+x = x_0 + \bar{v}t 
 \]
 
 \[
-x = x_0 + \bar{v}t \tag{2–8}
+v = v_0 + at 
 \]
 
+% HIER KAN EEN TIKZ PICTURE DUIDELIJKHEID BRENGEN; IS EIGENLIJK NIET MEER DAN DE SYMETRIE VAN EEN RECHT LIJNSTUK 
+% MISSCHIEN IS DIT TE MOEILIJK.. 
 
-Omdat de snelheid een lineaire functie is, kunnen we de gemiddelde snelheid ook schrijven als 
+De snelheid \(v = v_0 + at \) is een lineaire functie, in oefening X van vorig hoofdstuk werd aangetoond dat de gemiddelde snelheid geschreven dan kan worden als: 
 
 \[
-\bar{v} = \frac{v_0 + v}{2} \qquad \text{[constant acceleration] (2–9)}
+\bar{v} = \frac{v_0 + v}{2} 
 \]
 
 
-Deze functies invullen (hier de nummering hebben...) levert: 
+
+Dit alles invullen in de plaatsfunctie levert: 
 
 \begin{align*}
 	x &= x_0 + \bar{v}t \\
@@ -51,13 +67,12 @@ Deze functies invullen (hier de nummering hebben...) levert:
 \end{align*}
 
 \[
-\Rightarrow \quad x = x_0 + v_0 t + \frac{1}{2}at^2 \qquad \text{[constant acceleration] (2–10)}
+\Rightarrow \quad x = x_0 + v_0 t + \frac{1}{2}at^2 
 \]
 
-
-
-
-
+\begin{quickquestion}
+	Verklaar in elke tussenstap welke formule er wordt ingevuld. 
+\end{quickquestion}
 
 
 \begin{theorem}
@@ -79,6 +94,16 @@ x(t)&=&x_0+v_0(t-t_0)+\frac{1}{2}a(t-t_0)^2\\
 v(t)&=&v_0+a(t-t_0)
 \end{array}
 \]
+
+
+
+\begin{exercise}
+	Hoe werden de 
+\end{exercise}
+
+
+
+
 
 Met de functies kan je de volgende formule voor de gemiddelde snelheid van een EVRB aantonen:%\footnote{Het formuletje is handig te gebruiken in veel vraagstukken door gebruik te maken van $\Delta x=\overline{v}\Delta t$.} 
 \footnote{De afleiding van de gemiddelde snelheid is als volgt:
@@ -110,27 +135,30 @@ Blijkbaar houdt het eenparig toenemen van de snelheid in dat we het rekenkundig 
 \captionof{figure}{Grafieken van een EVRB}
 
 
-\begin{exercise}
-	\begin{tikzpicture}[scale=5]
-		% Axes
-		\draw[->] (-0.05,0) -- (1.1,0) node[right] {$t(s)$};
-		\draw[->] (0,-0.05) -- (0,1.1) node[above] {$v(s)$};
+
+
+% DEZE CONCEPTUELE VRAAG NOG UITWERKEN 
+% \begin{exercise}
+% 	\begin{tikzpicture}[scale=5]
+% 		% Axes
+% 		\draw[->] (-0.05,0) -- (1.1,0) node[right] {$t(s)$};
+% 		\draw[->] (0,-0.05) -- (0,1.1) node[above] {$v(s)$};
 		
-		% Grid lines (optional)
-		\draw[very thin,color=gray!30] (0,0) grid (1,1);
+% 		% Grid lines (optional)
+% 		\draw[very thin,color=gray!30] (0,0) grid (1,1);
 		
-		% Identity function
-		\draw[thick,blue,domain=0:1] plot(\x,\x);
-		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,2)});
-		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,1/2)});
-		% \draw[thick,red,domain=0:1] plot(\x,{pow(\x,3)});
-		% \draw[thick,green,domain=0:1] plot(\x,{pow(\x,1/3)});
-		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,4)});
-		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,1/4)});
+% 		% Identity function
+% 		\draw[thick,blue,domain=0:1] plot(\x,\x);
+% 		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,2)});
+% 		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,1/2)});
+% 		% \draw[thick,red,domain=0:1] plot(\x,{pow(\x,3)});
+% 		% \draw[thick,green,domain=0:1] plot(\x,{pow(\x,1/3)});
+% 		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,4)});
+% 		\draw[thick,blue,domain=0:1] plot(\x,{pow(\x,1/4)});
 		
 		
-	\end{tikzpicture}
-\end{exercise}
+% 	\end{tikzpicture}
+% \end{exercise}
 
 \begin{exercise}
 	\begin{tikzpicture}[scale=5]
