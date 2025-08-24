@@ -521,13 +521,14 @@ div.quickquestion:before {
     padding-left: 10px;
 }
 
-/* hack to get rif of dubious dummy image */
+/* hack to get rid of dubious dummy image */
 .denkvraag dt,
 .denkvraag dd > p img:last-child {
 	display: none
 }
 
-.denkvraag dd:before {
+/* prevent too many befores when itemize inside denkvraag ! */
+.denkvraag > .trivlist > dd:before {
 	content: 'Om eens over te denken ... ';
 	font-weight: bold;
 	margin-left:1cm
@@ -1118,4 +1119,8 @@ figcaption {
 /* geen section numbers */
 h4 span.titlemark {
     display: none;
+}
+
+iframe.xmyoutube {
+    width: 80%;
 }
