@@ -55,6 +55,36 @@ Zonder benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echt
 \end{image}
 
 
+
+% Tikz geprogrameerd zodat het een oefening kan zijn in lager jaar: bepaal aangrijpingspunt, richting, grootte en zin. 
+\begin{tikzpicture}
+
+	\draw (-5,-5) grid (5,5);
+
+
+	\pgfmathsetmacro{\ax}{1}
+	\pgfmathsetmacro{\ay}{1}
+	\pgfmathsetmacro{\ex}{4}
+	\pgfmathsetmacro{\ey}{2}
+	
+	\coordinate (O) at (0,0); %OORSPRONG 
+	\coordinate (A) at (\ax,\ay);  % AANGRIJPINGSPUNT 
+	\coordinate (E) at (\ex, \ey); % EINDPUNT 
+
+	\draw[->, dashed] (E) -- ($(A) ! 1.5 ! (E) $) node[pos=1, above left]{richting};
+	\draw[dashed] (A) -- ($(A) ! -0.5 ! (E) $);
+	
+
+	\draw[->,blue, very thick, -{latex[fill=orange]}] (A)--(E) 
+		node[midway, above left, blue]{\(grootte \lvert \vec{z} \rvert \)}
+		node[pos=1, above, orange]{zin};
+
+	
+	\fill[red] (A) circle (2pt) node[right]{(\ax, \ay)};
+	\fill (O) circle (2pt) node[below right]{O};
+\end{tikzpicture}
+
+
 Aan de zin van een vector kan wiskundig een teken gekoppeld worden, dit hangt af van de gekozen referentie-as. 
 
 +: in de zin van de gekozen referentie-as    -: tegen de zin van de referentie-as
