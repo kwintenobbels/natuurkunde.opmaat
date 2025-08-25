@@ -642,9 +642,15 @@
 {../..\xmDefaultGraphicsPath/}   %% then look for a pictures folder,
 {../../..\xmDefaultGraphicsPath/}   %% then look for a pictures folder,
 }
-\NewEnviron{image}[1][3in]{%
-  \begin{center}\resizebox{#1}{!}{\BODY}\end{center}% resize and center
+
+\NewEnviron{image}[1][\textwidth]{%
+  \centering
+  %\begin{minipage}[c]{#1}
+  X\centering\vspace*{0pt}\resizebox{#1}{!}{\BODY}Y
+  %\end{minipage}
+
 }
+
 \newcommand{\alt}[1]{}
 
 

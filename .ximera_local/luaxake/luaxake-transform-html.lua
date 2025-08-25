@@ -550,6 +550,45 @@ local function post_process_html(cmd)
 
   end
 
+  log:trace("Process .xmcss file if present")
+  local css_file = src:gsub(".html$", ".xmcss")
+  if not path.exists(css_file) then
+    log:warning("No CSS file with extra CSS config")
+    css_file = nil
+  end
+
+  if css_file then
+
+    local preambles = dom:query_selector("div.preamble")
+      
+    if #preambles == 0 then
+      -- Should not happen ...
+      log:error("No div.preamble in html : please add one") 
+    end
+
+    local preamble = preambles[1]
+    local scrpt = preamble:create_element("style")
+    scrpt:set_attribute("type", "text/css")
+    
+    
+    local f = io.open(css_file, "r")
+    local csslines = f:read("*a")
+    f:close()
+
+
+    csslines= csslines:gsub("\\%%", "%%")      -- remove all 'exotic' characters; _ must be kept...
+    
+    -- local _, n_cmds = cmds:gsub("\n","")
+    -- local _, n_filtered_cmds = filtered_cmds:gsub("\n","")
+
+    log:warningf("Adding style : \n %s", csslines)
+
+    local style_text = scrpt:create_text_node(csslines)
+    scrpt:add_child_node(style_text)
+    preamble:add_child_node(scrpt)
+
+  end
+
   
   if is_xourse(dom, src) then   -- not needed anymore, was already determened from .tex source ???
   -- if file.tex_documentclass == "xourse" then

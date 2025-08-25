@@ -168,10 +168,13 @@
 
 \newcounter{imagealt}
 \setcounter{imagealt}{0}
-\renewenvironment{image}[1][]{\stepcounter{imagealt}%
-  \ifvmode \IgnorePar\fi \EndP%
-  \HCode{<div class="image-environment" role="img" aria-labelledby="image-alt-\arabic{imagealt}">}%
-}{\HCode{</div>}}
+
+%%%\renewenvironment{image}[1][3in]{\stepcounter{imagealt}%
+%%%  \ifvmode \IgnorePar\fi \EndP%
+%%%  \begin{minipage}[#1]
+%%%  \HCode{<div class="image-environment" role="img" aria-labelledby="image-alt-\arabic{imagealt}">}%
+%%%}{\end{minipage}\HCode{</div>}}
+%%%
 \renewcommand{\alt}[1]{\HCode{<div style="display: none;" id="image-alt-\arabic{imagealt}">}#1\HCode{</div>}}
 \providecommand{\pgfsyspdfmark}[3]{}
 \renewenvironment{dialogue}{\begin{description}}{\end{description}}
