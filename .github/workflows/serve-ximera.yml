@@ -44,11 +44,12 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           XIMERA_URL: ${{ vars.XIMERA_URL }}
           XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
+          XMLATEX_OPTIONS: ${{ vars.XMLATEX_OPTIONS }}
         run: |
           ls -alrt
           # git config --global --add safe.directory "$(pwd)"
           # export COMMAND=./xmScripts/xmlatex.test
-          ./xmScripts/xmlatex ghaction -j 4 
+          ./xmScripts/xmlatex ghaction $XMLATEX_OPTIONS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
       - name: Setup ximera serve cache (only .git)
