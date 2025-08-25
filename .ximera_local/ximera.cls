@@ -644,11 +644,7 @@
 }
 
 \NewEnviron{image}[1][\textwidth]{%
-  \centering
-  %\begin{minipage}[c]{#1}
-  X\centering\vspace*{0pt}\resizebox{#1}{!}{\BODY}Y
-  %\end{minipage}
-
+  \centering\vspace*{0pt}\resizebox{#1}{!}{\BODY}
 }
 
 \newcommand{\alt}[1]{}
