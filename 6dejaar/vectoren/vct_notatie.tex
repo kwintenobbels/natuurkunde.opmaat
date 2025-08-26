@@ -8,59 +8,37 @@
 	\xmtitle{Voorstelling en notatie}{}
     \xmsource\xmuitleg
 
-Vectoren kunnen grafisch voorgesteld worden door een pijl.  
-Een vector wordt altijd benoemd door bij de pijl een symbool van de vectoriële grootheid te zetten. 
-Deze notatie gebeurt met één letter waarboven een pijltje wordt geplaatst. 
-Zonder benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echte pijl afgeschoten door een boog zijn)! De pijl geeft de drie variabele kenmerken weer, evenals het aangrijpingspunt.	
+
+Vectoren worden grafisch voorgesteld met een pijl.  
+Een vectoriële grootheid wordt genoteerd met \(\vec{z}, \vec{a}, \vec{x}, ...\). 
+Om duidelijk te maken dat het telkens om een vector gaat wordt een pijltje boven de letter geplaatst. 
+Zonder de vector te benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echte pijl afgeschoten door een boog zijn)! 
+De pijl geeft de drie variabele kenmerken weer, evenals het aangrijpingspunt.	
 
 
-% INSERT TIKZ PICTURE RICHTING ZIN GROOTTE VAN VECTOR 
 
-
-% HTML WERKT NIET VOOR DEZE TIKZ PICTURES 
-
-\begin{image}
-\begin{tikzpicture}
-	% Draw the axes with arrows
-	\draw[->] (-1,0) -- (5,0) node[right] {$x$};
-	\draw[->] (0,-0.5) -- (0, 3) node[above] {$y$};
-	
-	\draw[->, thick, blue] (1,1) -- (3,2) node[midway, below right] {\(\vec{z}\)};
-	\fill[blue] (1,1) circle (2pt) node[above left] {};
-\end{tikzpicture}
-\end{image}
+% Tikz zo proberen programeren opdat het een oefening kan zijn in lager jaar: bepaal aangrijpingspunt, richting, grootte en zin. 
 
 \begin{image}
 \begin{tikzpicture}
-	% Draw the axes with arrows
-	\draw[->] (-1,0) -- (5,0) node[right] {$x$};
-	\draw[->] (0,-0.5) -- (0, 3) node[above] {$y$};
-	
-	% Draw the frame around the graphsp
-	% \draw (0,0) rectangle (3,3);
-	
-	% Draw the vector with magnitude, direction, and point of application
-	\draw[dash pattern=on 5pt off 10pt] (-1,0) -- (5,3) node[pos=0.80, above left] {richting};
-	
-	\draw[blue, -{latex[fill=orange]}] (1,1) -- (3,2) node[pos=0.80, above, orange] {zin};
-	\fill[red] (1,1) circle (2pt) node[below right] {aangrijpingspunt};
-	% \draw[thick, blue] (1,1) -- (3,2) node[midway, below right] {\(\vec{z}\)};
-	
-	
-	% \draw[green, ->] (2.5,2.5) -- (2.75,2.75) node[right] {Magnitude};
-	
-	% Add the sense (arrowhead) in a separate color (e.g., purple)
-	% \draw[thick, blue, -{>[scale=1.5, length=5pt, width=5pt, purple]}] (1,1) -- (2.5,2.5);
-\end{tikzpicture}
-\end{image}
 
+\begin{scope}[shift={(0,0)}]
 
+	\pgfmathsetmacro{\ax}{1}
+	\pgfmathsetmacro{\ay}{1}
+	\pgfmathsetmacro{\ex}{4}
+	\pgfmathsetmacro{\ey}{2}
+	
+	\coordinate (O) at (0,0); %OORSPRONG 
+	\coordinate (A) at (\ax,\ay);  % AANGRIJPINGSPUNT 
+	\coordinate (E) at (\ex, \ey); % EINDPUNT 
 
-% Tikz geprogrameerd zodat het een oefening kan zijn in lager jaar: bepaal aangrijpingspunt, richting, grootte en zin. 
-\begin{tikzpicture}
+	\draw[->] (A)--(E) node[midway, below right]{\(\vec{z}\)};
 
-	\draw (-5,-5) grid (5,5);
+	\fill (A) circle (2pt);
+\end{scope}
 
+\begin{scope}[shift={(5,0)}]
 
 	\pgfmathsetmacro{\ax}{1}
 	\pgfmathsetmacro{\ay}{1}
@@ -74,35 +52,76 @@ Zonder benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echt
 	\draw[->, dashed] (E) -- ($(A) ! 1.5 ! (E) $) node[pos=1, above left]{richting};
 	\draw[dashed] (A) -- ($(A) ! -0.5 ! (E) $);
 	
-
 	\draw[->,blue, very thick, -{latex[fill=orange]}] (A)--(E) 
-		node[midway, above left, blue]{\(grootte \lvert \vec{z} \rvert \)}
+		node[midway, below right, black]{\(\vec{z}\)}
+		node[midway, above left, blue]{\( \lvert \vec{z} \rvert \)}
 		node[pos=1, above, orange]{zin};
 
-	
-	\fill[red] (A) circle (2pt) node[right]{(\ax, \ay)};
-	\fill (O) circle (2pt) node[below right]{O};
+	\fill[red] (A) circle (2pt) node[below right]{aangrijpingspunt};
+\end{scope}
 \end{tikzpicture}
+\end{image}
 
 
-Aan de zin van een vector kan wiskundig een teken gekoppeld worden, dit hangt af van de gekozen referentie-as. 
+Aan de zin van een vector wordt wiskundig een teken gekoppeld dat afhangt van de gekozen referentie-as. 
+Vectoren in de zin van de gekozen referentie-as worden aangeduid met een plusteken, vectoren tegen de zin van de referentie-as krijgen een minteken. 
 
-+: in de zin van de gekozen referentie-as    -: tegen de zin van de referentie-as
-
-
-De grootte van de vector wordt vaak als enkel positief aanzien (vooral in een situatie zonder referentie-as). 
-Om dit te beklemtonen gebruikt men soms het normteken van de vector
- $ \lVert \vec{z} \rVert $ 
-of het absolutewaardeteken van de grootte
+De grootte van de vector wordt vaak als enkel positief aanzien (vooral in een situatie zonder referentie-as). % absolute waarde is altijd postief? Lengte van het lijnstuk is nooit negatief?
+De grootte van een vector \(\vec{z}\) wordt aangeduid met de norm $ \lVert \vec{z} \rVert $ 
+of het absolutewaardeteken
  $\lvert z \rvert $. 
-Wanneer er echter geen twijfel is en de grootte sowieso positief is (zoals meestal bij krachten), noteert men ook gewoon $z$. 
+% Wanneer er echter geen twijfel is en de grootte sowieso positief is (zoals meestal bij krachten), noteert men ook gewoon $z$. % dit zou ik weglaten
 
-Enkele voorbeelden:
+
+
+% TODO: ZOU GOED ZIJN ALS HIER VOORBEELDEN UIT VORIGE JAREN WORDEN HERNOMEN (BV VECTOREN BIJ ELECTROMECHANICA)
+
+% Enkele voorbeelden:
 
 
 % INSERT TIKZ PICTURE ZWAARTEKRACHT EN ROLLENDE BAL 
 
-De richting van een vector wordt soms ook weergegeven met een eenheidsvector $\vec{e}$ . Dit is een vector met een welbepaalde richting en met grootte gelijk aan $ 1 $. Het nut hiervan komt in formules tot uiting. Ook in de algebraïsche notatie kan men de drie kenmerken weergeven:
+De richting van een vector wordt weergegeven met een eenheidsvector $\vec{e}$ waarvoor $ \lVert \vec{e} \rVert = 1$. 
+Het invoeren van een eenheidsvector blijkt erg nuttig in notaties, zo kunnen alle kenmerken van een vector ook algebraïsch weergegeven worden. 
+
+Er geldt in onderstaande tekeningen dat \(\vec{a} = \pm  \lVert \vec{a} \rVert \cdot \vec{e} = +2 \cdot \vec{e} \) met aangrijpingspunt \(2\). 
+Voor de vector \(\vec{b}\) geldt \(\vec{b} = \pm  \lVert \vec{b} \rVert \cdot \vec{e} = -1 \cdot \vec{e} \) met aangrijpingspunt \(6\). 
+
+% PH DIT BESCHRIJVEN IS VEEL EENVOUDIGER MET POOLCOORDINATEN.  
+% TIKZPICTURE DIE DE EENHEIDSVECTOR ILLUSTREERT 
+
+\begin{image}
+\begin{tikzpicture}
+
+	\pgfmathsetmacro{\ang}{15}
+
+	\coordinate (O) at (0,0); 
+	\coordinate (E) at ({\ang} : 1); 
+	\coordinate (A) at ({\ang} : 2); 
+	\coordinate (B) at ({\ang} : 6); 
+
+	\draw[dashed] ({\ang} : -1.5)--({\ang} : 7.5); 
+	
+	\foreach \i in {-1,...,7}{
+		\draw[dashed] ({\ang}:\i) -- ++({\ang+90}:0.1);
+		\draw[dashed] ({\ang}:\i) -- ++({\ang-90}:0.1);
+
+		\node[font=\tiny, shift={({\ang}:\i)}] at ({\ang+90}:0.3){\i};
+	}
+
+	\draw[->, very thick] (O)--(E) node[midway, below right]{\(\vec{e}\)};
+
+	\draw[->, very thick, red] (A)--($ (A) + ({\ang}:2)$) node[midway, below right]{\(\vec{a}\)};
+	
+	\draw[->, very thick, blue] (B)--($ (B) + ({\ang}:-1)$) node[midway, below right]{\(\vec{b}\)};
+
+	\fill (O) circle (2pt);
+	\fill[red] (A) circle (2pt);
+	\fill[blue] (B) circle (2pt);
+
+\end{tikzpicture}
+\end{image}
+
 
 
 %  INSERT TIKZ NORM RICHTING ZIN ALGEBRAISCH 
