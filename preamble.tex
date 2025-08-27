@@ -1271,3 +1271,9 @@ Dit materiaal wordt ontwikkeld als open-source project via \href{https://natuurk
 % TEMP :
 \usepackage{totcount}
 \newtotcounter{totaantal}
+
+\usepackage{import}
+
+\usepackage{marginnote}
+
+\newcommand{\pt}[1]{\leavevmode\marginnote[\hfill\textbf{/#1}]{\hfill/#1}\addtocounter{totaantal}{#1}}
