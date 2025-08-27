@@ -72,6 +72,34 @@
 \end{exercise}
 
 \begin{exercise}
+    Een trein rijdt tegen een snelheid van \SI{72}{km/h} en remt met een versnelling waarvan de grootte \SI{1,0}{m/s^2} bedraagt. Na hoeveel tijd komt de trein tot stilstand en welke afstand wordt er tijdens dit afremmen afgelegd?
+
+    \begin{oplossing}
+        % \item[gegeven]$v_0=\SI{20}{m/s}\newline $a=\SI{-1,0}{m/s^2}
+        % \item[gevraagd]$t$, $x$
+        % \item[oplossing]
+        Aangezien er per seconde een snelheid van \SI{1,0}{m/s} van de beginsnelheid afgaat, vinden we de tijd die nodig is voor het remmen, door de beginsnelheid te delen door de versnelling. Dat is namelijk de tijd die nodig is voor de trein om tot stilstand te komen:
+        \begin{eqnarray*}
+            v&=&0\\
+            &\Updownarrow&\\
+            v_0+at&=&0\\
+            &\Updownarrow&\\
+            t&=&-\frac{v_0}{a}
+        \end{eqnarray*}
+        Invullen van de gegevens levert een tijd van \SI{20}{s}. De afgelegde afstand gedurende het remmen vinden we nu met de plaatsfunctie. We kennen de benodigde tijd, die we in de plaatsfunctie invullen.
+        \begin{eqnarray*}
+            x&=&v_0t+\frac{1}{2}at^2\\
+            &=&v_0\left(-\frac{v_0}{a}\right)+\frac{1}{2}a\left(-\frac{v_0}{a}\right)^2\\
+            &=&-\frac{v_0^2}{a}+\frac{v_0^2}{2a}\\
+            &=&-\frac{v_0^2}{2a}\\
+        \end{eqnarray*}
+        Invullen van de gegevens levert een remafstand van \SI{200}{m}. 
+
+        Een andere mogelijkheid om de remafstand te vinden is te werken met de gemiddelde snelheid, $x=\overline{v}t$.
+    \end{oplossing}
+\end{exercise}
+
+\begin{exercise}
     Op een bevroren meer komt een glijdende hockeyschijf na \SI{200}{m} tot stilstand. Als zijn initi\"ele snelheid \SI{3,00}{m/s} was, bepaal dan
     \begin{enumerate}
         \item de versnelling in de veronderstelling dat deze constant is,
@@ -87,6 +115,29 @@
     \begin{oplossing}
         $a=\frac{v-v_0}{t-t_0}=0,750\rm\,m/s^2$, $x-x_0=\left(\frac{v_0+v}{2}\right)(t-t_0)=\SI{350}{m}$
     \end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+    Een auto vertrekt vanuit rust en bereikt na \SI{3,0}{km} een snelheid van \SI{450}{km/h} We onderstellen de versnelling constant en de baan recht. Bereken de versnelling en de tijd, nodig om die \SI{3,0}{km} af te leggen.
+\begin{oplossing}
+    % \item[gegeven]$x=3000\rm\,m$\newline $v=125\rm\,m/s$
+    % \item[gevraagd]$a$, $t$
+    % \item[oplossing]
+    Omdat voor een EVRB de gemiddelde snelheid gegeven wordt door $\overline{v}=\frac{v_0+v}{2}$ en we de afgelegde afstand kennen, kunnen we de benodigde tijd gemakkelijk vinden. We kiezen $t_0=0$, $x_0=0$. De beginsnelheid is nul zodat:
+    \begin{eqnarray*}
+        \Delta x &=& \overline{v}\Delta t \\
+        &\Downarrow & \\
+        t &=& \frac{x}{\left(\frac{v}{2}\right)} = \frac{2x}{v}
+    \end{eqnarray*}
+    Invullen van de gegevens levert een tijd van \SI{48}{s}. Met de formule $v=v_0+at$ voor de snelheid vinden we de versnelling door de tijd erin te substitueren, en de beginsnelheid nul te nemen:
+    \begin{eqnarray*}
+        % v &=& at \\
+        % &\Updownarrow&\\
+        a &=& \frac{v}{t}=\frac{v}{\left(\frac{2x}{v}\right)}\\
+        &=& \frac{v^2}{2x}
+    \end{eqnarray*}
+    Invullen van de gegeven grootheden levert een versnelling van \SI{2,6}{m/s^2}.
+\end{oplossing}
 \end{exercise}
 
 \begin{exercise}
@@ -284,7 +335,15 @@ Een deeltje beweegt in de zin van de $x$-as. De nevenstaande grafiek geeft aan h
     %\end{oplossing}
 \end{exercise}
 
+\begin{exercise}
+    Een vliegtuig start vanuit rust en versnelt met een constante versnelling langs de grond alvorens op te stijgen. Het legt \SI{600}{m} af in \SI{12}{s}. Bepaal de versnelling, de snelheid na \SI{12}{s} en de afstand afgelegd gedurende de twaalfde seconde.
 
+    \begin{oplossing}
+        $a=\frac{2x}{t^2}=\SI{8,33}{m/s^2}$,
+        $v=\frac{2x}{t}=\SI{100}{m/s}$,
+        $x(t=12)-x(t=11)=\frac{1}{2}a(t_{12}^2-t_{11}^2)=\SI{95,8}{m}$
+    \end{oplossing}
+\end{exercise}
 
 
 \end{document}
