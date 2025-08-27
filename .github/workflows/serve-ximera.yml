@@ -50,7 +50,8 @@ jobs:
           ls -alrt
           # git config --global --add safe.directory "$(pwd)"
           # export COMMAND=./xmScripts/xmlatex.test
-          ./xmScripts/xmlatex ghaction $XMLATEX_OPTIONS || echo NOK
+          ./xmScripts/xmlatex veryclean
+          ./xmScripts/xmlatex ghaction $XMLATEX_OPTIONS
           ./xmScripts/xmlatex serve $XMLATEX_OPTIONS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
