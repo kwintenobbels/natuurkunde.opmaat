@@ -1,0 +1,34 @@
+
+\begin{exercise}
+% !TEX root = ../main.tex
+
+
+
+ Wanneer de pelikaan naar vis duikt, trekt hij zijn vleugels in om als een steen loodrecht naar beneden te vallen. 
+
+Stel een pelikaan duikt vanaf \SI{25}{m} hoogte en verandert onderweg dus niet meer van koers. Als het een vis \SI{0,15}{s} kost om te vluchten, wat is dan de hoogte waarop de vis de pelikaan minstens moet opmerken, wil de vis nog kans maken te ontsnappen? 
+
+Neem aan dat de vis zich aan het wateroppervlak bevindt.
+
+\begin{oplossing}
+\item[Gegeven]$x_2=\SI{25}{m}$\newline$\Delta t=\SI{0,15}{s}$
+\item[Gevraagd]$x_2-x_1$
+\item[Oplossing]We kiezen de referentie-as naar beneden, met de oorsprong op de positie waar de pelikaan begint aan zijn duik. De versnelling is dan gelijk aan de valversnelling. 
+
+We kennen de afstand waarover de pelikaan valt zodat we de tijd die de pelikaan nodig heeft om het wateroppervlak te bereiken, de valtijd, kunnen berekenen uit $x_2=\frac{1}{2}gt_2^2 $:
+\begin{eqnarray*}
+t_2=\sqrt{\frac{2x_2}{g}}
+\end{eqnarray*}
+De pelikaan heeft namelijk geen beginsnelheid.%De referentie-as is hierbij naar beneden gekozen, met de oorsprong daar waar de pelikaan begint te vallen.
+
+Gedurende een tijd $t_1=t_2-\Delta t$ (15 honderdste van een seconde minder) mag de pelikaan vallen zonder door de vis te worden opgemerkt. De afstand boven het wateroppervlak is dan:
+\begin{eqnarray*}
+x_2-x_1&=&x_2-\frac{1}{2}gt_1^2\\
+&=&x_2-\frac{1}{2}g\left(t_2-\Delta t\right)^2\\
+%&=&x_2-\frac{1}{2}g\left(\sqrt{\frac{2x_2}{g}}-\Delta t\right)^2\\
+%&=&\Delta t\sqrt{2gx_2}-\frac{1}{2}g\Delta t^2\\
+&=&\SI{3,2}{m}
+\end{eqnarray*}
+\end{oplossing} 
+
+\end{exercise}
