@@ -4,7 +4,7 @@
 \addPrintStyle{..}
 
 \begin{document}
-	\author{Bart Lambregs}
+	\author{Bart Lambregs, Vincent Gellens}
 	\xmtitle{De positie}{}
     \xmsource\xmuitleg
 
@@ -19,24 +19,38 @@
 
 \subsection*{Positie en plaatsfunctie}
 
-Met een referentiestelsel en coördinaatassen kan elke plaats in de ruimte worden vastgelegd met een \textbf{plaatsvector}, genoteerd door \(\vec{x}\).  
+Met een referentiestelsel kan elke plaats van een puntmassa in de ruimte worden vastgelegd met een \textbf{positie- of plaatsvector}, algemeen genoteerd door \(\vec{r}\).
+Afhankelijk van het aantal dimensies waarin de beweging beschreven wordt heeft deze plaatsvector één, twee of drie componenten volgens de gekozen assen, doorgaans \(\vec{x}\), \(\vec{y}\) en \(\vec{z}\) genaamd.
+De (scalaire) getalcomponenten van deze vectoren zijn de plaatscoördinaten \(x\),\(y\) en \(z\).
+
 
 \begin{image}
 \begin{tikzpicture}
 	\draw[->] (-1,0) -- (4,0) node[right] {$x$};
 	\draw[->] (0,-1) -- (0,4) node[above] {$y$};
   
-	\coordinate (X) at (2,3);
-	\fill (X) circle (2pt) node[above right] {positie $x$};
-	\draw[->, thick, blue] (0,0) -- (X) node[midway, below right] {plaatsvector $\vec{x}$};
+	\coordinate (A) at (2,3);
+	\coordinate (X) at (2,0);
+	\coordinate (Y) at (0,3);
+	
+	\fill (A) circle (2pt) node[above right] {massapunt $A$};
+	\draw[->, thick, blue] (0,0) -- (A) node[midway, below right] {plaatsvector $\vec{r}$};
+	\draw[->, thick, red] (0,0) -- (X) node[midway, below right] {$\vec{x}$};
+	\draw[->, thick, green] (0,0) -- (Y) node[midway, below right] {$\vec{y}$};
+	\draw[->, thick, purple] (0,0) -- (0,0.5) node[midway, left] {$\vec{e_y}$};
+	\draw[->, thick, purple] (0,0) -- (0.5,0) node[midway, below] {$\vec{e_x}$};
+
+	% misschien te druk met eenheidsvectoren erbij? of interessanter nog: lijnen r, x en y dikker maken
+
   \end{tikzpicture}
 \end{image}
   
 
-Als \(x\) een puntmasse voorstelt die beweegt, verrandert de plaatsvector   
-De beweging van een puntmassa wordt beschreven door een \textit{functie} die de \textbf{plaats} weergeeft in functie van de \textbf{tijd}. 
-De \textbf{plaatsfunctie} $x = x(t)$ geeft voor elk tijdstip \(t\) de positie \(x\) waar de puntmassa zich bevindt. 
-Bij een ééndimensionale beweging is $x$ een getal, namelijk de positie op een coördinaatas
+Als een puntmassa beweegt, verandert haar plaatsvector \(\vec{r}\).  
+De beweging van een puntmassa wordt beschreven door een \textit{functie} die de \textbf{plaats} \(\vec{r}\) weergeeft in functie van de \textbf{tijd}. 
+De \textbf{plaatsfunctie} \(\vec{r}\) = \(\vec{r}\)(t) geeft voor elk tijdstip \(t\) de positie \(\vec{r}\) waar de puntmassa zich bevindt. 
+Op middelbaarniveau zijn dergelijke vectorfuncties ingewikkeld om te hanteren, daarom wordt geopteerd om te werken met de tijdsafhankelijke getalcomponenten \(x(t)\),\(y(t)\) en \(z(t)\).
+Bij een ééndimensionale beweging is er slechts één daarvan nodig, namelijk \(x\). Dat is een getal, namelijk de positie op de enige coördinaatas
 % \footnote{Een coördinaatas is een as van een cartesiaans assenstelsel, met een oorsprong en een ori\"entatie.} 
 en $t$ is de variabele die symbool staat voor de tijd.
 %\footnote{In de fysica gebruiken we de wiskunde als `taal' om de wetmatigheden van de natuur in uit te drukken. Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. $x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$ maar het symbool $t$ omdat deze symbool moet staan voor de tijd. En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat de beeldwaarden van de functie nu als betekenis een positie op een co\"ordinaatas hebben.}
@@ -84,15 +98,21 @@ $\qquad$   % hack
 \end{image}
 
 
+% ik zou durven opteren voor onderstaande figuur, dan heb je bewegend voorwerp naast de grafiek staan, handig voor volgende situaties van snelheid en versnelling.
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{positiemetgrafiek}
+
+\end{image}
+\captionof{figure}{Links het verplaatsend voorwerp met begin- en eindpositie. Rechts de grafiek van \(x(t)\).}
 
 
-
-De \textbf{verplaatsing} tussen $t_1$ en $t_2$ is verschil in positie tussen de twee tijdstippen $t_1$ en $t_2$, genoteerd met een $\Delta$ (Delta, een Griekse hoofdletter D  van het Engelse 'displacement' of het Franse 'déplacement').
+De \textbf{verplaatsing} tussen $t_1$ en $t_2$ is verschil in positie tussen de twee tijdstippen $t_1$ en $t_2$, genoteerd met een $\Delta$\(\vec{r}\) (Delta, een Griekse hoofdletter D  van het Engelse 'displacement' of het Franse 'déplacement').
 
 \begin{definition}
-De \textbf{verplaatsing} \(\Delta x\) is het verschil tussen twee posities:
+De \textbf{verplaatsing} \(\Delta \vec{r}\) is het verschil tussen twee posities:
 \[
-	\Delta x = x_2-x_1
+\Delta \vec{r} = \vec{r}_2 - \vec{r}_1
 \]
 
 \tikzset{>={latex[scale=1.2]}}
@@ -109,19 +129,41 @@ De \textbf{verplaatsing} \(\Delta x\) is het verschil tussen twee posities:
 		% \fill (X) circle (2pt) node[above] {};
 		% \fill (Y) circle (2pt) node[above right] {};
 		
-		\draw[->, thick] (0,0) -- (X) node[pos= 0.6, left] {$\vec{x}_1$};
-		\draw[->, thick] (0,0) -- (Y) node[midway, below, yshift=2pt] {$\vec{x}_2$};
-		\draw[->, thick, blue] (X) -- (Y) node[midway, above right] { $\Delta \vec{x}$};
+		\draw[->, thick] (0,0) -- (X) node[pos= 0.6, left] {$\vec{r}_1$};
+		\draw[->, thick] (0,0) -- (Y) node[midway, below, yshift=2pt] {$\vec{r}_2$};
+		\draw[->, thick, blue] (X) -- (Y) node[midway, above right] { $\Delta \vec{r}$};
 		
 	\end{tikzpicture}
 \end{image}
 \end{definition}
 % TODO: opmerking toevoegen dat de natatie $\Delta$ *erg* slecht is, omdat ze de indices 1 en 2 niet bevat!
 
-In de figuur is de verplaatsing van de auto tussen de tijdstippen $t_0$ en $t_1$ gelijk aan $\Delta x = x_1-x_0=50\rm\,m-30\rm\,m=20\rm\,m$ en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan $\Delta x=x_4-x_2=-40\rm\,m-40\rm\,m=-80\rm\,m$. Deze laatste verplaatsing is negatief, wat aangeeft dat de auto netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
+Voor ééndimensionale bewegingen is de verplaatsing eenvoudig scalair te berekenen met: $\Delta x$ = $x_{eind}-x_{begin}$ .
+In figuur 1 is de verplaatsing van de auto tussen de tijdstippen $t_0$ en $t_1$ gelijk aan $\Delta x = x_1-x_0=50\rm\,m-30\rm\,m=20\rm\,m$ en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan $\Delta x=x_4-x_2=-40\rm\,m-40\rm\,m=-80\rm\,m$. Deze laatste verplaatsing is negatief, wat aangeeft dat de auto netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
 
 %%%\newline
 Let op, de verplaatsing hoeft niet noodzakelijk gelijk te zijn aan de \emph{afgelegde weg} tussen de twee bijbehorende tijdstippen. Als je een rondje hebt gelopen op de atletiekpiste en terug aan start staat is je (netto) verplaatsing nul, maar heb je wel degelijk afstand afgelegd.
 
+Samengevat:
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{positieverplaatsing1D}
+
+\end{image}
+
+Voor tweedimensionale bewegingen worden de begrippen positie, verplaatsing en afgelegde weg complexer.
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{positie2D}
+
+\end{image}
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{verplaatsing2D}
+
+\end{image}
+
 	
 \end{document}
+
+

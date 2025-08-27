@@ -1,7 +1,6 @@
+%
 %%% Begin Laad packages
-
-
-
+%
 \makeatletter
 \@ifclassloaded{xourse}{%
     \typeout{Start loading preamble.tex (in a XOURSE)}%
@@ -859,7 +858,7 @@
 % te gebruiken als je zeker een newline wil na de hoofdig en titel
 % (in het bijzonder itemize zonder \nl is 'lelijk' ...)
 \ifdefined\HCode
-\newcommand{\nl}{}
+\newcommand{\nl}{\Hnewline}
 \else
 \newcommand{\nl}{\ \par} % newline (achter heading van definition etc.)
 \fi
