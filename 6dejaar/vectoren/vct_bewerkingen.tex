@@ -311,10 +311,10 @@ De lengte van de componenten volgt rechtstreeks uit de goniometrische getallen:
 
 Indien de componenten worden geschreven met behulp van de basisvectoren geeft dit 
 
-\[
-\vec{a} = \vec{a}_x + \vec{a}_y = a_x \cdot \vec{e}_x + a_y \cdot \vec{e}_y 
-\]
 
+$$
+\vec{a} = \vec{a}_x + \vec{a}_y = a_x \cdot \vec{e}_x + a_y \cdot \vec{e}_y 
+$$
 
 
 \subsection*{Het scalair product van twee vectoren (of inwendig product)}
@@ -325,9 +325,9 @@ Het scalair product levert een \textbf{scalar} (= getal) als resultaat op die pe
 
 Het scalair product wordt alsvolgt gedefineerd: 
 
-\[
+$$
 c = \vec{a} \cdot \vec{b} = \| \vec{a}_x \| \cdot \|\vec{b}\| = \|\vec{a}\| \cdot \cos(\alpha) \cdot \|\vec{b}\| = \| \vec{a}\| \cdot \| \vec{b}\| \cdot \cos(\alpha)
-\]
+$$
 
 % TIKZPICTURE DIE SCALAIR PRODUCT van a op b ILLUSTREERT  
 \begin{image}
@@ -345,10 +345,10 @@ c = \vec{a} \cdot \vec{b} = \| \vec{a}_x \| \cdot \|\vec{b}\| = \|\vec{a}\| \cdo
 
     \fill (O) circle (2pt) node[below left]{O};
     
-    \draw[->, -latex] (O) -- (B) node[midway, below]{\(\vec{b}\)};
+    \draw[->, -latex] (O) -- (B) node[midway, below]{$\vec{b}$};
 
-    \draw[->, -latex] (O) -- (A) node[midway, above left]{\(\vec{a}\)};
-    \draw[->, dashed, -latex, red, thick] (O) -- (\ax, 0) node[midway, below]{\( \vec{a}_x \)};
+    \draw[->, -latex] (O) -- (A) node[midway, above left]{$\vec{a}$};
+    \draw[->, dashed, -latex, red, thick] (O) -- (\ax, 0) node[midway, below]{$ \vec{a}_x $};
     \draw[dashed, -latex, thick] (\ax, 0) -- (A);
 
 
@@ -375,10 +375,10 @@ De richting van het vectorproduct is loodrecht op het vlak gevormd door de twee 
 
         \fill[gray] (O)--(A)--($(A)+(B)$)--(B)--cycle;
 
-        \draw[->, -latex, blue] (O)--(A) node[midway, above left]{\(\vec{a}\)};
-        \draw[->, -latex, red] (O)--(B) node[midway, below]{\(\vec{b}\)};
+        \draw[->, -latex, blue] (O)--(A) node[midway, above left]{$\vec{a}$};
+        \draw[->, -latex, red] (O)--(B) node[midway, below]{$\vec{b}$};
 
-        \draw[dotted] (\ax,0)--(A) node[midway, right]{\(\|\vec{a}_y\|\)};
+        \draw[dotted] (\ax,0)--(A) node[midway, right]{$\|\vec{a}_y\|$};
 
         \fill (O) node[]{\(\otimes\)};
 
