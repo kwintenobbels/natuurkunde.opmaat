@@ -57,7 +57,35 @@
 	\end{multipleChoice}
 \end{exercise}
 
+\begin{exercise}
+	De snelheid van een lichaam dat vanuit rust vrij valt, bedraagt na een valafstand $x$:
+	\begin{multipleChoice}
+		\choice{$v=2gx$}
+		\choice[correct]{$v=\sqrt{2gx}$}
+		\choice{$v=gx$}
+		\choice{$v=\sqrt{\frac{gx}{2}}$}
+	\end{multipleChoice}
+	\begin{oplossing}
+		$v=gt=g\sqrt{\frac{2x}{g}}=\sqrt{2gx}$
+	\end{oplossing}
+\end{exercise}
 
+\begin{exercise}
+	Laat zien dat voor een EVRB waarvoor $x_0=0$ de volgende formule geldt:
+	\begin{eqnarray*}
+		v^2=v_0^2+2ax
+		%v^2=v_0^2+2a(x-x_0)
+	\end{eqnarray*}
+
+	\begin{oplossing}
+		Uit $v=v_0+at$ volgt:
+		\begin{eqnarray*}
+			v^2&=&v_0^2+2v_0at+a^2t^2\\
+			&=&v_0^2+2a(v_0t+\frac{1}{2}at^2)\\
+			&=&v_0^2+2ax
+		\end{eqnarray*}
+	\end{oplossing}
+\end{exercise}
 
 
 % Denkvragen over grafische voorstellingen
@@ -77,6 +105,20 @@
 		\choice[correct]{\input{../../xmPictures/30p38_c.tex}}
 		\choice{\input{../../xmPictures/30p38_d.tex}}
 	\end{multipleChoice}
+\end{exercise}
+
+\begin{exercise}
+	Beargumenteer het gebruik van het model van een eenparig versnelde rechtlijnige beweging (EVRB) voor de vrije beweging van een wagentje op een helling. Denk daarbij aan een proefneming die we in de klas deden. De notie kracht moet je hier even buiten beschouwing laten.
+	\begin{oplossing}
+		Het model beschrijft de meetgegevens accuraat.
+
+		M.a.w. zijn de meetgegevens van de positie van het wagentje op de helling in functie van de tijd, gemeten met een (ultrasone) positiesensor, accuraat te beschrijven met de plaatsfunctie van een eenparig versnelde beweging.
+
+		\emph{Toelichting}.
+		De vraag gaat over de relatie tussen de theorie en de realiteit. Het is maar door metingen te doen dat we kunnen nagaan of gevolgen van de theorie (in dit geval bijvoorbeeld dat de positie kwadratisch in de tijd verloopt voor een beweging met constante versnelling) overeenkomen met de realiteit. In het gegeven geval van een wagentje op een helling, is bijvoorbeeld een model van constante snelheid niet van toepassing. Het zou immers impliceren dat het wagentje niet van zin kan veranderen. Dat laatste wordt door metingen of waarnemingen weerlegd.
+
+		We spreken over een \textit{falsifieerbaar} model. Dat betekent dat zolang het niet weerlegd wordt, het geldig blijft. Je kan het alleen `vals' maken door een situatie te tonen waarin het \textit{niet} werkt.
+	\end{oplossing} 
 \end{exercise}
 
 % Denkvragen over de valbeweging
@@ -128,6 +170,32 @@
 	\end{hint}
 	\begin{oplossing}
 		De afstand verandert lineair in functie van de tijd: $\Delta x(t)=gt_0\cdot t-\frac{1}{2}gt_0^2$ ($=\frac{1}{2}gt^2-\frac{1}{2}g(t-t_0)^2$ met $t\geq t_0=\SI{2}{s}$)
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Aan de rand van een afgrond laat men een steen vallen. Op hetzelfde ogenblik werpt men een steen op. Zou het kunnen dat, als de afgrond diep genoeg is, beide stenen elkaar nog ontmoeten?
+
+	\begin{oplossing}
+		Aangezien de opgeworpen steen later (en zelfs hoger) begint met vallen en beide stenen eenzelfde versnelling hebben, kan op geen enkel moment de opgeworpen steen een grotere snelheid hebben dan de steen die wordt losgelaten. Dat laatste zou op het moment van inhalen nochtans op zijn minst het geval moeten zijn.
+
+		In formules moet gelden, met $v_0$ een negatieve beginsnelheid:
+		\begin{eqnarray*}
+			\frac{1}{2}gt^2&=&v_0t+\frac{1}{2}gt^2.
+		\end{eqnarray*}
+		Dat is enkel het geval wanneer $t=0$.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Op de maan is de valversnelling slechts een zesde van die op de aarde. Als een voorwerp op de maan verticaal omhoog wordt gegooid, hoeveel maal hoger komt het dan dan een voorwerp dat met dezelfde beginsnelheid vanaf de aarde wordt opgeworpen?
+
+	\begin{oplossing}
+		De tijd die het voorwerp nodig heeft om tot zijn hoogste punt ($v=0$) te geraken, is $t=-\frac{v_0}{a}$ waarbij $a$ de negatieve versnelling op aarde of op de maan is. Met deze tijd en de gemiddelde snelheid gedurende de opwaartse beweging, kunnen we de bereikte hoogte uitdrukken in functie van de beginsnelheid $v_0$:
+		\begin{eqnarray*}
+			x=\bar{v}t=\frac{v_0+v}{2}\cdot\left(-\frac{v_0}{a}\right)=-\frac{v_0^2}{2a}
+		\end{eqnarray*}
+		Uit deze uitdrukking volgt dat de bereikte hoogte omgekeerd evenredig is met de versnelling. Op de maan zal het voorwerp dan ook zes keer zo hoog geraken.
 	\end{oplossing}
 \end{exercise}
 
