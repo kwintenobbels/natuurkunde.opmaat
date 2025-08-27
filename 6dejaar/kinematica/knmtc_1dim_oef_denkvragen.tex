@@ -17,24 +17,11 @@
 \end{exercise}
 
 \begin{exercise}
-	Geef een voorbeeld waarin zowel de snelheid als de versnelling negatief zijn.
+	Geef een voorbeeld waarin zowel de snelheids- als de versnellingscomponent negatief zijn.
 \end{exercise}
 
 \begin{exercise}
 	Wanneer een voorwerp zich met een constante snelheid verplaatst, verschilt de gemiddelde snelheid over een willekeurig tijdsinterval dan van de momentane snelheid op een willekeurig moment?
-\end{exercise}
-
-\begin{exercise}
-	Vanaf een klif laat men vanop dezelfde hoogte twee identieke bollen vallen. Men laat de tweede bol \'e\'en seconde later vallen dan de eerste. De luchtwrijving is \textit{niet} te verwaarlozen. Dan
-	\begin{multipleChoice}
-		\choice{zal de tweede bol iets later dan \'e\'en seconde na de eerste neerkomen.}
-		\choice{zal de tweede bol iets vroeger dan \'e\'en seconde na de eerste neerkomen.}
-		\choice[correct]{zal de tweede bol exact \'e\'en seconde na de eerste neerkomen.}
-		\choice{kunnen we hieromtrent geen uitspraak doen bij gebrek aan gegevens.}
-	\end{multipleChoice}
-	\begin{oplossing}
-		Voor beide bollen is de omstandigheid waarin ze vallen gelijk.
-	\end{oplossing}
 \end{exercise}
 
 \begin{exercise}
@@ -56,6 +43,60 @@
         \item Controleer het te bewijzen via de numerieke waarden van dit vraagstuk.
         \item Geef nu het bewijs.
     \end{enumerate}
+\end{exercise}
+
+% Denkvragen over grafische voorstellingen
+
+\begin{exercise}
+	Teken de overeenkomstige $x(t)$- en $a(t)$-grafiek bij de gegeven $v(t)$-grafiek. Ga ervan uit dat $x_0=\SI{0}{m}$.
+	\begin{image}[0.3\textwidth]
+		\includegraphics[width=\textwidth]{v(t)}
+	\end{image}
+\end{exercise}
+
+\begin{exercise}
+	De snelheid van een deeltje voldoet aan $v=at$ waarin $a$ constant en negatief is. De plaats van het deeltje wordt voorgesteld door $x$. Aangenomen wordt dat $x=0\rm\,m$ op het ogenblik $t=0\rm\,s$. Welke grafiek geeft het juiste verloop van $x(t)$?
+	\begin{multipleChoice}
+		\choice{\input{../../xmPictures/30p38_a.tex}}
+		\choice{\input{../../xmPictures/30p38_b.tex}}
+		\choice[correct]{\input{../../xmPictures/30p38_c.tex}}
+		\choice{\input{../../xmPictures/30p38_d.tex}}
+	\end{multipleChoice}
+\end{exercise}
+
+% Denkvragen over de valbeweging
+
+\begin{exercise}
+	Een lichaam wordt verticaal omhoog geworpen. De referentieas is omhoog gericht. Welke van de volgende $v(t)$-diagrammen geeft dan het juiste verloop van de snelheid weer?
+	\begin{image}[.92\textwidth]
+		\includegraphics[width=\textwidth]{vw}
+	\end{image}
+	\begin{oplossing}
+		Het juist antwoord is (b). De versnelling is constant waardoor de snelheid lineair moet verlopen in de tijd. Aangezien de referentieas naar boven is gekozen, moet de snelheid in het naar boven bewegen positief zijn. Dat is het geval bij (b).
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Vanaf een klif laat men vanop dezelfde hoogte twee identieke bollen vallen. Men laat de tweede bol \'e\'en seconde later vallen dan de eerste. De luchtwrijving is \textit{niet} te verwaarlozen. Dan
+	\begin{multipleChoice}
+		\choice{zal de tweede bol iets later dan \'e\'en seconde na de eerste neerkomen.}
+		\choice{zal de tweede bol iets vroeger dan \'e\'en seconde na de eerste neerkomen.}
+		\choice[correct]{zal de tweede bol exact \'e\'en seconde na de eerste neerkomen.}
+		\choice{kunnen we hieromtrent geen uitspraak doen bij gebrek aan gegevens.}
+	\end{multipleChoice}
+	\begin{oplossing}
+		Voor beide bollen is de omstandigheid waarin ze vallen gelijk.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Vanop een grote hoogte laat men achtereenvolgens twee stenen vallen met een tussentijd van 2 seconden. Op welke wijze verandert de afstand tussen beide stenen in de tijdsduur dat beide vallen?
+	\begin{hint}
+		Begin met een grafische voorstelling.
+	\end{hint}
+	\begin{oplossing}
+		De afstand verandert lineair in functie van de tijd: $\Delta x(t)=gt_0\cdot t-\frac{1}{2}gt_0^2$ ($=\frac{1}{2}gt^2-\frac{1}{2}g(t-t_0)^2$ met $t\geq t_0=\SI{2}{s}$)
+	\end{oplossing}
 \end{exercise}
 
 \end{document}
