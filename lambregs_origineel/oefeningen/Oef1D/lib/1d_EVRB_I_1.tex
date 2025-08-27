@@ -1,0 +1,25 @@
+% !TEX root = ../main.tex
+
+
+
+
+\item Een auto vertrekt vanuit rust en bereikt na \SI{3,0}{km} een snelheid van \SI{450}{km/h} We onderstellen de versnelling constant en de baan recht. Bereken de versnelling en de tijd, nodig om die \SI{3,0}{km} af te leggen.
+\begin{oplossing}
+    % \item[gegeven]$x=3000\rm\,m$\newline $v=125\rm\,m/s$
+    % \item[gevraagd]$a$, $t$
+    % \item[oplossing]
+    Omdat voor een EVRB de gemiddelde snelheid gegeven wordt door $\overline{v}=\frac{v_0+v}{2}$ en we de afgelegde afstand kennen, kunnen we de benodigde tijd gemakkelijk vinden. We kiezen $t_0=0$, $x_0=0$. De beginsnelheid is nul zodat:
+    \begin{eqnarray*}
+        \Delta x &=& \overline{v}\Delta t \\
+        &\Downarrow & \\
+        t &=& \frac{x}{\left(\frac{v}{2}\right)} = \frac{2x}{v}
+    \end{eqnarray*}
+    Invullen van de gegevens levert een tijd van \SI{48}{s}. Met de formule $v=v_0+at$ voor de snelheid vinden we de versnelling door de tijd erin te substitueren, en de beginsnelheid nul te nemen:
+    \begin{eqnarray*}
+        % v &=& at \\
+        % &\Updownarrow&\\
+        a &=& \frac{v}{t}=\frac{v}{\left(\frac{2x}{v}\right)}\\
+        &=& \frac{v^2}{2x}
+    \end{eqnarray*}
+    Invullen van de gegeven grootheden levert een versnelling van \SI{2,6}{m/s^2}.
+\end{oplossing}
