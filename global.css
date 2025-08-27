@@ -1124,3 +1124,8 @@ h4 span.titlemark {
 iframe.xmyoutube {
     width: 80%;
 }
+
+.minipage {
+	display: inline-block;
+    vertical-align: top;
+}
