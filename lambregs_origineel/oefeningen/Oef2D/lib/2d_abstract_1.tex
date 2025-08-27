@@ -1,0 +1,63 @@
+% !TEX root = ../main.tex
+
+
+
+
+\item De plaatsvector van een deeltje wordt (voor $t\geq0$) gegeven door
+\begin{equation*}
+	\vec{r}=-t\vec{e}_x+(t-1)^2\vec{e}_y
+\end{equation*}
+\begin{enumerate}
+\item Geef de baanvergelijking.
+
+\begin{oplossing}
+	$y(x)=(x+1)^2$
+\end{oplossing}
+
+\item Wanneer is \'e\'en van de snelheidscomponenten nul?
+
+\begin{oplossing}
+	De snelheidscomponent volgens de $x$-as is nooit nul. Die volgens de $y$-as is nul wanneer: $2(t-1)=0$ oftewel wanneer $t=1$.
+\end{oplossing}
+
+\item Hoe groot is dan de snelheid?
+
+\begin{oplossing}
+	$v(1)=\sqrt{v_x^2(1)+v_y^2(1)}=\sqrt{(-1)^2+0^2}=1\,\text{s}$
+\end{oplossing}
+
+\item Waar is het deeltje dan?
+
+\begin{oplossing}
+	$\vec{r}(1)=-\vec{e}_x$
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-3.2773087503908354,
+xmax=1.9347255210454852,
+ymin=-0.5305920286290815,
+ymax=4.946070914425411,
+xtick={-3,-2,...,1},
+ytick={0,1,...,4},]
+\clip(-3.2773087503908354,-0.5305920286290815) rectangle (1.9347255210454852,4.946070914425411);
+\draw [samples=50,rotate around={0:(-1,0)},xshift=-1cm,yshift=0cm,line width=2pt,domain=-4:4)] plot (\x,{(\x)^2/2/0.5});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{oplossing}
+
+\item Geef de versnellingsvector.
+
+\begin{oplossing}
+	$\vec{a}=2\vec{e}_y$, ($\vec{v}=-\vec{e}_x+2(t-1)\vec{e}_y$)
+\end{oplossing}
+
+\item Raakt de versnellingsvector aan de baan? Licht toe.
+
+\begin{oplossing}
+	Nee, de versnellingsvector is niet rakend aan de baan. Hij is altijd verticaal ge\"ori\"enteerd terwijl de afgeleide van de baanvergelijking ($y'=2(x+1)$) overal bestaat en dus nergens een verticale helling heeft.
+\end{oplossing}
+
+\end{enumerate}

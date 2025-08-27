@@ -1,0 +1,128 @@
+% !TEX root = ../main.tex
+
+
+
+\ProvidesPackage{preambule}
+
+
+
+\usepackage[dutch]{babel}
+
+\usepackage{graphicx}
+	\graphicspath{{./img/}{./opl/}{./config/}}
+
+
+\usepackage{amssymb, amsmath, tabularx, color, hyperref, eurosym, calc}
+%\usepackage{float}
+
+\usepackage{comment}
+	\specialcomment{oplossing}{\begingroup\color{cyan}}{\endgroup}
+	%% Gebruik: \excludecomment{oplossing}
+
+\usepackage{siunitx}
+	\sisetup{locale = FR, exponent-product = \cdot}
+
+
+\usepackage{geometry}
+%\geometry{bindingoffset=1cm}
+
+\usepackage{marginnote}
+%\setlength{\marginparwidth}{15pt}
+%\setlength{\marginparsep}{1cm}
+%\reversemarginpar
+
+\usepackage[export]{adjustbox}
+
+%\usepackage{polynom} % staartdeling en Horner - package
+\usepackage{mathabx} % curved pijlen?
+
+
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\setlength{\headheight}{16pt}
+\renewcommand{\headrulewidth}{0pt}
+%\fancyhead[CE]{\rightmark}
+%\fancyhead[CO]{\leftmark}
+%\fancyhead[LE,RO]{\thepage}
+
+\usepackage{array, booktabs, multirow}
+\newdimen\NetTableWidth
+%\newdimen\lijnbreedte
+%\def\arraystretch{1.5}% Standaard 1
+%\setlength{\tabcolsep}{4.0pt}% Standaard 6.0pt.
+
+
+\usepackage{pdfpages}
+	% Gebruik \includepdf[pages={1},scale=.8]{./Oplossingen/.pdf}
+
+\usepackage{pgf,tikz,pgfplots}
+	\pgfplotsset{compat=1.15}
+	\usetikzlibrary{arrows}
+
+
+\usepackage{parskip}
+	%\setlength{\parskip}{\baselineskip}%
+	\setlength{\parindent}{0pt}%
+	
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{6.5cm}
+%\addtolength{\hoffset}{-.5cm}
+%\addtolength{\textwidth}{2cm}
+
+
+\newcommand{\bgcos}{\operatorname{bgcos}}
+\newcommand{\bgtan}{\operatorname{bgtan}}
+\newcommand{\bgsin}{\operatorname{bgsin}}
+\newcommand{\cotan}{\operatorname{cotan}}
+\newcommand{\bgcot}{\operatorname{bgcot}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\ber}{\operatorname{ber}}
+\newcommand{\alog}[1]{\mathop{{}^{#1}\text{log}}}
+\newcommand{\diff}{\mathop{}\!d}
+
+\newcommand{\gr}{\operatorname{gr}}
+
+
+\usepackage{totcount}
+\newtotcounter{totaantal}
+%\newcounter{totaantal}
+\newcommand{\pt}[1]{\leavevmode\marginnote[\hfill\textbf{/#1}]{\hfill/#1}\addtocounter{totaantal}{#1}}
+
+\newcommand{\toetshoofding}[1]{%
+
+%\begingroup
+
+\NetTableWidth=\dimexpr
+	1\linewidth
+	- 14\tabcolsep %elke kolom wordt erdoor voorafgegaan en erdoor gevolgd. Per kolom dus 2x
+	- 8\arrayrulewidth % if package array is loaded % dikte van de randen
+	\relax
+	
+%	\begin{table}[h]
+	\begin{tabular}{%
+		>{\raggedright\arraybackslash}p{.46\NetTableWidth}%
+		>{\raggedright\arraybackslash}p{.14\NetTableWidth}%
+		>{\raggedright\arraybackslash}p{.08\NetTableWidth}%
+		>{\raggedright\arraybackslash}p{.08\NetTableWidth}%
+		>{\raggedright\arraybackslash}p{.08\NetTableWidth}%
+		>{\raggedright\arraybackslash}p{.08\NetTableWidth}%
+		>{\raggedright\arraybackslash}p{.08\NetTableWidth}%
+		}
+\cmidrule[\heavyrulewidth]{2-7}
+%\toprule
+\multirow{2}{*}{\parbox[c]{1em}{\includegraphics[height=1cm]{Logo_zwart}}}& \multicolumn{6}{l}{#1} \\
+%&\multicolumn{4}{l}{\noindent\rule{8cm}{0.4pt}}&&\\
+\multicolumn{7}{l}{\noindent\rule{\linewidth}{0pt}}\\
+%\midrule
+%
+%\proefwerk & \multicolumn{1}{l}{\deeleen} & Klas & \klaseen & \klastwee & \klasdrie & \klasvier \\
+%\leerkracht && Optie & \optieeen & \optietwee & \optiedrie & \optievier \\
+%\multicolumn{2}{l}{\datum} & Aantal & \aantaleen & \aantaltwee & \aantaldrie & \aantalvier \\
+%&&&&&&\\
+%\multicolumn{4}{l}{\didactischehulpmiddeleneen} & \multicolumn{3}{r}{Aantal blz. \pageref{laatstepagina_1}}\\
+
+\bottomrule
+\end{tabular}
+%\end{table}
+%\endgroup
+}

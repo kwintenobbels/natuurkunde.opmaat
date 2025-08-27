@@ -23,7 +23,7 @@ YOUR_EMAIL="DUMMY_EMAIL_TEST"
 
 
 
- : "${XIMERA_NAME:=myreponame}"
+## : "${XIMERA_NAME:=myreponame}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
 ## : "${XIMERA_URL:=https://ximera.osu.edu/}"
 ## : "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"

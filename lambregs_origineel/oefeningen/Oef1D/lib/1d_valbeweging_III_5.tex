@@ -1,0 +1,31 @@
+% !TEX root = ../main.tex
+
+
+
+\item Een voorwerp wordt verticaal omhoog geworpen en bereikt na een tijd $t$ een hoogte $h$. Toon aan dat de maximale hoogte $h_{\text{max}}$ die het voorwerp bereikt, wordt gegeven door:
+\begin{eqnarray*}
+h_{\text{max}}&=&\frac{(gt^2+2h)^2}{8gt^2}.
+\end{eqnarray*}
+\begin{oplossing}
+\item[oplossing]We zoeken eerst een uitdrukking voor de maximale hoogte. Op het hoogste punt is de snelheid nul zodat:
+\begin{eqnarray*}
+v&=&0\\
+&\Updownarrow&\\
+v_0-gt&=&0\\
+&\Updownarrow&\\
+t&=&\frac{v_0}{g}
+\end{eqnarray*}
+Deze tijd is dus de tijd die het voorwerp nodig heeft om het hoogste punt te bereiken. Als we de oorsprong van de $y$-as op de grond kiezen en naar boven gericht, dan vinden we de maximale hoogte door dit tijdstip in de plaatsfunctie in te vullen:
+\begin{eqnarray*}
+y_{max}&=&y(t_{max})\\
+&=&v_0\cdot\left(\frac{v_0}{g}\right)-\frac{1}{2}g\left(\frac{v_0}{g}\right)^2\\
+&=&\frac{v_0^2}{2g}
+\end{eqnarray*}
+Doordat we weten hoe hoog het voorwerp zich bevindt na een tijd $t_1$, kunnen we de beginsnelheid $v_0$ bepalen:
+\begin{eqnarray*}
+y_1&=&v_0t_1-\frac{1}{2}gt_1^2\\
+&\Updownarrow&\\
+v_0&=&\frac{2y_1+gt_1^2}{2t_1}
+\end{eqnarray*}
+Substitutie hiervan in de uitdrukking voor de maximale hoogte geeft de te bewijzen uitdrukking.
+\end{oplossing}
