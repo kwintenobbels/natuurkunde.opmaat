@@ -643,9 +643,10 @@
 {../../..\xmDefaultGraphicsPath/}   %% then look for a pictures folder,
 }
 
-\NewEnviron{image}[1][\textwidth]{%
-  \centering\vspace*{0pt}\resizebox{#1}{!}{\BODY}
+\NewEnviron{image}[1][3in]{%
+  \begin{center}\resizebox{#1}{!}{\BODY}\end{center}% resize and center
 }
+
 
 \newcommand{\alt}[1]{}
 
