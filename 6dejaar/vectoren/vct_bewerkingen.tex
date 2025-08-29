@@ -16,11 +16,15 @@
 
 \subsection*{Scalaire vermenigvuldiging van een reëel getal met een vector}
 
-Wanneer een reëel getal met een vector vermenigvuldigd wordt, dan is er een herschaling van de vector met behoud van richting. 
-De grootte en zin kunnen veranderen. Het is een soort reëel veelvoud van de vector. 
-De scalarie verminigvuldiging wordt genoteerd als \(\vec{c} = k \cdot \vec{a}\) waarbij \(k \in \R\).
 
-\begin{image}[0.2\textwidth]
+Een vector kan 'herschaalt' worden door hem te vermenigvuldigen met een reëel getal (d.w.z. een scalar). De richting blijft op die manier behouden. 
+De grootte en zin kunnen veranderen. 
+De scalarie verminigvuldiging wordt genoteerd als \(\vec{c} = k \cdot \vec{a}\) waarbij \(k \in \R\).
+Als de vector \(\vec{a}\) gegeven wordt door \((a_x, a_y)\), is de scalaire vermenigvuldiging \(3\cdot\vec{a}\) gelijk aan \(3\cdot((a_x, a_y)) = (3a_x, 3a_y)\).
+
+% Het is een soort reëel veelvoud van de vector. 
+
+\begin{image}[0.3\textwidth]
 \begin{tikzpicture}
     % \draw (-4,-4) grid (4,4);
 
@@ -45,12 +49,15 @@ De scalarie verminigvuldiging wordt genoteerd als \(\vec{c} = k \cdot \vec{a}\) 
 
 \end{tikzpicture}
 \end{image}
+\captionof{figure}{De scalaire vermenigvuldiging van een vector \(\vec{a}\)}
 
 
-\subsection*{Samenstelling of som van twee (of meer) vectoren}
 
-Wanneer vectoren van dezelfde grootheid worden opgeteld, bekomt men een nieuwe vector die het netto resultaat is van de samenstelling van de gegeven vectoren. 
-Men noemt dit resultaat daarom ook de resultante. Grafisch (kwalitatief) bekomt men de resultante via de kopstaartmethode of parallellogrammethode. 
+\subsection*{De samenstelling of som van twee (of meer) vectoren}
+
+Twee vectoren met hetzelfde aangrijpingspunt kunnen opgeteld worden met als resultaat een nieuwe vector. 
+Deze vector wordt \textbf{de resultante} genoemd. 
+Grafisch (kwalitatief) bekomt men de resultante via de parallellogrammethode.  %kopstaartmethode (voor de eenvoud enkel parallellogram gebruiken?)
 
 \begin{image}[0.2\textwidth]
     \begin{tikzpicture}
@@ -82,7 +89,9 @@ Men noemt dit resultaat daarom ook de resultante. Grafisch (kwalitatief) bekomt 
 \captionof{figure}{De optelling van twee vectoren}
 
 
-De grootte van de resultante bepalen (kwantitatief) kan op verschillende manieren gebeuren, belangrijkste is de meetkundige samenstelling in het oog te houden en zeker niet blindelings de groottes van de gegeven vectoren optellen! 
+De \textbf{grootte van de resultante} (kwantitatief) kan op verschillende manieren bepaald worden. 
+Erg belangrijk hierbij is om meetkundige samenstelling in het oog te houden en zeker niet blindelings de groottes van de gegeven vectoren optellen! 
+In het algemeen wordt de grootte van de resultate berekent met de cosinusregel. 
 In evenwijdige of loodrechte gevallen zijn er efficiënte manieren om de resultante te bepalen (som/verschil of stelling van Pythagoras), de meest algemene methode is echter met de (gewijzigde) cosinusregel:
 
 \[
@@ -90,6 +99,10 @@ In evenwijdige of loodrechte gevallen zijn er efficiënte manieren om de resulta
 \]
 
 met \(\alpha\) de hoek tussen \(\vec{a}\) en \(\vec{b}\). 
+
+\begin{quickquestion}
+    Hoe vereenvoudigd de formule als \(\vec{a}\) en \(\vec{b}\) loodrecht staan? Wat als ze evenwijdig (d.w.z. dezelfde richting) zijn? 
+\end{quickquestion}
 
 \begin{example}
 
@@ -105,14 +118,14 @@ Bijgevolg is  \(\| \vec{c} \| = \|\vec{a}\| + \|\vec{b}\| = \SI{8}{\newton}\).
 
         \coordinate (Shift) at (0,0.05);
 
-        \fill (O) circle (1pt);
-        \fill ($ (O) + (Shift) $) circle (1pt);
-        \fill ($ (O) - (Shift) $) circle (1pt);
+        \fill[olive] (O) circle (1pt);
+        \fill[red] ($ (O) + (Shift) $) circle (1pt);
+        \fill[blue] ($ (O) - (Shift) $) circle (1pt);
 
 
-        \draw[->] ($ (O) + (Shift) $)--($ (A) + (Shift) $)  node[midway, above]{$\vec{a}$};
-        \draw[->] (O)--(C)                                  node[pos=0.7, above]{$ \vec{c} = \vec{a} + \vec{b} $};
-        \draw[->] ($ (O) - (Shift) $)--($ (B) - (Shift) $)  node[midway, below]{$\vec{b}$};
+        \draw[->, red] ($ (O) + (Shift) $)--($ (A) + (Shift) $)  node[midway, above]{$\vec{a}$};
+        \draw[->, olive] (O)--(C)                                  node[pos=0.7, above]{$ \vec{c} = \vec{a} + \vec{b} $};
+        \draw[->, blue] ($ (O) - (Shift) $)--($ (B) - (Shift) $)  node[midway, below]{$\vec{b}$};
     \end{tikzpicture}
 \end{image}
 \end{example}
@@ -133,14 +146,14 @@ Bijgevolg is  \(\| \vec{c} \| = \|\vec{a} + \vec{b}\| = \| -3 + 5 \| = \SI{2}{\n
 
         \coordinate (Shift) at (0,0.05);
 
-        \fill (O) circle (1pt);
-        \fill ($ (O) + (Shift) $) circle (1pt);
-        \fill ($ (O) - (Shift) $) circle (1pt);
+        \fill[olive] (O) circle (1pt);
+        \fill[red] ($ (O) + (Shift) $) circle (1pt);
+        \fill[blue] ($ (O) - (Shift) $) circle (1pt);
 
 
-        \draw[->] ($ (O) + (Shift) $)--($ (A) + (Shift) $)  node[midway, above]{$\vec{a}$};
-        \draw[->] (O)--(C)                                  node[pos=0.7, above]{$ \vec{c} = \vec{a} + \vec{b} $};
-        \draw[->] ($ (O) - (Shift) $)--($ (B) - (Shift) $)  node[midway, below]{$\vec{b}$};
+        \draw[->, red] ($ (O) + (Shift) $)--($ (A) + (Shift) $)  node[midway, above]{$\vec{a}$};
+        \draw[->, olive] (O)--(C)                                  node[pos=0.7, above]{$ \vec{c} = \vec{a} + \vec{b} $};
+        \draw[->, blue] ($ (O) - (Shift) $)--($ (B) - (Shift) $)  node[midway, below]{$\vec{b}$};
     \end{tikzpicture}
 \end{image}
 \end{example}
@@ -185,9 +198,8 @@ In onderstaande figuur is \(\|\vec{a}\| = \SI{3}{\newton}, \; \|\vec{b}\| = \SI{
            \draw pic[ pic text = \(\varphi\), draw, angle radius=0.4cm]{angle= A--O--Z};
        \end{tikzpicture}
     \end{image}
-\end{example}
-
-De grootte van de resultante \(\vec{c}\) wordt bepaald met de cosinusregel: 
+    
+    De grootte van de resultante \(\vec{c}\) wordt bepaald met de cosinusregel: 
 
 % Cosinusregel
 \[
@@ -206,12 +218,14 @@ De grootte van de resultante \(\vec{c}\) wordt bepaald met de cosinusregel:
 = \sqrt{3^2 + 5^2 + 2 \cdot 3 \cdot 5 \cdot \cos 50^\circ} \approx \SI{7.3}{N}. 
 \]
 
+\end{example}
+
 \begin{remark}
 Als \(\vec{c} = \vec{a} + \vec{b}\) geldt dus \textbf{niet} dat \(\|\vec{c}\| = \|\vec{a}\| + \|\vec{b}\|\).
 \end{remark}
 
 
-De richting van de resultate (d.w.z. de hoek \(\gamma\)) kan bepaald worden met de sinusregel: 
+De \textbf{richting van de resultate} (d.w.z. de hoek \(\gamma\)) kan bepaald worden met de sinusregel: 
 
 \[
 \frac{\sin\gamma}{\|\vec{b}\|} = \frac{\sin\alpha}{\|\vec{c}\|}
@@ -224,22 +238,29 @@ De richting van de resultate (d.w.z. de hoek \(\gamma\)) kan bepaald worden met 
 
 
 
-Indien meer dan twee vectoren worden samengesteld, telt men eerst twee ervan met elkaar op en het resultaat daarvan telt men met de volgende op, enzovoort totdat alle vectoren in de som zitten (zoals ook met de optelling van getallen gebeurt).
+% TODO;  TIKZ VAN SOM HERNEMEN MET GROOTTE EN RICHTING RESULTANTE OP AANGEDUID 
 
+
+De optelling van vectoren is \textit{associatief}, d.w.z. dat \((\vec{a} + \vec{b}) + \vec{c} = \vec{a} + (\vec{b} + \vec{c})\). 
+Met deze eigenschap kan je de som bereken van meerderen vectoren. 
 
 \subsection*{Verschil van twee vectoren}
 
+Net zoals bij getallen is het ook mogelijk voor vectoren om van een verschil een som te maken: 
+
+\[
+\vec{c} = \vec{a}-\vec{b} = \vec{a} + (-\vec{b})
+\]
+
+Om \(\vec{c}\) te vinden moeten \(\vec{a}\) en \(-\vec{b}\) dus worden samengesteld.
 Het verschil van de getallen acht en vijf is gelijk aan drie. 
 Drie is dus het getal dat je bij vijf moet optellen om acht te bekomen. 
 Op dezelfde manier is het verschil van vectoren \(\vec{a}\) en \(\vec{b}\) gelijk aan de vector \(\vec{c}\) die je bij \(\vec{b}\) moet optellen om \(\vec{a}\) te bekomen.
- \(\vec{c}\)is dus letterlijk het verschil of 'onderscheid' tussen \(\vec{a}\) en \(\vec{b}\). 
- De eenvoudigste manier om (zowel grafisch als rekenkundig) het verschil te bepalen is door van het verschil een som te maken. 
- \[
-\vec{c} = \vec{a}-\vec{b} = \vec{a} + (-\vec{b})
- \]
+ \(\vec{c}\)is dus inderdaad het verschil of 'onderscheid' tussen \(\vec{a}\) en \(\vec{b}\). 
 
- Om \(\vec{c}\) te vinden moeten \(\vec{a}\) en \(-\vec{b}\) worden samengesteld.
 
+
+%  TODO DEZE TIKZ ZOUDEN (NET ALS VB SOM) ALLEMAAL ZELFDE STIJL MOETEN KRIJGEN ALS DE FIGUUR VOOR SOM 
 \begin{image}[0.5\textwidth]
     \begin{tikzpicture}
         
@@ -250,9 +271,7 @@ Op dezelfde manier is het verschil van vectoren \(\vec{a}\) en \(\vec{b}\) gelij
         \coordinate (A) at (\ang :0.8\r);
         \coordinate (B) at (0:\r);
         \coordinate (minB) at (180:\r);
-
-        \fill (O) circle (2pt); 
-
+        
         \draw[->, blue, thick] (O)--(A) node[midway, above left]{$\vec{a}$};
         \draw[->, red, thick] (O)--(B) node[midway, below]{$\vec{b}$};
         \draw[->, green, thick] (B)--(A) node[midway, above right]{$\vec{c}$};
@@ -261,18 +280,19 @@ Op dezelfde manier is het verschil van vectoren \(\vec{a}\) en \(\vec{b}\) gelij
         \draw[->, green, thick] (O)--($(A) - (B)$) node[midway, below]{$\vec{c}$};
         
         \draw[dotted] (A)--($(A) - (B)$)--(minB);
+        \fill[red] (O) circle (2pt); 
     \end{tikzpicture}
-    
 \end{image}
 
-Grafisch blijkt overigens dat indien \(\vec{a}\) en \(\vec{b}\) in hetzelfde punt aangrijpen, \(\vec{a} - \vec{b}\) gelijk is aan de vector met als aangrijpingspunt het eindpunt van \(\vec{b}\) en als eindpunt het eindpunt van \(\vec{b}\).
+Grafisch blijkt dat indien \(\vec{a}\) en \(\vec{b}\) in hetzelfde punt aangrijpen, \(\vec{a} - \vec{b}\) gelijk is aan de vector met als aangrijpingspunt het eindpunt van \(\vec{b}\) en als eindpunt het eindpunt van \(\vec{b}\).
 
 \subsection*{De loodrechte ontbinding of projectie van een vector in componenten}
 
 
 % dit zou iets uitgebreiden moeten via de omgekeerde richting (een vecor is eerder opgebouwd uit zijn componenten)
 
-Het is vaak nuttig en noodzakelijk in vraagstukken om een vector (loodrecht) te ontbinden in componenten. 
+Een vector is opgebouwd als de samenstelling van zijn componten volgens de assen.  
+In vraagstukken is het vaak erg nutting om een vector (loodrecht) te ontbinden in zijn componenten. 
 Noteer met \(\vec{a}_x\) de component volgens de \(x\)-as en met \(\vec{a}_y\) de component volgens de \(y\)-as. 
 Voor elke vector geldt dan 
 \[
@@ -290,6 +310,7 @@ De lengte van de componenten volgt rechtstreeks uit de goniometrische getallen:
 \]
 
 % TIKZPICTURE DIE DE ONTBINDING IN COMPONENTEN WEERGEEFT 
+\begin{image}[0.3\textwidth]
 \begin{tikzpicture}
     % \draw (-4,-4) grid (4,4);
 
@@ -306,8 +327,9 @@ De lengte van de componenten volgt rechtstreeks uit de goniometrische getallen:
     \draw[->, dashed, -latex, red, thick] (O) -- (0, \ay) node[midway, left]{\( \vec{a}_y \)};
 
     \draw[dotted] (0,\ay)--(A)--(\ax,0);
-        
 \end{tikzpicture}
+\end{image}
+\captionof{figure}{De loodrechte projectie van de vector \(\vec{a}\)}
 
 Indien de componenten worden geschreven met behulp van de basisvectoren geeft dit 
 
@@ -325,9 +347,14 @@ Het scalair product levert een \textbf{scalar} (= getal) als resultaat op die pe
 
 Het scalair product wordt alsvolgt gedefineerd: 
 
+% todo: hier gedefineerd als? 
 $$
 c = \vec{a} \cdot \vec{b} = \| \vec{a}_x \| \cdot \|\vec{b}\| = \|\vec{a}\| \cdot \cos(\alpha) \cdot \|\vec{b}\| = \| \vec{a}\| \cdot \| \vec{b}\| \cdot \cos(\alpha)
 $$
+
+\begin{quickquestion}
+    Is de eerste bewerking \(\cdot\) dezelfde als de tweede bewerking \(\cdot\)? Verklaar. 
+\end{quickquestion}
 
 % TIKZPICTURE DIE SCALAIR PRODUCT van a op b ILLUSTREERT  
 \begin{image}
@@ -360,6 +387,11 @@ $$
 
 Het vectorieel product levert een \textbf{vector} als resultaat op waarvan de grootte gelijk is aan de oppervlakte van de parallellogram ingesloten tussen de twee vectoren. 
 De richting van het vectorproduct is loodrecht op het vlak gevormd door de twee gegeven vectoren en de zin is te bepalen met de rechterhandregel.
+Het vectorieel product wordt genoteerd als 
+
+\[
+\vec{c} = \vec{a} \times \vec{b} = \| \vec{a}_y \| \cdot \|\vec{b}\| = \|\vec{a}\| \cdot \sin(\alpha) \cdot \|\vec{b}\| = \| \vec{a}\| \cdot \| \vec{b}\| \cdot \sin(\alpha)
+\]
 
 \begin{image}[0.5\textwidth]
     \begin{tikzpicture}
