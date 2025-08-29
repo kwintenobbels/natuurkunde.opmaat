@@ -1,40 +1,13 @@
-% !TEX root = ../main.tex
+\documentclass{ximera}
+
+\input{../../../preamble}
 
 
+\begin{document}
+        \author{Bert Lambregs}
+        \xmtitle{Oefeningen (één bestand, toep.)}
 
-\begin{enumerate}
-
-
-
-\import{./lib/}{dyn_theorie_1} % Valversnelling onafh. m
-
-\import{./lib/}{dyn_FV_9p143} % Lift en dynamometer
-
-\import{./lib/}{dyn_I_1} % Doos en schuine kracht
-\import{./lib/}{dyn_I_2} % Kracht en eindsnelheid
-
-\import{./lib/}{dyn_II_1} % Doos op een helling
-\import{./lib/}{dyn_II_2} % hockeyschijf
-\import{./lib/}{dyn_II_3} % Toestel van Atwood
-\import{./lib/}{dyn_II_4} % FV 6 p. 153
-\import{./lib/}{dyn_II_5} % Blokken op een tafel
-\import{./lib/}{dyn_II_6} % Ontsnappen langs een touw
-
-\import{./lib/}{dyn_III_1} % Drie voorwerpen 16de VFO 2004
-\import{./lib/}{dyn_III_2} % munt en blokje op een draaiende schijf
-
-\import{./lib/}{dyn_ECB_I_1} % Steen aan een touwtje
-%\import{./lib/}{dyn_ECB_II_1} % massa aan een touw in een auto in de bocht = verloren gegaan ...
-
-\import{./lib/}{dyn_ECB_II_2} % Looping 
-
-
-\import{./lib/}{dyn_ECB_theorie_I_5}
-
-
-
-
-\item Waarom kan de wrijvingswet bij glijdende wrijving zeker niet geschreven worden als $\vec{F}_w=\mu\vec{F}_n$?
+\begin{exercise} Waarom kan de wrijvingswet bij glijdende wrijving zeker niet geschreven worden als $\vec{F}_w=\mu\vec{F}_n$?
 \begin{oplossing}
 \newline
 De formule geldt niet vectori\"eel. Ze geeft enkel een relatie
@@ -45,7 +18,9 @@ evenwijdig met het onder\-steu\-nend oppervlak. De richtingen zijn
 dus niet gelijk.
 \end{oplossing}
 
-\item[Opgave] Een blok van $4,0~\rm kg$ heeft een beginsnelheid van $8,0~\rm m/s$ aan de voet van een helling van $30,0^\circ$. De wrijvingskracht die de beweging afremt is $15~\rm N$ groot.
+\end{exercise}
+
+\begin{exercise}[Opgave] Een blok van $4,0~\rm kg$ heeft een beginsnelheid van $8,0~\rm m/s$ aan de voet van een helling van $30,0^\circ$. De wrijvingskracht die de beweging afremt is $15~\rm N$ groot.
 \begin{enumerate}
 \item Teken en benoem de krachten die op het blok aangrijpen.
 \item Welke afstand zal het blok afleggen eer het tot rust komt?
@@ -55,8 +30,8 @@ dus niet gelijk.
 \begin{oplossing}
 \begin{figure}[h]
 \begin{flushright}
-\includegraphics[width=0.49\textwidth,angle=0]{blok_helling_2}
-\includegraphics[width=0.49\textwidth, angle=0]{blok_helling_2componenten}
+\includegraphics[width=0.49\textwidth,angle=0]{dyn/exercises/blok_helling_2}
+\includegraphics[width=0.49\textwidth, angle=0]{dyn/exercises/blok_helling_2componenten}
 \end{flushright}
 \end{figure}
 $a=-\frac{F_w+mg\sin\varphi}{m}=-8,66\rm\,m/s^2$
@@ -70,7 +45,9 @@ $\mu=\frac{F_w}{mg\cos\varphi}=0,44$
 
 
 
-\item Een blok ligt op een helling. Bepaal de maximale hoek die de
+\end{exercise}
+
+\begin{exercise} Een blok ligt op een helling. Bepaal de maximale hoek die de
 helling kan maken met de horizontale zodat het blok n\'et niet in
 beweging komt. De wrijvingsfactor is $\mu$.
 \begin{oplossing}
@@ -96,10 +73,14 @@ F_w&=&F_n\tan{\varphi}\\
 De maximale hoek is ${\rm Bgtan\,}\mu$.
 \end{oplossing}
 
-\item Een steen wordt aan een touwtje in een horizontaal vlak rondgeslingerd met een snelheid die in grootte constant is. Heeft de steen een versnelling? Ondervindt de steen een resulterende kracht? Leg uit.
+\end{exercise}
+
+\begin{exercise} Een steen wordt aan een touwtje in een horizontaal vlak rondgeslingerd met een snelheid die in grootte constant is. Heeft de steen een versnelling? Ondervindt de steen een resulterende kracht? Leg uit.
 
 
-\item Een bestuurder van een auto met een massa van $1000~\rm kg$ rijdt aan een snelheid in grootte gelijk aan $10~\rm m/s$. Hij probeert een horizontale bocht, met een straal van $100~\rm m$ te nemen. De maximale wrijvingskracht tussen de banden en de baan is $900~\rm N$. Kan de auto deze bocht nemen of zal hij beginnen slippen?
+\end{exercise}
+
+\begin{exercise} Een bestuurder van een auto met een massa van $1000~\rm kg$ rijdt aan een snelheid in grootte gelijk aan $10~\rm m/s$. Hij probeert een horizontale bocht, met een straal van $100~\rm m$ te nemen. De maximale wrijvingskracht tussen de banden en de baan is $900~\rm N$. Kan de auto deze bocht nemen of zal hij beginnen slippen?
 \begin{oplossing}
 \newline
 \newline
@@ -114,25 +95,30 @@ Dit is meer dan wat de grond maximaal op de wielen kan uitoefenen. De auto zal d
 \newline
 Realiseer je dat de wrijvingskracht door de grond op de auto wordt uitgeoefend en de resulterende kracht vormt. Het is dan ook de middelpuntzoekende kracht. 
 \begin{figure}[h]
-\centering\includegraphics[width=0.5\textwidth, angle=0]{auto_bocht_horizontaal}
+\centering\includegraphics[width=0.5\textwidth, angle=0]{dyn/exercises/auto_bocht_horizontaal}
 \end{figure}
 De auto duwt met zijn wielen dwars ten opzichte van de snelheid tegen de grond en de grond duwt terug. In de figuur beweegt de auto het vlak van de tekening in en neemt de auto een bocht naar links (in de richting van de wrijvingskracht).
 \end{oplossing}
 
 
 
-\item Een cirkelvormige renbaan is onder een helling van $30^\circ$
+\end{exercise}
+
+\begin{exercise} Een cirkelvormige renbaan is onder een helling van $30^\circ$
 gebouwd. De straal van de cirkel is $50~\rm m$. Met welke snelheid
 moet een auto rijden om in de baan te blijven? Veronderstel dat de
 baan spekglad is. 
 \begin{oplossing}
 \begin{figure}[h]
-\centering\includegraphics[width=0.6\textwidth, angle=0]{renbaan}
+\centering\includegraphics[width=0.6\textwidth, angle=0]{dyn/exercises/renbaan}
 \end{figure}
-\newline
-\item [\textit{gegeven:}]$\varphi=30^\circ$\newline$r=50\rm\,m$
-\item [\textit{gevraagd:}]$v$
-\item [\textit{oplossing:}]De krachten die op de auto aangrijpen, zijn de zwaartekracht en de normaalkracht. In de $y$-richting is er geen versnelling omdat de auto in een horizontaal vlak beweegt. We kiezen dan ook een assenstelsel met de $y$-as verticaal geori\"enteerd. De $x$-as kunnen we in de richting van het centrum van de cirkel nemen. De $y$-component van de normaalkracht moet dus even groot zijn als de zwaartekracht. De $x$-component van de normaalkracht is dan ook de resulterende kracht en levert de middelpuntzoekende kracht. De $x$-component van de normaalkracht kunnen we m.b.v. de hoek en de zwaartekracht schrijven.
+
+
+\textit{gegeven}: $\varphi=30^\circ$\newline$r=50\rm\,m$
+
+\textit{gevraagd:} $v$
+
+\textit{oplossing:} De krachten die op de auto aangrijpen, zijn de zwaartekracht en de normaalkracht. In de $y$-richting is er geen versnelling omdat de auto in een horizontaal vlak beweegt. We kiezen dan ook een assenstelsel met de $y$-as verticaal geori\"enteerd. De $x$-as kunnen we in de richting van het centrum van de cirkel nemen. De $y$-component van de normaalkracht moet dus even groot zijn als de zwaartekracht. De $x$-component van de normaalkracht is dan ook de resulterende kracht en levert de middelpuntzoekende kracht. De $x$-component van de normaalkracht kunnen we m.b.v. de hoek en de zwaartekracht schrijven.
 \newline
 \newline
 De $x$-component van de normaalkracht:
@@ -157,7 +143,9 @@ De gegevens invullen levert een snelheid van $17\rm\,m/s$.
 %\newpage
 
 
-\item Op een draaitafel draait met een constante hoeksnelheid een grammofoonplaat. Twee muntstukken A en B zijn op zo'n plaats van het middelpunt van de draaitafel geplaatst dat zij nog net niet wegschuiven. Voor muntstuk A bedraagt de afstand tot de rotatieas dan $6\rm\,cm$ en voor B is het dan $12\rm\,cm$. $m_a$ en $m_b$ zijn de massa's van respectievelijk de muntstukken A en B. $\mu_a$ en $\mu_b$ zijn de wrijvingsfactoren tussen de muntstukken en de grammofoonplaat.
+\end{exercise}
+
+\begin{exercise} Op een draaitafel draait met een constante hoeksnelheid een grammofoonplaat. Twee muntstukken A en B zijn op zo'n plaats van het middelpunt van de draaitafel geplaatst dat zij nog net niet wegschuiven. Voor muntstuk A bedraagt de afstand tot de rotatieas dan $6\rm\,cm$ en voor B is het dan $12\rm\,cm$. $m_a$ en $m_b$ zijn de massa's van respectievelijk de muntstukken A en B. $\mu_a$ en $\mu_b$ zijn de wrijvingsfactoren tussen de muntstukken en de grammofoonplaat.
 \newline
 Welke gevolgtrekking m.b.t. de massa's en de wrijvingsfactoren is juist?
 \newline
@@ -182,7 +170,9 @@ F&=&ma\\
 \end{eqnarray*}
 \end{oplossing}
 
-\item Een speelgoedwagentje beweegt in een horizontale cirkel met straal
+\end{exercise}
+
+\begin{exercise} Een speelgoedwagentje beweegt in een horizontale cirkel met straal
 $2l$ en heeft een tijd $T$ nodig om een volledige cirkel te
 beschrijven. Dit kan omdat aan het wagentje een veer vastgemaakt is
 .De lengte van de veer in niet uitgerekte toestand is $l$. Het
@@ -198,16 +188,18 @@ beschrijven is dan gelijk aan:
 \item $\sqrt{\frac{4}{3}}T$
 \end{enumerate}
 \begin{oplossing}
-\item[\textit{gegeven}]
+\textit{gegeven}
 \begin{tabular}[t]{lcl}
 $r$&=&$2l$\\
 $r'$&=&$3l$\\
 \end{tabular}
-\item [\textit{gevraagd}]
+
+\textit{gevraagd}
 \begin{tabular}[t]{ll}
 $T'/T$
 \end{tabular}
-\item [\textit{oplossing}]De veerkracht zorgt voor de middelpuntzoekende kracht. We leiden hieruit een uitdrukking af voor de periode:
+
+\textit{oplossing} De veerkracht zorgt voor de middelpuntzoekende kracht. We leiden hieruit een uitdrukking af voor de periode:
 \begin{eqnarray*}
 F&=&ma\\
 &\Downarrow&\\
@@ -233,19 +225,29 @@ Het juiste antwoord is C.
 
 
 
-\item Waarom vliegt bij het afschieten van een kanonskogel, het kanon niet even ver achteruit als dat de kogel vooruit vliegt?
+\end{exercise}
+
+\begin{exercise} Waarom vliegt bij het afschieten van een kanonskogel, het kanon niet even ver achteruit als dat de kogel vooruit vliegt?
 
 
-\item Moet een fietser, die op een horizontale weg eenparig rechtlijnig fietst, toch blijven trappen? Verklaar.
+\end{exercise}
 
-\item Een fietser met een massa van $60,2\rm\,kg$ rijdt op een rechte baan met een constante snelheid die $25,0\rm\,km/h$ bedraagt. Hoe groot is de inwerkende resulterende kracht? 
+\begin{exercise} Moet een fietser, die op een horizontale weg eenparig rechtlijnig fietst, toch blijven trappen? Verklaar.
+
+\end{exercise}
+
+\begin{exercise} Een fietser met een massa van $60,2\rm\,kg$ rijdt op een rechte baan met een constante snelheid die $25,0\rm\,km/h$ bedraagt. Hoe groot is de inwerkende resulterende kracht? 
 \begin{oplossing}
 De resulterende kracht is 0. De eerste wet van Newton zegt dat een voorwerp maar een ERB kan uitvoeren indien de resulterende kracht erop nul is. Zou er een van nul verschillende kracht op de fietser inwerken dan krijgt hij een versnelling. Je moet blijven trappen om een kracht te genereren die even groot is als de wrijvingskracht.
 \end{oplossing}
 
-\item Kareltje is net vier jaar geworden en vindt dat hij groot genoeg is om mama te helpen wanneer zij hem naar school brengt met de fiets. Vanuit zijn kinderstoel achterop zal hij mama flink in de rug duwen. Wat ziet Kareltje over het hoofd? 
+\end{exercise}
 
-\item Geef aan of de volgende uitspraken waar of vals zijn. Licht je antwoord toe.
+\begin{exercise} Kareltje is net vier jaar geworden en vindt dat hij groot genoeg is om mama te helpen wanneer zij hem naar school brengt met de fiets. Vanuit zijn kinderstoel achterop zal hij mama flink in de rug duwen. Wat ziet Kareltje over het hoofd? 
+
+\end{exercise}
+
+\begin{exercise} Geef aan of de volgende uitspraken waar of vals zijn. Licht je antwoord toe.
 \begin{enumerate}
 \item Als een lichaam niet versnelt dan kan er geen kracht op werken. 
 \item Bij een parachutist is de zwaartekracht even groot als de weerstandskracht -- die hij ondervindt van de lucht -- wanneer hij met zijn parachute met een constante snelheid naar beneden daalt. 
@@ -253,26 +255,40 @@ De resulterende kracht is 0. De eerste wet van Newton zegt dat een voorwerp maar
 \end{enumerate}
 
 
-\item Toon aan dat de remweg van een remmende auto omgekeerd
+\end{exercise}
+
+\begin{exercise} Toon aan dat de remweg van een remmende auto omgekeerd
 evenredig is met de wrijvingsfactor. Veronderstel dat de wielen
 glijden over het wegdek.
 
-\item Als we de `effectieve zwaartekracht' in een centrifuge willen vergroten, wat is dan beter: de straal verdubbelen of de hoeksnelheid verdubbelen?
+\end{exercise}
 
-\item Stel dat we een emmer met water aan een touw rondslingeren in een verticaal vlak zodanig dat het water niet uit de emmer valt. Neemt het (schijnbaar) gewicht van het water in de emmer toe wanneer we de emmer met een grotere snelheid laten ronddraaien? Leg uit.
+\begin{exercise} Als we de `effectieve zwaartekracht' in een centrifuge willen vergroten, wat is dan beter: de straal verdubbelen of de hoeksnelheid verdubbelen?
 
-\item Er wordt wel gezegd dat in een wasmachine water uit het wasgoed wordt verwijderd doordat de centrifugaalkracht het water naar buiten trekt. Is dit correct? Leg uit.
+\end{exercise}
 
-\item Verklaar hoe een fietser op een horizontaal wegdek een bocht kan nemen. Bepaal ook de maximale snelheid waarmee je door een bocht met straal $r$ kan gaan, als de wrijvingsfactor tussen de weg en de banden $\mu$ is.
+\begin{exercise} Stel dat we een emmer met water aan een touw rondslingeren in een verticaal vlak zodanig dat het water niet uit de emmer valt. Neemt het (schijnbaar) gewicht van het water in de emmer toe wanneer we de emmer met een grotere snelheid laten ronddraaien? Leg uit.
 
-\item Geef de formule voor de grootte van de middelpuntzoekende kracht.
+\end{exercise}
 
-\item Welk punt heeft de grootste versnelling: een punt op de buitenrand
+\begin{exercise} Er wordt wel gezegd dat in een wasmachine water uit het wasgoed wordt verwijderd doordat de centrifugaalkracht het water naar buiten trekt. Is dit correct? Leg uit.
+
+\end{exercise}
+
+\begin{exercise} Verklaar hoe een fietser op een horizontaal wegdek een bocht kan nemen. Bepaal ook de maximale snelheid waarmee je door een bocht met straal $r$ kan gaan, als de wrijvingsfactor tussen de weg en de banden $\mu$ is.
+
+\end{exercise}
+
+\begin{exercise} Geef de formule voor de grootte van de middelpuntzoekende kracht.
+
+\end{exercise}
+
+\begin{exercise} Welk punt heeft de grootste versnelling: een punt op de buitenrand
 van een ronddraaiende cd, of een punt op de helft van de straal van
 een cd die met een tweemaal zo grote hoeksnelheid ronddraait? Toon
 je antwoord aan.
 
-\end{enumerate}
+\end{exercise}
 
 
 
@@ -280,28 +296,30 @@ je antwoord aan.
 
 \subsection{Vraagstukken}
 
-\begin{enumerate}
 
-
-\item Om een ongeval te vermijden, drukt een bestuurder van een auto zijn remmen volledig in. Na een remspoor van \SI{90}{m} komt hij tot stilstand. De wrijvingsfactor tussen de wielen en de weg is gelijk aan \SI{0,500}{}. Bepaal de snelheid die hij voor het remmen had.
+\begin{exercise} Om een ongeval te vermijden, drukt een bestuurder van een auto zijn remmen volledig in. Na een remspoor van \SI{90}{m} komt hij tot stilstand. De wrijvingsfactor tussen de wielen en de weg is gelijk aan \SI{0,500}{}. Bepaal de snelheid die hij voor het remmen had.
 
 \begin{oplossing}
 $v_0=\sqrt{2\mu gx}=\SI{29,71}{m/s}=\SI{107}{km/h}$
 \end{oplossing}
 
-\item Een massa van $50,0~\rm g$ wordt door een horizontale kracht van $0,065~\rm N$ voortbewogen. Hij legt
+\end{exercise}
+
+\begin{exercise} Een massa van $50,0~\rm g$ wordt door een horizontale kracht van $0,065~\rm N$ voortbewogen. Hij legt
 onder de werking van deze kracht en de wrij\-vings\-kracht vanuit de rusttoestand in $10,0~\rm s$ op een rechte baan een afstand af van $40,7~\rm m$. Hoe groot zijn de wrijvingskracht en de wrijvingsfactor?
 \begin{oplossing}
-\item [\textit{gegeven}]
+\textit{gegeven}
 \begin{tabular}[t]{lcl}
 $m$ &$=$& $50,0\cdot10^{-3}~\rm kg$\\
 $F$ &$=$& $0,065~\rm N$\\
 $t$ &$=$& $10,0~\rm s$\\
 $x$ &$=$& $40,7~\rm m$\\
 \end{tabular}
-\item [\textit{gevraagd}]
+
+\textit{gevraagd}
 $F_w$, $\mu$
-\item [\textit{oplossing}]
+
+\textit{oplossing}
 Uit de vergelijkingen voor een EVRB vinden we de versnelling:
 \begin{eqnarray}
 x &=& x_0+v_0t+\frac{1}{2}at^2\nonumber\\
@@ -323,7 +341,9 @@ Uit vergelijking (\ref{F_w}) en $F_w=\mu F_n=\mu mg$ volgt:
 \end{eqnarray*}
 \end{oplossing}
 
-\item Toon aan dat de remweg van een remmende auto omgekeerd
+\end{exercise}
+
+\begin{exercise} Toon aan dat de remweg van een remmende auto omgekeerd
 evenredig is met de wrijvingsfactor. Veronderstel dat de wielen
 glijden over het wegdek.
 %Zie oplossing opdracht 33 HB p. 111, hier vonden we (\ref{remvgl}):
@@ -336,7 +356,9 @@ x&=&\frac{v_0^2}{2g\mu}
 De remweg $x$ is dus omgekeerd evenredig met de wrijvingsfactor $\mu$.
 \end{oplossing}
 
-\item Een auto rijdt op een horizontale baan met een snelheid van
+\end{exercise}
+
+\begin{exercise} Een auto rijdt op een horizontale baan met een snelheid van
 $108\rm\,km/h$. Als hij plots moet remmen, wat is dan zijn kleinste
 remafstand in de veronderstelling dat de wielen schuiven over het
 wegdek en de wrijvingsfactor tussen de wielen en de weg gelijk is
@@ -353,17 +375,21 @@ x&=&\frac{v_0^2}{2g\mu}\\
 \end{oplossing}
 
 
-\item Een massa van $10,0~\rm kg$ is aan touwen opgehangen zoals in de figuur. De hoek is $\theta=60^\circ$. Bepaal de spankrachten $F_1,~F_2$ en $F_3$ in het touw.
+\end{exercise}
+
+\begin{exercise} Een massa van $10,0~\rm kg$ is aan touwen opgehangen zoals in de figuur. De hoek is $\theta=60^\circ$. Bepaal de spankrachten $F_1,~F_2$ en $F_3$ in het touw.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=.4\textwidth]{massa_aan_touw}
+\includegraphics[width=.4\textwidth]{dyn/exercises/massa_aan_touw}
 \end{center}
 \end{figure}
 
 
 
 
-\item Een zak cement met massa $m$ hangt aan drie touwen zoals weergegeven op de figuur. Twee van de drie touwen maken een hoek $\theta_1$, respectievelijk $\theta_2$ met de horizontale. Het geheel is in rust.
+\end{exercise}
+
+\begin{exercise} Een zak cement met massa $m$ hangt aan drie touwen zoals weergegeven op de figuur. Twee van de drie touwen maken een hoek $\theta_1$, respectievelijk $\theta_2$ met de horizontale. Het geheel is in rust.
 \begin{enumerate}
 \item Bewijs dat de grootte van de spankracht in het linkertouw te berekenen is uit:
 \[
@@ -408,14 +434,18 @@ F_2&=&\frac{mg\cos{\theta_1}}{\sin{(\theta_1+\theta_2)}}
 \end{oplossing}
 
 
-\item Bereken de versnelling van het systeem in de figuur. De dynamische wrijvingsfactor is $\mu$ en het touw heeft een verwaarloosbare massa zodat de spankracht in het touw overal hetzelfde is. 
+\end{exercise}
+
+\begin{exercise} Bereken de versnelling van het systeem in de figuur. De dynamische wrijvingsfactor is $\mu$ en het touw heeft een verwaarloosbare massa zodat de spankracht in het touw overal hetzelfde is. 
 %figuur = blokken_op_helling.bmp
 
 
-\item Drie voorwerpen zijn aan elkaar verbonden met touwtjes. De wrij\-vings\-factor tussen de tafel en het erop liggend voorwerp $V$ is $\mu$.
+\end{exercise}
+
+\begin{exercise} Drie voorwerpen zijn aan elkaar verbonden met touwtjes. De wrij\-vings\-factor tussen de tafel en het erop liggend voorwerp $V$ is $\mu$.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.6\textwidth ,angle=0]{drie_voorwerpen}
+\includegraphics[width=0.6\textwidth ,angle=0]{dyn/exercises/drie_voorwerpen}
 \end{center}
 \end{figure}
 Veronderstel dat er geen wrijving is in de katrollen en dat de massa van de katrollen te verwaarlozen is. Bepaal de versnelling van het voorwerp. \footnote{Bron: 16de VFO 2004}
@@ -424,7 +454,7 @@ Veronderstel dat er geen wrijving is in de katrollen en dat de massa van de katr
 Om de versnelling van het voorwerp te vinden kunnen we de tweede wet van Newton toepassen op de drie massa's. We tekenen de krachtendiagrammen op elk van de massa's (zie figuur). 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.73\textwidth ,angle=0]{drie_voorwerpen_krachten}
+\includegraphics[width=0.73\textwidth ,angle=0]{dyn/exercises/drie_voorwerpen_krachten}
 \end{center}
 \end{figure}
 \newline
@@ -454,7 +484,9 @@ Zie ook dat uit vergelijking (\ref{m_1}) volgt dat $m_1$ niet met de zwaartekrac
 
 
 
-\item Een last van 1000 N hangt aan een kabel van $5,00\rm\,m$
+\end{exercise}
+
+\begin{exercise} Een last van 1000 N hangt aan een kabel van $5,00\rm\,m$
 lengte. Deze last wordt door een horizontale kracht $2,00\rm\,m$
 zijwaarts uit zijn verticale stand getrokken.
 \begin{enumerate}
@@ -465,7 +497,9 @@ zijwaarts uit zijn verticale stand getrokken.
 \end{enumerate}
 
 
-\item Als een persoon in vrije val ten gevolge van de
+\end{exercise}
+
+\begin{exercise} Als een persoon in vrije val ten gevolge van de
 wrijvingskracht met de lucht valt met een maximumsnelheid van
 ongeveer $240\rm\,km/h$ en deze wrijvingskracht is recht evenredig
 met het kwadraat van de snelheid, bepaal dan deze
@@ -474,9 +508,10 @@ heeft een massa van $66\rm\,kg$.
 
 
 \begin{oplossing}
+    \begin{itemize}
 \item[24 p.72]Misschien eerst ter verduidelijking: de aangeduide kracht kan bijvoorbeeld worden uitgeoefend door een gewicht dat aan punt $A$ is opgehangen. Om de gevraagde krachten te vinden, kunnen we de gegeven kracht ontbinden. We kunnen haar beschouwen als samengesteld uit twee krachten. Namelijk de kracht op de staaf uitgeoefend ($\vec{F}_{ab}$, de staaf ondersteunt punt $A$) en de kracht waarmee aan het touw wordt getrokken ($\vec{F}{ac}$, het touw voorkomt dat $A$ naar beneden zou vallen zodat m.a.w. het punt aan het touw moet trekken).
     \begin{figure}[h]
-    \centering\includegraphics[width=0.7\textwidth]{24p72_fig}
+    \centering\includegraphics[width=0.7\textwidth]{dyn/exercises/24p72_fig}
     \end{figure}
     \newline
     Voor $F_{ab}$ geldt:
@@ -506,25 +541,31 @@ Om deze vertraging te kunnen realiseren is volgens de tweede wet van Newton een 
 F=ma=-m\frac{v_0^2}{2x}=-37500\rm\,N
 \end{eqnarray*}
 Het minteken slaat op het feit dat de kracht tegengesteld is aan de snelheid die met de keuze van de $x$-as mee is. De grootte van de kracht is dan de uitdrukking zonder het minteken.
+\end{itemize}
 \end{oplossing}
 
 \begin{oplossing}
+    \begin{itemize}
+
 \item [36 p.112]
 Het juist antwoord is B. $v_{max}=\sqrt{\mu rg}$ dus $v_{max}\sim\sqrt{r}$.
 
 \item [37 p.112]
 $v_{max}\sim\sqrt{r}$ dus moeten we $v_{max}$ uitzetten tegen
 $\sqrt{r}$.
+    \end{itemize}
 \end{oplossing}
 
 
 
-\item Een blokje op een wrijvingsloze tafel beschrijft een ECB doordat het vastgemaakt is aan een koordje dat door een
+\end{exercise}
+
+\begin{exercise} Een blokje op een wrijvingsloze tafel beschrijft een ECB doordat het vastgemaakt is aan een koordje dat door een
 gaatje in de tafel gaat en waaraan een massa is verbonden die door
 de zwaartekracht naar beneden wordt getrokken.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.4\textwidth, angle=0]{massa_op_tafel}
+\includegraphics[width=0.4\textwidth, angle=0]{dyn/exercises/massa_op_tafel}
 \end{center}
 \end{figure}
 \begin{enumerate}
@@ -535,24 +576,30 @@ middelpuntzoekende kracht veranderen van grootte?
 voor verschillende stralen verschillend is?
 \end{enumerate}
 
-\item Een blokje op een wrijvingsloze tafel beschrijft een ECB met straal $r$ en snelheid $v$ doordat het vastgemaakt is aan een koordje dat door een gaatje in de tafel gaat en waaraan een massa is verbonden die door de zwaartekracht naar beneden wordt getrokken. Als de straal 2 maal groter wordt, hoeveel maal groter wordt dan de snelheid?
+\end{exercise}
+
+\begin{exercise} Een blokje op een wrijvingsloze tafel beschrijft een ECB met straal $r$ en snelheid $v$ doordat het vastgemaakt is aan een koordje dat door een gaatje in de tafel gaat en waaraan een massa is verbonden die door de zwaartekracht naar beneden wordt getrokken. Als de straal 2 maal groter wordt, hoeveel maal groter wordt dan de snelheid?
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.4\textwidth, angle=0]{massa_op_tafel}
+\includegraphics[width=0.4\textwidth, angle=0]{dyn/exercises/massa_op_tafel}
 \end{center}
 \end{figure}
 
-\item Een blokje op een wrijvingsloze tafel beschrijft een ECB met frequentie $f$ en snelheid $v$ doordat het
+\end{exercise}
+
+\begin{exercise} Een blokje op een wrijvingsloze tafel beschrijft een ECB met frequentie $f$ en snelheid $v$ doordat het
 vastgemaakt is aan een koordje dat door een gaatje in de tafel gaat en waaraan een massa is verbonden die door de zwaartekracht naar beneden wordt getrokken. Hoeveel maal groter is de snelheid van het blokje als het met een tweemaal zo grote frequentie ronddraait? Toon je antwoord aan.
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.4\textwidth, angle=0]{massa_op_tafel}
+\includegraphics[width=0.4\textwidth, angle=0]{dyn/exercises/massa_op_tafel}
 \end{center}
 \end{figure}
 
 
 
-\item Twee treinen met dezelfde massa nemen een bocht met een even grote straal. De snelheden zijn respectievelijk $60~\rm km/h$ en
+\end{exercise}
+
+\begin{exercise} Twee treinen met dezelfde massa nemen een bocht met een even grote straal. De snelheden zijn respectievelijk $60~\rm km/h$ en
 $180~\rm km/h$ in de bocht.
 \begin{enumerate}
 \item \textit{Wat} levert de middelpuntzoekende kracht? Op
@@ -561,5 +608,6 @@ $180~\rm km/h$ in de bocht.
 \end{enumerate}
 
 
+\end{exercise}
 
-\end{enumerate}
+\end{document}
