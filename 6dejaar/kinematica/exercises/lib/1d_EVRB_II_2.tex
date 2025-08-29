@@ -1,0 +1,30 @@
+
+\begin{exercise}
+% !TEX root = ../main.tex
+
+
+[\SI{80}{\percent} (b)] Een trein rijdt tegen een snelheid van \SI{72}{km/h} en remt met een versnelling waarvan de grootte \SI{1,0}{m/s^2} bedraagt. Na hoeveel tijd komt de trein tot stilstand en welke afstand wordt er tijdens dit afremmen afgelegd?
+
+\begin{oplossing}
+    % \item[gegeven]$v_0=\SI{20}{m/s}\newline $a=\SI{-1,0}{m/s^2}
+    % \item[gevraagd]$t$, $x$
+    % \item[oplossing]
+    Aangezien er per seconde een snelheid van \SI{1,0}{m/s} van de beginsnelheid afgaat, vinden we de tijd die nodig is voor het remmen, door de beginsnelheid te delen door de versnelling. Dat is namelijk de tijd die nodig is voor de trein om tot stilstand te komen:
+    \begin{eqnarray*}
+        v&=&0\\
+        &\Updownarrow&\\
+        v_0+at&=&0\\
+        &\Updownarrow&\\
+        t&=&-\frac{v_0}{a}
+    \end{eqnarray*}
+    Invullen van de gegevens levert een tijd van $20\rm\,s$. De afgelegde afstand gedurende het remmen vinden we nu met de plaatsfunctie. We kennen de benodigde tijd, die we in de plaatsfunctie invullen.\footnote{Een andere mogelijkheid is vertrekken met $x=\overline{v}t$}
+    \begin{eqnarray*}
+        x&=&v_0t+\frac{1}{2}at^2\\
+        &=&v_0\left(-\frac{v_0}{a}\right)+\frac{1}{2}a\left(-\frac{v_0}{a}\right)^2\\
+        &=&-\frac{v_0^2}{a}+\frac{v_0^2}{2a}\\
+        &=&-\frac{v_0^2}{2a}\\
+    \end{eqnarray*}
+    Invullen van de gegevens levert een remafstand van \SI{200}{m}. 
+\end{oplossing}
+
+\end{exercise}

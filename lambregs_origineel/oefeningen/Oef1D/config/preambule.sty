@@ -9,9 +9,21 @@
 
 \usepackage[dutch]{babel}
 
-\usepackage{graphicx}
+\usepackage[draft]{graphicx}
 	\graphicspath{{./img/}{./opl/}{./config/}}
 
+
+\usepackage{graphicx}
+\usepackage{etoolbox} % for \IfFileExists
+
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \IfFileExists{#2}{%
+    \oldincludegraphics[#1]{#2}%
+  }{%
+    % silently ignore missing file
+  }%
+}	
 
 \usepackage{amssymb, amsmath, tabularx, color, hyperref, eurosym, calc}
 %\usepackage{float}
