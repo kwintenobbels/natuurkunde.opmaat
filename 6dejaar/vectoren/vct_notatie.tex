@@ -13,7 +13,7 @@ Vectoren worden grafisch voorgesteld met een pijl.
 Een vectoriële grootheid wordt genoteerd met \(\vec{z}, \vec{a}, \vec{x}, ...\). 
 Om duidelijk te maken dat het telkens om een vector gaat wordt een pijltje boven de letter geplaatst. 
 Zonder de vector te benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echte pijl afgeschoten door een boog zijn)! 
-De pijl geeft de drie variabele kenmerken weer, evenals het aangrijpingspunt.	
+De pijl geeft alle kenmerken die een vector vastleggen weer. 
 
 
 
@@ -66,10 +66,9 @@ De pijl geeft de drie variabele kenmerken weer, evenals het aangrijpingspunt.
 Aan de zin van een vector wordt wiskundig een teken gekoppeld dat afhangt van de gekozen referentie-as. 
 Vectoren in de zin van de gekozen referentie-as worden aangeduid met een plusteken, vectoren tegen de zin van de referentie-as krijgen een minteken. 
 
-De grootte van de vector wordt vaak als enkel positief aanzien (vooral in een situatie zonder referentie-as). % absolute waarde is altijd postief? Lengte van het lijnstuk is nooit negatief?
-De grootte van een vector \(\vec{z}\) wordt aangeduid met de norm $ \lVert \vec{z} \rVert $ 
-of het absolutewaardeteken
- $\lvert z \rvert $. 
+% De grootte van de vector wordt vaak als enkel positief aanzien (vooral in een situatie zonder referentie-as). % absolute waarde is altijd postief? Lengte van het lijnstuk is nooit negatief?
+De grootte van een vector \(\vec{z}\) wordt aangeduid met de norm $ \lVert \vec{z} \rVert $  of het absolutewaardeteken $\lvert z \rvert $ en is altijd positief. 
+De grootte komt immers overeen met de lengte van de vector (en een lengte is altijd positief). 
 % Wanneer er echter geen twijfel is en de grootte sowieso positief is (zoals meestal bij krachten), noteert men ook gewoon $z$. % dit zou ik weglaten
 
 
@@ -82,13 +81,16 @@ of het absolutewaardeteken
 % INSERT TIKZ PICTURE ZWAARTEKRACHT EN ROLLENDE BAL 
 
 De richting van een vector wordt weergegeven met een eenheidsvector $\vec{e}$ waarvoor $ \lVert \vec{e} \rVert = 1$. 
-Het invoeren van een eenheidsvector blijkt erg nuttig in notaties, zo kunnen alle kenmerken van een vector ook algebraïsch weergegeven worden. 
+Het invoeren van een eenheidsvector blijkt erg nuttig in notaties. 
+Hiermee kunnen alle kenmerken van een vector ook algebraïsch weergegeven worden. 
 
 Er geldt in onderstaande tekeningen dat \(\vec{a} = \pm  \lVert \vec{a} \rVert \cdot \vec{e} = +2 \cdot \vec{e} \) met aangrijpingspunt \(2\). 
 Voor de vector \(\vec{b}\) geldt \(\vec{b} = \pm  \lVert \vec{b} \rVert \cdot \vec{e} = -1 \cdot \vec{e} \) met aangrijpingspunt \(6\). 
 
 % PH DIT BESCHRIJVEN IS VEEL EENVOUDIGER MET POOLCOORDINATEN.  
 % TIKZPICTURE DIE DE EENHEIDSVECTOR ILLUSTREERT 
+
+
 
 \begin{image}
 \begin{tikzpicture}
@@ -110,9 +112,7 @@ Voor de vector \(\vec{b}\) geldt \(\vec{b} = \pm  \lVert \vec{b} \rVert \cdot \v
 	}
 
 	\draw[->, very thick] (O)--(E) node[midway, below right]{\(\vec{e}\)};
-
 	\draw[->, very thick, red] (A)--($ (A) + ({\ang}:2)$) node[midway, below right]{\(\vec{a}\)};
-	
 	\draw[->, very thick, blue] (B)--($ (B) + ({\ang}:-1)$) node[midway, below right]{\(\vec{b}\)};
 
 	\fill (O) circle (2pt);
@@ -132,5 +132,9 @@ Men noteert dit als: $\vec{c} = \vec{0}$   of  $ \lVert \vec{c} \rVert $  of   $
 Men mag niet noteren dat: $ \vec{c} = 0$  
 Linkerlid en rechterlid moeten immers beiden een scalar of beiden een vector zijn!
 \end{remark}
+
+\begin{quickquestion}
+Waarom mag je \textbf{niet} noteren dat \(\vec{c} = 0\)? 
+\end{quickquestion}
 	
 \end{document}
