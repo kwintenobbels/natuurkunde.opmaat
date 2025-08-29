@@ -98,16 +98,44 @@
 \end{exercise}
 
 \begin{exercise}
-	De snelheid van een deeltje voldoet aan $v=at$ waarin $a$ constant en negatief is. De plaats van het deeltje wordt voorgesteld door $x$. Aangenomen wordt dat $x=0\rm\,m$ op het ogenblik $t=0\rm\,s$. Welke grafiek geeft het juiste verloop van $x(t)$?
+	De snelheid van een deeltje voldoet aan $v=at$ waarin $a$ constant en negatief is. De plaats van het deeltje wordt voorgesteld door $x$. Aangenomen wordt dat $x=0\rm\,m$ op het ogenblik $t=0\rm\,s$. 
+	
+	Welke grafiek geeft het juiste verloop van $x(t)$?
 
-	To be fixed
-	\todo{Fix}
-	% \begin{multipleChoice}
-	% 	\choice{\input{../../xmPictures/30p38_a.tex}}
-	% 	\choice{\input{../../xmPictures/30p38_b.tex}}
-	% 	\choice[correct]{\input{../../xmPictures/30p38_c.tex}}
-	% 	\choice{\input{../../xmPictures/30p38_d.tex}}
-	% \end{multipleChoice}
+	\begin{multipleChoice}
+		\choice{
+			\begin{tikzpicture}[scale=0.5]
+			  \draw[->] (0,0) -- (0,3) node[left]{$x$};
+			  \draw[->] (0,0) -- (4,0) node[right]{$t$};
+			  \node[below left] at (0,0) {$O$};
+			  \draw[blue,thick, domain=0:3.3, samples=100] plot (\x,{2*\x -0.5*\x*\x});
+			\end{tikzpicture}
+		}
+		\choice{
+			\begin{tikzpicture}[scale=0.5]
+				\draw[->] (0,0) -- (0,3) node[left]{$x$};
+				\draw[->] (0,0) -- (3,0) node[right]{$t$};
+				\node[below left] at (0,0) {$O$};
+				\draw[blue,thick, domain=0:2.2, samples=100] plot (\x,{0.4*\x*\x});
+			\end{tikzpicture}
+		}
+		\choice[correct]{
+			\begin{tikzpicture}[scale=0.5]
+			  \draw[->] (0,0) -- (0,3) node[left]{$x$};
+			  \draw[->] (0,2.5) -- (3.5,2.5) node[right]{$t$};
+			  \node[left] at (0,2.5) {$O$};
+			  \draw[blue,thick, domain=0:3, samples=100] plot (\x,{2.5 -0.3*\x*\x});
+			\end{tikzpicture}
+		}
+		\choice{
+			\begin{tikzpicture}[scale=0.5]
+				\draw[->] (0,0) -- (0,3) node[left]{$x$};
+				\draw[->] (0,0) -- (3.5,0) node[right]{$t$};
+				\node[below left] at (0,0) {$O$};
+				\draw[blue,thick, domain=0:3, samples=100] plot (\x,{2*\x -0.3*\x*\x});
+			\end{tikzpicture}	
+		}
+	\end{multipleChoice}
 \end{exercise}
 
 \begin{exercise}
