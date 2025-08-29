@@ -8,19 +8,42 @@
 	\xmtitle{De snelheid}{}
     \xmsource\xmuitleg
 
-Een voorwerp heeft snelheid als het beweegt, er is een verandering van de positie in de tijd.
-De snelheidsvector grijpt aan op het bewegend voorwerp en wijst in de zin van de ogenblikkelijke beweging, dat is rakend aan de baan dat het voorwerp maakt. % bewijs hiervoor van Bart kan toegevoegd worden
-In animaties lijkt het alsof de snelheidsvector aan de positievector 'trekt'. Bezie hiervoor animaties te vinden op https://www.hansbekaert.be/fysica/new/applets6.html.
+
+\sisetup{per-mode=symbol} %TEST VOOR DE SI EENHEDEN 
+
+% DE VARIABELEN VOOR DE GRAFIEK VAN DE ZEILBOOT 
+\pgfmathsetmacro{\at}{5}   \pgfmathsetmacro{\ax}{30}
+\pgfmathsetmacro{\bt}{10}  \pgfmathsetmacro{\bx}{45}
+\pgfmathsetmacro{\ct}{15}  \pgfmathsetmacro{\cx}{20}
+\pgfmathsetmacro{\dt}{30}  \pgfmathsetmacro{\dx}{0}
+\pgfmathsetmacro{\et}{45}  \pgfmathsetmacro{\ex}{-40}
+
+
+
+
+Een voorwerp in beweging heeft een snelheid. 
+De ervaring leert dat hoe groter de snelheid (in de auto, op je fiets, ...) hoe groter de verplaatsing is op een bepaald tijdsinterval. 
+Als je fietst aan \SI{30}{\kilo\meter\per\hour} leg je op een uur \SI{30}{km} af. 
+Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op een uur maar \SI{5}{km}. 
+Met behulp van de plaatsfunctie kan de snelheid van een voorwerp erg nauwkeurig bepaalt worden. 
+
+
+% Een voorwerp heeft snelheid als het beweegt, er is een verandering van de positie in de tijd.
+% De snelheidsvector grijpt aan op het bewegend voorwerp en wijst in de zin van de ogenblikkelijke beweging, dat is rakend aan de baan dat het voorwerp maakt. % bewijs hiervoor van Bart kan toegevoegd worden
+% In animaties lijkt het alsof de snelheidsvector aan de positievector 'trekt'. Bezie hiervoor animaties te vinden op https://www.hansbekaert.be/fysica/new/applets6.html.
+
 
 
 \subsection*{Snelheid bij ééndimensionale bewegingen}
 
 % gemiddelde snelheid als je een rondje loopt is nu nul; dat moet miss benoemd worden 
 
-Als een voorwerp op een rechte lijn beweegt (1D), dan valt de beweegrichting en dus ook die van de snelheidsvector samen met de richting van die lijn. 
+% Als een voorwerp op een rechte lijn beweegt (1D), dan valt de beweegrichting en dus ook die van de snelheidsvector samen met de richting van die lijn.  % dit weten ze nog niet...? 
+% Bovenstaande zin is erg moeilijk; gemiddelde vector is eerder een scalar dan een vector. 
 
 De tijd nodig voor een bepaalde verplaatsing geeft aanleiding tot de \textit{gemiddelde snelheid}. 
 
+% hieronder gedefinieerd als een scalar --> niet helemeel eenduidig dus momenteel. 
 
 \begin{definition}
 	
@@ -31,7 +54,14 @@ De gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen w
 De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$. 
 \end{definition}
 
-In de figuur is de gemiddelde snelheid van de auto tussen de tijdstippen $t_1$ en $t_2$ gelijk aan $\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{40\rm\,m-50\rm\,m}{20\rm\,s-10\rm\,s}=-1\rm\,m/s$. Als de snelheid negatief is betekent dit dat de auto achteruit rijdt.
+
+% REKENT AUTOMATISCH IN DE TEKST 
+\pgfmathsetmacro{\deltatba}{\bt - \at}
+\pgfmathsetmacro{\deltaxba}{\bx - \ax}
+\pgfmathsetmacro{\vbarba}{\deltaxba / \deltatba}
+In het traject van de zeilboot is de gemiddelde snelheid van de boot tussen de tijdstippen $t_1$ en $t_2$ gelijk aan 
+$\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{\bx}{\meter} - \SI{\ax}{\meter}}{\SI{\bt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxba}{\meter}}{\SI{\deltatba}{\meter}} = \SI{\vbarba}{\meter\per\second}$. 
+Als de snelheid negatief is betekent dit dat de auto achteruit rijdt.
 
 
 
@@ -46,15 +76,297 @@ Als een raket opstijgt vanuit stilstand is de snelheid duidelijk groter dan nul.
 \end{denkvraag*}
 
 
-`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' Dat \textit{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gemiddelde snelheid over het tijdsinterval dat het sensortje op je wiel nodig heeft om één omwenteling te maken. Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van één omwenteling. Als je plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
-\begin{image}
+`Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' 
+Dat \textit{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gemiddelde snelheid over het tijdsinterval dat het sensortje op je wiel nodig heeft om één omwenteling te maken. 
+Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van één omwenteling. 
+Als je plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. 
+Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
 
-\includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
-\end{image}
-\captionof{figure}{Stuiterende tennisbal}
 
-Hoe kan dit probleem opgelost worden? Op de stroboscopische foto van de stuiterende tennisbal is te zien dat de bal bovenaan trager beweegt dan wanneer hij de grond nadert. Bovenaan liggen de beelden immers dichter bij elkaar zodat de tennisbal minder afstand aflegt in de tijdsspanne tussen twee opeenvolgende opnames. 
-Deze kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid of een grootte gaat.} informatie die levert echter opnieuw gemiddelde snelheid en niet zomaar de ogenblikkelijke snelheid. De tennisbal verandert immers nog van snelheid tussen twee opeenvolgende opnames. Door de frequentie\footnote{Frequentie is een grootheid die aangeeft hoeveel cyclussen er per seconde worden doorlopen. Hier gaat het dus over het aantal beelden dat per seconde wordt gemaakt. De eenheid van frequentie is $\rm\,s^{-1}$ oftewel Hz (de Hertz).} waarmee de foto's worden genomen op te drijven, krijgen we een accurater beeld van de snelheid die de tennisbal op een gegeven moment heeft. De tijdsintervallen zijn nu immers korter zodat de bal minder van snelheid kan veranderen gedurende de intervallen en zodoende de gemiddelde snelheid een indicatie wordt van de ogenblikkelijke snelheid. De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval. Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \emph{limiet} van de gemiddelde snelheid over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
+% \begin{image}
+% \includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
+% \end{image}
+% \captionof{figure}{Stuiterende tennisbal}
+
+
+
+% % ------------------
+% Hoe kan dit probleem opgelost worden? Op de stroboscopische foto van de stuiterende tennisbal is te zien dat de bal bovenaan trager beweegt dan wanneer hij de grond nadert. 
+% Bovenaan liggen de beelden immers dichter bij elkaar zodat de tennisbal minder afstand aflegt in de tijdsspanne tussen twee opeenvolgende opnames. 
+% Deze kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid of een grootte gaat.} informatie die levert echter opnieuw gemiddelde snelheid en niet zomaar de ogenblikkelijke snelheid. 
+% De tennisbal verandert immers nog van snelheid tussen twee opeenvolgende opnames. 
+% Door de frequentie\footnote{Frequentie is een grootheid die aangeeft hoeveel cyclussen er per seconde worden doorlopen. 
+% Hier gaat het dus over het aantal beelden dat per seconde wordt gemaakt. 
+% De eenheid van frequentie is $\rm\,s^{-1}$ oftewel Hz (de Hertz).} waarmee de foto's worden genomen op te drijven, krijgen we een accurater beeld van de snelheid die de tennisbal op een gegeven moment heeft. 
+% De tijdsintervallen zijn nu immers korter zodat de bal minder van snelheid kan veranderen gedurende de intervallen en zodoende de gemiddelde snelheid een indicatie wordt van de ogenblikkelijke snelheid. 
+% De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval.
+% Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \textit{limiet} van de gemiddelde snelheid over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
+% % ------------------
+
+
+
+
+
+Hoe kan dit probleem opgelost worden? 
+Om de ogenblikkelijke snelheid op \(t_1 = \SI{\at}{\second}\) te kennen, lijk het eerste (en misschien wel enige...) idee om te vertrekken van de gemiddelde snelheid tussen \(t_2\) en \(t_2\) die hierboven werd berekend. 
+Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de snelheid op \(t_1 = \at\). 
+
+\[
+\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
+\]
+
+
+% ENKEL T1 EN T2 OP EEN RECHTE 
+\begin{image}[\textwidth]
+	\begin{tikzpicture}
+	\begin{axis}[
+		axis x line=bottom,
+		axis y line=none,       % no vertical axis
+		axis line style={->},
+		xmin=-50, xmax=55,    % position axis
+		ymin=-1, ymax=3,        % enough room for icons + labels
+		width=14cm, height=4cm,
+		xlabel={Positie--as (in meter)},
+		xtick={-50,-40,...,50},
+		xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}}, % gaf eerst in beduidende cijfers 
+		% yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	]
+	
+	% --- Ships at given positions ---
+	\node[scale=1,xscale=-1]  (ship1) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+	\node[scale=1,xscale=-1] (ship2) at (axis cs:\bx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+	
+	% --- Time labels above ships ---
+	\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.2) {\small $t_1=\SI{\at}{\second}$};
+	\node[draw, rectangle, inner sep=1pt] (t2) at (axis cs:\bx,2.2) {\small $t_2=\SI{\bt}{\second}$};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis x line=bottom,
+			axis y line=left,
+			axis line style={->},
+			xlabel={tijd (in seconden)},
+			ylabel={positie (in meter)},
+			xmin=0, xmax=50,
+			ymin=-50, ymax=65,
+			xtick={0,10,...,50},
+			ytick={-50,-40,...,50},
+			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
+			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+			grid=both,
+			width=15cm, height=10cm,
+		]
+	
+		% --- The position–time curve ---
+		\addplot[blue, thick, smooth, tension=0.5] coordinates{
+			(\at,\ax)
+			(\bt,\bx)
+		};
+	
+		% --- Ships as markers at data points ---
+		\node[opacity=0.4] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[opacity=0.4] at (axis cs:\bt,\bx) {\includegraphics[width=1cm]{schip_icoon}};
+	
+		% --- Time labels above each ship ---
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_1=\SI{\at}{\second}$};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\bt,\bx+10) {\small $t_2=\SI{\bt}{\second}$};
+	
+		% --- DeltaX brace ---
+		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
+			(axis cs:\bt,\ax) -- (axis cs:\bt,\bx) 
+			node[midway, right, xshift=2pt] {\small $\Delta x$};
+	
+		% --- DeltaT brace ---
+		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, cyan, thick] 
+			(axis cs:\at,\ax) -- (axis cs:\bt,\ax) 
+			node[midway, below, yshift=-2pt] {\small $\Delta t$};
+	
+		\end{axis}
+	\end{tikzpicture}
+\end{image}	
+\captionof{figure}{De positie van de zeilboot voor tijd \(t_1\) en \(t_2\)}
+
+% TODO VOOR VOLGEND JAAR --> DE FUNTIE BENADERD NU TEVEEL EEN RECHTE DOOR PLOT; MOOI ALS JE DIT DIFFERENTIECOETIENT ALTIJD ALS EEN VERBIENDINGSRECHTE KAN AANDUIDEN BIJV OP EEN SINUS. 
+% Hier dan helemaal dezelfde redenering als bij de afgeleide aanbrengen van wiskunde 
+
+
+% REKENT AUTOMATISCH IN DE TEKST 
+\pgfmathsetmacro{\lt}{7}
+\pgfmathsetmacro{\lx}{38}
+\pgfmathsetmacro{\deltatla}{\lt - \at}
+\pgfmathsetmacro{\deltaxla}{\lx - \ax}
+\pgfmathsetmacro{\vbarla}{\deltaxla / \deltatla}
+Indien niet met \(t_2 = \bt\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{8}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
+Eenvoudige berekening levert dat de gemiddelde snelheid tussen \(t_1=\ax\) en \(t_l=\lt\) gegeven wordt door 
+
+\[
+\overline{v}=\frac{x_2-x_l}{t_2-t_l}=\frac{\SI{\lx}{\meter} - \SI{\ax}{\meter}}{\SI{\lt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxla}{\meter}}{\SI{\deltatla}{\meter}} = \SI{\vbarla}{\meter\per\second}
+\]
+
+Op de plaatsgrafiek schuift de zeilboot in de richting van \(t_1\): 
+
+\begin{image}[\textwidth]
+	\begin{tikzpicture}
+	\begin{axis}[
+		axis x line=bottom,
+		axis y line=none,       % no vertical axis
+		axis line style={->},
+		xmin=-50, xmax=55,    % position axis
+		ymin=-1, ymax=3,        % enough room for icons + labels
+		width=14cm, height=4cm,
+		xlabel={Positie--as (in meter)},
+		xtick={-50,-40,...,50},
+		xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}}, % gaf eerst in beduidende cijfers 
+		% yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	]
+	
+	% --- Ships at given positions ---
+	\node[scale=1,xscale=-1]  (ship1) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+	\node[scale=1,xscale=-1] (ship2) at (axis cs:\lx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+	
+	% --- Time labels above ships ---
+	\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.0) {\small $t_1=\SI{\at}{\second}$};
+	\node[draw, rectangle, inner sep=1pt] (tl) at (axis cs:\lx,2.5) {\small $t_l=\SI{\lt}{\second}$};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis x line=bottom,
+			axis y line=left,
+			axis line style={->},
+			xlabel={tijd (in seconden)},
+			ylabel={positie (in meter)},
+			xmin=0, xmax=50,
+			ymin=-50, ymax=65,
+			xtick={0,10,...,50},
+			ytick={-50,-40,...,50},
+			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
+			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+			grid=both,
+			width=15cm, height=10cm,
+		]
+	
+		% --- The position–time curve ---
+		\addplot[blue, thick, smooth, tension=0.5] coordinates{
+			(\at,\ax)
+			(\lt,\lx)
+		};
+	
+		% --- Ships as markers at data points ---
+		\node[opacity=0.4] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[opacity=0.4] at (axis cs:\lt,\lx) {\includegraphics[width=1cm]{schip_icoon}};
+	
+		% --- Time labels above each ship ---
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_1=\SI{\at}{\second}$};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\lt,\lx+10) {\small $t_l=\SI{\lt}{\second}$};
+	
+		% --- DeltaX brace ---
+		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
+			(axis cs:\lt,\ax) -- (axis cs:\lt,\lx) 
+			node[midway, right, xshift=2pt] {\small $\Delta x$};
+	
+		% --- DeltaT brace ---
+		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, cyan, thick] 
+			(axis cs:\at,\ax) -- (axis cs:\lt,\ax) 
+			node[midway, below, yshift=-2pt] {\small $\Delta t$};
+	
+		\end{axis}
+	\end{tikzpicture}
+\end{image}	
+\captionof{figure}{De positie van de zeilboot voor tijd \(t_1\) en \(t_l\)}
+
+
+De gemiddelde snelheid \(\bar{v} = \frac{x_l - x_1}{t_l-t_1}\) is een \textit{betere} benadering voor de ogenblikkelijke snelheid op \(t_a\). 
+Het is nog steeds een gemiddelde snelheid! 
+De lezer raadde het waarschijnlijk al...
+\pgfmathsetmacro{\mt}{6}
+\pgfmathsetmacro{\mx}{34}
+\pgfmathsetmacro{\deltatma}{\mt - \at}
+\pgfmathsetmacro{\deltaxma}{\mx - \ax}
+\pgfmathsetmacro{\vbarma}{\deltaxma / \deltatma}
+Door de gemiddelde snelheid te berekenen voor \(t_m\) wordt de benadering voor de gemiddelde snelheid nog beter... 
+Op de grafiek komen de twee schapen erg dicht bij elkaar... 
+
+\[
+\overline{v}=\frac{x_2-x_m}{t_2-t_m}=\frac{\SI{\mx}{\meter} - \SI{\ax}{\meter}}{\SI{\mt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxma}{\meter}}{\SI{\deltatma}{\meter}} = \SI{\vbarma}{\meter\per\second}
+\]
+\begin{image}[\textwidth]
+	\begin{tikzpicture}
+	\begin{axis}[
+		axis x line=bottom,
+		axis y line=none,       % no vertical axis
+		axis line style={->},
+		xmin=-50, xmax=55,    % position axis
+		ymin=-1, ymax=3,        % enough room for icons + labels
+		width=14cm, height=4cm,
+		xlabel={Positie--as (in meter)},
+		xtick={-50,-40,...,50},
+		xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}}, % gaf eerst in beduidende cijfers 
+		% yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	]
+	
+	% --- Ships at given positions ---
+	\node[scale=1,xscale=-1]  (ship1) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+	\node[scale=1,xscale=-1] (ship2) at (axis cs:\mx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+	
+	% --- Time labels above ships ---
+	\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.0) {\small $t_1=\SI{\at}{\second}$};
+	\node[draw, rectangle, inner sep=1pt] (tl) at (axis cs:\mx,2.5) {\small $t_l=\SI{\mt}{\second}$};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis x line=bottom,
+			axis y line=left,
+			axis line style={->},
+			xlabel={tijd (in seconden)},
+			ylabel={positie (in meter)},
+			xmin=0, xmax=50,
+			ymin=-50, ymax=65,
+			xtick={0,10,...,50},
+			ytick={-50,-40,...,50},
+			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
+			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+			grid=both,
+			width=15cm, height=10cm,
+		]
+	
+		% --- The position–time curve ---
+		\addplot[blue, thick, smooth, tension=0.5] coordinates{
+			(\at,\ax)
+			(\mt,\mx)
+		};
+	
+		% --- Ships as markers at data points ---
+		\node[opacity=0.4] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[opacity=0.4] at (axis cs:\mt,\mx) {\includegraphics[width=1cm]{schip_icoon}};
+	
+		% --- Time labels above each ship ---
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_1=\SI{\at}{\second}$};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\mt,\mx+10) {\small $t_l=\SI{\mt}{\second}$};
+	
+		% --- DeltaX brace ---
+		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
+			(axis cs:\mt,\ax) -- (axis cs:\mt,\mx) 
+			node[midway, right, xshift=2pt] {\small $\Delta x$};
+	
+		% --- DeltaT brace ---
+		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, cyan, thick] 
+			(axis cs:\at,\ax) -- (axis cs:\mt,\ax) 
+			node[midway, below, yshift=-2pt] {\small $\Delta t$};
+	
+		\end{axis}
+	\end{tikzpicture}
+\end{image}	
+\captionof{figure}{De positie van de zeilboot voor tijd \(t_1\) en \(t_m\)}
+
+De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. 
+Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval.
+Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \textbf{limiet van de gemiddelde snelheid} over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
 
 \begin{definition}
 	
