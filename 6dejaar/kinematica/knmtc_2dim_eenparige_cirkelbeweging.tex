@@ -1,151 +1,94 @@
 \documentclass{ximera}
-\input{../preamble}
+\input{../../preamble}
 
 \addPrintStyle{..}
 
 \begin{document}
 	\author{Bart Lambregs}
-	\xmtitle{Eenparige cirkelbeweging}{}
+	\xmtitle{De eenparig cirkelvormige beweging}{}
     \xmsource\xmuitleg
 
+De cirkelbeweging is op het eerste zicht misschien een zeer eenvoudige beweging maar wel alom tegenwoordig. Denk maar aan een tol, een kermisattractie zoals een carrousel, wielen, planeetbanen of aan het nemen van een bocht met de auto of de fiets. Vandaar dat het een toch een erg belangrijke beweging is. Wij bestuderen een eenparige cirkelvormige beweging (ECB). Dat betekent dat de baan van het object een cirkel is en dat de grootte van de snelheid waarmee de baan wordt doorlopen, constant is.
 
+\subsection{Enkele begrippen}
 
+Om een cirkelbeweging te beschrijven, hebben we enkele begrippen nodig die je eventueel nog onbekend zijn. Zo is er de \emph{frequentie}. Het is algemeen het aantal trillingen of cyclussen van een periodieke beweging die per seconde worden doorlopen. Specifiek voor de cirkelbeweging is de frequentie dan het aantal keren dat de cirkel doorlopen wordt per tijdseenheid. De frequentie krijgt het symbool $f$ en heeft als eenheid de Hertz, $[f]=\rm Hz=s^{-1}$. Het begrip \emph{periode} gebruiken we voor de tijdsduur die nodig is voor het doorlopen van \'e\'en cyclus. Het symbool is $T$ en de eenheid seconde, $[T]=s$. Het aantal cyclussen dat in de periode wordt doorlopen is \'e\'en zodat de volgende relatie tussen de frequentie en de periode bestaat.
+\begin{equation*}
+	f=\frac{1}{T}
+\end{equation*}
+Als laatste hebben we nog het begrip \emph{hoeksnelheid}. 
+\begin{image}
+	\includegraphics[width=0.35\textwidth]{ecb_hoeksnelheid}
+\end{image}
+Verschillende punten op je fietswiel hebben verschillende snelheden als hun afstand tot het centrum verschilt. Het ventieldopje moet immers in eenzelfde tijd meer afstand afleggen dat het sensortje van je snelheidsmeter. Toch bestaat het wiel uit \'e\'en geheel. Als je naar de omwentelingshoek kijkt die een straal vanuit het centrum door een punt op het wile maakt, dan is die voor alle punten gelijk. Hoe sneller het wiel draait, hoe groter ook de omwentelingshoek is die een straal gemaakt heeft. Daarom defini\"eren we de hoeksnelheid $\omega$ als de verandering van de omwentelingshoek tot de benodigde tijd.\footnote{De letter $\omega$ is de kleine letter van $\Omega$ en de laatste letter in het Griekse alfabet. Spreek $\omega$ uit als omega. Een $\omega$ is geen w, zoals ook een w geen $\omega$ is. O wee ($\omega$?) als je je op het examen in juni vergist \ldots}
+\begin{equation*}
+	\omega=\frac{\Delta\theta}{\Delta t}
+\end{equation*}
+De eenheid is radialen per seconde, $[\omega]=\rm rad/s$. Aangezien een volledige omwentelingshoek $2\pi$ bedraagt en de tijd nodig om rond te gaan de periode is, geldt
+\begin{equation}
+	\omega=\frac{2\pi}{T}=2\pi f\label{hoeksnelheid}
+\end{equation}
 
-	%%%\section{Enkele begrippen}
+\subsection{Kinematica van de cirkelbeweging}
 
-	\subsection{Plaats, verplaatsing, afgelegde weg}
-	
-	Om aan een vectoriële snelheid te komen, voeren we een plaatsvector $\vec{r}$ in. Deze kan van de tijd afhangen en kunnen we met behulp van de eenheidsvectoren $\vec{e}_x$ en $\vec{e}_y$ schrijven als
-	\begin{equation*}
-	 \vec{r}=x\cdot\vec{e}_x+y\cdot\vec{e}_y.
-	\end{equation*}
-	De tijdsafhankelijkheid kunnen we expliciet weergeven door $x(t)$ en $y(t)$ te gebruiken i.p.v. $x$ en $y$. De functies $x(t)$ en $y(t)$ noemen we de \emph{coördinaat\-functies}. Door de plaats met een vector te beschrijven, kunnen we het begrip verplaatsing $\Delta x$ ook gemakkelijk en analoog uitbreiden naar twee dimensies. De verplaatsing
-	\begin{equation*}
-	\Delta\vec{r}=\vec{r}_2-\vec{r}_1
-	\end{equation*}
-	is nu immers ook een vector die naast de afstand in vogelvlucht tussen twee punten, ook ge\"oriënteerd is. Het is natuurlijk belangrijk in welke richting die afstand wordt afgelegd.
-	\begin{image}
-	
-	\includegraphics[width=0.4\textwidth]{plaatsvector}
-	\includegraphics[width=0.4\textwidth]{afgelegdeweg_verplaatsing}
-	\end{image}
-	\captionof{figure}{Het verschil tussen afgelegde weg en verplaatsing}
-	Merk op dat de begrippen verplaatsing en afgelegde weg niet hetzelfde zijn. De afgelegde weg hangt af van de gevolgde baan en is de totale afgelegde afstand terwijl de verplaatsing enkel van begin- en eindpunt afhangt en een vectorgrootheid is.
-	
-	Naast de coördinaatfuncties $x(t)$ en $y(t)$ is er ook de vergelijking van de baan $y(x)$. We bekomen deze door de tijd uit de coördinaatfuncties te elimineren\footnote{Dit komt neer op de inverse $t(x)$ van $x(t)$ te vinden en deze te substitueren in $y(t)$. Dus $y(x)=y(t(x))$.}. De grafiek van deze baanvergelijking geeft ons het beeld van de baan maar zegt niets over de snelheid waarmee het object over deze baan beweegt. Daarvoor hebben we de afhankelijkheid van de tijd nodig.
-	
-	\subsection{Snelheid}
-	
-	%\begin{wrapfigure}[9]{R}{0.35\textwidth}
-	%
-	%\includegraphics[width=0.34\textwidth]{snelheidsvector}
-	%\end{wrapfigure}
-	Analoog aan de snelheid in \'e\'en dimensie, kunnen we in meerdere dimensies de snelheid definiëren als de afgeleide -- nu van de plaatsvector. De snelheid is dan opnieuw een vector:\footnote{De definitie van een afgeleide van een vector is evenzeer met een limiet. We maken gebruik van de uitdrukkingen $\vec{r}(t+\Delta t)=x(t+\Delta t)\vec{e}_x+y(t+\Delta t)\vec{e}_y$ en $\vec{r}(t)=x(t)\vec{e}_x+y(t)\vec{e}_y$.\begin{eqnarray*}
-	\vec{v}=\frac{d\vec{r}}{dt}&=&\lim_{\Delta t\to 0}\frac{\vec{r}(t+\Delta t)-\vec{r}(t)}{\Delta t}\\
-	&=&\lim_{\Delta t\to 0}\frac{[x(t+\Delta t)\vec{e}_x+y(t+\Delta t)\vec{e}_y]-[x(t)\vec{e}_x+y(t)\vec{e}_y]}{\Delta t}\\
-	&=&\lim_{\Delta t\to 0}\frac{[x(t+\Delta t)-x(t)]\vec{e}_x+[y(t+\Delta t)-y(t)]\vec{e}_y}{\Delta t}\\
-	&=&\lim_{\Delta t\to 0}\left(\frac{x(t+\Delta t)-x(t)}{\Delta t}\right)\vec{e}_x+\lim_{\Delta t\to 0}\left(\frac{y(t+\Delta t)-y(t)}{\Delta t}\right)\vec{e}_y\\
-	&=&\frac{dx}{dt}\vec{e}_x+\frac{dy}{dt}\vec{e}_y%\\&=&v_x\vec{e}_x+v_y\vec{e}_y
-	\end{eqnarray*}}
-	\begin{eqnarray*}
-	\vec{v}=\frac{d\vec{r}}{dt}=\frac{d}{dt}\left(x\cdot\vec{e}_x+y\cdot\vec{e}_y\right)=\frac{dx}{dt}\vec{e}_x+\frac{dy}{dt}\vec{e}_y%=v_x\vec{e}_x+v_y\vec{e}_y
-	\end{eqnarray*}
-	De eenheidsvectoren $\vec{e}_x$ en $\vec{e}_y$ veranderen niet in de tijd zodat we die buiten de afgeleide hebben kunnen brengen. We zien dat de snelheidsvector dus te ontbinden is in componenten waarbij de componenten gewoonweg de snelheden van de afzonderlijke coördinaten zijn. 
-	\begin{eqnarray*}
-	\vec{v}=v_x\vec{e}_x+v_y\vec{e}_y\quad\mathrm{met}\quad v_x=\frac{dx}{dt},\,v_y=\frac{dy}{dt}
-	\end{eqnarray*}
-	
-	%\begin{image}
-	%
-	%%\includegraphics[width=0.38\textwidth]{gem_snelheidsvector}
-	%%\hspace{1cm}
-	%\includegraphics[width=0.4\textwidth]{snelheidsvector}
-	%\captionof{figure}{De snelheidsvector is te ontbinden in componenten}
-	%\end{image}
-	%%%%\newline
-	
-	%%\newpage
-	
-	\begin{eigenschap}
-	De snelheidsvector is rakend aan de baan.
-	\end{eigenschap}
-	%\begin{image}
-	%
-	%\includegraphics[width=0.4\textwidth]{snelheidrakend}
-	%\captionof{figure}{De snelheid raakt aan de baan}
-	%\end{image}
-	\begin{proof}
-	We kunnen dit bewijzen met de kettingregel, toegepast op de functie $y(t)=y(x(t))$.
-	\begin{eqnarray*}
-	 \frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}\Leftrightarrow\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{v_y}{v_x}
-	\end{eqnarray*}
-	Inderdaad, $\frac{dy}{dx}$ is de helling van de baan en deze valt samen met de helling die de snelheidsvector maakt $\frac{v_y}{v_x}$.
-	\end{proof}
-	
-	\subsection{Versnelling}
-	
-	Ook de versnelling definieren we analoog; als afgeleide van de snelheid.
-	\begin{eqnarray*}
-	\vec{a}=\frac{d\vec{v}}{dt}=\frac{dv_x}{dt}\vec{e}_x+\frac{dv_y}{dt}\vec{e}_y=a_x\vec{e}_x+a_y\vec{e}_y
-	\end{eqnarray*}
-	Merk op dat er een versnelling kan zijn wanneer de snelheidsvector van grootte verandert maar \'o\'ok wanneer de snelheidsvector van richting verandert! Als de snelheidsvector immers van richting verandert, veranderen zijn coördinaten $v_x$ en/of $v_y$. Merk bovendien op dat de versnelling niet noodzakelijk samen hoeft te vallen met de baan \ldots
-	\begin{image}
-	
-	\includegraphics[width=0.4\textwidth]{versnellingsvector}
-	\end{image}
-	\captionof{figure}{De versnelling raakt niet noodzakelijk aan de baan}
-	
-	%%\newpage
-	
-	%oefening baanvergelijking, enz.
-	
-	\begin{enumerate}
-	\item[\textbf{Opdracht}]\textsf{De positie van een deeltje als functie van de tijd wordt beschreven door
-	\begin{displaymath}
-	\vec{r}=bt\vec{e}_x+(c-dt^2)\vec{e}_y
-	\end{displaymath}
-	met $b=2,00\rm\,m/s$, $c=5,00\rm\,m$ en $d=1,00\rm\,m/s^2$.
-	\begin{enumerate}
-	\item Druk $y$ uit in functie van $x$. Hoe ziet de baan eruit?
-	\item Bepaal de snelheidsvector.
-	\item Op welk tijdstip ($t>0$) staat de snelheid loodrecht op de plaatsvector?
-	\end{enumerate}
-	\item[\textit{oplossing}]
-	\begin{enumerate}
-	\item We moeten dus de baanvergelijking geven. Dit doen we door de tijd uit te drukken i.f.v. de positie $x$ en dit te substitueren in de coördinaatvergelijking $y(t)$.
-	\begin{eqnarray*}
-	x&=&bt\Leftrightarrow t=\frac{x}{b}\\
-	&\Downarrow&\\
-	y&=&c-dt^2=c-\frac{d}{b^2}x^2
-	\end{eqnarray*}
-	Dit is een bergparabool met top $(0,c)=(0,5,00\rm\,m)$
-	\item De componenten van de snelheid zijn:
-	\begin{eqnarray*}
-	v_x&=&\frac{dx}{dt}=b\\
-	v_y&=&\frac{dy}{dt}=-2dt
-	\end{eqnarray*}
-	zodat de snelheid(svector) wordt gegeven door
-	\begin{eqnarray*}
-	\vec{v}&=&v_x\vec{e}_x+v_y\vec{e}_y\\
-	&=&b\vec{e}_x-2dt\vec{e}_y
-	\end{eqnarray*}
-	\item De rechte die de richting van de snelheid weergeeft, staat loodrecht op de rechte die de richting van de positievector weergeeft wanneer het product van de richtingscoöefficiënten gelijk is aan $-1$:
-	\begin{eqnarray*}
-	rc_{r}\cdot rc_{v}&=&-1\\
-	&\Updownarrow&\\
-	\frac{y}{x}\cdot\frac{v_y}{v_x}&=&-1\\
-	&\Downarrow&\\
-	\frac{c-dt^2}{bt}\cdot\frac{-2dt}{b}&=&-1\\
-	&\Downarrow&(t>0)\\
-	t&=&\sqrt{\frac{2cd-b^2}{2d^2}}\\
-	&=&1,73\rm\,s
-	\end{eqnarray*}
-	\end{enumerate}}
-	\end{enumerate}
-	
-	%%\newpage
-	
-	
+We beschouwen een punt dat een cirkelbeweging maakt met straal $r$. We voeren een assenstelsel in met de oorsprong in het middelpunt van de cirkel.
+\begin{image}
+	\includegraphics[width=0.4\textwidth]{ecb_positie}
+\end{image}
+Als we de omwentelingshoek $\theta$ meten vanaf de positieve $x$-as en en het tijdstip $t_0=0$ nemen, kunnen we de doorlopen omwentelingshoek als volgt in functie van de tijd schrijven.
+\begin{equation*}
+	\omega=\frac{\Delta\theta}{\Delta t}=\frac{\theta-\theta_0}{t-t_0}=\frac{\theta}{t}\quad\Rightarrow\quad\theta=\omega t
+\end{equation*}
+De co\"ordinaatfuncties vinden we dan als projecties op de $x$- en $y$-as. \todo{klopt die term coördinaatfunctie wel?}
+\begin{eqnarray*}
+	x(t)&=&r\cos\omega t\\
+	y(t)&=&r\sin\omega t
+\end{eqnarray*}
+We krijgen dan voor de plaatsvector, de snelheid en de versnelling:
+\begin{eqnarray}
+	\vec{r}&=&r\cos\omega t\cdot\vec{e}_x+r\sin\omega t\cdot\vec{e}_y\nonumber\\
+	&\Downarrow&
+	\left\{
+		\begin{array}{l}
+			v_x=\frac{dx}{dt}=-\omega r\sin\omega t\\
+			v_y=\frac{dy}{dt}=\omega r\cos\omega t
+		\end{array}
+	\right.\nonumber\\
+	\vec{v}&=&-\omega r\sin\omega t\cdot\vec{e}_x+\omega r\cos\omega t\cdot\vec{e}_y\nonumber\\
+	&\Downarrow&
+	\left\{
+		\begin{array}{l}
+			a_x=\frac{dv_x}{dt}=-\omega^2 r\cos\omega t\\
+			a_y=\frac{dv_y}{dt}=-\omega^2 r\sin\omega t
+		\end{array}
+	\right.\nonumber\\
+	\vec{a}&=&-\omega^2 r\cos\omega t\cdot\vec{e}_x-\omega^2 r\sin\omega t\cdot\vec{e}_y\nonumber\\
+	&=&-\omega^2(r\cos\omega t\cdot\vec{e}_x+r\sin\omega t\cdot\vec{e}_y)\nonumber\\
+	&\Updownarrow&\nonumber\\
+	\vec{a}&=&-\omega^2\vec{r}\label{versnelling}
+\end{eqnarray}
+Deze laatste gelijkheid is erg belangrijk. We vinden dat de versnelling steeds naar het middelpunt van de cirkel is ge\"ori\"enteerd \ldots! We noemen het bijgevolg een centripetale\footnote{Dit is niet hetzelfde als centrifugaal.} of middelpuntzoekende versnelling.
+\begin{image}
+	\includegraphics[width=0.4\textwidth]{ecb_versnelling}
+\end{image}
+Je zou dit resultaat opmerkelijk kunnen noemen aangezien de snelheid een constante grootte heeft.
+\begin{eqnarray}
+	v=\parallel\vec{v}\parallel&=&\sqrt{v_x^2+v_y^2}\nonumber\\
+	&=&\sqrt{(-\omega r\sin\omega t)^2+(\omega r\cos\omega t)^2}\nonumber\\
+	&=&\sqrt{r^2\omega^2(\sin^2\omega t+\cos^2\omega t)}\nonumber\\
+	&\Updownarrow&\nonumber\\
+	v&=&r\omega\label{snelheid}
+\end{eqnarray}
+Echter verandert de richting van de snelheid en aangezien de versnelling de verandering van de snelheid is, moet er een versnelling zijn. Deze is naar het centrum ge\"ori\"enteerd omdat een fractie van een seconde later het object -- in vergelijking met de baan die het zou afleggen moest het volgens de snelheid die het op een bepaald moment heeft, voortbewegen -- iets dichter naar het centrum moet zijn gekomen. De snelheidsvector is in grootte niet veranderd maar wel gedraaid, in de richting van het centrum. Moest bovendien de versnelling niet loodrecht op de snelheid staan, dan zou de versnelling een component volgens de snelheid hebben wat zou betekenen dat de snelheid in die richting zou moeten toenemen.
+\begin{image}
+	\includegraphics[width=0.4\textwidth]{ballnostring}
+\end{image}
+Toelichting figuur: Moest er geen versnelling naar het centrum zijn -- bv. in het geval dat een touwtje met een ronddraaiend object aan, knapt -- dan zou de snelheid niet veranderen en het object op een rechte baan in het verlengde van de snelheid met een constante snelheid voortbewegen.
 
-	
+Uit (\ref{hoeksnelheid}), (\ref{versnelling}) en (\ref{snelheid}) vinden we nog:
+\begin{equation}
+	a=r\omega^2=v\omega=\frac{v^2}{r}
+\end{equation}
+Merk op dat de snelheid een kwadratische invloed op de grootte van de versnelling heeft.
+
 \end{document}
