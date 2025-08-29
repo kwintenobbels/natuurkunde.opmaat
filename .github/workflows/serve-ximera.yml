@@ -45,11 +45,12 @@ jobs:
           XIMERA_URL: ${{ vars.XIMERA_URL }}
           XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
           # XMLATEX_OPTIONS: ${{ vars.XMLATEX_OPTIONS }}
-          XMLATEX_OPTIONS: "*tex  -j 4 -f"
+          XMLATEX_OPTIONS: "-j 4 -f"
         run: |
           ls -alrt
           # git config --global --add safe.directory "$(pwd)"
           # export COMMAND=./xmScripts/xmlatex.test
+          ./xmScripts/xmlatex bake --compile pdf -f $XMLATEX_OPTIONS
           ./xmScripts/xmlatex ghaction $XMLATEX_OPTIONS || echo NOK
           ./xmScripts/xmlatex serve $XMLATEX_OPTIONS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
