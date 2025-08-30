@@ -9,6 +9,7 @@
 %   }
 % \fi
 
+
 \begin{document}
 	\author{Bart Lambregs, Vincent Gellens}
 	\xmtitle{De positie}{}
@@ -21,13 +22,16 @@
 % ALS IETS BEWEEGT BEWEEGT DEZE VECTOR 
 % JE WILT EEN FUNCTIE DIE VOOR ELKE TIJD DE VECTOR GEEFT --> PLAATSFUNCTIE 
 
-\renewcommand{\vec}[1]{#1}
+
+% DEZE FIX WERKT NIET --> PRINT GEEN VECTORPIJLTJES MEER!! 
+% \renewcommand{\vec}[1]{#1}
 
 \subsection*{Positie en plaatsfunctie}
 
-Met een referentiestelsel kan elke plaats van een puntmassa in de ruimte worden vastgelegd met een \textbf{positie- of plaatsvector}, algemeen genoteerd door \(\vec{r}\).
+Met behulp van een referentiestelsel kan elke plaats van een puntmassa in de ruimte worden beschreven met een \textbf{positie- of plaatsvector}, algemeen genoteerd door $\vec{r}$.
 Afhankelijk van het aantal dimensies waarin de beweging beschreven wordt heeft deze plaatsvector één, twee of drie componenten volgens de gekozen assen, doorgaans \(\vec{x}\), \(\vec{y}\) en \(\vec{z}\) genaamd.
 De (scalaire) getalcomponenten van deze vectoren zijn de plaatscoördinaten \(x\),\(y\) en \(z\).
+
 
 
 \begin{image}[0.3\textwidth]
@@ -45,7 +49,7 @@ De (scalaire) getalcomponenten van deze vectoren zijn de plaatscoördinaten \(x\
 		\coordinate (X) at (\r*cos{\ang},0);
 		\coordinate (Y) at (0,\r*sin{\ang});
 	
-		\fill (A) circle (2pt) node[above right] {massapunt $A$};
+		\fill (A) circle (2pt) node[above right] {puntmassa $A$};
 	
 		\draw[->, very thick, blue] (O) -- (A) node[midway, below right] {plaatsvector $\vec{r}$};
 		\draw[->, very thick, dashed, blue] (O) -- (X) node[midway, below] {$\vec{r}_x$};
@@ -62,11 +66,20 @@ De (scalaire) getalcomponenten van deze vectoren zijn de plaatscoördinaten \(x\
 Als een puntmassa beweegt, verandert haar plaatsvector \(\vec{r}\).  
 De beweging van een puntmassa wordt beschreven door een \textit{functie} die de \textbf{plaats} \(\vec{r}\) weergeeft in functie van de \textbf{tijd}. 
 De \textbf{plaatsfunctie} \(\vec{r}\) = \(\vec{r}\)(t) geeft voor elk tijdstip \(t\) de positie \(\vec{r}\) waar de puntmassa zich bevindt. 
-Op middelbaarniveau zijn dergelijke vectorfuncties ingewikkeld om te hanteren, daarom wordt geopteerd om te werken met de tijdsafhankelijke getalcomponenten \(x(t)\),\(y(t)\) en \(z(t)\).
-Bij een ééndimensionale beweging is er slechts één daarvan nodig, namelijk \(x\). Dat is een getal, namelijk de positie op de enige coördinaatas
+In het algemeen is een dergelijke vectorfuncties ingewikkeld om te hanteren, daarom wordt er gewerkt met de tijdsafhankelijke getalcomponenten \(x(t)\),\(y(t)\) en \(z(t)\).
+Elke coordinaatsfunctie geeft voor elk moment \(t\) de coordinaat van de puntmassa volgens een welbepaalde-as. 
+Al deze componentsfuncties samen beschrijven de volledige beweging van de puntmassa. 
+
+
+Bij een ééndimensionale bewegingen is er slechts één coordinaats-as nodig om de beweging te beschrijven. 
+Dat is een scalaire grootheid, namelijk de positie op de enige coördinaatas
 % \footnote{Een coördinaatas is een as van een cartesiaans assenstelsel, met een oorsprong en een ori\"entatie.} 
 en $t$ is de variabele die symbool staat voor de tijd.
-%\footnote{In de fysica gebruiken we de wiskunde als `taal' om de wetmatigheden van de natuur in uit te drukken. Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. $x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$ maar het symbool $t$ omdat deze symbool moet staan voor de tijd. En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat de beeldwaarden van de functie nu als betekenis een positie op een co\"ordinaatas hebben.}
+\footnote{In de fysica gebruiken we de wiskunde als `taal' om de wetmatigheden van de natuur in uit te drukken. 
+Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. 
+$x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. 
+Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$ maar het symbool $t$ omdat deze symbool moet staan voor de tijd. 
+En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat de beeldwaarden van de functie nu als betekenis een positie op een coördinaatas hebben.}
 
 
 De positie op een welbepaald tijdstip $t_1$ wordt genoteerd als 
@@ -88,23 +101,22 @@ Op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ wordt weergegeven waar het sh
 % \captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
 
 
-\pgfmathsetmacro{\at}{5}
-\pgfmathsetmacro{\ax}{30}
-\pgfmathsetmacro{\bt}{10}
-\pgfmathsetmacro{\bx}{45}
-\pgfmathsetmacro{\ct}{15}
-\pgfmathsetmacro{\cx}{20}
-\pgfmathsetmacro{\dt}{30}
-\pgfmathsetmacro{\dx}{0}
-\pgfmathsetmacro{\et}{45}
+\pgfmathsetmacro{\at}{0  }
+\pgfmathsetmacro{\ax}{30 }
+\pgfmathsetmacro{\bt}{5  }
+\pgfmathsetmacro{\bx}{45 }
+\pgfmathsetmacro{\ct}{10 }
+\pgfmathsetmacro{\cx}{20 }
+\pgfmathsetmacro{\dt}{30 }
+\pgfmathsetmacro{\dx}{0  }
+\pgfmathsetmacro{\et}{45 }
 \pgfmathsetmacro{\ex}{-40}
-
 
 
 % DE ZEILBOOT OP 1 LIJN ------------ % DE ZEILBOOT OP 1 LIJN ------ % DE ZEILBOOT OP 1 LIJN 
 % DE ZEILBOOT OP 1 LIJN ------------ % DE ZEILBOOT OP 1 LIJN ------ % DE ZEILBOOT OP 1 LIJN
 % DE ZEILBOOT OP 1 LIJN ------------ % DE ZEILBOOT OP 1 LIJN ------ % DE ZEILBOOT OP 1 LIJN
-\begin{image}[0.5\textwidth]
+\begin{image}[0.8\textwidth]
 \begin{tikzpicture}
 \begin{axis}[
 	axis x line=bottom,
@@ -127,11 +139,11 @@ Op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ wordt weergegeven waar het sh
 \node[]                                (ship5) at (axis cs:\ex,0.5) {\includegraphics[width=1cm]{schip_icoon}};
 
 % --- Time labels above ships ---
-\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.2) {\small $t_1=\SI{\at}{\second}$};
-\node[draw, rectangle, inner sep=1pt] (t2) at (axis cs:\bx,2.2) {\small $t_2=\SI{\bt}{\second}$};
-\node[draw, rectangle, inner sep=1pt] (t3) at (axis cs:\cx,2.2) {\small $t_3=\SI{\ct}{\second}$};
-\node[draw, rectangle, inner sep=1pt] (t4) at (axis cs:\dx,2.2) {\small $t_4=\SI{\dt}{\second}$};
-\node[draw, rectangle, inner sep=1pt] (t5) at (axis cs:\ex,2.2) {\small $t_5=\SI{\et}{\second}$};
+\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.2) {\small $t_0=\SI{\at}{\second}$};
+\node[draw, rectangle, inner sep=1pt] (t2) at (axis cs:\bx,2.2) {\small $t_1=\SI{\bt}{\second}$};
+\node[draw, rectangle, inner sep=1pt] (t3) at (axis cs:\cx,2.2) {\small $t_2=\SI{\ct}{\second}$};
+\node[draw, rectangle, inner sep=1pt] (t4) at (axis cs:\dx,2.2) {\small $t_3=\SI{\dt}{\second}$};
+\node[draw, rectangle, inner sep=1pt] (t5) at (axis cs:\ex,2.2) {\small $t_4=\SI{\et}{\second}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -140,10 +152,10 @@ Op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ wordt weergegeven waar het sh
 
 
 In de natuurkunde is \textbf{tijd een dimensie}.\footnote{Einstaan gaf een beschrijving voor de zwaartekracht in de \textit{4-dimensionale ruimte-tijd}.}
-In bovenstaande figuur wordt bovenaan aangegeven boven elke zeilboot op welk tijdstip de boot daar was waargenomen. 
-Zo bevindt de boot zich op \(t_3 = \SI{15}{s}\) op de positie \(\SI{20}{meter}\). 
-Deze informatie over de tijd kan worden weergegeven op een tijd-as. 
-
+In bovenstaande figuur wordt boven elke zeilboot aangegeven op welk tijdstip de boot daar werd waargenomen. 
+Zo bevindt de boot zich op \(t_3 = \SI{\ct}{\second}\) op de positie \(\SI{\cx}{\meter}\). 
+De startpositie van de zeilboot \(x_0\) is gelijk aan \(\SI{\ax}{\meter}\) want voor \(t_0 = \SI{\at}{\second}\) geldt \(x(\at) = \SI{\ax}{\meter}\).
+In plaats van de tijd boven elke zeilboot te noteren, is het ook mogelijk om de tocht op een tijd-as uit te zetten. 
 
 
 
@@ -199,15 +211,18 @@ Deze informatie over de tijd kan worden weergegeven op een tijd-as.
 
 
 Er zit \textbf{geen} extra informatie in bovenstaande figuur! 
-We hebben enkel de tijdsdimensie uitgezet op een horizontale-as. 
+We hebben enkel de tijdsdimensie uitgezet op een horizontale-as en de positie op de verticale-as. 
 Als je nu ijverig natuurkunde aan het studeren bent, kan je 'de positie' van dit blad papier onderzoeken. 
 Dit blad ligt stil op je bureau en je probeert te begrijpen wat er uitgelegd wordt. 
-Echter, als je de tijdsdimensie in rekening brengt, verandert de positie je blad wel\footnote{Want terwijl je dit aan het lezen bent staat de tijd natuurlijk niet stil...\footnotemark}
+Dan verandert de positie volgens de positie-as natuurlijk niet, maar het blad beweegt zich wel voort op de tijd-as. \footnote{Want terwijl je dit aan het lezen bent staat de tijd natuurlijk niet stil...\footnotemark}
 \footnotetext{Je blad beweegt zich -eerder saai- constant voort op de tijdsdimensie. Het is echter mogelijk -in de relativiteitstheorie- om ook op meer interessantere manieren op de tijd-as te bewegen.\footnotemark}
 \footnotetext{Aangezien je enkel constant op de tijd-as kan voortbewegen, en dus niet terug kan, lijkt het aangewezen om je tijd goed te benutten. Bijvoorbeeld door wat natuurkunde te leren.}
 
-De positie van de zeilboot is enkel weergegeven voor een aantal specifieke momenten \(t_i\). In bovenstaande figuur kan voor elke moment \(t\) de positie worden weergegeven, op die manier bekom je de \textbf{plaatsfunctie}. 
+De positie van de zeilboot is enkel weergegeven voor een aantal specifieke momenten \(t_0, t_1, t_2, t_3 \text{ en } t_4\). 
+De boot heeft natuurlijk ook op \textit{elk moment hiertussen} een positie \ldots
 
+% bovenstaande figuur kan voor elke moment \(t\) de positie worden weergegeven, op die manier bekom je de \textbf{plaatsfunctie}. 
+% @bart; moet nog aangepast worden naar hoe een groot onderscheid je maakt tussen funcite en grafiek
 
 \begin{image}[0.5\textwidth]
 \begin{tikzpicture}
@@ -304,18 +319,6 @@ De positie van de zeilboot is enkel weergegeven voor een aantal specifieke momen
 
 
 
-% WE GAAN SEBIET DE PLAATSVFUCTIE HERNEMEN EN HIER DELTA X EN T OPZETTEN --> KAN DEZE FIGUUR VERVANGEN 
-% In onderstaande figuur zie je voor een bepaalde 1D beweging ook de begin- en eindplaatsvectoren met hun plaatscoördinaten die dan in een grafiek als functie van de tijd wordt weergegeven.
-
-% \begin{image}
-% \includegraphics[width=0.8\textwidth]{positiemetgrafiek}
-% \end{image}
-% \captionof{figure}{Links het verplaatsend voorwerp met begin- en eindpositie. Rechts de grafiek van \(x(t)\).}
-
-
-\newpage %heel tijdelijk
-
-
 De \textbf{verplaatsing} tussen $t_1$ en $t_2$ is het verschil in positie tussen de twee tijdstippen $t_1$ en $t_2$, genoteerd met een $\Delta$\(\vec{r}\) (Delta, een Griekse hoofdletter D  van het Engelse 'displacement' of het Franse 'déplacement').
 
 \begin{definition}
@@ -349,11 +352,12 @@ De \textbf{verplaatsing} \(\Delta \vec{r}\) is het verschil tussen twee posities
 
 
 
-
+\pgfmathsetmacro{\deltaxba}{\bx - \ax}
+\pgfmathsetmacro{\deltaxec}{\ex - \cx}
 
 Voor ééndimensionale bewegingen is de verplaatsing eenvoudig scalair te berekenen met: $\Delta x$ = $x_{eind}-x_{begin}$.
-De verplaatsing van de zeilboot tussen de tijdstippen $t_0$ en $t_1$ is gelijk aan \( \Delta x = x_1-x_0 = \SI{45}{meter} - \SI{30}{meter} = \SI{15}{meter}\)  en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan \(\Delta x=x_4-x_2=\SI{-40}{meter} - \SI{0}{meter} = \SI{-40}{meter}\). Deze laatste verplaatsing is negatief, wat aangeeft dat de zeilboot netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
-
+De verplaatsing van de zeilboot tussen de tijdstippen $t_0$ en $t_1$ is gelijk aan \( \Delta x = x_1-x_0 = \SI{\bx}{\meter} - \SI{\ax}{\meter} = \SI{\deltaxba}{\meter}\)  en is de verplaatsing tussen de tijdstippen $t_2$ en $t_4$ gelijk aan \(\Delta x = x_4 - x_2=\SI{\ex}{\meter} - \SI{\cx}{\meter} = \SI{\deltaxec}{\meter}\). 
+Deze laatste verplaatsing is negatief, wat aangeeft dat de zeilboot netto naar achteren is bewogen -- tegengesteld aan de zin van de gekozen as.
 Op de plaatsfunctie kan de verplaatsing eenvoudig afgelezen worden: 
 
 \begin{image}
@@ -379,6 +383,7 @@ Op de plaatsfunctie kan de verplaatsing eenvoudig afgelezen worden:
 		};
 
 		% Interpolating function through the points
+
 		\addplot[
 			smooth,
 			thick,
@@ -405,7 +410,39 @@ Op de plaatsfunctie kan de verplaatsing eenvoudig afgelezen worden:
 % \end{quickquestion*}
 
 
-Let op, de verplaatsing hoeft niet noodzakelijk gelijk te zijn aan de \emph{afgelegde weg} tussen de twee bijbehorende tijdstippen. Als je een rondje hebt gelopen op de atletiekpiste en terug aan start staat is je (netto) verplaatsing nul, maar heb je wel degelijk afstand afgelegd.
+\textbf{Let op}, de verplaatsing hoeft niet noodzakelijk gelijk te zijn aan de \emph{afgelegde weg} tussen de twee bijbehorende tijdstippen. 
+Als je een rondje hebt gelopen op de atletiekpiste en terug aan start staat is je (netto) verplaatsing nul, maar heb je wel degelijk afstand afgelegd.
+
+
+Wanneer een voorwerp beweegt, doorloopt het meerdere posities. 
+De verbindingslijn van al deze gepasseerde posities, noemt men de \textbf{baan} van de beweging. 
+Een ééndimensionale beweging heeft een rechte baan. 
+Een tweedimensionale is doorgaans krom en kan meerdere vormen hebben (willekeurig, cirkelvormig, paraboolvormig, ellipsvormig,\ldots). 
+% Soms is men geïnteresseerd in een \textbf{baanvergelijking} waarin men de afhankelijkheid tussen x en y wiskundig neerschrijft.
+% Indien de functies \(x(t)\) en \(y(t)\) gekend zijn, kan soms een (expliciete) baanvergelijking bekomen worden door één voorschrift uit te werken naar \(t\) en dit vervolgens te substitueren in de andere vergelijking.
+
+
+\begin{image}[0.5\textwidth]
+
+\begin{tikzpicture}[scale=1.1]
+	\node[left] (A) at (0,0) {A};
+	\node[right] (B) at (6,2) {B};
+  
+	\draw[thick,->] (A) -- (B) node[midway, above]{\(\Delta x\)};
+  
+	\draw[dashed] 
+	  (A) .. controls (2,2) and (4,3) .. (B) 
+	  node[midway,above left] {baan \(1\)};
+  
+	\draw[dashed] 
+	  (A) .. controls (2,-0.5) and (3,-1.5) .. (3,-1.8)
+		  .. controls (3,-2.2) and (2.5,-2.2) .. (3,-1.5)
+		  .. controls (3.5,-1) and (5,0) .. (B)
+	  node[midway,right] {baan \(2\)};
+  
+  \end{tikzpicture}
+\end{image}
+\captionof{figure}{Verplaatsing en afgelegde weg}
 
 Samengevat voor ééndimensionale bewegingen:
 
@@ -418,33 +455,6 @@ Samengevat voor ééndimensionale bewegingen:
 % \includegraphics[width=0.8\textwidth]{positieverplaatsing1D}
 
 % \end{image}
-
-
-
-
-% \begin{tabular}{p{4cm}|p{4cm}}
-% 	\textbf{Vectoriële notatie} & \textbf{Scalaire notatie} \\ \midrule
-% 	Positie op moment $t$: & \\
-% 	$\vecx(t) = x(t) \cdot \ehatx = x \cdot \ehatx$ & $x(t) = x$ \\
-% 	& (kan negatief zijn) \\ \midrule
-% 	Verplaatsing op tijdsinterval $\deltat = t_2 - t_1$: & \\
-% 	$\Delta\vecx = \vecxtwo - \vecxone$ & $\deltax = x_2 - x_1$ \\
-% 	$= x_2 \cdot \ehatx - x_1 \cdot \ehatx = (x_2 - x_1) \cdot \ehatx = \deltax \cdot \ehatx$ & (kan negatief zijn bij verplaatsing tegen de zin van de $x$-as) \\ \midrule
-% 	Afgelegde weg op moment $t$: & \\
-% 	$\left| \vecx(t) \right|$ & $s(t)$ \\
-% 	(afgelegde verplaatsing) & (kan niet negatief zijn, zie wiskunde) \\
-% \end{tabular}
-
-% \begin{center}
-% 	\begin{tabular}{p{5cm} c c}
-% 		& Vectoriële notatie                                   & Scalaire notatie        \\ [10pt]
-% 		\cline{2-3}
-% 		Positie op moment \(t\):                               & $\vec{x}_t = x(t)\cdot\vec{e}_x = x\cdot\vec{e}_x $  & $x(t) = x$              \\ [10pt]
-% 		Verplaatsing op \newline tijdsinterval $\Delta t = t_2 - t_1 $: & $\Delta\vec{x} = \vec{x}_2 - \vec{x}_1$              & $\Delta x = x_2 - x_1 $ \\ [10pt]
-% 		Afgelegde weg op moment t:                             &  $\diagup$                                           & $s(t)$
-% 	\end{tabular}
-% \end{center}
-
 
 
 
@@ -469,23 +479,21 @@ Voor tweedimensionale bewegingen worden de begrippen positie, verplaatsing en af
 
 \end{image}
 
+
+
 \begin{image}
 \includegraphics[width=0.8\textwidth]{verplaatsing2D}
 
 \end{image}
 
 
-Wanneer een voorwerp beweegt, doorloopt het meerdere posities. De verbindingslijn van al deze gepasseerde posities, noemt men de \textbf{baan} van de beweging. 
-Een ééndimensionale beweging heeft een rechte baan. Een tweedimensionale is doorgaans krom en kan meerdere vormen hebben zoals cirkelvormig, paraboolvormig, ellipsvormig,...
-Soms is men geïnteresseerd in een \textbf{baanvergelijking} waarin men de afhankelijkheid tussen x en y wiskundig neerschrijft.
-Indien de functies \(x(t)\) en \(y(t)\) gekend zijn, kan soms een (expliciete) baanvergelijking bekomen worden door één voorschrift uit te werken naar \(t\) en dit vervolgens te substitueren in de andere vergelijking.
+% \begin{image}
+% \includegraphics[width=0.8\textwidth]{vbBaanvergelijking}
 
-\begin{image}
-\includegraphics[width=0.8\textwidth]{vbBaanvergelijking}
-
-\end{image}
+% \end{image}
 	
 \end{document}
+
 
 
 
