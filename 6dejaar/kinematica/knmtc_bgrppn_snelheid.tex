@@ -22,10 +22,10 @@
 
 
 Een voorwerp in beweging heeft een snelheid. 
-De ervaring leert dat hoe groter de snelheid (in de auto, op je fiets, ...) hoe groter de verplaatsing is op een bepaald tijdsinterval. 
-Als je fietst aan \SI{30}{\kilo\meter\per\hour} leg je op een uur \SI{30}{km} af. 
-Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op een uur maar \SI{5}{km}. 
-Met behulp van de plaatsfunctie kan de snelheid van een voorwerp erg nauwkeurig bepaalt worden. 
+De ervaring leert dat hoe groter de snelheid (in de auto, op je fiets, ...) hoe groter de verplaatsing op een bepaald tijdsinterval. 
+Als je fietst aan \SI{30}{\kilo\meter\per\hour}, leg je op één uur tijd \SI{30}{km} af. 
+Als je wandelt aan \SI{5}{\kilo\meter\per\hour}/ leg je op één uur tijd slechts \SI{5}{km}. 
+Met behulp van de plaatsfunctie kan de snelheid van een voorwerp volledig worden bepaald. 
 
 
 % Een voorwerp heeft snelheid als het beweegt, er is een verandering van de positie in de tijd.
@@ -61,15 +61,17 @@ De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$.
 \pgfmathsetmacro{\vbarba}{\deltaxba / \deltatba}
 In het traject van de zeilboot is de gemiddelde snelheid van de boot tussen de tijdstippen $t_1$ en $t_2$ gelijk aan 
 $\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{\bx}{\meter} - \SI{\ax}{\meter}}{\SI{\bt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxba}{\meter}}{\SI{\deltatba}{\meter}} = \SI{\vbarba}{\meter\per\second}$. 
-Als de snelheid negatief is betekent dit dat de auto achteruit rijdt.
+Als de snelheid negatief is betekent dit dat de zeilboot tegen de positieve richting-as bewogen is. 
 
 
 
 \subsection*{Ogenblikkelijke snelheid bij ééndimensionale bewegingen}
 
-De gemiddelde snelheid \(\overline{v}\) is enkel gedefinieerd \textit{tussen} twee posities \(x_1\) en \(x_2\). De plaatsfunctie \(x(t)\) kent voor elk tijdstip \(t\) aan een puntmassa een positie \(x\) toe. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
+De gemiddelde snelheid \(\overline{v}\) is enkel gedefinieerd \textit{tussen} twee posities \(x_1\) en \(x_2\). 
+De plaatsfunctie \(x(t)\) kent voor elk tijdstip \(t\) aan een puntmassa een positie \(x\) toe. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
 
-De eenheid van snelheid is \(m/s\), het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. Op één bepaald moment \(t\), één ogenblik, is er helemaal geen tijdsverloop en bijgevolg kan er ook geen verplaatsing zijn \ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
+De eenheid van snelheid is \SI{}{\meter\per\second}, het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. 
+Op één bepaald moment \(t\), één ogenblik, is er helemaal geen tijdsverloop en bijgevolg kan er ook geen verplaatsing zijn \ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
 
 \begin{denkvraag*}{}
 Als een raket opstijgt vanuit stilstand is de snelheid duidelijk groter dan nul. \textbf{Wat is volgens jou de snelheid op het eerste moment dat een opstijgende raket de grond niet meer raakt?}
@@ -395,7 +397,9 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de r
 	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
 \end{remark}
 
-% TODO de plaatsfunctie kan beter voor deze vraag --> eventueel naar tikz iets? 
+
+
+% DIT MOET SWS NAAR DE BOOT!! 
 \begin{exercise}
 Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van het autotje. Bepaal enkel met de grafiek en zonder te rekenen: 
 \begin{itemize}
