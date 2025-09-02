@@ -642,12 +642,9 @@
 {../..\xmDefaultGraphicsPath/}   %% then look for a pictures folder,
 {../../..\xmDefaultGraphicsPath/}   %% then look for a pictures folder,
 }
-
 \NewEnviron{image}[1][3in]{%
   \begin{center}\resizebox{#1}{!}{\BODY}\end{center}% resize and center
 }
-
-
 \newcommand{\alt}[1]{}
 
 

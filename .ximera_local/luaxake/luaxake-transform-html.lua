@@ -181,11 +181,17 @@ local function transform_xourse(dom, file)
     if path.extension(newhref) == "" then newhref = newhref .. ".html" end
     
     local relhref = file.relative_dir.."/"..newhref
-    relhref = relhref:gsub("^/","")   -- remove leading /
+
+    -- log:debug("HREF: Got relhref "..relhref)
+   relhref = relhref:gsub("^/","")    -- remove leading /
+   relhref = path.normpath(relhref)   -- normalize A/../B, A//B, A/./B etc (fixes gradebook issue, 2025-08)
+
    if relhref:gsub(".html$","") ~= href then 
       -- The  .html extension breaks the previous/next buttons in ximeraServer 
       log:debug("Resetting href to "..relhref:gsub(".html$","") .. "( from "..href..")") 
       activity:set_attribute("href",relhref:gsub(".html$",""))
+    -- else 
+    --   log:debug("HREF: Keeping original "..href) 
     end
     
     -- the absolute path to .html of the linked activity
@@ -333,7 +339,7 @@ local function get_associated_files(dom, file)
       logo = path.join(file.relative_dir, logo)
       log:debugf("Found logo %s in %s", logo, file.absolute_path )
       ass_files[#ass_files+1] = logo
-    end
+  end
   end
   
   -- Add images 
@@ -358,13 +364,18 @@ local function get_associated_files(dom, file)
     
     ass_files[#ass_files+1] = src
     
-    -- local u = url.parse(src)
-    -- if false and get_extension(u.path) == "svg"
-    -- then
-    --   local png  = u.path:gsub(".svg$", ".png")
-    --   log:debug("also adding  "..png)
-    --   ass_files[#ass_files+1] = png
-    -- end
+    local u = url.parse(src)
+    if get_extension(u.path) == "svg"
+    then
+      local png  = u.path:gsub(".svg$", ".png")
+      log:debugf("also adding PNG %s", png)
+      ass_files[#ass_files+1] = png
+    elseif get_extension(u.path) == "png"
+    then
+      local svg  = u.path:gsub(".png$", ".svg")
+      log:debugf("also adding SVG %s", svg)
+      ass_files[#ass_files+1] = svg
+    end
   
     ::next_image::
   end
@@ -454,6 +465,18 @@ local function post_process_html(cmd)
     cmd.error = msg
     return cmd
   end
+
+    -- find all <img> elements
+for _, img in ipairs(dom:query_selector("img")) do
+  local src = img:get_attribute("src")
+  if src then
+    local pat = file.basename .. "(%d+)x%.svg"
+    local new = src:gsub(pat, "tikz/"..file.basename.."-figure%1." .. config.img_format)
+    log:debugf("Set src in %s to %s (from %s).", file.basename, new, src)
+
+    img:set_attribute("src", new)
+  end
+end
   
 
   local ret, msg =  update_html_fileinfo(file, dom)     -- not really 'post-processing', but implicit checking-of-generated-images
