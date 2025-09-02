@@ -16,7 +16,7 @@ Bepaal grafisch en kwantitatief de resultante van de gegeven vectoren.
 
 \begin{question}
 
-\(\|\vec{a} = \SI{5}{N}\),\; \(\|\vec{b} = \SI{4}{N}\), \(\alpha = 40^\circ\)\;
+\(\|\vec{a} \| = \SI{5}{N}\),\; \(\|\vec{b} \| = \SI{4}{N}\), \(\alpha = 40^\circ\)\;
 
 \begin{image}[0.2\textwidth]
 \begin{tikzpicture}
@@ -28,9 +28,9 @@ Bepaal grafisch en kwantitatief de resultante van de gegeven vectoren.
 	\coordinate (B) at (-\ang :2); 
 
 
-	\draw[dotted] (O)--(4,0);
-	\draw[->, very thick, red] (O)--(A) node[midway, left]{$\vec{a}$};
-	\draw[->, very thick, green] (O)--(B) node[midway, below left]{$\vec{b}$};
+	\draw[dotted, thick] (O)--(4,0);
+	\draw[->, -latex, very thick, red] (O)--(A) node[midway, left]{$\vec{a}$};
+	\draw[->, -latex, very thick, xmgreen] (O)--(B) node[midway, below left]{$\vec{b}$};
 
 	\draw pic[ pic text= \(\alpha\), draw,  angle radius=0.7cm]{angle = B--O--X};
 	\draw pic[ angle radius=0.7cm]{right angle = X--O--A};
@@ -40,7 +40,7 @@ Bepaal grafisch en kwantitatief de resultante van de gegeven vectoren.
 \end{question}
 
 \begin{question}
-\(\|\vec{a} = \SI{4}{N}\),\; \(\|\vec{b} = \SI{2.5}{N}\) \; \(\|\vec{c} = \SI{3}{N}\), \; \(\alpha = 15^\circ\)\;
+\(\|\vec{a} \| = \SI{4}{N}\),\; \(\|\vec{b} \| = \SI{2.5}{N}\) \; \(\|\vec{c} \| = \SI{3}{N}\), \; \(\alpha = 15^\circ\)\;
 
 \begin{image}[0.2\textwidth]
 	\begin{tikzpicture}
@@ -51,9 +51,9 @@ Bepaal grafisch en kwantitatief de resultante van de gegeven vectoren.
 		\coordinate (B) at (90-\ang :2); 
 		\coordinate (C) at (90:2.5); 
 	
-		\draw[->, very thick, red] (O)--(A) node[midway, below]{$\vec{a}$};
-		\draw[->, very thick, green] (O)--(B) node[midway, below right]{$\vec{b}$};
-		\draw[->, very thick, blue] (O)--(C) node[pos=0.8, left]{$\vec{c}$};
+		\draw[->, -latex, very thick, red] (O)--(A) node[midway, below]{$\vec{a}$};
+		\draw[->, -latex, very thick, xmgreen] (O)--(B) node[midway, below right]{$\vec{b}$};
+		\draw[->, -latex, very thick, blue] (O)--(C) node[pos=0.8, left]{$\vec{c}$};
 	
 		\draw pic[ pic text= \(\alpha\), draw,  angle radius=0.7cm, angle eccentricity=1.5]{angle = B--O--C};
 		\draw pic[ draw, angle radius=0.4cm]{right angle = C--O--A};
@@ -64,7 +64,7 @@ Bepaal grafisch en kwantitatief de resultante van de gegeven vectoren.
 \end{question}
 
 \begin{question}
-\(\|\vec{a} = \SI{5}{N}\),\; \(\|\vec{b} = \SI{8}{N}\) \; \(\|\vec{c} = \SI{15}{N}\), \; \(\|\vec{d} = \SI{3}{N}\), \; \(\alpha = 60^\circ\)\;
+\(\|\vec{a} \| = \SI{5}{N}\),\; \(\|\vec{b} \| = \SI{8}{N}\) \; \(\|\vec{c} \| = \SI{15}{N}\), \; \(\|\vec{d} \| = \SI{3}{N}\), \; \(\alpha = 60^\circ\)\;
 
 	\begin{image}[0.2\textwidth]
 		\begin{tikzpicture}
@@ -77,10 +77,10 @@ Bepaal grafisch en kwantitatief de resultante van de gegeven vectoren.
 			\coordinate (D) at (270:1.5); 
 		
 		
-			\draw[->, very thick, blue] (O)--(A) node[midway, below]{$\vec{a}$};
-			\draw[->, very thick, green] (O)--(B) node[pos=0.7, below right]{$\vec{b}$};
-			\draw[->, very thick, red] (O)--(C) node[midway, left]{$\vec{c}$};
-			\draw[->, very thick, cyan] (O)--(D) node[midway, left]{$\vec{d}$};
+			\draw[->, -latex, very thick, blue] (O)--(A) node[midway, below]{$\vec{a}$};
+			\draw[->, -latex, very thick, xmgreen] (O)--(B) node[pos=0.7, below right]{$\vec{b}$};
+			\draw[->, -latex, very thick, red] (O)--(C) node[midway, left]{$\vec{c}$};
+			\draw[->, -latex, very thick, cyan] (O)--(D) node[midway, left]{$\vec{d}$};
 		
 			\draw pic[ pic text= \(\alpha\), draw,  angle radius=0.5cm]{angle = B--O--C};
 			\draw pic[ draw, angle radius=0.2cm]{right angle = D--O--A};
@@ -105,8 +105,8 @@ Construeer indien mogelijk en bereken de grootte van:
 			\coordinate (X) at (0:2); 
 			\coordinate (F) at (\ang :1); 
 		
-			\draw[->, very thick, blue] (O)--(F) node[midway, above left]{$\vec{F}$};
-			\draw[->, very thick, red] (O)--(X) node[midway, below]{$\vec{x}$};
+			\draw[->, -latex, very thick, blue] (O)--(F) node[midway, above left]{$\vec{F}$};
+			\draw[->, -latex, very thick, red] (O)--(X) node[midway, below]{$\vec{x}$};
 		
 			\draw pic[ pic text= \(\alpha\), draw,  angle radius=0.7cm]{angle = X--O--F};
 		\end{tikzpicture}
@@ -133,7 +133,7 @@ Construeer indien mogelijk en bereken de grootte van:
 
 \begin{exercise}
 
-Gegeven zijn de vectoren \(\vec{F}\) en \(\vec{x}\) waarvan geweten is dat \(\| \vec{F} \| = \SI{3}{N}, \; \|\vec{x}\| = \SI{4}{m} \text{ en } \alpha = 50^\circ \).
+Gegeven zijn de vectoren \(\vec{F}\) en \(\vec{x}\) waarvan geweten is dat \(\| \vec{F} \| = \SI{7}{N}, \; \|\vec{x}\| = \SI{2}{m} \text{ en } \alpha = 125^\circ \).
 Construeer indien mogelijk en bereken de grootte van: 
 
 	\begin{image}[0.2\textwidth]
@@ -145,8 +145,8 @@ Construeer indien mogelijk en bereken de grootte van:
 			\coordinate (S) at (\ang + \angg :1); 
 			\coordinate (F) at (\angg :2); 
 		
-			\draw[->, very thick, blue] (O)--(F) node[midway, below right]{$\vec{F}$};
-			\draw[->, very thick, red] (O)--(S) node[pos=1, above]{$\vec{x}$};
+			\draw[->, -latex, very thick, blue] (O)--(F) node[midway, below right]{$\vec{F}$};
+			\draw[->, -latex, very thick, red] (O)--(S) node[pos=1, above]{$\vec{x}$};
 		
 			\draw pic[ pic text= \(\alpha\), draw,  angle radius=0.7cm]{angle = F--O--S};
 			

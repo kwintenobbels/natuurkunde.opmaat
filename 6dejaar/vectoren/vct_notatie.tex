@@ -10,7 +10,7 @@
 
 
 Vectoren worden grafisch voorgesteld met een pijl.  
-Een vectoriële grootheid wordt genoteerd met \(\vec{z}, \vec{a}, \vec{x}, ...\). 
+Een vectoriële grootheid wordt genoteerd met \(\vec{z}, \vec{a}, \vec{x}, ...\) en wordt altijd bij de pijl gezet ter benoeming. 
 Om duidelijk te maken dat het telkens om een vector gaat wordt een pijltje boven de letter geplaatst. 
 Zonder de vector te benoemen stelt de pijl geen vector voor (en kan het dus evengoed een echte pijl afgeschoten door een boog zijn)! 
 De pijl geeft alle kenmerken die een vector vastleggen weer. 
@@ -49,22 +49,23 @@ De pijl geeft alle kenmerken die een vector vastleggen weer.
 	\coordinate (A) at (\ax,\ay);  % AANGRIJPINGSPUNT 
 	\coordinate (E) at (\ex, \ey); % EINDPUNT 
 
-	\draw[->, dashed] (E) -- ($(A) ! 1.5 ! (E) $) node[pos=1, above left]{richting};
+	\draw[dashed] (E) -- ($(A) ! 1.5 ! (E) $) node[pos=1, above left]{richting};
 	\draw[dashed] (A) -- ($(A) ! -0.5 ! (E) $);
 	
 	\draw[->,blue, very thick, -{latex[fill=orange]}] (A)--(E) 
 		node[midway, below right, black]{\(\vec{z}\)}
-		node[midway, above left, blue]{\( \lvert \vec{z} \rvert \)}
+		node[midway, above left, blue]{ grootte \( \lVert \vec{z} \rVert \)}
 		node[pos=1, above, orange]{zin};
 
 	\fill[red] (A) circle (2pt) node[below right]{aangrijpingspunt};
 \end{scope}
 \end{tikzpicture}
 \end{image}
+\captionof{figure}{De vector $\vec{z}$ met al zijn componenten.}
 
 
 Aan de zin van een vector wordt wiskundig een teken gekoppeld dat afhangt van de gekozen referentie-as. 
-Vectoren in de zin van de gekozen referentie-as worden aangeduid met een plusteken, vectoren tegen de zin van de referentie-as krijgen een minteken. 
+Vectoren in de zin van de gekozen referentie-as worden als positief beschouwd, vectoren tegen de zin van de referentie-as als negatief. 
 
 % De grootte van de vector wordt vaak als enkel positief aanzien (vooral in een situatie zonder referentie-as). % absolute waarde is altijd postief? Lengte van het lijnstuk is nooit negatief?
 De grootte van een vector \(\vec{z}\) wordt aangeduid met de norm $ \lVert \vec{z} \rVert $  of het absolutewaardeteken $\lvert z \rvert $ en is altijd positief. 
