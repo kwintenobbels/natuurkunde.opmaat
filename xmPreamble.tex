@@ -15,7 +15,7 @@
     \typeout{tikzexport: in xourse no exports}
     \else\ifhandout
     \typeout{tikzexport: in handout no exports}
-    \else
+    \else\iftikzexport
     \typeout{tikzexport: global export settings}
 
 \usepackage{tikz}
@@ -55,6 +55,10 @@
             echo "DONE pdflatex \image"
         },
     }
+\else
+    \typeout{NO tikzexport}
+
+\fi
 \fi\fi
 
 %            dvisvgm --pdf --page=1- "\image".pdf -o "\image".svg &&
