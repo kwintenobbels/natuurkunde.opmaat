@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     container: &x-container
-      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2-full
+      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2
       options: >-
         --workdir /code
     permissions:
@@ -66,8 +66,10 @@ jobs:
           env
           type xmlatex
           ls -al /usr/local/bin
-          xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
-          xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
+          ls -al /root/texmf/tex/latex
+          find  /root/texmf
+          xmlatex -d bake --compile pdfexport  -j 5 $XM_TO_PROCESS
+          xmlatex -d bake --compile htmlexport -j 5 $XM_TO_PROCESS
 
       # Save cache
       - name: "Postprocess: Save cache"
