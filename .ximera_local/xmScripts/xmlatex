@@ -311,18 +311,6 @@ COMMAND=$1
 
 debug "COMMAND=$COMMAND"
 
-env
-
-type kpsewhich
-
-type luaxake
-
-ls -al /usr/local/bin
-
-ls -al /root/texmf/tex/latex/ximeraLatex/luaxake/luaxake
-ls -al /root/texmf/tex/latex/ximeraLatex/luaxake
-
-/root/texmf/tex/latex/ximeraLatex/luaxake -h 
 # Should not occur ...
 [[ -z "$LUAXAKE" ]] && error "Mmm, luaxake ($LUAXAKE) command not found: $(type luaxake); $(type kpsewhich)"
 

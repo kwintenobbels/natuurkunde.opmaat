@@ -60,10 +60,10 @@ jobs:
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          .ximera_local/xmScripts/xmlatex bake -d --compile pdfexport  -j 5 $XM_TO_PROCESS
-          .ximera_local/xmScripts/xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
-          .ximera_local/xmScripts/xmlatex bake -d --compile handout.pdf -j 5 $XM_TO_PROCESS
-          
+          .ximera_local/xmScripts/xmlatex bake -t --compile pdfexport  -j 5 $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex bake -t --compile htmlexport -j 5 $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex bake -t --compile handout.pdf -f -j 5 $XM_TO_PROCESS
+
 
       # Save cache
       - name: "Postprocess: Save cache"
