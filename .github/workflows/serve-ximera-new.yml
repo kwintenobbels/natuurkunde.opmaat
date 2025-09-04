@@ -63,6 +63,7 @@ jobs:
           .ximera_local/xmScripts/xmlatex bake -d --compile pdfexport  -j 5 $XM_TO_PROCESS
           .ximera_local/xmScripts/xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
           .ximera_local/xmScripts/xmlatex bake -d --compile handout.pdf -j 5 $XM_TO_PROCESS
+          
 
       # Save cache
       - name: "Postprocess: Save cache"
@@ -133,7 +134,11 @@ jobs:
     needs: serve-ximera-preview
     runs-on: ubuntu-latest
     continue-on-error: true
-    container: *x-container
+    # container: *x-container
+    container:
+      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2
+      options: >-
+        --workdir /code    
     environment: production
 
     steps:
