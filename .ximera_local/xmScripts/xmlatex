@@ -317,6 +317,9 @@ type kpsewhich
 
 type luaxake
 
+ls -al .ximera_local/xmScripts
+chmod +x .ximera_local/xmScripts/*
+
 # Should not occur ...
 [[ -z "$LUAXAKE" ]] && error "Mmm, luaxake ($LUAXAKE) command not found: $(type luaxake); $(type kpsewhich)"
 
