@@ -116,9 +116,9 @@ jobs:
         run: |
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          xmlatex name
-          xmlatex frost $XM_TO_PROCESS
-          xmlatex serve $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex name
+          .ximera_local/xmScripts/xmlatex frost $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex serve $XM_TO_PROCESS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
