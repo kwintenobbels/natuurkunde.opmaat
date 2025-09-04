@@ -174,13 +174,13 @@ config = {
     },    
     ["htmlexport"] = {   -- NEW, TEST
       -- command = 'pdflatex -interaction=nonstopmode  -file-line-error -shell-escape  -jobname @{basename}.handout "\\PassOptionsToClass{handout}{ximera}\\PassOptionsToClass{handout}{xourse}\\input{@{filename}}"',
-      command = "make4ht -l -c @{configfile} -f html5 -m draft -d build -j @{basename} -s @{make4ht_extraoptions} @{filename} 'svg,htex4ht,mathjax,-css' '' '' '--interaction=nonstopmode -shell-escape -file-line-error'",
+      command = "make4ht -l -c @{configfile} -f html5 -m draft -j @{basename}.export -s @{make4ht_extraoptions} @{filename} 'svg,htex4ht,mathjax,-css' '' '' '--interaction=nonstopmode -shell-escape -file-line-error'",
       check_log = true, -- check log
       status = 0, -- check that the latex command return 0
       post_command = 'post_process_html',
       extension = "html",
       output_format = "html",
-      infix = "" ,
+      infix = "export" ,
     },    
     ["make4ht.html"] = {
       command = "make4ht -l -c @{configfile} -f html5+dvisvgm_hashes          -j @{basename}.make4ht -s @{make4ht_extraoptions} @{filename} 'svg,htex4ht,mathjax,-css' '' '' '--interaction=nonstopmode -shell-escape -file-line-error'",
@@ -222,11 +222,11 @@ config = {
     },
     ["pdfexport"] = {  -- NEW, TEST
       -- this doesn't work well
-      command = 'pdflatex -j @{basename} -interaction=nonstopmode  -file-line-error -shell-escape  "\\PassOptionsToClass{tikzexport}{ximera}\\PassOptionsToClass{tikzexport}{ximera}\\PassOptionsToClass{tikzexport}{xourse}\\nonstopmode\\input{@{filename}}"',
+      command = 'pdflatex -j @{basename}.export -interaction=nonstopmode  -file-line-error -shell-escape  "\\PassOptionsToClass{tikzexport}{ximera}\\PassOptionsToClass{tikzexport}{ximera}\\PassOptionsToClass{tikzexport}{xourse}\\nonstopmode\\input{@{filename}}"',
       -- command = 'pdflatex -interaction=nonstopmode  -file-line-error -shell-escape  "\\PassOptionsToClass{xake}{ximera}\\PassOptionsToClass{xake}{xourse}\\input{@{filename}}"',
       check_log = true,     -- check log
       status = 0,           -- check that the latex command return 0
-      infix = "" ,          -- used for .handout, and .make4k4
+      infix = "export" ,          -- used for .handout, and .make4k4
       extension = "pdf",    -- not used ????
       output_format = "pdf",-- the extension of the 'final' output file, that is eg checked for uptodate-ness
       post_command = 'post_process_pdf',
@@ -568,7 +568,7 @@ end
     if command == "veryclean" then
       -- log:debug("Appending extra extensions")
       tablex.insertvalues(to_be_cleaned_extensions, config.output_formats)   -- append arrays ...
-      tablex.insertvalues(to_be_cleaned_extensions, { "aux", "toc", "log", "dlog", "xref", "jax", "xmjax", "sagetex.sage", "html.failed", "pdf.failed", "svg" })   -- append arrays ...
+      tablex.insertvalues(to_be_cleaned_extensions, { "aux", "toc", "log", "dlog", "xref", "jax", "xmjax", "sagetex.sage", "html.failed", "pdf.failed", "svg", "oc", "xmcss", "png", "pdf", "html" })   -- append arrays ...
       log:debugf("Appended extra extensions %s", table.concat(to_be_cleaned_extensions, ', '))
     end
 
