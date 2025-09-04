@@ -11,7 +11,7 @@ env:
   GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
   XIMERA_URL: ${{ vars.XIMERA_URL }}
   XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}*wim
-  XM_TO_PROCESS: "."
+  XM_TO_PROCESS: "test.tex"
 
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     # continue-on-error: true
     container: &x-container
-      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2
+      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2-full
       options: >-
         --workdir /code
     permissions:
@@ -60,20 +60,9 @@ jobs:
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          type luaxake
-          pwd
-          ls -al
-          env
-          type xmlatex
-          ls -al /usr/local/bin
-          ls -al /root/texmf/tex/latex
-          find  /root/texmf
-          type luaxake
-          kpsewhich luaxake
-          echo "Start luaxake:"
-          luaxake  -h || echo NOK
           .ximera_local/xmScripts/xmlatex bake -d --compile pdfexport  -j 5 $XM_TO_PROCESS
-          # .ximera_local/xmScripts/xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex bake -d --compile handout.pdf -j 5 $XM_TO_PROCESS
 
       # Save cache
       - name: "Postprocess: Save cache"
