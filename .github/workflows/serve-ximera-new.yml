@@ -61,7 +61,7 @@ jobs:
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          .ximera_local/xmScripts/xmlatex bake veryclean  -j 5 $XM_TO_PROCESS
+          .ximera_local/xmScripts/xmlatex veryclean  -j 5 $XM_TO_PROCESS
           rm -rf */*/tikz
           rm -rf */*/build
           rm -rf */*/xmPictures
