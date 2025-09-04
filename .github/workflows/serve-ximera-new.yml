@@ -19,7 +19,7 @@ jobs:
   build-ximera-htmlexport:
     name: Run pdfexport and htmlexport
     runs-on: ubuntu-latest
-    continue-on-error: true
+    # continue-on-error: true
     container: &x-container
       image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2
       options: >-
@@ -68,8 +68,10 @@ jobs:
           ls -al /usr/local/bin
           ls -al /root/texmf/tex/latex
           find  /root/texmf
-          xmlatex bake -d --compile pdfexport  -j 5 $XM_TO_PROCESS
-          xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
+          type luaxake
+          luaxake || echo NOK
+          .ximera_local/xmScripts/xmlatex bake -d --compile pdfexport  -j 5 $XM_TO_PROCESS
+          # .ximera_local/xmScripts/xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
 
       # Save cache
       - name: "Postprocess: Save cache"
