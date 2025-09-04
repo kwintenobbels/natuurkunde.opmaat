@@ -1,4 +1,4 @@
-name: Ximera Workflow
+name: Ximera Workflow (new)
 
 on:
   push:
@@ -60,6 +60,12 @@ jobs:
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          type luaxake
+          pwd
+          ls -al
+          env
+          type xmlatex
+          ls -al /usr/local/bin
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
 
