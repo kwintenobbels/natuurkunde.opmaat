@@ -69,7 +69,9 @@ jobs:
           ls -al /root/texmf/tex/latex
           find  /root/texmf
           type luaxake
-          luaxake || echo NOK
+          kpsewhich luaxake
+          echo "Start luaxake:"
+          luaxake  -h || echo NOK
           .ximera_local/xmScripts/xmlatex bake -d --compile pdfexport  -j 5 $XM_TO_PROCESS
           # .ximera_local/xmScripts/xmlatex bake -d --compile htmlexport -j 5 $XM_TO_PROCESS
 
