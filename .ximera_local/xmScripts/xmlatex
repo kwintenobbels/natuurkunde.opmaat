@@ -311,8 +311,14 @@ COMMAND=$1
 
 debug "COMMAND=$COMMAND"
 
+env
+
+type kpsewhich
+
+type luaxake
+
 # Should not occur ...
-[[ -z "$LUAXAKE" ]] && error "Mmm, luaxake command not found: $(type luaxake); $(type kpsewhich)"
+[[ -z "$LUAXAKE" ]] && error "Mmm, luaxake ($LUAXAKE) command not found: $(type luaxake); $(type kpsewhich)"
 
 
 if [[ "$XIMERA_NAME" =~ [^a-z0-9] ]]; then
