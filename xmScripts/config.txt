@@ -40,7 +40,7 @@ YOUR_EMAIL="DUMMY_EMAIL_TEST"
 # For testing/debugging
 #
 # : "${DEBUG:=1}"
-# : "${COMMAND:=./xmScripts/xmlatex.test}"
+: "${COMMAND:=.ximera_local//xmScripts/xmlatex}"
 #
 # for LOCALLY generated/tagged images, use:
 # export DOCKER_REPO=" "
