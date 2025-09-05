@@ -1,5 +1,4 @@
 name: "Ximera Workflow (new)"
-
 on:
   push:
     # branches:
@@ -11,8 +10,8 @@ env:
   GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
   XIMERA_URL: ${{ vars.XIMERA_URL }}
   XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
-  # XM_TO_PROCESS: "."
-  XM_TO_PROCESS: "test.tex spc/basisbegrippen.tex"
+  XM_TO_PROCESS: "."
+  # XM_TO_PROCESS: "test.tex spc/basisbegrippen.tex"
   #XM_TO_PROCESS: "6dejaar/kinematica/knmtc_bgrppn_referentiestelsel.tex"
 
 jobs:
