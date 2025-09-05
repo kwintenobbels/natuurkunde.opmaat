@@ -11,20 +11,35 @@
 
 \sisetup{per-mode=symbol} %TEST VOOR DE SI EENHEDEN 
 
-% DE VARIABELEN VOOR DE GRAFIEK VAN DE ZEILBOOT 
-\pgfmathsetmacro{\at}{5}   \pgfmathsetmacro{\ax}{30}
-\pgfmathsetmacro{\bt}{10}  \pgfmathsetmacro{\bx}{45}
-\pgfmathsetmacro{\ct}{15}  \pgfmathsetmacro{\cx}{20}
-\pgfmathsetmacro{\dt}{30}  \pgfmathsetmacro{\dx}{0}
-\pgfmathsetmacro{\et}{45}  \pgfmathsetmacro{\ex}{-40}
+\NewDocumentCommand{\maakachtvar}{m m m m m m m m}{
 
+\pgfmathsetmacro{\at}{#1}    \pgfmathsetmacro{\ax}{#2}
+\pgfmathsetmacro{\bt}{#3}    \pgfmathsetmacro{\bx}{#4}
+\pgfmathsetmacro{\ct}{#5}    \pgfmathsetmacro{\cx}{#6}
+\pgfmathsetmacro{\dt}{#7}    \pgfmathsetmacro{\dx}{#8}
 
+\pgfmathsetmacro{\tmin}{min(\at,\bt,\ct,\dt)}
+\pgfmathsetmacro{\tmax}{max(\at,\bt,\ct,\dt)}
+\pgfmathsetmacro{\xmin}{min(\ax,\bx,\cx,\dx)}
+\pgfmathsetmacro{\xmax}{max(\ax,\bx,\cx,\dx)}
+
+\pgfmathsetmacro{\deltat}{\tmax-\tmin}
+\pgfmathsetmacro{\deltax}{\xmax-\xmin}
+
+\pgfmathsetmacro{\xmargin}{0.08*\deltat}   
+\pgfmathsetmacro{\ymargin}{0.3*\deltax} 
+
+\pgfmathsetmacro{\xrangemin}{\tmin-\xmargin}
+\pgfmathsetmacro{\xrangemax}{\tmax+\xmargin}
+\pgfmathsetmacro{\yrangemin}{\xmin-\ymargin}
+\pgfmathsetmacro{\yrangemax}{\xmax+\ymargin}
+}
 
 
 Een voorwerp in beweging heeft een snelheid. 
-De ervaring leert dat hoe groter de snelheid (in de auto, op je fiets, ...) hoe groter de verplaatsing op een bepaald tijdsinterval. 
+De ervaring leert dat hoe groter de snelheid (in de auto, op je fiets, ...) hoe groter de verplaatsing in een bepaald tijdsinterval. 
 Als je fietst aan \SI{30}{\kilo\meter\per\hour}, leg je op één uur tijd \SI{30}{km} af. 
-Als je wandelt aan \SI{5}{\kilo\meter\per\hour}/ leg je op één uur tijd slechts \SI{5}{km}. 
+Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op één uur tijd slechts \SI{5}{km}. 
 Met behulp van de plaatsfunctie kan de snelheid van een voorwerp volledig worden bepaald. 
 
 
@@ -55,13 +70,14 @@ De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$.
 \end{definition}
 
 
-% REKENT AUTOMATISCH IN DE TEKST 
-\pgfmathsetmacro{\deltatba}{\bt - \at}
-\pgfmathsetmacro{\deltaxba}{\bx - \ax}
-\pgfmathsetmacro{\vbarba}{\deltaxba / \deltatba}
 In het traject van de zeilboot is de gemiddelde snelheid van de boot tussen de tijdstippen $t_1$ en $t_2$ gelijk aan 
-$\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{\bx}{\meter} - \SI{\ax}{\meter}}{\SI{\bt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxba}{\meter}}{\SI{\deltatba}{\meter}} = \SI{\vbarba}{\meter\per\second}$. 
-Als de snelheid negatief is betekent dit dat de zeilboot tegen de positieve richting-as bewogen is. 
+$\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{10}{\meter} - \SI{40}{\meter}}{\SI{15}{\second} - \SI{5}{\second}}= \frac{\SI{-30}{\meter}}{\SI{10}{\second}} = \SI{-3}{\meter\per\second}$. 
+Deze gemiddelde snelheid is negatief, wat betekent dat de zeilboot tegen de positieve richting-as bewogen is. 
+
+
+\begin{quickquestion*}
+Kan je op de plaatsgrafiek van de zeilboot de gemiddelde snelheid tussen \(t_2\) en \(t_0\) aanduiden? 
+\end{quickquestion*}
 
 
 
@@ -85,14 +101,13 @@ Als je plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenbl
 Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
 
 
+
+% DIT GAAT WEL ALS DE TEKST INORDE IS
+% % ------------------% % ------------------% % ------------------% % ------------------% % ------------------
 % \begin{image}
 % \includegraphics[width=0.8\textwidth]{stuiterendetennisbal}
 % \end{image}
 % \captionof{figure}{Stuiterende tennisbal}
-
-
-
-% % ------------------
 % Hoe kan dit probleem opgelost worden? Op de stroboscopische foto van de stuiterende tennisbal is te zien dat de bal bovenaan trager beweegt dan wanneer hij de grond nadert. 
 % Bovenaan liggen de beelden immers dichter bij elkaar zodat de tennisbal minder afstand aflegt in de tijdsspanne tussen twee opeenvolgende opnames. 
 % Deze kwantitatieve\footnote{Kwantitatief wil zeggen dat het over een hoeveelheid of een grootte gaat.} informatie die levert echter opnieuw gemiddelde snelheid en niet zomaar de ogenblikkelijke snelheid. 
@@ -103,268 +118,234 @@ Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen 
 % De tijdsintervallen zijn nu immers korter zodat de bal minder van snelheid kan veranderen gedurende de intervallen en zodoende de gemiddelde snelheid een indicatie wordt van de ogenblikkelijke snelheid. 
 % De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval.
 % Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \textit{limiet} van de gemiddelde snelheid over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
-% % ------------------
-
-
-
+% % ------------------% % ------------------% % ------------------% % ------------------% % ------------------
 
 
 Hoe kan dit probleem opgelost worden? 
-Om de ogenblikkelijke snelheid op \(t_1 = \SI{\at}{\second}\) te kennen, lijk het eerste (en misschien wel enige...) idee om te vertrekken van de gemiddelde snelheid tussen \(t_2\) en \(t_2\) die hierboven werd berekend. 
-Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de snelheid op \(t_1 = \at\). 
+Om de ogenblikkelijke snelheid op \(t_1 = \SI{5}{\second}\) te kennen, lijk het eerste (en misschien wel enige...) idee om te vertrekken van de gemiddelde snelheid tussen \(t_1\) en \(t_2\) die hierboven werd berekend. 
+Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de snelheid op \(t_1 = 5\). 
 
 \[
-\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
+\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1} = \frac{10-40}{10-5} = \frac{-30}{5} = \SI{-6}{\meter\per\second}
 \]
 
 
-% ENKEL T1 EN T2 OP EEN RECHTE 
-\begin{image}[\textwidth]
-	\begin{tikzpicture}
-	\begin{axis}[
-		axis x line=bottom,
-		axis y line=none,       % no vertical axis
-		axis line style={->},
-		xmin=-50, xmax=55,    % position axis
-		ymin=-1, ymax=3,        % enough room for icons + labels
-		width=14cm, height=4cm,
-		xlabel={Positie--as (in meter)},
-		xtick={-50,-40,...,50},
-		xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}}, % gaf eerst in beduidende cijfers 
-		% yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
-	]
-	
-	% --- Ships at given positions ---
-	\node[scale=1,xscale=-1]  (ship1) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
-	\node[scale=1,xscale=-1] (ship2) at (axis cs:\bx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
-	
-	% --- Time labels above ships ---
-	\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.2) {\small $t_1=\SI{\at}{\second}$};
-	\node[draw, rectangle, inner sep=1pt] (t2) at (axis cs:\bx,2.2) {\small $t_2=\SI{\bt}{\second}$};
-	
-	\end{axis}
-	\end{tikzpicture}
-	\begin{tikzpicture}
-		\begin{axis}[
-			axis x line=bottom,
-			axis y line=left,
-			axis line style={->},
-			xlabel={tijd (in seconden)},
-			ylabel={positie (in meter)},
-			xmin=0, xmax=50,
-			ymin=-50, ymax=65,
-			xtick={0,10,...,50},
-			ytick={-50,-40,...,50},
-			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
-			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
-			grid=both,
-			width=15cm, height=10cm,
-		]
-	
-		% --- The position–time curve ---
-		\addplot[blue, thick, smooth, tension=0.5] coordinates{
-			(\at,\ax)
-			(\bt,\bx)
-		};
-	
-		% --- Ships as markers at data points ---
-		\node[opacity=0.4] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
-		\node[opacity=0.4] at (axis cs:\bt,\bx) {\includegraphics[width=1cm]{schip_icoon}};
-	
-		% --- Time labels above each ship ---
-		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_1=\SI{\at}{\second}$};
-		\node[draw, rectangle, inner sep=1pt] at (axis cs:\bt,\bx+10) {\small $t_2=\SI{\bt}{\second}$};
-	
-		% --- DeltaX brace ---
-		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
-			(axis cs:\bt,\ax) -- (axis cs:\bt,\bx) 
-			node[midway, right, xshift=2pt] {\small $\Delta x$};
-	
-		% --- DeltaT brace ---
-		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, cyan, thick] 
-			(axis cs:\at,\ax) -- (axis cs:\bt,\ax) 
-			node[midway, below, yshift=-2pt] {\small $\Delta t$};
-	
-		\end{axis}
-	\end{tikzpicture}
-\end{image}	
-\captionof{figure}{De positie van de zeilboot voor tijd \(t_1\) en \(t_2\)}
+\maakachtvar{0}{30}{5}{40}{15}{10}{35}{-10}
 
-% TODO VOOR VOLGEND JAAR --> DE FUNTIE BENADERD NU TEVEEL EEN RECHTE DOOR PLOT; MOOI ALS JE DIT DIFFERENTIECOETIENT ALTIJD ALS EEN VERBIENDINGSRECHTE KAN AANDUIDEN BIJV OP EEN SINUS. 
-% Hier dan helemaal dezelfde redenering als bij de afgeleide aanbrengen van wiskunde 
+\begin{image}[0.8\textwidth]
+  \begin{tikzpicture}
+  \begin{axis}[
+	  axis x line=bottom,
+	  axis y line=none,   
+	  axis line style={->},
+	  xmin= \yrangemin, xmax=\yrangemax,
+	  ymin=-1, ymax=3,  %plek voor schepen en tijdlabels 
+	  xlabel={Positie--as (in meter)},
+	  xtick distance=5,
+	  xticklabel={\tiny\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	  width=14cm, height=4cm,
+  ]
 
+  % Schip niet tonen-->opacity op nul
+  \node[opacity=0,scale=1,xscale=-1]  (schip0) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0,draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.2) {\small $t_0=\SI{\at}{\second}$};
 
-% REKENT AUTOMATISCH IN DE TEKST 
-\pgfmathsetmacro{\lt}{7}
-\pgfmathsetmacro{\lx}{38}
-\pgfmathsetmacro{\deltatla}{\lt - \at}
-\pgfmathsetmacro{\deltaxla}{\lx - \ax}
-\pgfmathsetmacro{\vbarla}{\deltaxla / \deltatla}
-Indien niet met \(t_2 = \bt\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{8}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
-Eenvoudige berekening levert dat de gemiddelde snelheid tussen \(t_1=\ax\) en \(t_l=\lt\) gegeven wordt door 
+  \node[opacity=1,scale=1,xscale=1] (schip1) at (axis cs:\bx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] (t2) at (axis cs:\bx,2.2) {\small $t_1=\SI{\bt}{\second}$};
+
+  \node[opacity=1]                     (schip2) at (axis cs:\cx,0.5) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] (t3) at (axis cs:\cx,2.2) {\small $t_2=\SI{\ct}{\second}$};
+
+  % Schip niet tonen-->opacity op nul
+  \node[opacity=0]                                (schip3) at (axis cs:\dx,0.5) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0, draw, rectangle, inner sep=1pt] (t4) at (axis cs:\dx,2.2) {\small $t_3=\SI{\dt}{\second}$};
+
+  \draw[<->, dotted, red] (schip1) -- (schip2) node[midway, fill=white]{\(\Delta x\)};
+
+  
+  \end{axis}
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+  \begin{axis}[
+	  axis x line=bottom,
+	  axis y line=left,
+	  axis line style={->},
+	  xlabel={tijd (in seconden)},
+	  ylabel={positie (in meter)},
+	  xmin= \xrangemin, xmax=\xrangemax,
+	  ymin= \yrangemin, ymax=\yrangemax,
+	  xtick distance=5,
+	  ytick distance=10,
+	  xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
+	  yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	  grid=both,
+	  width=15cm, height=10cm,
+  ]
+
+  \addplot[blue, thick, smooth, tension=0.5] coordinates{
+	  (\at,\ax)
+	  (\bt,\bx)
+	  (\ct,\cx)
+	  (\dt,\dx)
+  };
+  
+  % SCHIP NIET AFBEELDEN --> OPACITY 0 
+  \node[opacity=0] (schip0) at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0, draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_0=\SI{\at}{\second}$};
+
+  \node[] (schip1) at (axis cs:\bt,\bx) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:\bt,\bx+10) {\small $t_1=\SI{\bt}{\second}$};
+
+  \node[] (schip2) at (axis cs:\ct,\cx) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:\ct,\cx+10) {\small $t_2=\SI{\ct}{\second}$};
+
+  % SCHIP NIET AFBEELDEN --> OPACITY 0 
+  \node[opacity=0] (schip3) at (axis cs:\dt,\dx) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0, draw, rectangle, inner sep=1pt] at (axis cs:\dt,\dx+10) {\small $t_3=\SI{\dt}{\second}$};
+
+  % --- DeltaX accolade ---
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
+  (axis cs:\bt,\bx) -- (axis cs:\bt,\cx) 
+  node[midway, right, xshift=2pt] {\small $\Delta x$};
+
+  % --- DeltaT accolade ---
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, xmgreen, thick] 
+	  (axis cs:\bt,\cx) -- (axis cs:\ct,\cx) 
+	  node[midway, below, yshift=-2pt] {\small $\Delta t$};
+
+  \end{axis}
+  \end{tikzpicture}
+\end{image}
+\captionof{figure}{De positie van de zeilboot met een tijd-as}
+
+Indien niet met \(t_2 = 15\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{10}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
+Op de grafiek zien we dat \(x_l = 22\) en een rechtsreekse berekening levert dan dat de gemiddelde snelheid tussen \(t_1=5\) en \(t_l=8\) gegeven wordt door 
 
 \[
-\overline{v}=\frac{x_2-x_l}{t_2-t_l}=\frac{\SI{\lx}{\meter} - \SI{\ax}{\meter}}{\SI{\lt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxla}{\meter}}{\SI{\deltatla}{\meter}} = \SI{\vbarla}{\meter\per\second}
+\overline{v}=\frac{x_l-x_1}{t_l-t_1}=\frac{\SI{22}{\meter} - \SI{40}{\meter}}{\SI{10}{\second} - \SI{5}{\second}}=  \frac{\SI{-18}{\meter}}{\SI{5}{\second}} = \SI{-3.6}{\meter\per\second}
 \]
 
-Op de plaatsgrafiek schuift de zeilboot in de richting van \(t_1\): 
-
-\begin{image}[\textwidth]
-	\begin{tikzpicture}
-	\begin{axis}[
-		axis x line=bottom,
-		axis y line=none,       % no vertical axis
-		axis line style={->},
-		xmin=-50, xmax=55,    % position axis
-		ymin=-1, ymax=3,        % enough room for icons + labels
-		width=14cm, height=4cm,
-		xlabel={Positie--as (in meter)},
-		xtick={-50,-40,...,50},
-		xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}}, % gaf eerst in beduidende cijfers 
-		% yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
-	]
-	
-	% --- Ships at given positions ---
-	\node[scale=1,xscale=-1]  (ship1) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
-	\node[scale=1,xscale=-1] (ship2) at (axis cs:\lx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
-	
-	% --- Time labels above ships ---
-	\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.0) {\small $t_1=\SI{\at}{\second}$};
-	\node[draw, rectangle, inner sep=1pt] (tl) at (axis cs:\lx,2.5) {\small $t_l=\SI{\lt}{\second}$};
-	
-	\end{axis}
-	\end{tikzpicture}
-	\begin{tikzpicture}
-		\begin{axis}[
-			axis x line=bottom,
-			axis y line=left,
-			axis line style={->},
-			xlabel={tijd (in seconden)},
-			ylabel={positie (in meter)},
-			xmin=0, xmax=50,
-			ymin=-50, ymax=65,
-			xtick={0,10,...,50},
-			ytick={-50,-40,...,50},
-			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
-			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
-			grid=both,
-			width=15cm, height=10cm,
-		]
-	
-		% --- The position–time curve ---
-		\addplot[blue, thick, smooth, tension=0.5] coordinates{
-			(\at,\ax)
-			(\lt,\lx)
-		};
-	
-		% --- Ships as markers at data points ---
-		\node[opacity=0.4] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
-		\node[opacity=0.4] at (axis cs:\lt,\lx) {\includegraphics[width=1cm]{schip_icoon}};
-	
-		% --- Time labels above each ship ---
-		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_1=\SI{\at}{\second}$};
-		\node[draw, rectangle, inner sep=1pt] at (axis cs:\lt,\lx+10) {\small $t_l=\SI{\lt}{\second}$};
-	
-		% --- DeltaX brace ---
-		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
-			(axis cs:\lt,\ax) -- (axis cs:\lt,\lx) 
-			node[midway, right, xshift=2pt] {\small $\Delta x$};
-	
-		% --- DeltaT brace ---
-		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, cyan, thick] 
-			(axis cs:\at,\ax) -- (axis cs:\lt,\ax) 
-			node[midway, below, yshift=-2pt] {\small $\Delta t$};
-	
-		\end{axis}
-	\end{tikzpicture}
-\end{image}	
-\captionof{figure}{De positie van de zeilboot voor tijd \(t_1\) en \(t_l\)}
-
-
+De gemiddelde snelheid is kleiner geworden en op de plaatsgrafiek schuift de zeilboot in de richting van \(t_1\). 
 De gemiddelde snelheid \(\bar{v} = \frac{x_l - x_1}{t_l-t_1}\) is een \textit{betere} benadering voor de ogenblikkelijke snelheid op \(t_a\). 
 Het is nog steeds een gemiddelde snelheid! 
 De lezer raadde het waarschijnlijk al...
-\pgfmathsetmacro{\mt}{6}
-\pgfmathsetmacro{\mx}{34}
-\pgfmathsetmacro{\deltatma}{\mt - \at}
-\pgfmathsetmacro{\deltaxma}{\mx - \ax}
-\pgfmathsetmacro{\vbarma}{\deltaxma / \deltatma}
-Door de gemiddelde snelheid te berekenen voor \(t_m\) wordt de benadering voor de gemiddelde snelheid nog beter... 
-Op de grafiek komen de twee schapen erg dicht bij elkaar... 
+
+Door de gemiddelde snelheid te berekenen voor \(t_m = 7\) waarvoor \(x_m = 31\) wordt de benadering voor de ogenblikkelijke snelheid op \(t_1\) nog beter... 
+Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar... 
 
 \[
-\overline{v}=\frac{x_2-x_m}{t_2-t_m}=\frac{\SI{\mx}{\meter} - \SI{\ax}{\meter}}{\SI{\mt}{\second} - \SI{\at}{\second}}=  \frac{\SI{\deltaxma}{\meter}}{\SI{\deltatma}{\meter}} = \SI{\vbarma}{\meter\per\second}
+\overline{v}=\frac{x_2-x_m}{t_2-t_m}=\frac{\SI{31}{\meter} - \SI{40}{\meter}}{\SI{7}{\second} - \SI{5}{\second}}=  \frac{\SI{9}{\meter}}{\SI{2}{\meter}} = \SI{4.5}{\meter\per\second}
 \]
-\begin{image}[\textwidth]
-	\begin{tikzpicture}
-	\begin{axis}[
-		axis x line=bottom,
-		axis y line=none,       % no vertical axis
-		axis line style={->},
-		xmin=-50, xmax=55,    % position axis
-		ymin=-1, ymax=3,        % enough room for icons + labels
-		width=14cm, height=4cm,
-		xlabel={Positie--as (in meter)},
-		xtick={-50,-40,...,50},
-		xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}}, % gaf eerst in beduidende cijfers 
-		% yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
-	]
-	
-	% --- Ships at given positions ---
-	\node[scale=1,xscale=-1]  (ship1) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
-	\node[scale=1,xscale=-1] (ship2) at (axis cs:\mx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
-	
-	% --- Time labels above ships ---
-	\node[draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.0) {\small $t_1=\SI{\at}{\second}$};
-	\node[draw, rectangle, inner sep=1pt] (tl) at (axis cs:\mx,2.5) {\small $t_l=\SI{\mt}{\second}$};
-	
-	\end{axis}
-	\end{tikzpicture}
-	\begin{tikzpicture}
-		\begin{axis}[
-			axis x line=bottom,
-			axis y line=left,
-			axis line style={->},
-			xlabel={tijd (in seconden)},
-			ylabel={positie (in meter)},
-			xmin=0, xmax=50,
-			ymin=-50, ymax=65,
-			xtick={0,10,...,50},
-			ytick={-50,-40,...,50},
-			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
-			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
-			grid=both,
-			width=15cm, height=10cm,
-		]
-	
-		% --- The position–time curve ---
-		\addplot[blue, thick, smooth, tension=0.5] coordinates{
-			(\at,\ax)
-			(\mt,\mx)
-		};
-	
-		% --- Ships as markers at data points ---
-		\node[opacity=0.4] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
-		\node[opacity=0.4] at (axis cs:\mt,\mx) {\includegraphics[width=1cm]{schip_icoon}};
-	
-		% --- Time labels above each ship ---
-		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_1=\SI{\at}{\second}$};
-		\node[draw, rectangle, inner sep=1pt] at (axis cs:\mt,\mx+10) {\small $t_l=\SI{\mt}{\second}$};
-	
-		% --- DeltaX brace ---
-		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
-			(axis cs:\mt,\ax) -- (axis cs:\mt,\mx) 
-			node[midway, right, xshift=2pt] {\small $\Delta x$};
-	
-		% --- DeltaT brace ---
-		\draw[decorate, decoration={brace, amplitude=5pt, mirror}, cyan, thick] 
-			(axis cs:\at,\ax) -- (axis cs:\mt,\ax) 
-			node[midway, below, yshift=-2pt] {\small $\Delta t$};
-	
-		\end{axis}
-	\end{tikzpicture}
-\end{image}	
-\captionof{figure}{De positie van de zeilboot voor tijd \(t_1\) en \(t_m\)}
+
+% HIER ZIJN DE NUMMER NOG FOUT --> WORDT GROTER DOOR AFRONDINGSFOUTEN... 
+
+\maakachtvar{0}{30}{5}{40}{15}{10}{35}{-10}
+
+\begin{image}[0.8\textwidth]
+  \begin{tikzpicture}
+  \begin{axis}[
+	  axis x line=bottom,
+	  axis y line=none,   
+	  axis line style={->},
+	  xmin= \yrangemin, xmax=\yrangemax,
+	  ymin=-1, ymax=3,  %plek voor schepen en tijdlabels 
+	  xlabel={Positie--as (in meter)},
+	  xtick distance=5,
+	  xticklabel={\tiny\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	  width=14cm, height=4cm,
+  ]
+
+  % Schip niet tonen-->opacity op nul
+  \node[opacity=0,scale=1,xscale=-1]  (schip0) at (axis cs:\ax,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0,draw, rectangle, inner sep=1pt] (t1) at (axis cs:\ax,2.2) {\small $t_0=\SI{\at}{\second}$};
+
+  \node[opacity=1,scale=1,xscale=1] (schip1) at (axis cs:\bx,0.5)  {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] (t2) at (axis cs:\bx,2.2) {\small $t_1=\SI{\bt}{\second}$};
+
+  \node[opacity=1]                     (schip2) at (axis cs:\cx,0.5) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] (t3) at (axis cs:\cx,2.2) {\small $t_2=\SI{\ct}{\second}$};
+
+  \node[opacity=1]                     (schipl) at (axis cs:22,0.5) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] (t3) at (axis cs:22,2.2) {\small $t_l=\SI{10}{\second}$};
+
+  \node[opacity=1]                     (schipm) at (axis cs:31,0.5) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] (t3) at (axis cs:31,2.2) {\small $t_m=\SI{7}{\second}$};
+
+  % Schip niet tonen-->opacity op nul
+  \node[opacity=0]                                (schip3) at (axis cs:\dx,0.5) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0, draw, rectangle, inner sep=1pt] (t4) at (axis cs:\dx,2.2) {\small $t_3=\SI{\dt}{\second}$};
+
+  \draw[<->, dotted, red] (schip1) -- (schipm) node[above, fill=white]{\(\Delta x\)};
+
+  
+  \end{axis}
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+  \begin{axis}[
+	  axis x line=bottom,
+	  axis y line=left,
+	  axis line style={->},
+	  xlabel={tijd (in seconden)},
+	  ylabel={positie (in meter)},
+	  xmin= \xrangemin, xmax=\xrangemax,
+	  ymin= \yrangemin, ymax=\yrangemax,
+	  xtick distance=5,
+	  ytick distance=10,
+	  xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
+	  yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	  grid=both,
+	  width=15cm, height=10cm,
+  ]
+
+  \addplot[blue, thick, smooth, tension=0.5] coordinates{
+	  (\at,\ax)
+	  (\bt,\bx)
+	  (\ct,\cx)
+	  (\dt,\dx)
+  };
+  
+  % SCHIP NIET AFBEELDEN --> OPACITY 0 
+  \node[opacity=0] (schip0) at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0, draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_0=\SI{\at}{\second}$};
+
+  \node[] (schip1) at (axis cs:\bt,\bx) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:\bt,\bx+10) {\small $t_1=\SI{\bt}{\second}$};
+
+  \node[] (schip2) at (axis cs:\ct,\cx) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:\ct,\cx+10) {\small $t_2=\SI{\ct}{\second}$};
+
+  \node[] (schipl) at (axis cs:10,22) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:10,22+10) {\small $t_l=\SI{10}{\second}$};
+
+  \node[] (schipm) at (axis cs:7,31) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:7,31+10) {\small $t_m=\SI{7}{\second}$};
+
+  % SCHIP NIET AFBEELDEN --> OPACITY 0 
+  \node[opacity=0] (schip3) at (axis cs:\dt,\dx) {\includegraphics[width=1cm]{schip_icoon}};
+  \node[opacity=0, draw, rectangle, inner sep=1pt] at (axis cs:\dt,\dx+10) {\small $t_3=\SI{\dt}{\second}$};
+
+  % --- DeltaX accolade ---
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
+  (axis cs:\bt,\bx) -- (axis cs:\bt,22) 
+  node[midway, left, xshift=2pt] {\small $\Delta x$};
+
+  % --- DeltaT accolade ---
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, xmgreen, thick] 
+	  (axis cs:\bt,22) -- (axis cs:10,22) 
+	  node[midway, below, yshift=-2pt] {\small $\Delta t$};
+
+  \end{axis}
+  \end{tikzpicture}
+\end{image}
+\captionof{figure}{De positie van de zeilboot met een tijd-as}
+
+
+
+
+
+
 
 De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. 
 Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval.
@@ -399,22 +380,56 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de r
 
 
 
-% DIT MOET SWS NAAR DE BOOT!! 
 \begin{exercise}
-Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van het autotje. Bepaal enkel met de grafiek en zonder te rekenen: 
+Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van de zeilboot. Bepaal enkel met de grafiek en zonder te rekenen: 
 \begin{itemize}
-	\item Waar staat de auto stil? 
-	\item Waar heeft de auto een positieve snelheid?
+	\item Waar ligt de zeilboot stil? 
+	\item Waar heeft de zeilboot een positieve snelheid?
 	\item waar is de snelheid negatief? 
-	\item Op welk moment bewoog de auto het snelst? 
+	\item Op welk moment bewoog de zeilboot het snelst? 
 \end{itemize}
 
-\begin{image}
-	\includegraphics[width=0.45\textwidth]{Serway2p1(1)}
-	$\qquad$   % hack 
-	\includegraphics[width=0.45\textwidth]{Serway2p1(2)}
+\begin{image}[0.5\textwidth]
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis x line=bottom,
+			axis y line=left,
+			axis line style={->},
+			xlabel={tijd (in seconden)},
+			ylabel={positie (in meter)},
+			xmin= \xrangemin, xmax=\xrangemax,
+			ymin= \yrangemin, ymax=\yrangemax,
+			xtick distance=5,
+			ytick distance=10,
+			xticklabel={\SI[round-precision=0, round-mode=places]{\tick}{s}},
+			yticklabel={\SI[round-precision=0, round-mode=places]{\tick}{m}},
+			grid=both,
+			width=15cm, height=10cm,
+		]
+
+		\addplot[blue, thick, smooth, tension=0.5] coordinates{
+			(\at,\ax)
+			(\bt,\bx)
+			(\ct,\cx)
+			(\dt,\dx)
+		};
+		
+		\node[] at (axis cs:\at,\ax) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\at,\ax+10) {\small $t_0=\SI{\at}{\second}$};
+	
+		\node[] at (axis cs:\bt,\bx) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\bt,\bx+10) {\small $t_1=\SI{\bt}{\second}$};
+	
+		\node[] at (axis cs:\ct,\cx) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\ct,\cx+10) {\small $t_2=\SI{\ct}{\second}$};
+	
+		\node[] at (axis cs:\dt,\dx) {\includegraphics[width=1cm]{schip_icoon}};
+		\node[draw, rectangle, inner sep=1pt] at (axis cs:\dt,\dx+10) {\small $t_3=\SI{\dt}{\second}$};
+	
+		\end{axis}
+		\end{tikzpicture}
 	\end{image}
-	\captionof{figure}{Verschillende posities en de grafiek van de plaatsfunctie}
+	\captionof{figure}{De positie van de zeilboot met een tijd-as}
 	
 \end{exercise}
 
