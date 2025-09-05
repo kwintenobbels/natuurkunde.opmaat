@@ -3,7 +3,8 @@
 #
 # : "${XAKE_BASE:=ximeralatex}"
 # : "${XAKE_VERSION:=v2.7.4}"
-: "${XAKE_VERSION:=v2.7.5fix-full}"    # with texlive_full
+: "${XAKE_VERSION:=v2.7.xmcss-full}"    # with texlive_full
+# : "${XAKE_VERSION:=v2.7.5fix3-full}"    # with texlive_full
 #
 # For publishing you'll need a GPG Key
 # To generate a key-pair, fill in your name and email, and run 'xmlatex genKey'
@@ -40,7 +41,7 @@ YOUR_EMAIL="DUMMY_EMAIL_TEST"
 # For testing/debugging
 #
 # : "${DEBUG:=1}"
-: "${COMMAND:=.ximera_local//xmScripts/xmlatex}"
+#: "${COMMAND:=.ximera_local/xmScripts/xmlatex}"
 #
 # for LOCALLY generated/tagged images, use:
 # export DOCKER_REPO=" "
