@@ -61,12 +61,12 @@ jobs:
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          xmlatex veryclean  -j 5 $XM_TO_PROCESS
-          ls -alrt 6dejaar/kinematica
-          rm -rf */*/tikz
-          rm -rf */*/build
-          rm -rf */*/xmPictures
-          find 6dejaar/kinematica
+          # xmlatex veryclean  -j 5 $XM_TO_PROCESS
+          # ls -alrt 6dejaar/kinematica
+          # rm -rf */*/tikz
+          # rm -rf */*/build
+          # rm -rf */*/xmPictures
+          # find 6dejaar/kinematica
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
@@ -171,7 +171,6 @@ jobs:
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"          
           xmlatex name
-          xmlatex frost  $XM_TO_PROCESS
           xmlatex serve  $XM_TO_PROCESS
           # echo "Recent git log:"
           # git log --oneline --graph --decorate --all -n 10
