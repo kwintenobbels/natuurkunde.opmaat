@@ -171,7 +171,8 @@ jobs:
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"          
           xmlatex name
-          xmlatex serve -t $XM_TO_PROCESS
+          xmlatex frost  $XM_TO_PROCESS
+          xmlatex serve  $XM_TO_PROCESS
           # echo "Recent git log:"
           # git log --oneline --graph --decorate --all -n 10
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
