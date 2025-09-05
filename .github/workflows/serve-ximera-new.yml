@@ -49,26 +49,26 @@ jobs:
             **/*.xref
             **/*.svg
             **/*.png
+            **/*.xbb
             !.git/**
             !.github/**
           key: ximeraPDFexport-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
             ximeraHTMLexport-${{ github.ref_name }}-
             ximeraPDFexport-${{ github.ref_name }}-
-            ximeraPDFexport-
-            ximeraHTMLexport-
 
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          .ximera_local/xmScripts/xmlatex veryclean  -j 5 $XM_TO_PROCESS
+          xmlatex veryclean  -j 5 $XM_TO_PROCESS
+          ls -alrt 6dejaar/kinematica
           rm -rf */*/tikz
           rm -rf */*/build
           rm -rf */*/xmPictures
           find 6dejaar/kinematica
-          .ximera_local/xmScripts/xmlatex bake -t --compile pdfexport  -j 5 $XM_TO_PROCESS
-          .ximera_local/xmScripts/xmlatex bake -t --compile htmlexport -j 5 $XM_TO_PROCESS
-          .ximera_local/xmScripts/xmlatex bake -t --compile handout.pdf -f -j 5 $XM_TO_PROCESS
+          xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
+          xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
+          xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
 
 
       # Save cache
@@ -84,6 +84,7 @@ jobs:
             **/*.xref
             **/*.svg
             **/*.png
+            **/*.xbb
             !.git/**
             !.github/**
           key: ximeraHTMLexport-${{ github.ref_name }}-${{ github.run_id }}
@@ -123,9 +124,9 @@ jobs:
         run: |
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          .ximera_local/xmScripts/xmlatex name
-          .ximera_local/xmScripts/xmlatex frost $XM_TO_PROCESS
-          .ximera_local/xmScripts/xmlatex serve $XM_TO_PROCESS
+          xmlatex name
+          xmlatex frost $XM_TO_PROCESS
+          xmlatex serve $XM_TO_PROCESS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 

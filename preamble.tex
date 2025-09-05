@@ -1,3 +1,13 @@
+
+\ifdefined\adhocpreambleloaded
+    \typeout{SKIP (re-)loading preamble.tex}%
+      \endinput % stops reading this file here
+\fi
+%     \else
+%     \typeout{LOADING PREAMBLE.tex}%
+% %  \fi
+
+
 %
 %%% Begin Laad packages
 %
@@ -1283,3 +1293,6 @@ Dit materiaal wordt ontwikkeld als open-source project via \href{https://natuurk
 \usepackage{marginnote}
 
 \newcommand{\pt}[1]{\leavevmode\marginnote[\hfill\textbf{/#1}]{\hfill/#1}\addtocounter{totaantal}{#1}}
+
+
+% \fi

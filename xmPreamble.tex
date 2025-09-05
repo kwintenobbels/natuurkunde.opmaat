@@ -4,10 +4,10 @@
 \typeout{**** Class options: \@classoptionslist ****}
 
 \@ifclassloaded{xourse}{%
-    \typeout{Start loading preamble.tex (in a XOURSE)}%
+    \typeout{Start loading xmPreamble.tex (in a XOURSE)}%
     \def\isXourse{true}  % could/should be in xourse.cls !
 }{%
-    \typeout{Start loading preamble.tex (NOT in a XOURSE)}%
+    \typeout{Start loading xmPreamble.tex (NOT in a XOURSE)}%
 }
 \makeatother
 
@@ -65,3 +65,10 @@
 
 
 \makeatother
+
+\typeout{Start loading preamble.tex from xmPreamble}%
+
+\input{preamble.tex}
+
+\def\adhocpreambleloaded{true}
+\typeout{Loaded preamble.tex from xmPreamble (\adhocpreambleloaded)}%
