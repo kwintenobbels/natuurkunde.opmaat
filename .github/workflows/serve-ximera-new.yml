@@ -15,14 +15,12 @@ env:
   # XM_TO_PROCESS: "test.tex spc/basisbegrippen.tex"
   #XM_TO_PROCESS: "6dejaar/kinematica/knmtc_bgrppn_referentiestelsel.tex"
 
-
 jobs:
-
   build-ximera-htmlexport:
     name: Run pdfexport and htmlexport
     runs-on: ubuntu-latest
     # continue-on-error: true
-    container: &x-container
+    container: &build-container
       image: ghcr.io/ximeraproject/ximeralatex:v2.7.xmcss-full
       options: >-
         --workdir /code
@@ -57,20 +55,21 @@ jobs:
           restore-keys: |
             ximeraHTMLexport-${{ github.ref_name }}-
             ximeraPDFexport-${{ github.ref_name }}-
+            ximeraHTMLexport-
+            ximeraPDFexport-
 
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           # xmlatex veryclean  -j 5 $XM_TO_PROCESS
-          # ls -alrt 6dejaar/kinematica
+          ls -alrt 6dejaar/kinematica
           # rm -rf */*/tikz
-          # rm -rf */*/build
-          # rm -rf */*/xmPictures
-          # find 6dejaar/kinematica
+          rm -rf */*/build
+          rm -rf */*/xmPictures
+          find 6dejaar/kinematica
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
-
 
       # Save cache
       - name: "Postprocess: Save cache"
@@ -102,7 +101,8 @@ jobs:
     needs: build-ximera-htmlexport
     # continue-on-error: true
     runs-on: ubuntu-latest
-    container: *x-container
+    container: &serve-container
+      image: ghcr.io/ximeraproject/ximeralatex:v2.7.xmcss
     permissions:
       actions: read
       contents: read
@@ -143,11 +143,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  
     continue-on-error: true
-    # container: *x-container
-    container:
-      image: ghcr.io/ximeraproject/ximeralatex:v2.7.xmcss
-      options: >-
-        --workdir /code    
+    container: *serve-container
     environment: production
 
     steps:
