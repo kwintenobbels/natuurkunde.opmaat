@@ -1,4 +1,4 @@
-name: Ximera Workflow (new)
+name: "Ximera Workflow (new)"
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     # continue-on-error: true
     container: &x-container
-      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2-full
+      image: ghcr.io/ximeraproject/ximeralatex:v2.7.xmcss-full
       options: >-
         --workdir /code
     permissions:
@@ -143,7 +143,7 @@ jobs:
     continue-on-error: true
     # container: *x-container
     container:
-      image: ghcr.io/ximeraproject/ximeralatex:v2.7.5fix2
+      image: ghcr.io/ximeraproject/ximeralatex:v2.7.xmcss
       options: >-
         --workdir /code    
     environment: production
