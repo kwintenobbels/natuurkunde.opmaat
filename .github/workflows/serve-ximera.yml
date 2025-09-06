@@ -52,10 +52,10 @@ jobs:
             !.github/**
           key: ximeraPDFexport-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
-            ximeraHTMLexport-${{ github.ref_name }}-
-            ximeraPDFexport-${{ github.ref_name }}-
-            ximeraHTMLexport-
-            ximeraPDFexport-
+            # ximeraHTMLexport-${{ github.ref_name }}-
+            # ximeraPDFexport-${{ github.ref_name }}-
+            # ximeraHTMLexport-
+            # ximeraPDFexport-
 
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
@@ -71,6 +71,11 @@ jobs:
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
+          ls -alR
+          rm -rf */*/build
+          rm -rf */*/xmPictures
+          rm -rf */build
+          rm -rf */xmPictures          
 
       # Save cache
       - name: "Postprocess: Save cache"
