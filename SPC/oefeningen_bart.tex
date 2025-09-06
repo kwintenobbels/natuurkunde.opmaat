@@ -6,7 +6,7 @@
 % \newcommand{\pt}[1]{\leavevmode\marginnote[\hfill\textbf{/#1}]{\hfill/#1}\addtocounter{totaantal}{#1}}
 
 
-\addPrintStyle{.}
+%\addPrintStyle{.}
 
 \pdfOnly{
     \renewcommand{\xmcursusnaam}{{\textsc{Natuurkunde}}}
@@ -16,18 +16,26 @@
 
 \begin{document}
 %	\setcounter{tocdepth}{2}
-    \xmtitle{Oefeningen 1D}{}  
+    \xmtitle{Oefeningen cursus Bart}{}  
 
     
 \makeatletter
-\g@addto@macro\input@path{{6dejaar/kinematica/exercises/}}
+\g@addto@macro\input@path{{../kinematica/exercises/}}
 \makeatother
 
 
-\activitychapter{6dejaar/kinematica/exercises/vragen_1import.tex}
-\activitychapter{6dejaar/kinematica/exercises/vragen_1noimport.tex}
+\activitychapter{../kinematica/exercises/bart_1dim_import.tex}
+\activitychapter{../kinematica/exercises/bart_1dim_noimport.tex}
 % \activitychapter{6dejaar/kinematica/exercises/vragen_1vraagstukken.tex}
 
+    
+\makeatletter
+\g@addto@macro\input@path{{../dynamica/exercises/}}
+\makeatother
+
+% 
+\activitychapter{../dynamica/exercises/bart_2dim_import.tex}
+%\activitychapter{6dejaar/dynamica/exercises/vragen_2Dnoimport.tex}
 
 
 \end{document}
