@@ -1395,6 +1395,15 @@ Dit kan gaan over:
 }
 \fi
 
+%% Overwrite definition in xourse.cls
+\AtBeginDocument{
+\renewcommand*{\logo}[1]{%
+    \IfFileExists{#1}%
+      {\gdef\xourse@logo{#1}}%
+      {\ClassError{xmPreamble}{logo file does not exist}
+        {To use logo, make sure that the referenced image file exists}}%
+}
+}
 % \fi
 
 
