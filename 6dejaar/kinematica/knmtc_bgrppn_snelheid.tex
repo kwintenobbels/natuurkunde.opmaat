@@ -574,54 +574,72 @@ Bij voorwerpen die in twee dimensies bewegen, splitst men de beweging doorgaans 
 
 % \end{image}
 
-Snelheid wordt vectorieel beschreven met de snelheidsvector \(\vec{v}\) die altijd raakt aan de baan. Scalair rekeningen worden gedaan met de snelheidscomponenten \(v_x\) en \(v_y\). De totale snelheid heeft het symbool \(v\).
 
+\begin{definition}
+	
+De \textbf{snelheidsvector \(\vec{v}\)} van een bewegend punt wordt gedefinieerd als de afgeleide van de plaatsvector naar de tijd:
 
-\begin{theorem}
-De snelheidsvector is rakend aan de baan.
+\[
+\vec{v}(t) = \frac{d\vec{r}(t)}{dt},
+\]
+
+en kan worden opgesplits in snelheidscomponenten \(v_x\) en \(v_y\):
+
+\[
+	\vec{v} = \frac{d\vec{r}}{dt} = \frac{d}{dt}(x \cdot \vec{e}_x + y \cdot \vec{e}_y) = \frac{dx}{dt} \cdot \vec{e}_x + \frac{dy}{dt} \cdot \vec{e}_y = \vec{v}_x + \vec{v}_y
+\]
+De grootte van de totale snelheid wordt genoteerd met het symbool \(v\) en is gelijk aan 
+\[
+v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
+\]
 
 \begin{image}[0.4\textwidth]
-\begin{tikzpicture}
-    \begin{axis}[
-        axis lines=middle,
-        xlabel={$x$},
-        ylabel={$y$},
-        ticks=none,        % removes all tick marks
-        xmin=0, xmax=2.5,
-        ymin=0, ymax=2.5,
-        grid=both,
-        % minor tick num=1
-    ]
-    \addplot[
-        domain=-3:3, 
-        samples=100, 
-        thick, 
-        blue
-    ]{-0.5*(x^2) + 2};
-    % node[pos=0.3, above]{De baan in het \(xy-vlak\)};
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=middle,
+			xlabel={$x$},
+			ylabel={$y$},
+			ticks=none,        % removes all tick marks
+			xmin=0, xmax=2.5,
+			ymin=0, ymax=2.5,
+			% grid=both,
+			% minor tick num=1
+		]
+		\addplot[
+			domain=-3:3, 
+			samples=100, 
+			thick, 
+			blue
+		]{-0.5*(x^2) + 2};
+		% node[pos=0.3, above]{De baan in het \(xy-vlak\)};
+	
+		\node[blue, above] at (axis cs:0.8, 2) {Baan in het \(xy-vlak\)};
+	
+	
+		\addplot[only marks, mark=*, mark size =2pt, red] coordinates {(1, 1.5)};
+	
+		\draw[->, thick, red] 
+		(axis cs:1,1.5) -- (axis cs:2,0.5)
+		node[pos=0.8, above right]{\(\vec{v}\)};
+	
+		\draw[->, thick, dotted, red] 
+		(axis cs:1,1.5) -- (axis cs:2,1.5)
+		node[pos=0.8, above right]{\(\vec{v}_x\)};
+	
+		\draw[->, thick, dotted, red] 
+		(axis cs:1,1.5) -- (axis cs:1,0.5)
+		node[pos=0.8, above right]{\(\vec{v}_y\)};
+	
+	
+		\end{axis}
+	
+	\end{tikzpicture}
+	\end{image}
+\end{definition}
 
-    \node[blue, above] at (axis cs:0.8, 2) {Baan in het \(xy-vlak\)};
+\begin{theorem}
+De snelheidsvector is altijd rakend aan de baan.
 
-
-    \addplot[only marks, mark=*, mark size =2pt, red] coordinates {(1, 1.5)};
-
-    \draw[->, thick, red] 
-    (axis cs:1,1.5) -- (axis cs:2,0.5)
-    node[pos=0.8, above right]{\(\vec{v}\)};
-
-    \draw[->, thick, dotted, red] 
-    (axis cs:1,1.5) -- (axis cs:2,1.5)
-    node[pos=0.8, above right]{\(\vec{v}_x\)};
-
-    \draw[->, thick, dotted, red] 
-    (axis cs:1,1.5) -- (axis cs:1,0.5)
-    node[pos=0.8, above right]{\(\vec{v}_y\)};
-
-
-    \end{axis}
-
-\end{tikzpicture}
-\end{image}
 \end{theorem}
 	\begin{proof}
 	We kunnen dit bewijzen met de kettingregel, toegepast op de functie $y(t)=y(x(t))$.
@@ -631,27 +649,28 @@ De snelheidsvector is rakend aan de baan.
 	Inderdaad, $\frac{dy}{dx}$ is de helling van de baan en deze valt samen met de helling die de snelheidsvector maakt $\frac{v_y}{v_x}$.
 \end{proof}
 
-\subsection{Vectoriële notatie \& definitie}
-\[
-\langle \vec{v} \rangle = \frac{\Delta \vec{r}}{\Delta t}
-\]
-\[
-\vec{v} = \frac{d\vec{r}}{dt} = \frac{d}{dt}(x \cdot \vec{e}_x + y \cdot \vec{e}_y) = \frac{dx}{dt} \cdot \vec{e}_x + \frac{dy}{dt} \cdot \vec{e}_y = \vec{v}_x + \vec{v}_y
-\]
+% \subsection{Vectoriële notatie \& definitie}
+% \[
+% \langle \vec{v} \rangle = \frac{\Delta \vec{r}}{\Delta t}
+% \]
 
-\subsection{Scalaire notatie \& definitie}
-\[
-v_x(t) = v_x = \frac{dx}{dt}
-\]
-\[
-v_y(t) = v_y = \frac{dy}{dt}
-\]
-\[
-\langle v \rangle = \frac{\Delta r}{\Delta t}
-\]
-\[
-v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
-\]
+
+
+
+% DIT KOMT UIT DE SLIDES VAN VINCENT 
+% \subsection{Scalaire notatie \& definitie}
+% \[
+% v_x(t) = v_x = \frac{dx}{dt}
+% \]
+% \[
+% v_y(t) = v_y = \frac{dy}{dt}
+% \]
+% \[
+% \langle v \rangle = \frac{\Delta r}{\Delta t}
+% \]
+% \[
+% v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
+% \]
 
 	
 \end{document}
