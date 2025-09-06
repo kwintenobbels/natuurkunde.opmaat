@@ -1384,6 +1384,17 @@ Dit kan gaan over:
 \newcommand{\pt}[1]{\leavevmode\marginnote[\hfill\textbf{/#1}]{\hfill/#1}\addtocounter{totaantal}{#1}}
 
 
+\ifdefined\isXourse
+\else
+% \logo is only defined in xourses (but that prevents \logo to be used in global.sty etc ....)
+\newcommand*{\logo}[1]{%
+    \IfFileExists{#1}%
+      {\gdef\xourse@logo{#1}}%
+      {\ClassError{xmPreamble}{logo file does not exist}
+        {To use logo, make sure that the referenced image file exists}}%
+}
+\fi
+
 % \fi
 
 
