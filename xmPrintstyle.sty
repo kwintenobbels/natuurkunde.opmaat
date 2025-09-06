@@ -1314,8 +1314,11 @@
 
 % load global.sty if present
 \IfFileExists{global.sty}{
-    \typeout{Loading global.sty (from TEXINPUTPATH..)}   % logging
-    \usepackage{global}
+    \typeout{Scheduling loading global.sty at begindocument (from TEXINPUTPATH..)}   % logging
+    \AddToHook{begindocument}{%
+        \typeout{Loading global.sty (at begindocument)}   % logging
+        \usepackage{global}
+    }
 }{
     \typeout{Info: No global.sty found/used}   % logging
 }   
