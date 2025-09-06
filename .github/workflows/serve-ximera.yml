@@ -60,7 +60,7 @@ jobs:
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          # xmlatex veryclean  -j 5 $XM_TO_PROCESS
+          xmlatex veryclean  -j 5 $XM_TO_PROCESS
           echo "kinematica:"
           ls -alR kinematica
           rm -rf */*/build
@@ -71,6 +71,7 @@ jobs:
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
+          xmlatex frost $XM_TO_PROCESS || echo "FROST FAILED"
           ls -alR
           rm -rf */*/build
           rm -rf */*/xmPictures
