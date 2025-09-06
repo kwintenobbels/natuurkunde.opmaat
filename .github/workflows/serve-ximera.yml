@@ -52,31 +52,31 @@ jobs:
             !.github/**
           key: ximeraPDFexport-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
-            # ximeraHTMLexport-${{ github.ref_name }}-
-            # ximeraPDFexport-${{ github.ref_name }}-
-            # ximeraHTMLexport-
-            # ximeraPDFexport-
+            ximeraHTMLexport-${{ github.ref_name }}-
+            ximeraPDFexport-${{ github.ref_name }}-
+            ximeraHTMLexport-
+            ximeraPDFexport-
 
       - name: "XIMERA: pdf and html (tikzexternalize/html)"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          xmlatex veryclean  -j 5 $XM_TO_PROCESS
-          echo "kinematica:"
-          ls -alR kinematica
-          rm -rf */*/build
-          rm -rf */*/xmPictures
-          rm -rf */build
-          rm -rf */xmPictures
+          # xmlatex veryclean  -j 5 $XM_TO_PROCESS
+          # echo "kinematica:"
+          # ls -alR kinematica
+          # rm -rf */*/build
+          # rm -rf */*/xmPictures
+          # rm -rf */build
+          # rm -rf */xmPictures
           echo "START"
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
           xmlatex frost $XM_TO_PROCESS || echo "FROST FAILED"
           ls -alR
-          rm -rf */*/build
-          rm -rf */*/xmPictures
-          rm -rf */build
-          rm -rf */xmPictures          
+          # rm -rf */*/build
+          # rm -rf */*/xmPictures
+          # rm -rf */build
+          # rm -rf */xmPictures          
 
       # Save cache
       - name: "Postprocess: Save cache"
@@ -133,7 +133,7 @@ jobs:
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           xmlatex name
-          xmlatex frost $XM_TO_PROCESS
+          # xmlatex frost $XM_TO_PROCESS   ### DONE ABOVE
           xmlatex serve $XM_TO_PROCESS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
