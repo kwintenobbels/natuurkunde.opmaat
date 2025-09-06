@@ -12,7 +12,6 @@ env:
   XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
   # XM_TO_PROCESS: "."
   XM_TO_PROCESS: "test.tex SPC/vectoren.tex"
-  #XM_TO_PROCESS: "6dejaar/kinematica/knmtc_bgrppn_referentiestelsel.tex"
 
 jobs:
   build-ximera-htmlexport:
@@ -61,11 +60,11 @@ jobs:
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           # xmlatex veryclean  -j 5 $XM_TO_PROCESS
-          ls -alrt 6dejaar/kinematica
-          # rm -rf */*/tikz
+          echo "kinematica:"
+          ls -alR kinematica
           rm -rf */*/build
           rm -rf */*/xmPictures
-          find 6dejaar/kinematica
+          echo "START"
           xmlatex bake --compile pdfexport  -j 5 $XM_TO_PROCESS
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 5 $XM_TO_PROCESS
