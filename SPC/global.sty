@@ -7,3 +7,38 @@
 \renewcommand{\xmafdelingsnaam}{{\textsc{Wiskunde Op Maat}}}
 
 \logo{xmPictures/logospc.png}
+
+%
+% Voorbereiding MAIN FRONTPAGE (Algemene titlepagina, en tableofcontents)
+%
+% ** overschrijf maketitle voor de \xmtitle van de xourse (of activity) **
+%% (Enkel in global.sty, want xmPrintstyle wordt *te vroeg* geladen, en alles wordt later overschreven door xourse.cls)
+\makeatletter
+\renewcommand{\maketitle}{
+  % Maak onderscheid tussen (volledige) xourses of (aparte) activities
+  \ifdefined\isXourse  
+      \xmPrintFrontPage{\@title}
+  
+      % Toon INHOUDSOPGAVE 
+      \thispagestyle{empty}
+      \cleardoublepage
+      \thispagestyle{empty}
+      \afterpage{\thispagestyle{empty}}  
+      \tableofcontents  
+      \thispagestyle{empty}
+      \cleardoublepage 
+  \fi  
+
+  \let\maketitle\othermaketitle % reset maketitle to usual definition.
+
+   \ifdefined\isXourse
+   \else
+       \markboth{\@title}{\@title}  % only needed in non-xourses ...
+   \fi
+%  \markright{ \@title }   % fix wrong section on first page of activity    
+
+  \thispagestyle{firstpage} 
+  \afterpage{\thispagestyle{otherpage}}  
+} % end \renewcommand maketitle (voor MAIN FRONTPAGE)
+
+\makeatother
