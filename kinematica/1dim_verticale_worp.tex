@@ -1,0 +1,105 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Verticale worp}{}
+    \xmsource\xmuitleg
+
+
+
+ In het jaar 1586 stond een wetenschapper uit Brugge op de Nieuwe Kerk van Delft . 
+ Onze perceptie leert dat zwaardere lichamen sneller vallen dan lichtere. 
+ Een pluim en een steen komen in regel niet op hetzelfde moment op de grond terecht. 
+ Toch blijkt deze intuitie niet te kloppen. \href{https://www.canonvanvlaanderen.be/events/simon-stevin/}{Simon Stevin} liet vanop de kerktoren twee loden bollen met een verschillend gewicht vallen en stelde vast dat ze op hetzelfde moment de grond raakten. 
+	
+
+In vacuüm -- waar voorwerpen geen luchtweerstand ondervinden -- blijkt de massa geen rol te spelen bij de constante versnelling die de voorwerpen krijgen: alle voorwerpen vallen met dezelfde versnelling! 
+Met lode bollen kon Simon Stevin dit effect uitschakelen. 
+De theoretische verklaring voor dit experiment hoort thuis in de dynamica. 
+In de kinematica wordt enkel de beweging beschreven. 
+Omdat de valversnelling constant is, heb je hier simpelweg met een EVRB te maken.
+
+\begin{image}
+
+\includegraphics[width=0.85\textwidth]{valbeweging_pasco2}
+\end{image}
+\captionof{figure}{Experimenteel bekomen grafieken van een verticale worp waarbij de as naar beneden is georiënteerd.}
+Strikt genomen verschilt de valversnelling van plaats tot plaats op de aarde, maar voor het gemak nemen wij in vraagstukken de waarde
+\[g=9,81\rm\,m/s^2.\]
+Omdat de verticale worp een EVRB is, kunnen we de formules (\ref{x(t)0}) en (\ref{v(t)0}) gebruiken om een valbeweging te beschrijven. Voor de versnelling $a$ nemen we dan $a=g$ of $a=-g$ al naargelang de oriëntatie van de coördinaatas.
+
+\begin{quickquestion*}{}{}
+Als je een tennisbal in de lucht gooit, op welk(e) moment(en) is de versnelling \(0\)? Op welk(e) moment(en) is de snelheid \(0\)? 
+\end{quickquestion*}
+
+\begin{quickquestion*}{}{}
+Leg de fysische betekenis uit indien de richting van de snelheidsvector en versnellingsvector tegengesteld zijn. Wat indien ze dezelfde richting hebben?
+\end{quickquestion*}
+
+
+\begin{exercise}
+Simon Stevin laat van de boord van een schip een loden bol in het water vallen. De \mbox{boord} bevindt zich $4,0\rm\,m$ boven het wateroppervlak. De loden bol zinkt vervolgens met de snelheid waarmee hij het water raakte. Er zijn $6,0\rm\,s$ tussen het tijdstip waarop de bol valt en ze de bodem van het water bereikt.
+
+\begin{image}
+	\includegraphics[width=0.4\textwidth]{boordschip}
+\end{image}
+
+\begin{question} Hoe diep is het water? \end{question}
+\begin{question} Wat is de gemiddelde snelheid van de bol over het hele traject? \end{question}
+
+\begin{oplossing}
+% \textit{gegeven} $x_1=4,0\rm\,m$ \\%%%\newline$t_2=6,0\rm\,s$ \\
+% \textit{gevraagd} $x_2-x_1$, $\overline{v}_{02}$ \\
+% \textit{oplossing} 
+De beweging is opgebouwd uit twee verschillende soorten bewegingen. Het eerste stuk is een vrije val, wat een EVRB is. In het tweede stuk (onder water) is de snelheid constant en is er dus geen versnelling. In geen geval kunnen we dus de formules voor een EVRB op het geheel toepassen. Die zijn immers afgeleid voor een beweging waar de versnelling (altijd, gedurende de hele beweging) constant is. \\
+
+Omdat we weten hoe ver de bol moet vallen voordat hij het wateroppervlak bereikt, kunnen we zowel de tijd die de bol hiervoor nodig heeft als de snelheid waarmee de bol het wateroppervlak raakt, bepalen. We kiezen een as naar beneden zodat -- omdat de snelheid in deze richting toeneemt -- de versnelling positief is en gelijk aan de valversnelling $g$ (toch voor het eerste stuk). De beginsnelheid van de bol is nul omdat hij vanuit rust wordt losgelaten. Voor de tijd vinden we:
+
+\[
+x_1=\frac{1}{2}gt^2\quad\Rightarrow\quad t_1=\sqrt{\frac{2x_1}{g}}
+\]
+
+Met de tijd\footnote{We zouden de tijd met het gevonden formuletje kunnen uitrekenen en met het getalletje dat we vinden verder rekenen. Maar met het formuletje verder werken -- algebra\"isch of symbolisch -- is toch o zo veel knapper en van toepassing voor \'alle boten en niet enkel voor een boot waarvoor het dek zich $4,0$ meter boven het wateroppervlak bevindt. Bovendien is het ``echte'' fysica omdat je een ``model'' uitwerkt en niet een rekensommetje oplost...} kunnen we de snelheid op het wateroppervlak vinden.
+
+\[
+v_1=gt_1\nonumber=g\sqrt{\frac{2x_1}{g}}\nonumber=\sqrt{2gx_1}
+\]
+
+Onder water, in het tweede stuk, beweegt de kogel met deze snelheid gedurende de resterende tijd: $6,0$ seconden min de tijd $t_1$ (\ref{tijd_boordschip}) die de kogel nodig had om te vallen. De afstand die de bol onder water aflegt, vinden we met de eenvoudige formuletjes van een ERB\footnote{Opmerking, een ERB is een speciaal geval van een EVRB. Een ERB heeft als constante versnelling $a=0$.}. We substitueren ook vergelijkingen (\ref{tijd_boordschip}) en (\ref{snelheid_boordschip}).
+
+\[
+\begin{array}{rcl}
+\Delta x&=&\overline{v}\cdot\Delta t\\
+&\Downarrow&\\
+x_2-x_1&=&v_1(t_2-t_1)\\
+&=&\sqrt{2gx_1}(t_2-\sqrt{\frac{2x_1}{g}})\\
+&=&\sqrt{2gx_1}t_2-2x_1\\
+&=&45\rm\,m
+\end{array}
+\]
+
+De gemiddelde snelheid vinden we door de totale afgelegde weg te delen door de totale benodigde tijd. Andere formuletjes zoals $\overline{v}=\frac{v_1+v_2}{2}$ zijn niet van toepassing omdat het helemaal niet over \'e\'en EVRB gaat waar dit formuletje geldt omdat de snelheid mooi lineair toeneemt. Hier gebeurt dat enkel in het eerste stuk en worden de verschillende snelheden niet even lang aangehouden zodat ze een verschillend aandeel hebben in de totale benodigde tijd.
+
+\[
+\begin{array}{rcl}
+\overline{v}_{02}=\frac{\Delta x}{\Delta t}=\frac{x_2}{t_2}&=&\frac{\sqrt{2gx_1}t_2-x_1}{t_2}\\
+&=&\sqrt{2gx_1}-\frac{x_1}{t_2}\\
+&=&8,2\rm\,m/s
+\end{array}
+\]
+
+\end{oplossing}
+\end{exercise}
+
+
+\begin{expandable}{youtube}{Een universiteitscollege over de leerstof van dit hoofdstuk.}
+
+	\youtube{q9IWoQ199_o}
+
+
+\end{expandable}
+
+
+\end{document}
