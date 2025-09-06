@@ -70,11 +70,11 @@ De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$.
 
 
 In het traject van de zeilboot is de gemiddelde snelheid van de boot tussen de tijdstippen $t_1$ en $t_2$ gelijk aan 
-$\overline{v}=\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{10}{\meter} - \SI{40}{\meter}}{\SI{15}{\second} - \SI{5}{\second}}= \frac{\SI{-30}{\meter}}{\SI{10}{\second}} = \SI{-3}{\meter\per\second}$. 
+$\overline{v} =\frac{\Delta x}{\Delta t} =\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{10}{\meter} - \SI{40}{\meter}}{\SI{15}{\second} - \SI{5}{\second}}= \frac{\SI{-30}{\meter}}{\SI{10}{\second}} = \SI{-3}{\meter\per\second}$. 
 Deze gemiddelde snelheid is negatief, wat betekent dat de zeilboot tegen de positieve richting-as bewogen is. 
 
 
-\begin{quickquestion*}
+\begin{quickquestion*}{}{}
 Kan je op de plaatsgrafiek van de zeilboot de gemiddelde snelheid tussen \(t_2\) en \(t_0\) aanduiden? 
 \end{quickquestion*}
 
@@ -125,8 +125,8 @@ Om de ogenblikkelijke snelheid op \(t_1 = \SI{5}{\second}\) te kennen, lijk het 
 Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de snelheid op \(t_1 = 5\). 
 
 \[
-\overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1} = \frac{10-40}{10-5} = \frac{-30}{5} = \SI{-6}{\meter\per\second}
-\]
+\overline{v} =\frac{\Delta x}{\Delta t} =\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{10}{\meter} - \SI{40}{\meter}}{\SI{15}{\second} - \SI{5}{\second}}= \frac{\SI{-30}{\meter}}{\SI{10}{\second}} = \SI{-3}{\meter\per\second}
+\] 
 
 
 \maakachtvar{0}{30}{5}{40}{15}{10}{35}{-10}
@@ -206,7 +206,7 @@ Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de sne
   % --- DeltaX accolade ---
   \draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
   (axis cs:\bt,\bx) -- (axis cs:\bt,\cx) 
-  node[midway, right, xshift=2pt] {\small $\Delta x$};
+  node[midway, left, xshift=-4pt] {\small $\Delta x$};
 
   % --- DeltaT accolade ---
   \draw[decorate, decoration={brace, amplitude=5pt, mirror}, xmgreen, thick] 
@@ -219,23 +219,24 @@ Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de sne
 \captionof{figure}{De positie van de zeilboot met een tijd-as}
 
 Indien niet met \(t_2 = 15\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{10}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
-Op de grafiek zien we dat \(x_l = 22\) en een rechtsreekse berekening levert dan dat de gemiddelde snelheid tussen \(t_1=5\) en \(t_l=8\) gegeven wordt door 
 
-\[
-\overline{v}=\frac{x_l-x_1}{t_l-t_1}=\frac{\SI{22}{\meter} - \SI{40}{\meter}}{\SI{10}{\second} - \SI{5}{\second}}=  \frac{\SI{-18}{\meter}}{\SI{5}{\second}} = \SI{-3.6}{\meter\per\second}
-\]
+% Op de grafiek zien we dat \(x_l = 22\) en een rechtsreekse berekening levert dan dat de gemiddelde snelheid tussen \(t_1=5\) en \(t_l=8\) gegeven wordt door 
+
+% \[
+% \overline{v}=\frac{x_l-x_1}{t_l-t_1}=\frac{\SI{22}{\meter} - \SI{40}{\meter}}{\SI{10}{\second} - \SI{5}{\second}}=  \frac{\SI{-18}{\meter}}{\SI{5}{\second}} = \SI{-3.6}{\meter\per\second}
+% \]
 
 De gemiddelde snelheid is kleiner geworden en op de plaatsgrafiek schuift de zeilboot in de richting van \(t_1\). 
 De gemiddelde snelheid \(\bar{v} = \frac{x_l - x_1}{t_l-t_1}\) is een \textit{betere} benadering voor de ogenblikkelijke snelheid op \(t_a\). 
-Het is nog steeds een gemiddelde snelheid! 
+Maar het is nog steeds een gemiddelde snelheid! 
 De lezer raadde het waarschijnlijk al...
 
-Door de gemiddelde snelheid te berekenen voor \(t_m = 7\) waarvoor \(x_m = 31\) wordt de benadering voor de ogenblikkelijke snelheid op \(t_1\) nog beter... 
+Door de gemiddelde snelheid te berekenen voor \(t_m = 7\) wordt de benadering voor de ogenblikkelijke snelheid op \(t_1\) nog beter... 
 Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar... 
 
-\[
-\overline{v}=\frac{x_2-x_m}{t_2-t_m}=\frac{\SI{31}{\meter} - \SI{40}{\meter}}{\SI{7}{\second} - \SI{5}{\second}}=  \frac{\SI{9}{\meter}}{\SI{2}{\meter}} = \SI{4.5}{\meter\per\second}
-\]
+% \[
+% \overline{v}=\frac{x_2-x_m}{t_2-t_m}=\frac{\SI{31}{\meter} - \SI{40}{\meter}}{\SI{7}{\second} - \SI{5}{\second}}=  \frac{\SI{9}{\meter}}{\SI{2}{\meter}} = \SI{4.5}{\meter\per\second}
+% \]
 
 % HIER ZIJN DE NUMMER NOG FOUT --> WORDT GROTER DOOR AFRONDINGSFOUTEN... 
 
@@ -275,7 +276,7 @@ Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar...
   \node[opacity=0]                                (schip3) at (axis cs:\dx,0.5) {\includegraphics[width=1cm]{schip_icoon}};
   \node[opacity=0, draw, rectangle, inner sep=1pt] (t4) at (axis cs:\dx,2.2) {\small $t_3=\SI{\dt}{\second}$};
 
-  \draw[<->, dotted, red] (schip1) -- (schipm) node[above, fill=white]{\(\Delta x\)};
+%   \draw[<->, dotted, red] (schip1) -- (schipm) node[above, fill=white]{\(\Delta x\)};
 
   
   \end{axis}
@@ -319,7 +320,7 @@ Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar...
   \node[draw, rectangle, inner sep=1pt] at (axis cs:10,22+10) {\small $t_l=\SI{10}{\second}$};
 
   \node[] (schipm) at (axis cs:7,31) {\includegraphics[width=1cm]{schip_icoon}};
-  \node[draw, rectangle, inner sep=1pt] at (axis cs:7,31+10) {\small $t_m=\SI{7}{\second}$};
+  \node[draw, rectangle, inner sep=1pt] at (axis cs:8,31+10) {\small $t_m=\SI{7}{\second}$};
 
   % SCHIP NIET AFBEELDEN --> OPACITY 0 
   \node[opacity=0] (schip3) at (axis cs:\dt,\dx) {\includegraphics[width=1cm]{schip_icoon}};
@@ -328,7 +329,7 @@ Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar...
   % --- DeltaX accolade ---
   \draw[decorate, decoration={brace, amplitude=5pt, mirror}, red, thick] 
   (axis cs:\bt,\bx) -- (axis cs:\bt,22) 
-  node[midway, left, xshift=2pt] {\small $\Delta x$};
+  node[midway, left, xshift=-4pt] {\small $\Delta x$};
 
   % --- DeltaT accolade ---
   \draw[decorate, decoration={brace, amplitude=5pt, mirror}, xmgreen, thick] 
@@ -361,17 +362,149 @@ De functie $v(t)$ geeft op elk moment $t$ de snelheid $v(t)$.
 \end{definition}
 
 
-Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je  de snelheid als de richtingscoöefficiënt van de raaklijn in het beschouwde punt. 
+Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je de snelheid als de richtingscoöefficiënt van de raaklijn in het beschouwde punt. 
 
-\begin{image}
-\includegraphics[width=0.8\textwidth]{snelheid1D}
+\begin{image}[0.4\textwidth]
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=middle,
+			xlabel={tijd \(t\)}, ylabel={positie \(\vec{x}\)},
+			grid=both,
+			width=10cm, height=6cm,
+			xmin=0, xmax=6, ymin=0, ymax=6,
+			xtick=\empty,
+			ytick=\empty,
+			clip=false,
+		]
+		% Keep original curve
+		\addplot[
+			smooth,
+			thick,
+			color=blue
+		] coordinates {
+			(0,1) (1,3) (3,2) (5,5) (6,5.5)
+		};
 
+		% Red points (only moved t_a dot)
+		\addplot[
+			only marks,
+			mark=*,
+			mark size=2pt,
+			color=red
+		] coordinates {
+			(2.85,1.95) (5,5)
+		};
+
+		% Dashed guide lines
+		\draw[dashed] (axis cs:2.85,1.95) -- (axis cs:2.85,0) node[below]{$t_a$};
+		\draw[dashed] (axis cs:2.85,1.95) -- (axis cs:0,1.95) node[left]{$x_a$};
+		\draw[dashed] (axis cs:5,5) -- (axis cs:5,0) node[below]{$t_b$};
+		\draw[dashed] (axis cs:5,5) -- (axis cs:0,5) node[left]{$x_b$};
+
+		% Tangent lines
+		\addplot[domain=1.8:3.8, thick, color=red] 
+			{0*(x-2.85) + 1.95};  % horizontal tangent through new red dot
+		\addplot[domain=4:6, thick, color=red] 
+			{1.2*(x-5) + 5};
+		\end{axis}
+	\end{tikzpicture}
 \end{image}
+\captionof{figure}{De snelheid als rico aan de raaklijn}
 
-\begin{image}
-\includegraphics[width=0.8\textwidth]{overzichtsnelheid1D}
 
+\begin{definition}
+De \textbf{snelheidsfunctie} \(\vec{v}(t)\) geeft voor elke moment \(t\) de snelheidsvector \(\vec{v}\). \\
+In één dimensie is \(\vec{v}\) een scalar en is de plaatsfuncie een grafiek waarop horizontaal de tijd wordt weergegeven en verticaal de grootte van de snelheid. 
+De snelheid op een welbepaald tijdstip \(t_a\) wordt genoteerd als 
+\[
+v_a = v(t_a)
+\]
+
+\begin{image}[0.4\textwidth]
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=middle,
+			xlabel={tijd \(t\)}, ylabel={snelheid \(\vec{v}\)},
+			grid=both,
+			width=10cm, height=6cm,
+			xmin=0, xmax=6, ymin=-1, ymax=3,
+			xtick=\empty,
+			ytick=\empty,
+			clip=false,
+		]
+
+		% Red points for t_a and t_b
+		\addplot[
+			only marks,
+			mark=*,
+			mark size=2pt,
+			color=red
+		] coordinates {
+			(2.85,0) (5,1.2)
+		};
+
+		% Dashed guide lines
+		\draw[dashed] (axis cs:2.85,0) -- (axis cs:2.85,0) node[below]{$t_a$};
+		\draw[dashed] (axis cs:2.85,0) -- (axis cs:0,0) node[left]{$v_a$};
+		\draw[dashed] (axis cs:5,1.2) -- (axis cs:5,0) node[below]{$t_b$};
+		\draw[dashed] (axis cs:5,1.2) -- (axis cs:0,1.2) node[left]{$v_b$};
+
+		% Smooth velocity curve (updated with zero at t_a=2.85)
+		\addplot[
+			smooth,
+			thick,
+			color=blue
+		] coordinates {
+			(0,1) (1,0) (2,-0.6) (2.85,0) (4,1) (5,1.2) (6,0.5)
+		};
+	
+		\end{axis}
+	\end{tikzpicture}
 \end{image}
+\captionof{figure}{Een snelheidsfunctie voor een ééndimensionale beweging.}
+
+
+\end{definition}
+
+
+
+% dit zit in tikz nu
+% \begin{image}
+% \includegraphics[width=0.8\textwidth]{snelheid1D}
+
+% \end{image}
+
+% \begin{image}
+% \includegraphics[width=0.8\textwidth]{overzichtsnelheid1D}
+
+% \end{image}
+
+
+% DIT IS NOG NIET GOED --> IS GEWOON OM GEEN SCREENSHOTS MEER IN DE CURSUS TE HEBBEN...! 
+
+
+\textbf{Gemiddelde snelheid op tijdsinterval } $\Delta t = t_2 - t_1$:
+\[
+\text{Vectoriële notatie: } \quad
+\langle \vec{v} \rangle = \frac{\Delta \vec{x}}{\Delta t} = \frac{\Delta x}{\Delta t} \cdot \vec{e}_x
+\]
+\[
+\text{Scalaire notatie: } \quad
+\langle v \rangle = \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} 
+\quad \text{(kan negatief zijn bij verplaatsing tegen de zin van de x-as)}
+\]
+
+\textbf{Ogenblikkelijke snelheid op willekeurig tijdstip } $t$:
+\[
+\text{Vectoriële notatie: } \quad
+\vec{v}(t) = \lim_{\Delta t \to 0} \frac{\Delta \vec{x}}{\Delta t} = \frac{d\vec{x}}{dt} 
+= \frac{d(x \cdot \vec{e}_x)}{dt} = \frac{dx}{dt} \cdot \vec{e}_x + x \cdot \frac{d\vec{e}_x}{dt} = \frac{dx}{dt} \cdot \vec{e}_x = v \cdot \vec{e}_x
+\]
+\[
+\text{Scalaire notatie: } \quad
+v(t) = v = \frac{dx}{dt} \quad \text{(kan negatief zijn bij verplaatsing tegen de zin van de x-as)}
+\]
+
 
 \begin{remark}
 	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
@@ -381,12 +514,10 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de r
 
 \begin{exercise}
 Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van de zeilboot. Bepaal enkel met de grafiek en zonder te rekenen: 
-\begin{itemize}
-	\item Waar ligt de zeilboot stil? 
-	\item Waar heeft de zeilboot een positieve snelheid?
-	\item waar is de snelheid negatief? 
-	\item Op welk moment bewoog de zeilboot het snelst? 
-\end{itemize}
+\begin{question} Waar ligt de zeilboot stil?                    \end{question}
+\begin{question} Waar heeft de zeilboot een positieve snelheid? \end{question}
+\begin{question} waar is de snelheid negatief?                  \end{question}
+\begin{question} Op welk moment bewoog de zeilboot het snelst?  \end{question}
 
 \begin{image}[0.5\textwidth]
 	\begin{tikzpicture}
@@ -426,20 +557,120 @@ Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van de zeilboot. Bepaal enkel 
 		\node[draw, rectangle, inner sep=1pt] at (axis cs:\dt,\dx+10) {\small $t_3=\SI{\dt}{\second}$};
 	
 		\end{axis}
-		\end{tikzpicture}
-	\end{image}
-	\captionof{figure}{De positie van de zeilboot met een tijd-as}
-	
+	\end{tikzpicture}
+\end{image}
+\captionof{figure}{De positie van de zeilboot met een tijd-as}
+
 \end{exercise}
 
 \subsection*{Snelheid bij tweedimensionale bewegingen}
 
 Bij voorwerpen die in twee dimensies bewegen, splitst men de beweging doorgaans op in loodrechte x- en y-componenten. Daarmee kan men analoge redeneringen en gelijkaardige formules maken zoals in het 1D geval.
 
-\begin{image}
-\includegraphics[width=0.8\textwidth]{snelheid2D}
+% AFBEELDING DAT SNELHEID REKEND AAN DE BAAN IS NOG INVOEGEN...! 
 
-\end{image}
+% \begin{image}
+% \includegraphics[width=0.8\textwidth]{snelheid2D}
+
+% \end{image}
+
+
+\begin{definition}
+	
+De \textbf{snelheidsvector \(\vec{v}\)} van een bewegend punt wordt gedefinieerd als de afgeleide van de plaatsvector naar de tijd:
+
+\[
+\vec{v}(t) = \frac{d\vec{r}(t)}{dt},
+\]
+
+en kan worden opgesplits in snelheidscomponenten \(v_x\) en \(v_y\):
+
+\[
+	\vec{v} = \frac{d\vec{r}}{dt} = \frac{d}{dt}(x \cdot \vec{e}_x + y \cdot \vec{e}_y) = \frac{dx}{dt} \cdot \vec{e}_x + \frac{dy}{dt} \cdot \vec{e}_y = \vec{v}_x + \vec{v}_y
+\]
+De grootte van de totale snelheid wordt genoteerd met het symbool \(v\) en is gelijk aan 
+\[
+v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
+\]
+
+\begin{image}[0.4\textwidth]
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=middle,
+			xlabel={$x$},
+			ylabel={$y$},
+			ticks=none,        % removes all tick marks
+			xmin=0, xmax=2.5,
+			ymin=0, ymax=2.5,
+			% grid=both,
+			% minor tick num=1
+		]
+		\addplot[
+			domain=-3:3, 
+			samples=100, 
+			thick, 
+			blue
+		]{-0.5*(x^2) + 2};
+		% node[pos=0.3, above]{De baan in het \(xy-vlak\)};
+	
+		\node[blue, above] at (axis cs:0.8, 2) {Baan in het \(xy-vlak\)};
+	
+	
+		\addplot[only marks, mark=*, mark size =2pt, red] coordinates {(1, 1.5)};
+	
+		\draw[->, thick, red] 
+		(axis cs:1,1.5) -- (axis cs:2,0.5)
+		node[pos=0.8, above right]{\(\vec{v}\)};
+	
+		\draw[->, thick, dotted, red] 
+		(axis cs:1,1.5) -- (axis cs:2,1.5)
+		node[pos=0.8, above right]{\(\vec{v}_x\)};
+	
+		\draw[->, thick, dotted, red] 
+		(axis cs:1,1.5) -- (axis cs:1,0.5)
+		node[pos=0.8, above right]{\(\vec{v}_y\)};
+	
+	
+		\end{axis}
+	
+	\end{tikzpicture}
+	\end{image}
+\end{definition}
+
+\begin{theorem}
+De snelheidsvector is altijd rakend aan de baan.
+
+\end{theorem}
+	\begin{proof}
+	We kunnen dit bewijzen met de kettingregel, toegepast op de functie $y(t)=y(x(t))$.
+	\begin{eqnarray*}
+	 \frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}\Leftrightarrow\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{v_y}{v_x}
+	\end{eqnarray*}
+	Inderdaad, $\frac{dy}{dx}$ is de helling van de baan en deze valt samen met de helling die de snelheidsvector maakt $\frac{v_y}{v_x}$.
+\end{proof}
+
+% \subsection{Vectoriële notatie \& definitie}
+% \[
+% \langle \vec{v} \rangle = \frac{\Delta \vec{r}}{\Delta t}
+% \]
+
+
+
+
+% DIT KOMT UIT DE SLIDES VAN VINCENT 
+% \subsection{Scalaire notatie \& definitie}
+% \[
+% v_x(t) = v_x = \frac{dx}{dt}
+% \]
+% \[
+% v_y(t) = v_y = \frac{dy}{dt}
+% \]
+% \[
+% \langle v \rangle = \frac{\Delta r}{\Delta t}
+% \]
+% \[
+% v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
+% \]
 
 	
 \end{document}
