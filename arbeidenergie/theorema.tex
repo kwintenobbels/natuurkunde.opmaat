@@ -1,0 +1,105 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Het arbeid-energietheorema}{}
+    \xmsource\xmuitleg
+
+
+	%%%\section{Het arbeid-energietheorema}
+
+	Indien op een voorwerp een resulterende kracht inwerkt, moet de snelheid ervan veranderen. Volgens de tweede wet van Newton krijgt het immers een versnelling. Indien kracht en verplaatsing dezelfde zin hebben, is er een snelheidstoename en is de arbeid door de kracht geleverd positief. Er moet dus misschien een verband bestaan tussen de geleverde arbeid en de verandering in snelheid \ldots 
+	
+	\kader{\textit{Het arbeid-energietheorema}
+	
+	Voor de arbeid door de \textit{resulterende kracht} op een voorwerp geleverd geldt:
+	\begin{eqnarray}
+	W=\int_{x_a}^{x_b}F(x)\
+	dx=\frac{mv_b^2}{2}-\frac{mv_a^2}{2}\nonumber
+	\end{eqnarray}
+	waarin $m$ de massa van het voorwerp is en $v_a$ en $v_b$ de snelheden van het voorwerp op respectievelijk het begin- en het eindpunt.
+	
+	In het rechterlid verschijnt een grootheid die we \textit{definiëren} als de \mbox{\textit{kinetische energie}} van het voorwerp:
+	\begin{eqnarray}
+	E_k&=&\frac{mv^2}{2}\nonumber
+	\end{eqnarray}
+	De arbeid geleverd door de resulterende kracht op een voorwerp, is dus gelijk aan het verschil van de kinetische energie van het lichaam in begin- en eindpunt:
+	\begin{eqnarray}
+	W&=&E_{k,b}-E_{k,a}
+	\end{eqnarray}}
+	
+	\textit{Opmerkingen:}
+	\begin{enumerate}
+	\item[-]Dit theorema geeft een samenhang tussen arbeid en energie
+	zoals we dat verwachten. De \textit{nettoarbeid} geleverd over het hele traject \textit{door} de resulterende kracht \textit{op} het voorwerp, resulteert in een toe- of afname van de
+	kinetische energie van dat voorwerp met \textit{eenzelfde waarde}.
+	Zoveel arbeid als geleverd wordt, zoveel energie krijgt of verliest het voorwerp. De manier waarop de arbeid is geleverd tussen begin- en eindpunt speelt geen rol. Enkel de totale hoeveelheid is van belang.
+	%\footnote{Indien een kracht arbeid zou leveren als ze
+	%loodrecht op de verplaasting zou staan, dan zou er arbeid kunnen zijn
+	%\textit{zonder} een toename in snelheid. M.a.w. zou dit theorema dan
+	%niet opgaan. De betekenis van arbeid zou dan verloren gaan.}
+	
+	\item[-]Indien de geleverde nettoarbeid op een voorwerp positief is, neemt de
+	kinetische energie toe. Voor positieve arbeid hebben kracht en
+	verplaatsing tussen begin- en eindpunt meer eenzelfde dan een
+	tegengestelde zin zodat de snelheid inderdaad kan toenemen. Denk bijvoorbeeld aan een vallende steen; hier levert de zwaartekracht ook positieve arbeid.
+	\item[-]Indien de geleverde nettoarbeid op een
+	voorwerp negatief is, neemt de kinetische energie af. Voor een
+	negatieve arbeid hebben kracht en verplaatsing tussen begin- en
+	eindpunt meer een tegengestelde dan een gelijke zin. De snelheid zal op die manier kunnen afnemen. De geleverde arbeid op
+	bij\-voor\-beeld een hamer die een nagel in de muur drijft, is
+	negatief. Zijn snelheid, en dus zijn kinetische energie, is
+	afgenomen. Ze is gebruikt om de nagel in de muur te krijgen.
+	Inderdaad is de kracht \textit{door} de hamer op de nagel
+	uitgeoefend met de beweging mee (de \textit{hamer} levert positieve arbeid, en verliest energie) en is de reactiekracht, de kracht door de nagel \textit{op} de hamer uitgeoefend, tegengesteld
+	aan de beweging (de \textit{nagel} levert negatieve arbeid, of ontvangt dus energie).
+	\item[-]Merk op dat dit theorema geldt voor de arbeid door de
+	\textit{resulterende kracht} geleverd en in de regel niet door
+	slechts \'e\'en van de krachten die op het voorwerp werken. Het is
+	de resulterende kracht die voor een resulterende versnelling van het
+	lichaam zorgt en dus voor een verandering in de snelheid.
+	\end{enumerate}
+	
+	\textit{Bewijs arbeid-energietheorema}
+	
+	Veronderstel dat de resulterende kracht wordt gegeven door de functie $F(x)$. We berekenen de arbeid door de resulterende kracht geleverd wanneer het voorwerp een verplaatsing ondergaat van $x_a$ naar $x_b$ door de tweede wet van Newton te gebruiken\footnote{Het gaat hier immers over de resulterende kracht\ldots}, de kettingregel en een substitutie door te voeren.
+	\begin{eqnarray*}
+	W&=&\int_{x_a}^{x_b}F(x)dx\\
+	&=&\int_{x_a}^{x_b}ma\,dx\\
+	&=&\int_{x_a}^{x_b}m\frac{dv}{dt}dx
+	\end{eqnarray*}
+	Door de kettingregel $\frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}$ en de definitie van snelheid $v=\frac{dx}{dt}$ te gebruiken, krijgen we
+	\begin{eqnarray*}
+	W&=&\int_{x_a}^{x_b}m\frac{dv}{dx}\frac{dx}{dt}dx\\
+	&=&\int_{x_a}^{x_b}m\frac{dv}{dx}v\,dx\\
+	\end{eqnarray*}
+	Deze integraal kunnen we uitwerken door de substitutie $v=v(x)$ door te voeren\footnote{Omdat de substitutie met de letter $v$ enigszins verwarrend is, vind je onder de uitdrukking de benoeming van de variabelen zoals je die voor de substitutieregel kent, nl. met $u$. En hopelijk overbodig, hier de substitutieregel:
+	\begin{eqnarray*}
+	\int_{a}^{b}f(\underbrace{g(x)}_u)\underbrace{\underbrace{g'(x)}_{u'}\underbrace{dx}_{dx}}_{du}=\int_{g(a)}^{g(b)}f(u)du
+	\end{eqnarray*}}. De integratiegrenzen $x_a$ en $x_b$ voor de positie $x$, worden $v_a=v(x_a)$ en $v_b=v(x_b)$ voor de snelheid $v$. We wisselen voor de duidelijkheid ook twee factoren om.
+	\begin{eqnarray*}
+	W&=&\int_{x_a}^{x_b}m\underbrace{v\frac{dv}{dx}\,dx}_{u\cdot u'\,dx}\\
+	&=&\int_{v(x_a)}^{v(x_b)}mv\,dv\\
+	&=&\left[\frac{mv^2}{2}\right]_{v_a}^{v_b}\\
+	&=&\frac{mv_b^2}{2}-\frac{mv_a^2}{2}
+	\end{eqnarray*}
+	\phantom{}\hfill$\blacksquare$
+	
+	\begin{exercise}(arbeid-energie theorema)
+	Een horizontaal liggende veer op tafel heeft een veerconstante $k=360\rm\,N/m$ en wordt $11,0\rm\,cm$ ingedrukt. Een blok van $1,85\rm\,kg$ wordt tegen de gespannen veer gelegd en losgelaten. De wrijvingscoöefficiënt tussen het blok en de tafel is $0,38$.
+	\begin{enumerate}
+	\item Hoeveel arbeid levert de veerkracht vanaf de ingedrukte toestand tot in zijn evenwichtstoestand?
+	\item Hoeveel arbeid levert de wrijvingskracht over hetzelfde traject?
+	\item Hoe groot is de nettoarbeid?
+	\item Welke snelheid heeft het blok wanneer het zich, in de evenwichtstoestand, van de veer losmaakt?
+	\end{enumerate}
+	\end{exercise}
+	
+	%%%\newpage
+	
+	
+	
+
+\end{document}

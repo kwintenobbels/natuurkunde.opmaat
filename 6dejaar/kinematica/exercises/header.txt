@@ -1,7 +1,0 @@
-\documentclass{ximera}
-
-\begin{document}
-	\author{Stitz-Zeager}
-	\xmtitle{TITLE}
-
-
