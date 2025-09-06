@@ -1129,3 +1129,8 @@ iframe.xmyoutube {
 	display: inline-block;
     vertical-align: top;
 }
+
+/* last <p> creates too much whitespace? */
+p:last-child {
+	margin-bottom: 0;      /* remove the gap */
+}
