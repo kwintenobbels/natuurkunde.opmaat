@@ -8,8 +8,10 @@
     \xmsource\xmuitleg
 
 	
-Een voorwerp versnelt of heeft versnelling wanneer de snelheid verandert in de tijd. Een synoniem voor het woord versnelling is acceleratie, dat het symbool \(\vec{a}\) van deze grootheid verklaart. 
+Wanneer de snelheid van een voorwerpt verandert in de tijd, heeft het een \textit{versnelling}. 
+Een synoniem voor het woord versnelling is \textit{acceleratie}, dat het symbool \(\vec{a}\) van deze grootheid verklaart. 
 Acceleratie is soms handiger om te gebruiken, dat vermijdt verwarring met het begrip snelheid, wat helemaal niet hetzelfde is!
+
 
 \(\vec{v}\) = velocity = vitesse = snelheid
 
@@ -29,23 +31,333 @@ De eenheid van versnelling is meter per seconde, per seconde -- wat meter per se
 
 Als de snelheid van een voorwerp wijzigt, dan wijzigt uiteraard ook de snelheidsvector. Afhankelijk van welk kenmerk van de snelheidsvector (en dus ook van de beweging) verandert, maakt men een onderscheid tussen twee verschillende soorten versnellingen:
 
-\begin{itemize}
-    \item Als enkel de \textit{grootte} van de snelheidsvector verandert, spreekt men over een \textbf{tangentiële versnelling \(\vec{a_t}\)}. In dit geval is de versnellingsvector tangentieel of evenwijdig met de snelheidsvector. Dit komt voor bij ééndimensionale bewegingen. Hierbij blijft de richting van de beweging onveranderd.
-		\begin{description}
-			\item[vb1] Een verticaal omhoog geworpen steen versnelt tangentieel, de bal gaat eerst trager en trager en na het hoogste punt sneller en sneller. Enkel de grootte van de snelheid verandert. De richting niet, want de bal blijft verticaal bewegen.
-			\item[vb2] Een auto trekt op een rechte weg op met een versnelling van 3 m/s². Dit wil zeggen dat per seconde de grootte van zijn snelheid met 3 m/s verandert (of in dit geval toeneemt).
-		\end{description}
-    \item Als enkel de \textit{richting} van de snelheidsvector verandert, spreekt men over een \textbf{normale versnelling \(\vec{a_n}\)}. In dit geval staat de versnellingsvector normaal of loodrecht op de snelheidsvector. Dit komt voor bij tweedimensionale cirkelbewegingen waarbij de grootte van de snelheid onveranderd blijft.
-    \item Combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een schuin geworpen basketbal.
-\end{itemize}
 
-\begin{remark}
-	De zin van de snelheidsvector kan nooit plots veranderen omdat snelheid een grootheid is die enkel continu in de tijd kan veranderen. De zin van de snelheidsvector kan enkel wijzigen als de grootte van de snelheidsvector vermindert tot nul om dan nadien de tegengestelde zin uit te wijzen. In dit geval gaat het hier dus eveneens over de tangentiële versnelling.
-\end{remark}
+\begin{definition}
+Als enkel de \textit{grootte} van de snelheidsvector verandert, spreekt men over een \textbf{tangentiële versnelling \(\vec{a_t}\)}. In dit geval is de versnellingsvector tangentieel of evenwijdig met de snelheidsvector. Dit komt voor bij ééndimensionale bewegingen. Hierbij blijft de richting van de beweging onveranderd.
+\end{definition}
+
+\begin{example}
+Een verticaal omhoog geworpen basketbal versnelt tangentieel, de bal gaat eerst trager en trager en na het hoogste punt sneller en sneller. Enkel de grootte van de snelheid verandert. De richting niet, want de bal blijft verticaal bewegen.
+
+\begin{image}[0.7\textwidth]
+	\begin{tikzpicture}[scale=1]
+
+		% \draw[step=1cm, gray!50, very thin] (0,0) grid (12,12);
+	
+		% \draw[thick,->] (0,0) -- (5,0) node[right] {$x$};
+		% \draw[thick,->] (0,0) -- (0,7) node[above] {$y$};
+	
+		% \foreach \x in {1,...,5}
+		%     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+	
+		% \foreach \y in {1,...,7}
+		%     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+		
+		\coordinate (B1) at (1, 6); 
+		\coordinate (B2) at (1, 3); 
+		\coordinate (B3) at (4, 6); 
+		\coordinate (B4) at (4, 3); 
+	
+		% linksboven 
+		\node[opacity=1] (Bal1) at (B1) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B1) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B1) --++ (0,1) node[thick, pos=0.8, left, blue]{\(\vec{v}_2\)};
+		
+		% linksbeneden
+		\node[opacity=1] (Bal2) at (B2) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B2) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B2) --++ (0,2) node[thick, midway, left, blue]{\(\vec{v}_1\)};
+		
+		% rechtsboven 
+		\node[opacity=1] (Bal3) at (B3) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B3) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B3) --++ (0,1) node[thick, pos=0.8, left, blue]{\(\vec{v}_2\)};
+		\fill[xmgreen] ([xshift=0.2cm]B3) circle (2pt);
+		\draw[->, xmgreen, very thick, -latex] ([xshift=0.2cm]B3) --++ (0,-1.5) node[thick, midway, right, xmgreen]{\(\vec{a}\)};
+		
+		% rechtsbeneden 
+		\node[opacity=1] (Bal4) at (B4) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B4) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B4) --++ (0,2) node[thick, midway, left, blue]{\(\vec{v}_1\)};
+		\fill[xmgreen] ([xshift=0.2cm]B4) circle (2pt);
+		\draw[->, xmgreen, very thick, -latex] ([xshift=0.2cm]B4) --++ (0,-1.5) node[thick, midway, right, xmgreen]{\(\vec{a}\)};
+		
+	
+		% midden 
+		\coordinate (M) at ($0.25*(B1) + 0.25*(B2) + 0.25*(B3) + 0.25*(B4)$);
+		\fill[blue] (M) circle (2pt);
+		
+		\draw[->, blue, very thick, -latex] (M) --++ (0,1) node[thick, midway, left, blue]{\(\vec{v}_2\)};
+		
+		\fill[blue] ([xshift=0.2cm]M) circle (2pt);
+		\draw[->, blue, very thick, -latex] ([xshift=0.2cm]M) --++ (0,2) node[thick, midway, right, blue]{\(\vec{v}_1\)};
+		
+		\fill[red] ([yshift=2cm]M) circle (2pt);
+		\draw[->, red, very thick, -latex] ([yshift=2cm]M) --++ (0,-1) node[thick, midway, left, red]{\(\Delta \vec{v}\)};
+	
+	\end{tikzpicture}
+	\hspace{1cm}
+	\begin{tikzpicture}[scale=1]
+
+		% \draw[step=1cm, gray!50, very thin] (0,0) grid (12,12);
+	
+		% \draw[thick,->] (0,0) -- (5,0) node[right] {$x$};
+		% \draw[thick,->] (0,0) -- (0,7) node[above] {$y$};
+	
+		% \foreach \x in {1,...,5}
+		%     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+	
+		% \foreach \y in {1,...,7}
+		%     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+	
+		
+		\coordinate (B1) at (1, 6); 
+		\coordinate (B2) at (1, 3); 
+		\coordinate (B3) at (4, 6); 
+		\coordinate (B4) at (4, 3); 
+	
+		
+		
+		\node[opacity=1] (Bal1) at (B1) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B1) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B1) --++ (0,-1) node[thick, pos=0.8, left, blue]{\(\vec{v}_1\)};
+		
+		\node[opacity=1] (Bal2) at (B2) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B2) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B2) --++ (0,-2) node[thick, midway, left, blue]{\(\vec{v}_2\)};
+		
+		\node[opacity=1] (Bal3) at (B3) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B3) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B3) --++ (0,-1) node[thick, pos=0.8, left, blue]{\(\vec{v}_1\)};
+		\fill[xmgreen] ([xshift=0.2cm]B3) circle (2pt);
+		\draw[->, xmgreen, very thick, -latex] ([xshift=0.2cm]B3) --++ (0,-1.5) node[thick, midway, right, xmgreen]{\(\vec{a}\)};
+		
+		\node[opacity=1] (Bal4) at (B4) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B4) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B4) --++ (0,-2) node[thick, midway, left, blue]{\(\vec{v}_2\)};
+		\fill[xmgreen] ([xshift=0.2cm]B4) circle (2pt);
+		\draw[->, xmgreen, very thick, -latex] ([xshift=0.2cm]B4) --++ (0,-1.5) node[thick, midway, right, xmgreen]{\(\vec{a}\)};
+		
+		\coordinate (M) at ($0.25*(B1) + 0.25*(B2) + 0.25*(B3) + 0.25*(B4)$);
+		\fill[blue] (M) circle (2pt);
+		
+		\draw[->, blue, very thick, -latex] (M) --++ (0,-1) node[thick, midway, left, blue]{\(\vec{v}_1\)};
+		
+		\fill[blue] ([xshift=0.2cm]M) circle (2pt);
+		\draw[->, blue, very thick, -latex] ([xshift=0.2cm]M) --++ (0,-2) node[thick, midway, right, blue]{\(\vec{v}_2\)};
+		
+		\fill[red] ([yshift=-1cm]M) circle (2pt);
+		\draw[->, red, very thick, -latex] ([yshift=-1cm]M) --++ (0,-1) node[thick, midway, left, red]{\(\Delta \vec{v}\)};
+	
+	\end{tikzpicture}
+	
+\end{image}
+\captionof{figure}{Snelheid en versnelling bij een verticale worp}
+\end{example}
+
+\begin{example}
+Een auto trekt op een rechte weg op met een versnelling van \SI{3}{\meter\per\second^2}. Dit wil zeggen dat per seconde de grootte van zijn snelheid met \SI{3}{\meter\per\second} verandert (of in dit geval toeneemt).
+\end{example}
+
+\begin{exercise}
+\begin{question}
+Als een basketbal botst op de grond verandert de snelheidsvector ook van \textit{zin}. 
+Maar een tekening met vectoren net voor en na de bots.  
+\begin{oplossing}
+	\begin{tikzpicture}[scale=1]
+
+		% \draw[step=1cm, gray!50, very thin] (0,-4) grid (10,4);
+	
+		\draw[thick,->] (0,0) -- (10,0) node[right] {$x$};
+		% \draw[thick,->] (0,-5) -- (0,5) node[above] {$y$};
+	
+		% \foreach \x in {1,...,10}
+		%     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+	
+		% \foreach \y in {-5,...,5}
+		%     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+		
+		% ballen op een lijn 
+		\coordinate (B1) at (1, 0.5); 
+		\coordinate (B2) at (3, 0.5); 
+		\coordinate (B3) at (7, 0.5); 
+		\coordinate (B4) at (9, 0.5); 
+	
+		 
+		\node[opacity=1] (Bal1) at (B1) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B1) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B1) --++ (0,-2) node[thick, midway, left, blue]{\(\vec{v}_1\)};
+		
+		\node[opacity=1] (Bal2) at (B2) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B2) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B2) --++ (0,1) node[thick, pos=0.8, left, blue]{\(\vec{v}_2\)};
+		
+		\node[opacity=1] (Bal3) at (B3) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B3) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B3) --++ (0,-2) node[thick, midway, left, blue]{\(\vec{v}_1\)};
+		\fill[xmgreen] ([xshift=0.2cm]B3) circle (2pt);
+		\draw[->, xmgreen, very thick, -latex] ([xshift=0.2cm]B3) --++ (0,1.5) node[thick, midway, right, xmgreen]{\(\vec{a}\)};
+		
+		\node[opacity=1] (Bal4) at (B4) {\includegraphics[width=1cm]{basketbal}};
+		\fill[blue] (B4) circle (2pt);
+		\draw[->, blue, very thick, -latex] (B4) --++ (0,1) node[thick, pos=0.8, left, blue]{\(\vec{v}_2\)};
+		\fill[xmgreen] ([xshift=0.2cm]B4) circle (2pt);
+		\draw[->, xmgreen, very thick, -latex] ([xshift=0.2cm]B4) --++ (0,1.5) node[thick, midway, right, xmgreen]{\(\vec{a}\)};
+		
+	
+		% midden 
+		\coordinate (M) at ($0.25*(B1) + 0.25*(B2) + 0.25*(B3) + 0.25*(B4)$);
+		\fill[blue] (M) circle (2pt);
+		
+		\draw[->, blue, very thick, -latex] (M) --++ (0,1) node[thick, midway, left, blue]{\(\vec{v}_2\)};
+		
+		\fill[blue] (M) circle (2pt);
+		\draw[->, blue, very thick, -latex] (M) --++ (0,-2) node[thick, midway, left, blue]{\(\vec{v}_1\)};
+		
+		\fill[red] ([xshift=0.2cm, yshift=-2cm]M) circle (2pt);
+		\draw[->, red, very thick, -latex] ([xshift=0.2cm, yshift=-2cm]M) --++ (0,3) node[thick, midway, right, red]{\(\Delta \vec{v}\)};
+	
+	\end{tikzpicture}
+\end{oplossing}
+\end{question}
+\begin{question}
+Waarom is dit een tangentiële versnelling? 
+\begin{oplossing}
+De snelheidsvector is enkel in de grootte en zin gewijzigd. 
+\end{oplossing}
+\end{question}
+\end{exercise}
+
+% \begin{itemize}
+%     \item Als enkel de \textit{grootte} van de snelheidsvector verandert, spreekt men over een \textbf{tangentiële versnelling \(\vec{a_t}\)}. In dit geval is de versnellingsvector tangentieel of evenwijdig met de snelheidsvector. Dit komt voor bij ééndimensionale bewegingen. Hierbij blijft de richting van de beweging onveranderd.
+% 		\begin{description}
+% 			\item[vb1] Een verticaal omhoog geworpen steen versnelt tangentieel, de bal gaat eerst trager en trager en na het hoogste punt sneller en sneller. Enkel de grootte van de snelheid verandert. De richting niet, want de bal blijft verticaal bewegen.
+% 			\item[vb2] Een auto trekt op een rechte weg op met een versnelling van 3 m/s². Dit wil zeggen dat per seconde de grootte van zijn snelheid met 3 m/s verandert (of in dit geval toeneemt).
+% 		\end{description}
+%     \item Als enkel de \textit{richting} van de snelheidsvector verandert, spreekt men over een \textbf{normale versnelling \(\vec{a_n}\)}. In dit geval staat de versnellingsvector normaal of loodrecht op de snelheidsvector. Dit komt voor bij tweedimensionale cirkelbewegingen waarbij de grootte van de snelheid onveranderd blijft.
+%     \item Combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een schuin geworpen basketbal.
+% \end{itemize}
+
+\begin{definition}
+Als enkel de \textit{richting} van de snelheidsvector verandert, spreekt men over een \textbf{normale versnelling \(\vec{a_n}\)}. In dit geval staat de versnellingsvector normaal of loodrecht op de snelheidsvector. Dit komt voor bij tweedimensionale cirkelbewegingen waarbij de grootte van de snelheid onveranderd blijft.
+\end{definition}
+
+\begin{example}
+De auto in onderstaande afbeeldingen rijdt op een rotonde. De grootte van de snelheid is constant, maar de richting van de snelheid wijzigt. 
+De auto ondergaat een normale versnelling. 
 
 \begin{image}
-\includegraphics{soortenversnelling}
+	
+\begin{tikzpicture}[scale=1]
+    \def\radius{2}
+    \coordinate (center) at (3,3);
+    \def\vlength{1.5} 
+    \def\alength{0.4}
+    \def\imgsize{1cm} 
+    
+    % \draw[thick,->] (0,0) -- (6,0) node[right] {$x$};
+    % \draw[thick,->] (0,0) -- (0,6) node[above] {$y$};
+    
+    % \foreach \x in {1,...,5}
+    %     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+    % \foreach \y in {1,...,5}
+    %     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+    
+    
+    \draw[thick, gray!60, line width = 1cm] (center) circle (\radius);
+
+    \foreach \angle in {0,60,..., 300} {
+        \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
+        
+        \node[rotate=\angle+90] at (P\angle) {\includegraphics[width=\imgsize]{auto_bovenaan}};
+        
+        \fill[blue] (P\angle) circle (2pt);
+        
+        \draw[->, blue, very thick, -latex] 
+        (P\angle) --++ (\angle+90:\vlength)
+        node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+        
+        % Centripetal acceleration vector (toward center)
+        \fill[xmgreen] (P\angle) circle (2pt);
+        \draw[->, xmgreen, very thick, -latex] 
+            (P\angle) -- ($(P\angle)!\alength!(center)$)
+            node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
+    }
+    
+    \end{tikzpicture}
 \end{image}
+\end{example}
+
+\begin{remark}
+Combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een schuin geworpen basketbal.
+\begin{image}
+	\begin{tikzpicture}[xscale=0.5, yscale=0.5]
+		% \draw[thick,->] (0,0) -- (10,0) node[right] {$x$};
+		% \draw[thick,->] (0,0) -- (0,10) node[above] {$y$};
+	
+		% \foreach \x in {1,...,10}
+		%     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+		% \foreach \y in {1,...,10}
+		%     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+		
+		% Projectile parameters
+		\def\v{15}          % Initial speed
+		\def\theta{45}     % Launch angle in degrees
+		\def\g{25}       % Gravity
+		\def\vel{1}      % length of velocity vector
+		\def\hoogte{3}  
+		\def\imgsize{0.5cm}   
+	
+		% Trajectory
+		\draw[thick, orange, domain=0:10, samples=50, smooth, dotted] 
+			plot (\x, {tan(\theta)*\x - ( \g / (2 * \v * \v * cos(\theta)^2) ) * (\x)^2 + \hoogte});
+		
+		% Ball positions + velocity vectors in a single loop
+		\foreach \x in {1,3,...,9} {
+	
+	
+			% y-coordinate
+			\pgfmathsetmacro{\y}{tan(\theta)*\x - ( \g / (2 * \v * \v * cos(\theta)^2) ) * (\x)^2 + \hoogte}
+			% derivative (slope)
+			\pgfmathsetmacro{\slope}{tan(\theta) - (\g / (\v*\v*cos(\theta)^2))*\x}
+	
+			\pgfmathsetmacro{\arrowHeadsize}{0.3*\vel} % you can replace with a more complex formula
+	
+	
+			% Ball position (red dot or image)
+			% \fill[red] (\x,\y) circle (1.5pt);
+			\node at (\x,\y) {\includegraphics[width=\imgsize]{basketbal}}; % optional
+			
+	
+			\ifnum\x=9
+			\else
+			% Velocity vector tangent to trajectory
+			% \draw[->, blue, very thick, -latex] (\x,\y) -- ++({\vel/sqrt(1+\slope*\slope)}, {\vel*\slope/sqrt(1+\slope*\slope)});
+			\draw[->, blue, very thick, -latex] (\x,\y) -- ++(\vel, {\vel*\slope}) node[blue, pos=0.8, above]{\(\vec{v}\)};
+			\fill[blue] (\x,\y) circle (2pt);
+			
+			\draw[->, xmgreen, very thick, -latex] (\x,{\y-0.2}) -- ++(0, -1) node[xmgreen, midway, left]{\(a\)};
+			\fill[xmgreen] (\x,{\y-0.2}) circle (2pt);
+			\fi
+			
+			\ifnum \x=9
+			\node[xscale=-1, opacity=1] at ({\x+0.2},\y) {\includegraphics[width=1cm]{basketring}}; 
+			\fi
+	
+			}
+		\end{tikzpicture}
+			
+\end{image}
+\end{remark}
+
+
+\begin{remark}
+De zin van de snelheidsvector kan nooit plots veranderen omdat snelheid een grootheid is die enkel continu in de tijd kan veranderen. De zin van de snelheidsvector kan enkel wijzigen als de grootte van de snelheidsvector vermindert tot nul om dan nadien de tegengestelde zin uit te wijzen. In dit geval gaat het hier dus eveneens over de tangentiële versnelling.
+\end{remark}
+
+% \begin{image}
+% \includegraphics{soortenversnelling}
+% \end{image}
 
 In al deze voorbeelden lijkt het alsof de versnellingsvector aan de snelheidsvector "trekt".
 
