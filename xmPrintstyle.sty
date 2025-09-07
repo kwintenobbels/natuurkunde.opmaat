@@ -153,7 +153,7 @@
 %\textblockorigin{-24⟩}{-11}
 \begin{textblock}{70}(-18,-19)
 \textblockcolour{}
-\includegraphics*[height=19.8truemm]{demo_logo.png}
+\includegraphics*[height=19.8truemm]{logospc.png}
 \end{textblock}
 %
 \begin{textblock}{160}(-6,63)
@@ -868,7 +868,21 @@
 \let\c@remark\relax
 \let\endremark\relax
 \makeatother
-\newtheorem{remark}{\nlen{Opmerking}{Remark}}
+% \newtheorem{remark}{\nlen{Opmerking}{Remark}}
+\newtheoremstyle{remarkNoDot}   % name
+  {3pt}                         % Space above
+  {3pt}                         % Space below
+  {}                             % Body font
+  {}                             % Indent amount
+  {\bfseries}                    % Theorem head font
+  {}                             % Punctuation after theorem head
+  {0.5em}                        % Space after theorem head
+  {}                             % Theorem head spec
+
+\theoremstyle{remarkNoDot}
+\newtheorem*{remark}{}
+\theoremstyle{definition} % Bold titels
+
 \renewcommand{\theremark}{\theoremtitle{remark}} % titel instellen
 \tcolorboxenvironment{remark}{
     boxrule=0pt,
@@ -1007,10 +1021,19 @@
 }
 \fi
 
+\usepackage{pifont}
+
 % Expandable printed a bit smaller (TBI)
 \let\expandable\relax
 \let\endexpandable\relax
-\NewEnviron{expandable}[2]{\begin{#1}[#2]\nl\smaller\BODY\end{#1}}
+% \NewEnviron{expandable}[2]{\begin{#1}[#2]\nl\smaller\BODY\end{#1}}
+% \DeclareDocumentEnvironment{expandable}{m m}{\begin{#1}\nl#2\nl\smaller\BODY\end{#1}}
+% \DeclareDocumentEnvironment{expandable}{m m}{\begin{#1}\nl\nl\smaller\BODY\end{#1}}
+% \ding{228}  % small black right-pointing triangle
+
+\NewEnviron{expandable}[2]{\begin{#1}\nl\ding{228} #2 \nl\smaller\BODY\end{#1}}
+
+\renewcommand{\youtube}[1]{YouTube link: \url{https://www.youtube.com/watch?v=#1} \hfill \qrcode{https://www.youtube.com/watch?v=#1}} 
 
 %% Compress dialogue
 \renewenvironment{dialogue}{%
