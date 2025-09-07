@@ -52,8 +52,8 @@ jobs:
             !.github/**
           key: ximeraPDFexport-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
-            ximeraHTMLexport-${{ github.ref_name }}-
-            ximeraPDFexport-${{ github.ref_name }}-
+            # ximeraHTMLexport-${{ github.ref_name }}-
+            # ximeraPDFexport-${{ github.ref_name }}-
             # ximeraHTMLexport-main-
             # ximeraPDFexport-main-
 
