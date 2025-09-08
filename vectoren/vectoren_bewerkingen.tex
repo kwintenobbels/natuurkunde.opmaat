@@ -60,7 +60,7 @@ Twee vectoren van dezelfde grootheid met hetzelfde aangrijpingspunt kunnen opget
 Deze vector wordt \textbf{de resultante} genoemd. 
 Grafisch (kwalitatief) bekomt men de resultante via de kopstaartmethode of parallellogrammethode.  %kopstaartmethode (voor de eenvoud enkel parallellogram gebruiken? --> toch niet (vincent))
 
-\begin{image}[0.4\textwidth]
+\begin{image}[0.3\textwidth]
     \begin{tikzpicture}
      % TIKZPICTURE DIE DE SOM VAN TWEE VECTOREN BEREKENT 
     % \draw (-4,-4) grid (4,4);
@@ -93,24 +93,207 @@ Grafisch (kwalitatief) bekomt men de resultante via de kopstaartmethode of paral
 De \textbf{grootte van de resultante} (kwantitatief) kan op verschillende manieren bepaald worden. 
 Erg belangrijk hierbij is om meetkundige samenstelling in het oog te houden en zeker niet blindelings de groottes van de gegeven vectoren op te tellen! 
 In het algemeen wordt de grootte van de resultante berekend met de cosinusregel. 
-In evenwijdige of loodrechte gevallen zijn er efficiënte manieren om de resultante te bepalen (som/verschil of stelling van Pythagoras), de meest algemene methode is echter met de (gewijzigde) cosinusregel:
+In evenwijdige of loodrechte gevallen zijn er efficiënte manieren om de resultante te bepalen (som/verschil of stelling van Pythagoras), de meest algemene methode is echter met de (aangepaste) cosinusregel voor de lengte van $\vec{c} = \vec{a} + \vec{b}$:
 
 \[
-\vec{c} = \vec{a} + \vec{b} \Rightarrow \| \vec{c} \|^2 = \| \vec{a} \|^2 + \| \vec{b} \|^2 + 2 \cdot \|\vec{a}\| \cdot \|\vec{b}\| \cdot \cos(\alpha)
+\| \vec{a} + \vec{b} \|^2 = \| \vec{a} \|^2 + \| \vec{b} \|^2 + 2 \cdot \|\vec{a}\| \cdot \|\vec{b}\| \cdot \cos(\alpha)
 \]
 
 met \(\alpha\) de hoek tussen \(\vec{a}\) en \(\vec{b}\). 
 
 \begin{quickquestion*}{}{}
-  Hoe vereenvoudigt de formule als \(\vec{a}\) en \(\vec{b}\) loodrecht staan? Wat als ze dezelfde richting hebben? 
+  Hoe vereenvoudigt de cosinusregel als \(\vec{a}\) en \(\vec{b}\) loodrecht op elkaar staan? \\
+  Hoe vereenvoudigt de cosinusregel als \(\vec{a}\) en \(\vec{b}\) dezelfde richting en dezelfde zin hebben? 
+  Hoe vereenvoudigt de cosinusregel als \(\vec{a}\) en \(\vec{b}\) dezelfde richting en tegengestelde zin hebben? 
 \end{quickquestion*}
+
+
+\begin{expandable}{proposition}{Twee versies van de cosinusregel ?}
+
+
+De 'klassieke' cosinusregel wordt geformuleerd voor de zijden van een driehoek, en zegt  
+\[
+    c^2 = a^2 + b^2 \red{ - } 2 a b \cos\varphi
+\]
+met \(\varphi\) de overstaande hoek van zijde \(c\). 
+
+Merk op dat het teken van de derde term verschillend is. Waarom is dat zo, en hoe moet je dat onthouden?
+
+In een driehoek gebruik je natuurlijkerwijze niet de hoek $\alpha$ tussen de vectoren $\vec{a}$ en $\vec{b}$, maar wel de \textit{complementaire} hoek $\varphi$ tussen de lijnstukken $a$ en $b$.
+
+Volgende tekening en redenering geeft het verband tussen beide situaties, en de bijhorende formuleringen. 
+Het enige verschil is een minteken, en dat komt omdat je afhankelijk van de situatie liever met één van de twee complementaire hoeken werkt. 
+En zoals je op de goniometrische cirkel onmiddellijk kan zien, hebben complementaire hoeken tegengestelde cosinussen. 
+Dat precies dat verschil wordt gecompenseerd door het extra minteken.
+
+
+    \begin{image}[0.8\textwidth]
+
+        \begin{tikzpicture}
+            % TIKZPICTURE met extra \varphi aangeduid
+       
+           \pgfmathsetmacro{\ang}{50} 
+       
+           \coordinate (O) at (0,0); 
+           \coordinate (A) at (\ang :2); 
+           \coordinate (B) at (0:3); 
+           \coordinate (C) at ($ (A) + (B)$); 
+           
+           %\draw[->, -latex, blue   ] (O) -- (A) node[midway, above left]{\( a \)};
+           \draw[red    ]     (O) -- (B) node[midway, below     ]{\( b \phantom{\vec{b}}\)};  % \phantom to get nice alignment !
+           \draw[xmgreen]     (O) -- (C) node[midway, above left]{\( c \)};
+           \draw[blue, thick] (B) -- (C) node[midway, below right]{\( a\)};
+           %\draw[->, dashed, -latex, red , thick] (A) -- (C) node[midway, above left ]{\( \vec{b} \)};
+
+           %\draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm]                        {angle= B--O--A};
+           %\draw pic[ pic text = \(\gamma \), draw, angle radius=1.2cm, angle eccentricity=1.2]{angle= B--O--C};
+           \draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm]                        {angle= C--B--O};
+           %\draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm]                        {angle= A--O--Z};
+
+           \draw (0,-0.7) node[right,scale=0.8]{Natuurlijke hoek in een driehoek: $\varphi$} ;
+       \end{tikzpicture}
+       \begin{tikzpicture}
+            % TIKZPICTURE met extra \varphi aangeduid
+           \pgfmathsetmacro{\ang}{50} 
+              
+           \coordinate (O) at (0,0); 
+           \coordinate (A) at (\ang :2); 
+           \coordinate (B) at (0:3); 
+           \coordinate (C) at ($ (A) + (B)$); 
+           
+           \coordinate (X) at (0:4); 
+
+           \draw[->, -latex, blue          ] (O) -- (A) node[midway, above left]{\( \vec{a} \)};
+           \draw[->, -latex, red           ] (O) -- (B) node[midway, below     ]{\( \vec{b} \)};
+    %       \draw[->, -latex, xmgreen,dashed] (O) -- (C) node[pos=1, above right]{\( \vec{c} = \vec{a}+\vec{b} \)};
+           
+        %    \draw[->, dashed, -latex, red , thick] (A) -- (C) node[midway, above left]{\( \vec{b} \)};
+        %    \draw[->, dashed, -latex, blue, thick] (B) -- (C) node[midway, above left]{\( \vec{a} \)};
+
+           \draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm] {angle= B--O--A};
+        %    \draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm] {angle= X--B--C};
+        %    \draw pic[ pic text = \(\varphi\), draw, angle radius=0.7cm] {angle= C--B--O};
+
+           \draw (0,-0.7) node[right,scale=0.8]{Natuurlijke hoek bij vectoren: $\alpha$} ;
+
+        \end{tikzpicture}
+       \begin{tikzpicture}
+            % TIKZPICTURE met extra \varphi aangeduid
+           \pgfmathsetmacro{\ang}{50} 
+              
+           \coordinate (O) at (0,0); 
+           \coordinate (A) at (\ang :2); 
+           \coordinate (B) at (0:3); 
+           \coordinate (C) at ($ (A) + (B)$); 
+           
+           \coordinate (X) at (0:4); 
+           \draw[dotted] (O)--(X);
+
+           \draw[->, -latex, blue          ] (O) -- (A) node[midway, above left]{\( \vec{a} \)};
+           \draw[->, -latex, red           ] (O) -- (B) node[midway, below     ]{\( \vec{b} \)};
+    %       \draw[->, -latex, xmgreen,dashed] (O) -- (C) node[pos=1, above right]{\( \vec{c} = \vec{a}+\vec{b} \)};
+           
+           \draw[->, dashed, -latex, red , thick] (A) -- (C) node[midway, above left]{\( \vec{b} \)};
+           \draw[->, dashed, -latex, blue, thick] (B) -- (C) node[midway, above left]{\( \vec{a} \)};
+
+           \draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm] {angle= B--O--A};
+           \draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm] {angle= X--B--C};
+           \draw pic[ pic text = \(\varphi\), draw, angle radius=0.7cm] {angle= C--B--O};
+
+           \draw (0,-0.7) node[right,scale=0.8]{Verband: $\alpha + \varphi = 180^\circ$} ;
+
+        \end{tikzpicture}
+    \end{image}
+
+    \begin{image}[0.7\textwidth]
+       \begin{tikzpicture}
+            % TIKZPICTURE met extra \varphi aangeduid
+           \pgfmathsetmacro{\ang}{50} 
+              
+           \coordinate (O) at (0,0); 
+           \coordinate (A) at (\ang :2); 
+           \coordinate (B) at (0:3); 
+           \coordinate (C) at ($ (A) + (B)$); 
+           
+
+           \draw[            ->, -latex, blue,dashed ] (O) -- (A) node[midway, above left]{\( \vec{a} \)};
+           \draw[very thick, ->, -latex, red,        ] (O) -- (B) node[midway, below     ]{\( \vec{b} \)};
+           \draw[very thick, ->, -latex, xmgreen     ] (O) -- (C) node[pos=1, above right]{\( \vec{c} = \vec{a}+\vec{b} \)};
+           
+           \draw[->, dashed, -latex, red ,           ] (A) -- (C) node[midway, above left ]{\( \vec{b} \)};
+           \draw[->,         -latex, blue, very thick] (B) -- (C) node[midway, below right]{\( \vec{a} \)};
+
+           % \draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm]                        {angle= B--O--A};
+           % \draw pic[ pic text = \(\gamma \), draw, angle radius=1.2cm, angle eccentricity=1.2]{angle= B--O--C};
+           \draw[very thick] pic[ pic text = \(\varphi\), draw, angle radius=0.7cm]                        {angle= C--B--O};
+
+           \draw (0,-0.7) node[right,scale=0.8]{In een driehoek: $c^2 = a^2 + b^2 \red{-} 2ab\cos\red{\varphi}$ } ;
+
+       \end{tikzpicture}
+       \begin{tikzpicture}
+
+           \pgfmathsetmacro{\ang}{50} 
+       
+           \coordinate (O) at (0,0); 
+           \coordinate (A) at (\ang :2); 
+           \coordinate (B) at (0:3); 
+           \coordinate (C) at ($ (A) + (B)$); 
+           
+           \coordinate (X) at (0:4); 
+           \draw[dotted] (O)--(X);
+
+           
+           \draw[very thick, ->, -latex, blue   ] (O) -- (A) node[midway, above left]{\( \vec{a} \)};
+           \draw[very thick, ->, -latex, red    ] (O) -- (B) node[midway, below     ]{\( \vec{b} \)};
+           \draw[            ->, -latex, xmgreen,dashed] (O) -- (C) node[pos=1, above right]{\( \vec{c} = \vec{a}+\vec{b} \)};
+           
+           \draw[->, dashed, -latex, red ] (A) -- (C) node[midway, above left ]{\( \vec{b} \)};
+           \draw[->, dashed, -latex, blue] (B) -- (C) node[midway, below right]{\( \vec{a} \)};
+
+           \draw[very thick] pic[ pic text = \(\alpha \), draw, angle radius=0.9cm]                        {angle= B--O--A};
+           \draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm,angle eccentricity=1.3] {angle= C--B--O};
+           \draw pic[ pic text = \(\alpha \), draw, angle radius=0.5cm,angle eccentricity=1.3] {angle= X--B--C};
+
+           \draw (0,-0.7) node[right,scale=0.8]{Met vectoren: $\|c\|^2 = \|a\|^2 + \|b\|^2 \red{+} 2\|a\|\|b\|\cos\red{\alpha}$} ;
+
+       \end{tikzpicture}
+    \end{image}
+    \captionof{figure}{Omdat $\alpha + \varphi = 180^\circ$, is $\cos\varphi = -\cos\alpha$.}
+
+    Het verband tussen beide versies van de cosinusregel is nu duidelijk: afhankelijk van welke hoek je neemt tussen de richtingen van $\vec{a}$ en $\vec{b}$ krijg je ofwel een plusteken, ofwel een minteken.
+    Het is niet de moeite om dat teken van buiten te leren, want het teken volgt onmiddellijk uit het speciale geval wanneer $\vec{a}$ en $\vec{b}$ loodrecht op elkaar staan: dan zijn zowel $\alpha$ als $\varphi$ dus $90^\circ$, en de cosinus is dus nul.% 
+    \footnote{Gelukkig, want de Stelling van Pythagoras zegt dat bij een rechte hoek $c^2 = a^2 + b^2$, en dat klopt enkel met de cosinusregel als de derde term nul is. }
+    \\
+    Als de hoek tussen $\vec{a}$ en $\vec{b}$ \textit{kleiner} wordt, wordt ook $\|\vec{c}\|$ \textit{kleiner} en moet de derde term in de cosinusregel \textit{negatief} zijn.\\
+    Als de hoek tussen $\vec{a}$ en $\vec{b}$ \textit{groter } wordt, wordt ook $\|\vec{c}\|$ \textit{groter } en moet de derde term in de cosinusregel \textit{positief} zijn.
+
+    Naargelang je met de hoek $\alpha$ rekent dan wel met de hoek $\varphi$ wordt het teken van de term met de cosinus dus aangepast.
+
+% \[
+% \|\vec{c}\|^2 = \|\vec{a}\|^2 + \|\vec{b}\|^2 - 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos\varphi
+% \]
+% \[
+% = \|\vec{a}\|^2 + \|\vec{b}\|^2 - 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos(180^\circ - \alpha)
+% \]
+% \[
+% = \|\vec{a}\|^2 + \|\vec{b}\|^2 - 2 \,\|\vec{a}\|\,\|\vec{b}\|(-\cos\alpha)
+% \]
+% \[
+% = \|\vec{a}\|^2 + \|\vec{b}\|^2 + 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos\alpha
+% \]
+
+
+\end{expandable}
+
 
 \begin{example}
 
-In onderstaande figuur is \(\|\vec{a}\| = \SI{3}{\newton}\) en \(\|\vec{b}\| = \SI{5}{\newton}\). 
-Bijgevolg is  \(\| \vec{c} \| = \|\vec{a}\| + \|\vec{b}\| = \SI{8}{\newton}\). 
+%% Som colineair
+\begin{question}
+Als in onderstaande figuur \(\|\vec{a}\| = \SI{3}{\newton}\) en \(\|\vec{b}\| = \SI{5}{\newton}\),\\
+dan is hier  \(\| \vec{c} \| = \|\vec{a} + \vec{b} \| = \|\vec{a}\| + \|\vec{b}\| = \SI{5}{\newton} - \SI{3}{\newton}= \SI{8}{\newton}\). 
 
-\begin{image}[0.3\textwidth]
+\begin{image}[!]
     \begin{tikzpicture}
         \coordinate (O) at (0,0);
         \coordinate (A) at (1,0);
@@ -129,16 +312,16 @@ Bijgevolg is  \(\| \vec{c} \| = \|\vec{a}\| + \|\vec{b}\| = \SI{8}{\newton}\).
         \draw[->, blue] ($ (O) - (Shift) $)--($ (B) - (Shift) $)  node[midway, below]{$\vec{b}$};
     \end{tikzpicture}
 \end{image}
-\end{example}
+\end{question}
 
-\begin{example}
-
+%% Verschil colineair
+\begin{question}
 % hier staat onnauwkeurigheid; de norm moet buiten de bewerking staan; de norm van een verschil is commutatief
 
-In onderstaande figuur is \(\|\vec{a}\| = \SI{3}{\newton}\) en \(\|\vec{b}\| = \SI{5}{\newton}\). 
-Bijgevolg is  \(\| \vec{c} \| = \|\vec{a} + \vec{b}\| =  \SI{5}{\newton} - \SI{3}{\newton}  = \SI{2}{\newton}\). 
+Als in onderstaande figuur \(\|\vec{a}\| = \SI{3}{\newton}\) en \(\|\vec{b}\| = \SI{5}{\newton}\), \\
+dan is hier \(\| \vec{c} \| = \|\vec{a} + \vec{b} \| = \|\vec{a}\|  - \|\vec{b}\| =  \SI{5}{\newton} - \SI{3}{\newton}  = \SI{2}{\newton}\). 
 
-\begin{image}[0.3\textwidth]
+\begin{image}[!]
     \begin{tikzpicture}
         \coordinate (O) at (0,0);
         \coordinate (A) at (-1,0);
@@ -157,13 +340,15 @@ Bijgevolg is  \(\| \vec{c} \| = \|\vec{a} + \vec{b}\| =  \SI{5}{\newton} - \SI{3
         \draw[->, blue] ($ (O) - (Shift) $)--($ (B) - (Shift) $) node[midway, below]{$\vec{b}$};
     \end{tikzpicture}
 \end{image}
-\end{example}
 
+\end{question}
 
+%% Algemeen geval: cosinusregel
+\begin{question}
 
-\begin{example}
+Als in onderstaande figuur \(\|\vec{a}\| = \SI{3}{\newton}, \; \|\vec{b}\| = \SI{5}{\newton} \text{ en } \alpha = 50^\circ\),\\
+dan moet  \(\| \vec{c} \| = \|\vec{a} + \vec{b}\| \) worden berekend met de cosinusregel. 
 
-In onderstaande figuur is \(\|\vec{a}\| = \SI{3}{\newton}, \; \|\vec{b}\| = \SI{5}{\newton} \text{ en } \alpha = 50^\circ\). 
 
     \begin{image}[0.5\textwidth]
         \begin{tikzpicture}
@@ -186,43 +371,38 @@ In onderstaande figuur is \(\|\vec{a}\| = \SI{3}{\newton}, \; \|\vec{b}\| = \SI{
 
            \draw[dotted] (O)--(Z);
        
-           \draw[->, -latex, blue] (O) -- (A) node[midway, above left]{\(\vec{a}\)};
-           \draw[->, -latex, red] (O) -- (B) node[midway, below]{\(\vec{b}\)};
-           \draw[->, -latex, xmgreen] (O) -- (C) node[pos=1, above right, xmgreen]{\(\vec{c} = \vec{a}+\vec{b}\)};
+           \draw[->, -latex, blue   ] (O) -- (A) node[midway, above left]{\( \vec{a} \)};
+           \draw[->, -latex, red    ] (O) -- (B) node[midway, below     ]{\( \vec{b} \)};
+           \draw[->, -latex, xmgreen] (O) -- (C) node[pos=1, above right]{\( \vec{c} = \vec{a}+\vec{b} \)};
            
-           \draw[->, dashed, -latex, red, thick] (A) -- (C) node[midway, above left]{\( \vec{b} \)};
+           \draw[->, dashed, -latex, red , thick] (A) -- (C) node[midway, above left ]{\( \vec{b} \)};
            \draw[->, dashed, -latex, blue, thick] (B) -- (C) node[midway, below right]{\( \vec{a} \)};
 
-           \draw pic[ pic text = \(\alpha\), draw, angle radius=0.4cm]{angle= B--O--A};
-           \draw pic[ pic text = \(\gamma\), draw, angle radius=0.7cm, angle eccentricity=1.2]{angle= B--O--C};
-           \draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm]{angle= C--B--O};
-           \draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm]{angle= A--O--Z};
+           \draw pic[ pic text = \(\alpha \), draw, angle radius=0.7cm]                        {angle= B--O--A};
+           \draw pic[ pic text = \(\gamma \), draw, angle radius=1.2cm, angle eccentricity=1.2]{angle= B--O--C};
+           %\draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm]                        {angle= C--B--O};
+           %\draw pic[ pic text = \(\varphi\), draw, angle radius=0.5cm]                        {angle= A--O--Z};
        \end{tikzpicture}
     \end{image}
     
-De grootte van de resultante \(\vec{c}\) wordt bepaald met de cosinusregel: 
+De grootte van de resultante \(\vec{c}\) wordt bepaald met bovenstaande versie van de  cosinusregel: 
 
 % Cosinusregel
 \[
-\|\vec{c}\|^2 = \|\vec{a}\|^2 + \|\vec{b}\|^2 - 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos\varphi
-\]
-\[
-= \|\vec{a}\|^2 + \|\vec{b}\|^2 - 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos(180^\circ - \alpha)
-\]
-\[
-= \|\vec{a}\|^2 + \|\vec{b}\|^2 - 2 \,\|\vec{a}\|\,\|\vec{b}\|(-\cos\alpha)
-\]
-\[
-= \|\vec{a}\|^2 + \|\vec{b}\|^2 + 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos\alpha
+\|\vec{c}\| = \|\vec{a} / \vec{b}\|  = \sqrt{\|\vec{a}\|^2 + \|\vec{b}\|^2 + 2 \,\|\vec{a}\|\,\|\vec{b}\|\cos\alpha}
 \]
 \[
 = \sqrt{3^2 + 5^2 + 2 \cdot 3 \cdot 5 \cdot \cos 50^\circ} \approx \SI{7.3}{N}. 
 \]
 
+
+\end{question}
+
 \end{example}
 
 \begin{remark}
-In het algemeen geldt dus \textbf{niet} dat \(\|\vec{c}\| = \| \vec{a+b}\| = \|\vec{a}\| + \|\vec{b}\|\). In welk(e) geval(len) geldt de eigenschap wel? 
+In het algemeen geldt dus \textbf{niet} dat  \( \xcancel{ \|\vec{a+b}\| = \|\vec{a}\| + \|\vec{b}\| } \). 
+In welk(e) geval(len) geldt de geljkheid wel? 
 \end{remark}
 
 
@@ -250,7 +430,7 @@ Indien er dus meer dan twee vectoren worden samengesteld, tel je eerst twee erva
 
 \subsection*{Verschil van twee vectoren}
 
-Net zoals bij getallen is het ook mogelijk voor vectoren om van een verschil een som te maken: 
+Net zoals bij getallen $5 - 3 = 5 + (-3)$, kan je ook bij vectoren een verschil schrijven als een som met de tegengestelde: 
 
 \[
 \vec{c} = \vec{a}-\vec{b} = \vec{a} + (-\vec{b})
@@ -264,7 +444,7 @@ Op dezelfde manier is het verschil van vectoren \(\vec{a}\) en \(\vec{b}\) gelij
 
 
 % TIKZPICTURE DIE HET VERSCHIL VAN TWEE VECTOREN WEERGEEFT 
-\begin{image}[0.5\textwidth]
+\begin{image}[!]
     \begin{tikzpicture}
         \pgfmathsetmacro{\r}{3}
         \pgfmathsetmacro{\ra}{0.5 * \r}
@@ -316,7 +496,7 @@ De grootte van de componenten volgt rechtstreeks uit de goniometrische getallen:
 \]
 
 % TIKZPICTURE DIE DE ONTBINDING IN COMPONENTEN WEERGEEFT 
-\begin{image}[0.3\textwidth]
+\begin{image}[!]
 \begin{tikzpicture}
     % \draw (-4,-4) grid (4,4);
 
@@ -367,7 +547,7 @@ $$
 \end{quickquestion*}
 
 % TIKZPICTURE DIE SCALAIR PRODUCT van a op b ILLUSTREERT  
-\begin{image}
+\begin{image}[!]
 \begin{tikzpicture}
     % \draw (-4,-4) grid (4,4);
 
@@ -404,7 +584,7 @@ Het vectorieel product wordt genoteerd als
 \vec{c} = \vec{a} \times \vec{b} = \| \vec{a}_y \| \cdot \|\vec{b}\| = \|\vec{a}\| \cdot \sin(\alpha) \cdot \|\vec{b}\| = \| \vec{a}\| \cdot \| \vec{b}\| \cdot \sin(\alpha)
 \]
 
-\begin{image}[0.4\textwidth]
+\begin{image}[!]
     \begin{tikzpicture}
         
         \pgfmathsetmacro{\ax}{1}
@@ -432,7 +612,7 @@ Het vectorieel product wordt genoteerd als
 \end{image}
 \captionof{figure}{Het vectorieel product}
 
-\begin{image}[0.4\textwidth]
+\begin{image}[0.2\textwidth]
 \includegraphics{rechterhandregel}
 \end{image}
 \captionof{figure}{De rechterhandregel}
