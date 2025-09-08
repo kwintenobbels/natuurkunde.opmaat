@@ -869,19 +869,19 @@
 \let\endremark\relax
 \makeatother
 % \newtheorem{remark}{\nlen{Opmerking}{Remark}}
-\newtheoremstyle{remarkNoDot}   % name
-  {3pt}                         % Space above
-  {3pt}                         % Space below
-  {}                             % Body font
-  {}                             % Indent amount
-  {\bfseries}                    % Theorem head font
-  {}                             % Punctuation after theorem head
-  {0.5em}                        % Space after theorem head
-  {}                             % Theorem head spec
+% \newtheoremstyle{remarkNoDot}   % name
+%   {3pt}                         % Space above
+%   {3pt}                         % Space below
+%   {}                             % Body font
+%   {}                             % Indent amount
+%   {\bfseries}                    % Theorem head font
+%   {}                             % Punctuation after theorem head
+%   {0.5em}                        % Space after theorem head
+%   {}                             % Theorem head spec
 
-\theoremstyle{remarkNoDot}
-\newtheorem*{remark}{}
-\theoremstyle{definition} % Bold titels
+% \theoremstyle{remarkNoDot}
+\newtheorem{remark}{}
+%\theoremstyle{definition} % Bold titels
 
 \renewcommand{\theremark}{\theoremtitle{remark}} % titel instellen
 \tcolorboxenvironment{remark}{
@@ -1031,7 +1031,7 @@
 % \DeclareDocumentEnvironment{expandable}{m m}{\begin{#1}\nl\nl\smaller\BODY\end{#1}}
 % \ding{228}  % small black right-pointing triangle
 
-\NewEnviron{expandable}[2]{\begin{#1}\nl\ding{228} #2 \nl\smaller\BODY\end{#1}}
+\NewEnviron{expandable}[2]{\begin{#1}\ding{228} #2 \nl\smaller\BODY\end{#1}}
 
 \renewcommand{\youtube}[1]{YouTube link: \url{https://www.youtube.com/watch?v=#1} \hfill \qrcode{https://www.youtube.com/watch?v=#1}} 
 
