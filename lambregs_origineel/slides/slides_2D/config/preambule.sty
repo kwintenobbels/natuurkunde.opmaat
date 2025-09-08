@@ -1,0 +1,69 @@
+% !TEX root = ../main.tex
+
+
+
+\ProvidesPackage{preambule}
+
+\usepackage[dutch]{babel}
+
+\usepackage{graphicx}
+\graphicspath{ {./img/}{./config}}
+
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{datetime2}
+\usepackage{hyperref}
+\usepackage{calc}
+\usepackage{pgfpages}
+\usepackage{pgfplots}
+	%\usetikzlibrary{arrows}
+
+%\usepackage{media9}
+
+\usepackage{siunitx}
+	\sisetup{locale = FR, exponent-product = \cdot}
+
+\usepackage[official]{eurosym}
+
+\setbeamercolor{block body}{bg=structure!10} %Zonder \usetheme{} toch een kleur voor de blokken
+\setbeamertemplate{blocks}[rounded][shadow] %Of \setbeamertemplate{blocks}[rounded]
+
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
+%\setbeamercovered{again covered={\opaqueness<1->{40}}}
+
+%%\setbeameroption{hide notes} % Only slides
+%%\setbeameroption{show only notes} % Only notes
+%\setbeameroption{show notes on second screen=right} % Both
+
+
+\newcommand{\bgcos}{\operatorname{bgcos}}
+\newcommand{\bgtan}{\operatorname{bgtan}}
+\newcommand{\bgsin}{\operatorname{bgsin}}
+\newcommand{\cotan}{\operatorname{cotan}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\ber}{\operatorname{ber}}
+\newcommand\alog[1]{\mathop{{}^{#1}\text{log}}}
+\newcommand{\diff}{\mathop{}\!d}
+\newcommand{\graf}{\operatorname{graf}}
+\newcommand{\gr}{\operatorname{gr}\,}
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+%\AtBeginSection[]
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \frametitle{Inhoudstafel}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+
+  
+  
