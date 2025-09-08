@@ -36,10 +36,13 @@
 
 
 Een voorwerp in beweging heeft een snelheid. 
-De ervaring leert dat hoe groter de snelheid (in de auto, op je fiets, ...) hoe groter de verplaatsing in een bepaald tijdsinterval. 
+De ervaring leert dat hoe groter de snelheid, hoe groter de verplaatsing in een bepaald tijdsinterval. 
 Als je fietst aan \SI{30}{\kilo\meter\per\hour}, leg je op één uur tijd \SI{30}{km} af. 
-Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op één uur tijd slechts \SI{5}{km}. 
-Met behulp van de plaatsfunctie kan de snelheid van een voorwerp volledig worden bepaald. 
+Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op één uur tijd slechts \SI{5}{km} af. 
+De snelheid van een voorwerp kan volledig bepaald worden met behulp van de plaatsfunctie. 
+
+We behandelen eerst de snelheid in één dimensie. 
+Daarna kijken we naar de snelheid in twee dimensies, die wordt opgebouwd als samenstelling van twee (ééndimensionale) snelheidscomponenten. 
 
 
 % Een voorwerp heeft snelheid als het beweegt, er is een verandering van de positie in de tijd.
@@ -61,7 +64,7 @@ De tijd nodig voor een bepaalde verplaatsing geeft aanleiding tot de \textit{gem
 
 \begin{definition}
 	
-De gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen wordt gedefiniëerd als
+In één dimensie wordt de gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen gedefiniëerd als
 \[
 \overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
 \]
@@ -71,7 +74,7 @@ De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$.
 
 In het traject van de zeilboot is de gemiddelde snelheid van de boot tussen de tijdstippen $t_1$ en $t_2$ gelijk aan 
 $\overline{v} =\frac{\Delta x}{\Delta t} =\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{10}{\meter} - \SI{40}{\meter}}{\SI{15}{\second} - \SI{5}{\second}}= \frac{\SI{-30}{\meter}}{\SI{10}{\second}} = \SI{-3}{\meter\per\second}$. 
-Deze gemiddelde snelheid is negatief, wat betekent dat de zeilboot tegen de positieve richting-as bewogen is. 
+Deze gemiddelde snelheid is negatief, wat betekent dat de zeilboot tegen de positieve richting-as is bewogen. 
 
 
 \begin{quickquestion*}{}{}
@@ -83,7 +86,7 @@ Kan je op de plaatsgrafiek van de zeilboot de gemiddelde snelheid tussen \(t_2\)
 \subsection*{Ogenblikkelijke snelheid bij ééndimensionale bewegingen}
 
 De gemiddelde snelheid \(\overline{v}\) is enkel gedefinieerd \textit{tussen} twee posities \(x_1\) en \(x_2\). 
-De plaatsfunctie \(x(t)\) kent voor elk tijdstip \(t\) aan een puntmassa een positie \(x\) toe. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
+De plaatsfunctie \(x(t)\) kent voor elk tijdstip \(t\) een positie \(x\) toe aan een puntmassa. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
 
 De eenheid van snelheid is \SI{}{\meter\per\second}, het gaat dus over het aantal meter dat in een bepaald tijds\-in\-ter\-val wordt afgelegd. 
 Op één bepaald moment \(t\), één ogenblik, is er helemaal geen tijdsverloop en bijgevolg kan er ook geen verplaatsing zijn \ldots! Er is immers geen tijd verstreken om afstand te kunnen afleggen.
@@ -216,7 +219,7 @@ Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de sne
   \end{axis}
   \end{tikzpicture}
 \end{image}
-\captionof{figure}{De positie van de zeilboot met een tijd-as}
+\captionof{figure}{De gemiddelde snelheid voor \(t_1 = 5\) en \(t_3 = 15\)}
 
 Indien niet met \(t_2 = 15\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{10}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
 
@@ -339,7 +342,7 @@ Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar...
   \end{axis}
   \end{tikzpicture}
 \end{image}
-\captionof{figure}{De positie van de zeilboot met een tijd-as}
+\captionof{figure}{De gemiddelde snelheid voor \(t_1 = 5\) en \(t_l = 10\)}
 
 
 
@@ -349,11 +352,11 @@ Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar...
 
 De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. 
 Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval.
-Daarom, je raadde het misschien al, wordt de ogenblikkelijke snelheid gedefinieerd als de \textbf{limiet van de gemiddelde snelheid} over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
+Daarom wordt de ogenblikkelijke snelheid gedefinieerd als de \textbf{limiet van de gemiddelde snelheid} over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
 
 \begin{definition}
 	
-De \textbf{ogenblikkelijke snelheid}  is de afgeleide van de plaatsfunctie:
+De \textbf{ogenblikkelijke snelheid}  in één dimensie is de afgeleide van de plaatsfunctie:
 \[
 v=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}=\frac{dx}{dt}
 \]
@@ -368,7 +371,7 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de r
 	\begin{tikzpicture}
 		\begin{axis}[
 			axis lines=middle,
-			xlabel={tijd \(t\)}, ylabel={positie \(\vec{x}\)},
+			xlabel={tijd \(t\)}, ylabel={positie \(x\)},
 			grid=both,
 			width=10cm, height=6cm,
 			xmin=0, xmax=6, ymin=0, ymax=6,
@@ -424,7 +427,7 @@ v_a = v(t_a)
 	\begin{tikzpicture}
 		\begin{axis}[
 			axis lines=middle,
-			xlabel={tijd \(t\)}, ylabel={snelheid \(\vec{v}\)},
+			xlabel={tijd \(t\)}, ylabel={snelheid \(v\)},
 			grid=both,
 			width=10cm, height=6cm,
 			xmin=0, xmax=6, ymin=-1, ymax=3,
@@ -482,28 +485,27 @@ v_a = v(t_a)
 
 % DIT IS NOG NIET GOED --> IS GEWOON OM GEEN SCREENSHOTS MEER IN DE CURSUS TE HEBBEN...! 
 
+% \textbf{Gemiddelde snelheid op tijdsinterval } $\Delta t = t_2 - t_1$:
+% \[
+% \text{Vectoriële notatie: } \quad
+% \langle \vec{v} \rangle = \frac{\Delta \vec{x}}{\Delta t} = \frac{\Delta x}{\Delta t} \cdot \vec{e}_x
+% \]
+% \[
+% \text{Scalaire notatie: } \quad
+% \langle v \rangle = \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} 
+% \quad \text{(kan negatief zijn bij verplaatsing tegen de zin van de x-as)}
+% \]
 
-\textbf{Gemiddelde snelheid op tijdsinterval } $\Delta t = t_2 - t_1$:
-\[
-\text{Vectoriële notatie: } \quad
-\langle \vec{v} \rangle = \frac{\Delta \vec{x}}{\Delta t} = \frac{\Delta x}{\Delta t} \cdot \vec{e}_x
-\]
-\[
-\text{Scalaire notatie: } \quad
-\langle v \rangle = \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} 
-\quad \text{(kan negatief zijn bij verplaatsing tegen de zin van de x-as)}
-\]
-
-\textbf{Ogenblikkelijke snelheid op willekeurig tijdstip } $t$:
-\[
-\text{Vectoriële notatie: } \quad
-\vec{v}(t) = \lim_{\Delta t \to 0} \frac{\Delta \vec{x}}{\Delta t} = \frac{d\vec{x}}{dt} 
-= \frac{d(x \cdot \vec{e}_x)}{dt} = \frac{dx}{dt} \cdot \vec{e}_x + x \cdot \frac{d\vec{e}_x}{dt} = \frac{dx}{dt} \cdot \vec{e}_x = v \cdot \vec{e}_x
-\]
-\[
-\text{Scalaire notatie: } \quad
-v(t) = v = \frac{dx}{dt} \quad \text{(kan negatief zijn bij verplaatsing tegen de zin van de x-as)}
-\]
+% \textbf{Ogenblikkelijke snelheid op willekeurig tijdstip } $t$:
+% \[
+% \text{Vectoriële notatie: } \quad
+% \vec{v}(t) = \lim_{\Delta t \to 0} \frac{\Delta \vec{x}}{\Delta t} = \frac{d\vec{x}}{dt} 
+% = \frac{d(x \cdot \vec{e}_x)}{dt} = \frac{dx}{dt} \cdot \vec{e}_x + x \cdot \frac{d\vec{e}_x}{dt} = \frac{dx}{dt} \cdot \vec{e}_x = v \cdot \vec{e}_x
+% \]
+% \[
+% \text{Scalaire notatie: } \quad
+% v(t) = v = \frac{dx}{dt} \quad \text{(kan negatief zijn bij verplaatsing tegen de zin van de x-as)}
+% \]
 
 
 \begin{remark}
@@ -565,7 +567,8 @@ Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van de zeilboot. Bepaal enkel 
 
 \subsection*{Snelheid bij tweedimensionale bewegingen}
 
-Bij voorwerpen die in twee dimensies bewegen, splitst men de beweging doorgaans op in loodrechte x- en y-componenten. Daarmee kan men analoge redeneringen en gelijkaardige formules maken zoals in het 1D geval.
+Bij voorwerpen die in twee dimensies bewegen, splitst men de beweging op in loodrechte x- en y-componenten. 
+Op die manier bekomt men gelijkaardige formules zoals in het 1D geval.
 
 % AFBEELDING DAT SNELHEID REKEND AAN DE BAAN IS NOG INVOEGEN...! 
 
@@ -590,8 +593,53 @@ en kan worden opgesplits in snelheidscomponenten \(v_x\) en \(v_y\):
 \]
 De grootte van de totale snelheid wordt genoteerd met het symbool \(v\) en is gelijk aan 
 \[
-v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
+v = \| \vec{v}\| = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
 \]
+
+\begin{image}[0.5\textwidth]
+	\begin{tikzpicture}
+		\draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
+		\draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+		\coordinate (O) at (0,0);
+
+		\pgfmathsetmacro{\r}{3}       
+		\pgfmathsetmacro{\ang}{45} 
+
+		\coordinate (A) at (\ang :\r);
+		\coordinate (X) at (\r*cos{\ang},0);
+		\coordinate (Y) at (0,\r*sin{\ang});
+
+		\draw[thick, gray, dotted, domain=0:90] plot ({\r*cos(\x)}, {\r*sin(\x)});
+
+	
+		\fill (A) circle (2pt);
+	
+		\draw[->, very thick, blue, -latex] (O) -- (A) node[midway, below right] { $\vec{r}$};
+		% \draw[->, very thick, dashed, blue] (O) -- (X) node[midway, below] {$\vec{r}_x$};
+		% \draw[->, very thick, dashed, blue] (O) -- (Y) node[midway, right] {$\vec{r}_y$};
+		% \draw[thick, dotted, blue] (Y) -- (A) -- (X);
+		
+		
+		\draw[->, very thick, red, -latex] 			(A) --++ (1, -1) node[pos=0.8, right, xshift=3pt]{ $\vec{v}$ snelheidsvector};
+		\draw[->, very thick, red, dotted, -latex] 	(A) --++ (1, 0) node[midway, above right] { $\vec{v}_x$};
+		\draw[->, very thick, red, dotted, -latex] 	(A) --++ (0, -1) node[pos=0.8, left ] { $\vec{v}_y$};
+
+
+		\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0.5,0) node[midway, below] {$\vec{e}_x$};
+		\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0,0.5) node[midway, left] {$\vec{e}_y$};
+	\end{tikzpicture}
+\end{image}
+\captionof{figure}{De snelheidsvector \(\vec{v}\)}
+	
+
+\end{definition}
+
+De snelheid werd gedefinieerd als afgeleide van de plaatsfunctie.
+Uit de wiskunde weten we dat de afgeleide overeenkomt met de rico van de raaklijn. 
+In de volgende eigenschap van de snelheidsvector komt dit fysisch tot uiting. 
+
+\begin{theorem}
+De snelheidsvector is altijd rakend aan de baan.
 
 \begin{image}[0.4\textwidth]
 	\begin{tikzpicture}
@@ -635,19 +683,18 @@ v = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
 	
 	\end{tikzpicture}
 	\end{image}
-\end{definition}
-
-\begin{theorem}
-De snelheidsvector is altijd rakend aan de baan.
+	\captionof{figure}{De snelheidsvector is rakend aan de baan.}
 
 \end{theorem}
-	\begin{proof}
+	\begin{expandable}{proof}{}
 	We kunnen dit bewijzen met de kettingregel, toegepast op de functie $y(t)=y(x(t))$.
 	\begin{eqnarray*}
 	 \frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}\Leftrightarrow\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{v_y}{v_x}
 	\end{eqnarray*}
 	Inderdaad, $\frac{dy}{dx}$ is de helling van de baan en deze valt samen met de helling die de snelheidsvector maakt $\frac{v_y}{v_x}$.
-\end{proof}
+\end{expandable}
+
+
 
 % \subsection{Vectoriële notatie \& definitie}
 % \[
