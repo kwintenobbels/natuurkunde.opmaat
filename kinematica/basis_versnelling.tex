@@ -380,23 +380,64 @@ Bij ééndimensionale bewegingen wordt de gemiddelde versnelling \(\overline{a}\
 De gemiddelde versnelling \(\overline{a}\) geeft de verandering in snelheid \textit{tussen} twee tijdstippen \(t_1\) en \(t_2\).  Om de ogenblikkelijke versnelling \(a\) op één tijdstip \(t\) te bepalen wordt -net zoals bij de ogenblikkelijke snelheid- gebruik gemaakt van de afgeleide. 
 
 \begin{definition}
-De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de snelheidsfunctie \(v(t)\):
-\[
-a=\lim_{t\to t_0}\frac{v(t)-v(t_0)}{t-t_0} = \frac{dv}{dt}=\frac{d^2x}{dt^2}
-\]
-De notatie met een accent $a(t)=v'(t)$ of $a=v'$ wordt op dezelfde manier als in de wiskunde gebruikt. $a(t)$ is een functie die op elk moment de snelheid geeft. 
-\end{definition}
-
-\begin{image}
-\includegraphics{versnellingmetgrafiek}
-\end{image}
-
+	De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de snelheidsfunctie \(v(t)\):
+	\[
+		a=\lim_{t\to t_0}\frac{v(t)-v(t_0)}{t-t_0} = \frac{dv}{dt}=\frac{d^2x}{dt^2}
+		\]
+		De notatie met een accent $a(t)=v'(t)$ of $a=v'$ wordt op dezelfde manier als in de wiskunde gebruikt. $a(t)$ is een functie die op elk moment de snelheid geeft. 
+	\end{definition}
+	
+	
+	% Dit zijn erg drukke afbeeldingen 
+	% \begin{image}
+	% \includegraphics{versnellingmetgrafiek}
+	% \end{image}
+\subsection*{Ogenblikkelijke versnelling bij ééndimensionale bewegingen}
+	
 In twee dimensies, kan men de versnelling opsplitsen in loodrechte x- en y-componenten. Daarmee kan men analoge redeneringen en gelijkaardige formules maken zoals in het 1D geval.
+	
+% \begin{image}
+% \includegraphics[width=0.8\textwidth]{versnelling2D}
 
-\begin{image}
-\includegraphics[width=0.8\textwidth]{versnelling2D}
+% \end{image}
+% BOVENSTAANDE SLIDE MET GPT NAAR TEX: 
 
-\end{image}
+Versnelling wordt vectorieel beschreven met de versnellingsvector $\vec{a}$. 
+Scalair rekent men met de versnellingscomponenten $a_x$ en $a_y$. 
+De totale versnelling heeft het symbool $a$. 
+Bij 2D bewegingen is er altijd normale versnelling (mogelijk in combinatie met tangentiële versnelling).
+
+Vectoriële notatie en definitie:
+	
+\[
+\langle \vec{a} \rangle = \frac{\Delta \vec{v}}{\Delta t}
+\]
+
+\[
+\vec{a} = \frac{d\vec{v}}{dt} 
+= \frac{d}{dt}(v_x \cdot \vec{e}_x + v_y \cdot \vec{e}_y) 
+= \frac{dv_x}{dt} \cdot \vec{e}_x + \frac{dv_y}{dt} \cdot \vec{e}_y 
+= \vec{a}_x + \vec{a}_y
+\]
+
+Scalaire notatie ens definitie:
+
+\[
+a_x(t) = a_x = \frac{dv_x}{dt} = \frac{d^2x}{dt^2}
+\]
+
+\[
+a_y(t) = a_y = \frac{dv_y}{dt} = \frac{d^2y}{dt^2}
+\]
+
+\[
+\langle a \rangle = \frac{\Delta v}{\Delta t}
+\]
+
+\[
+a = \sqrt{a_x^2 + a_y^2}
+\]
+
 
 \begin{remark}
 	Het begrip versnelling in de fysica heeft niet dezelfde betekenis als hoe het begrip in de volksmond wordt gebruikt.
@@ -420,7 +461,15 @@ In twee dimensies, kan men de versnelling opsplitsen in loodrechte x- en y-compo
 
 \begin{remark}
 
-	Wagens en fietsen hebben ook versnellingen. Weet dat deze versnellingen nauwelijks iets te maken hebben met het fysisch begrip versnelling. Een auto die in derde versnelling met een constante snelheid van 50 km/h rechtdoor rijdt, versnelt bijvoorbeeld helemaal niet. Zijn versnelling is 0 m/s². Een juistere naam om de standen van de versnellingspook of de ketting weer te geven had eigenlijk “snelheid” geweest omdat de versnelling waarin je rijdt veel meer zegt over welke snelheid je hebt. Kleine versnellingen gebruik je voor kleine snelheden en grote versnellingen voor grote snelheden. Onze Franstalige zuiderburen hebben daar een logischere naam voor, namelijk: “vitesse” (= snelheid). Probeer dus de begrippen snelheid en versnelling niet door elkaar te gooien, want ze hebben een heel andere betekenis! Het is alsof je zou zeggen dat positie en snelheid hetzelfde is!
+	Wagens en fietsen hebben ook versnellingen. 
+	Weet dat deze versnellingen nauwelijks iets te maken hebben met het fysisch begrip versnelling. 
+	Een auto die in derde versnelling met een constante snelheid van 50 km/h rechtdoor rijdt, versnelt bijvoorbeeld helemaal niet. 
+	Zijn versnelling is 0 m/s². 
+	Een juistere naam om de standen van de versnellingspook of de ketting weer te geven had eigenlijk “snelheid” geweest omdat de versnelling waarin je rijdt veel meer zegt over welke snelheid je hebt. 
+	Kleine versnellingen gebruik je voor kleine snelheden en grote versnellingen voor grote snelheden. 
+	Onze Franstalige zuiderburen hebben daar een logischere naam voor, namelijk: “vitesse” (= snelheid). 
+	Probeer dus de begrippen snelheid en versnelling niet door elkaar te gooien, want ze hebben een heel andere betekenis! 
+	Het is alsof je zou zeggen dat positie en snelheid hetzelfde is!
 
 
 \end{remark}
