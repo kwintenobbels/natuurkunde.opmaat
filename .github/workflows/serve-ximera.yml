@@ -73,17 +73,11 @@ jobs:
           xmlatex bake --compile htmlexport -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -j 5 $XM_TO_PROCESS
           xmlatex bake --compile handout.pdf -f -j 3 --nodependencies $XM_TO_PROCESS   # voor TOC
-          rm -rf ximera-download/pdfexport
-          xmlatex frost $XM_TO_PROCESS || echo "FROST FAILED"
-          xmlatex name
-          xmlatex serve $XM_TO_PROCESS
-
-          # ls -alR
-          # rm -rf */*/build
-          # rm -rf */*/xmPictures
-          # rm -rf */build
-          # rm -rf */xmPictures          
-
+          rm -rf ximera-downloads/pdfexport
+          # xmlatex frost $XM_TO_PROCESS || echo "FROST FAILED"
+          # xmlatex name
+          # xmlatex serve $XM_TO_PROCESS
+          
       # Save cache
       - name: "Postprocess: Save cache"
         uses: actions/cache/save@v4
@@ -140,7 +134,7 @@ jobs:
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           xmlatex name
-          xmlatex frost $XM_TO_PROCESS   ### DONE ABOVE
+          xmlatex frost $XM_TO_PROCESS   
           xmlatex serve $XM_TO_PROCESS
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
@@ -181,7 +175,8 @@ jobs:
           echo "Serving to $XIMERA_URL$XIMERA_NAME"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"          
           xmlatex name
-          xmlatex serve  $XM_TO_PROCESS
+          xmlatex frost $XM_TO_PROCESS   
+          xmlatex serve $XM_TO_PROCESS
           # echo "Recent git log:"
           # git log --oneline --graph --decorate --all -n 10
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
