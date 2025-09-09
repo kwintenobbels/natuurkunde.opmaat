@@ -42,7 +42,7 @@ Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op één uur tijd slechts
 De snelheid van een voorwerp kan volledig bepaald worden met behulp van de plaatsfunctie. 
 
 We behandelen eerst de snelheid in één dimensie. 
-Daarna kijken we naar de snelheid in twee dimensies, die wordt opgebouwd als samenstelling van twee (ééndimensionale) snelheidscomponenten. 
+Daarna kijken we naar de snelheid in twee dimensies, die wordt opgebouwd als samenstelling van twee (eendimensionale) snelheidscomponenten. 
 
 
 % Een voorwerp heeft snelheid als het beweegt, er is een verandering van de positie in de tijd.
@@ -51,7 +51,7 @@ Daarna kijken we naar de snelheid in twee dimensies, die wordt opgebouwd als sam
 
 
 
-\subsection*{Snelheid bij ééndimensionale bewegingen}
+\subsection*{Snelheid bij eendimensionale bewegingen}
 
 % gemiddelde snelheid als je een rondje loopt is nu nul; dat moet miss benoemd worden 
 
@@ -64,7 +64,7 @@ De tijd nodig voor een bepaalde verplaatsing geeft aanleiding tot de \textit{gem
 
 \begin{definition}
 	
-In één dimensie wordt de gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen gedefiniëerd als
+In één dimensie wordt de gemiddelde snelheid $\overline{v}$ van een voorwerp tussen twee tijdstippen gedefinieerd als
 \[
 \overline{v}=\frac{\Delta x}{\Delta t}=\frac{x_2-x_1}{t_2-t_1}
 \]
@@ -83,7 +83,7 @@ Kan je op de plaatsgrafiek van de zeilboot de gemiddelde snelheid tussen \(t_2\)
 
 
 
-\subsection*{Ogenblikkelijke snelheid bij ééndimensionale bewegingen}
+\subsection*{Ogenblikkelijke snelheid bij eendimensionale bewegingen}
 
 De gemiddelde snelheid \(\overline{v}\) is enkel gedefinieerd \textit{tussen} twee posities \(x_1\) en \(x_2\). 
 De plaatsfunctie \(x(t)\) kent voor elk tijdstip \(t\) een positie \(x\) toe aan een puntmassa. Op dezelfde manier zou je op elk tijdstip de snelheid willen kennen. 
@@ -223,7 +223,7 @@ Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de sne
 
 Indien niet met \(t_2 = 15\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{10}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
 
-% Op de grafiek zien we dat \(x_l = 22\) en een rechtsreekse berekening levert dan dat de gemiddelde snelheid tussen \(t_1=5\) en \(t_l=8\) gegeven wordt door 
+% Op de grafiek zien we dat \(x_l = 22\) en een rechtstreekse berekening levert dan dat de gemiddelde snelheid tussen \(t_1=5\) en \(t_l=8\) gegeven wordt door 
 
 % \[
 % \overline{v}=\frac{x_l-x_1}{t_l-t_1}=\frac{\SI{22}{\meter} - \SI{40}{\meter}}{\SI{10}{\second} - \SI{5}{\second}}=  \frac{\SI{-18}{\meter}}{\SI{5}{\second}} = \SI{-3.6}{\meter\per\second}
@@ -365,7 +365,7 @@ De functie $v(t)$ geeft op elk moment $t$ de snelheid $v(t)$.
 \end{definition}
 
 
-Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je de snelheid als de richtingscoöefficiënt van de raaklijn in het beschouwde punt. 
+Grafisch kan je de afgeleide terugvinden als de richtingscoëfficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je de snelheid als de richtingscoëfficiënt van de raaklijn in het beschouwde punt. 
 
 \begin{image}[0.4\textwidth]
 	\begin{tikzpicture}
@@ -416,12 +416,15 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoöefficiënt van de r
 
 
 \begin{definition}
-De \textbf{snelheidsfunctie} \(\vec{v}(t)\) geeft voor elke moment \(t\) de snelheidsvector \(\vec{v}\). \\
-In één dimensie is \(\vec{v}\) een scalar en is de plaatsfuncie een grafiek waarop horizontaal de tijd wordt weergegeven en verticaal de grootte van de snelheid. 
+	% De \textbf{snelheidsfunctie} \(\vec{v}(t)\) geeft voor elk moment \(t\) de snelheidsvector \(\vec{v}\). \\
+	De snelheidsfunctie $v(t)$ geeft de component van de snelheid in functie van de tijd.% In één dimensie is \(\vec{v}\) een scalar en is de plaatsfuncie een grafiek waarop horizontaal de tijd wordt weergegeven en verticaal de grootte van de snelheid. 
 De snelheid op een welbepaald tijdstip \(t_a\) wordt genoteerd als 
 \[
-v_a = v(t_a)
+	v_a = v(t_a).
 \]
+In een grafiek van de functie wordt op de horizontale as de tijd weergegeven en op de verticale de snelheidscomponent.
+% In één dimensie is \(\vec{v}\) een scalar =nee, het blijft een vector. Je kan daarnaast ook focussen op de component van die vector, wat een scalar is.
+% In één dimensie is \(\vec{v}\) een scalar en is de plaatsfuncie een grafiek waarop horizontaal de tijd wordt weergegeven en verticaal de grootte van de snelheid. = nee, niet de grootte!! = nee, de grafiek is niet de functie
 
 \begin{image}[0.4\textwidth]
 	\begin{tikzpicture}
@@ -570,7 +573,7 @@ Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van de zeilboot. Bepaal enkel 
 Bij voorwerpen die in twee dimensies bewegen, splitst men de beweging op in loodrechte x- en y-componenten. 
 Op die manier bekomt men gelijkaardige formules zoals in het 1D geval.
 
-% AFBEELDING DAT SNELHEID REKEND AAN DE BAAN IS NOG INVOEGEN...! 
+% AFBEELDING DAT SNELHEID RAKEND AAN DE BAAN IS NOG INVOEGEN...! 
 
 % \begin{image}
 % \includegraphics[width=0.8\textwidth]{snelheid2D}
@@ -580,21 +583,20 @@ Op die manier bekomt men gelijkaardige formules zoals in het 1D geval.
 
 \begin{definition}
 	
-De \textbf{snelheidsvector \(\vec{v}\)} van een bewegend punt wordt gedefinieerd als de afgeleide van de plaatsvector naar de tijd:
-
+De \textbf{snelheidsvector \(\vec{v}\)} van een lichaam wordt gedefinieerd als de afgeleide van de plaatsvector naar de tijd:
 \[
 \vec{v}(t) = \frac{d\vec{r}(t)}{dt},
 \]
-
-en kan worden opgesplits in snelheidscomponenten \(v_x\) en \(v_y\):
+en kan worden opgesplitst in snelheidscomponenten \(v_x\) en \(v_y\):
 
 \[
-	\vec{v} = \frac{d\vec{r}}{dt} = \frac{d}{dt}(x \cdot \vec{e}_x + y \cdot \vec{e}_y) = \frac{dx}{dt} \cdot \vec{e}_x + \frac{dy}{dt} \cdot \vec{e}_y = \vec{v}_x + \vec{v}_y
+	\vec{v} = \frac{d\vec{r}}{dt} = \frac{d}{dt}(x \cdot \vec{e}_x + y \cdot \vec{e}_y) = \frac{dx}{dt} \cdot \vec{e}_x + \frac{dy}{dt} \cdot \vec{e}_y = v_x\cdot\vec{e}_x+v_y\cdot\vec{e}_y%\vec{v}_x + \vec{v}_y
 \]
 De grootte van de totale snelheid wordt genoteerd met het symbool \(v\) en is gelijk aan 
 \[
-v = \| \vec{v}\| = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
+v = \| \vec{v}\| = \sqrt{v_x^2 + v_y^2}
 \]
+% v = \| \vec{v}\| = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2} = zou ik hier weglaten omdat die notatie van het scalair product in de regels slechts op het einde van het zesde bij vectoren in wiskunde behandeld wordt
 
 \begin{image}[0.5\textwidth]
 	\begin{tikzpicture}
@@ -630,7 +632,7 @@ v = \| \vec{v}\| = \sqrt{(\vec{v}_x)^2 + (\vec{v}_y)^2}
 	\end{tikzpicture}
 \end{image}
 \captionof{figure}{De snelheidsvector \(\vec{v}\)}
-	
+% Ik denk niet dat we over de snelheid van een bewegend punt kunnen spreken, het gaat over de snelheid van het fysische object? 
 
 \end{definition}
 
