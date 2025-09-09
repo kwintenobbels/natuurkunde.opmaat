@@ -8,7 +8,7 @@
     \xmsource\xmuitleg
 
 \textbf{Kinematica}
-\footnote{Het woord 'kinematica' is net zoals 'cinema' en 'kinesist' afgeleid van het Griekse $\kappa \iota \nu \eta \mu \alpha$ dat 'beweging' betekent.} 
+\footnote{Het woord `kinematica' is net zoals `cinema' en `kinesist' afgeleid van het Griekse $\kappa \iota \nu \eta \mu \alpha$ dat `beweging' betekent.} 
 is het onderdeel van de fysica dat de \textbf{bewegingen van voorwerpen beschrijft}, 
 zoals vallende appels, rollende knikkers of rijdende auto's, maar ook de beweging van de maan rond de aarde of de aarde rond de zon. 
 De kinematica beperkt zich tot het \textit{beschrijven} van de beweging, zonder de onderliggende \textit{oorzaak} te onderzoeken. 
@@ -54,8 +54,55 @@ Als je een krijtje gooit naar het bord, kan je je daarover allerlei vragen stell
 Sommige van deze vragen worden behandeld in de kinematica, andere in de dynamica. 
 Één vraag past natuurlijk beter binnen een cursus zingeving en ethiek, maar dat had je wel door... 
 % Enkele vragen zijn eigenlijk onzinnig, en uitzonderlijk kan een vraag worden behandeld in de strafstudie. Als een vraag grappig zou zijn, is dat toevallig en irrelevant.
+\end{example} \nl
 
-\end{example}
+\begin{denkvraag*}{}
+	Een buffel tracht loodrecht een \SI{300}{m} brede rivier over te steken met een snelheid van \SI{1,00}{m/s}. De stroomsnelheid bedraagt \SI{1,50}{m/s}.
+\begin{enumerate}
+		\item In welke tijd bereikt de buffel de overzijde?
+		\item Hoever drijft de buffel af?
+		\item Met welke snelheid beweegt de buffel voor iemand die op de oever staat?
+		%\item Construeer de snelheidsvectoren en bereken de grootte van de resulterende snelheid.
+        \item Waarom is het antwoord op de vorige vraag niet simpelweg $\SI{1,00}{m/s}+\SI{1,50}{m/s}=\SI{2,50}{m/s}$?
+\end{enumerate}
+\begin{oplossing}
+    % Laten we de breedte van de rivier $d$ noemen, de snelheid waarmee de buffel kan zwemmen ten opzichte van het water $v_{\text{zw}}$ en de stroomsnelheid van het water $v_{\text{rivier}}$.
+    \begin{enumerate}
+        \item De buffel bereikt de overzijde van de rivier na een tijd van \SI{300}{s}. Of het water nu al dan niet stroomt, heeft geen invloed op de snelheid waarmee de buffel ten opzichte van het water naar de overkant gaat. Beschouw (een stuk van) de rivier als een bassin waarin de buffel zwemt, waarbij dat bassin dan zelf ten opzichte van de oever beweegt. De buffel moet dus een afstand van \SI{300}{m} afleggen met een snelheid \SI{1,00}{m/s}, waar hij dus \SI{300}{s} (of 5 minuten) voor nodig heeft.
+        \item De buffel drijft \SI{450}{m} af; hij komt die afstand verderop langs de oever aan de overkant aan. Zolang dat de buffel aan het zwemmen is, gaat de rivier namelijk met hem aan de haal en neemt hem mee stroomafwaarts. De afgelegde afstand volgens de richting van de rivier is dan $\SI{1,50}{m/s}\cdot\SI{300}{s}=\SI{450}{m}$.
+        \item Voor iemand die op de oever staat, beweegt de buffel met een snelheid van \SI{1,8}{m/s}. Omdat in een bepaalde tijdsspanne $\Delta t$ de buffel t.o.v. het water een afstand $\SI{1,00}{m/s}\cdot\Delta t$ heeft gezwommen en het water hem in diezelfde tijd over een afstand $\SI{1,50}{m/s}\cdot\Delta t$ heeft meegenomen, heeft de buffel in vogelvlucht, met de stelling van Pythagoras, een afstand van $\sqrt{(\SI{1,00}{m/s}\cdot\Delta t)^2+(\SI{1,50}{m/s}\cdot\Delta t)^2}$ afgelegd. Die afstand in de gegeven tijdsspanne geeft dan de snelheid van de buffel ten opzichte van de over:
+        \begin{equation*}
+            v=\sqrt{(\SI{1,00}{m/s})^2+(\SI{1,50}{m/s})^2}.
+        \end{equation*}
+        Hierbij hebben we $(\Delta t)^2$ onder de wortel afgezonderd, uit de wortel gehaald waarbij het kwadraat verdween en de tijdsspanne in teller en noemer tegen mekaar hebben kunnen wegstrepen.
+        \item De totale snelheid van de buffel is niet gelijk aan de optelling van de afzonderlijke snelheden omdat die snelheden van toepassing zijn op verschillende richtingen.
+    \end{enumerate}
+\end{oplossing}
+\end{denkvraag*} \nl
+
+\begin{denkvraag*}{}
+	Vanuit de laadbak van een auto gooit een man een zware medicine bal omhoog. Een klein beetje later vangt hij die bal terug op. Zie het volgende filmpje voor de reële situatie:
+	\begin{center}
+		\youtube{j1URC2G2qnc}
+	\end{center}
+\begin{enumerate}
+    \item Beschrijf de baan van de bal zoals die eruit ziet voor iemand die naar de rijdende auto kijkt.
+    \item Beschrijf de baan van de bal zoals die eruit ziet voor de werper in de auto.
+    \item Schets de snelheidsvector van de bal voor het moment dat de bal op zijn hoogste punt is, voor een waarnemer die naar de rijdende auto kijkt.
+    \item Doe hetzelfde voor de snelheidsvector van de bal op een moment dat hij voorbij zijn hoogste punt is.
+\end{enumerate}
+\begin{oplossing}
+    \begin{enumerate}
+        \item De baan van de bal ziet er gebogen uit, waarbij de bal eerst omhoog en dan terug omlaag gaat.
+        \item Ten opzichte van de werper in de auto gaat de bal enkel naar boven en naar beneden. Als we ervan uitgaan dat de wrijving te verwaarlozen is, is de baan van de bal een verticale rechte.
+        \item Voor een waarnemer buiten de auto die stilstaat, is de snelheidsvector van de bal op het moment dat hij zich op zijn hoogste punt bevindt, horizontaal gericht. In verticale zin keert de bal van bewegingszin om zodat hij in deze richting geen snelheid heeft maar in horizontale zin beweegt de bal nog altijd met de auto mee.
+        \item De snelheidsvector maakt nu een hoek met de horizontale en is groter dan de snelheid op het hoogste punt. Naast een horizontale component heeft de snelheid nu ook een verticaal naar beneden gerichte component omdat de bal ook terug naar beneden aan het vallen is.
+    \end{enumerate}
+\end{oplossing}
+% Bijkomende vragen
+% - hoe definiëren we de snelheid?
+% - hoe zit het met de verandering van de snelheid? 
+\end{denkvraag*} \nl
 
 \begin{expandable}{xmyoutube}{Een universiteitscollege over deze leerstof}
     \youtube{q9IWoQ199_o}
@@ -85,6 +132,5 @@ Sommige van deze vragen worden behandeld in de kinematica, andere in de dynamica
 % deze zin is enkel goed als ze het al kennen. 
 
 % wat we niet doen: 
-
 	
 \end{document}
