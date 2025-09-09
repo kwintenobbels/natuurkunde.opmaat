@@ -38,8 +38,9 @@
 Een voorwerp in beweging heeft een snelheid. 
 De ervaring leert dat hoe groter de snelheid, hoe groter de verplaatsing in een bepaald tijdsinterval. 
 Als je fietst aan \SI{30}{\kilo\meter\per\hour}, leg je op één uur tijd \SI{30}{km} af. 
-Als je wandelt aan \SI{5}{\kilo\meter\per\hour} leg je op één uur tijd slechts \SI{5}{km} af. 
-De snelheid van een voorwerp kan volledig bepaald worden met behulp van de plaatsfunctie. 
+Als je wandelt aan \SI{5}{\kilo\meter\per\hour}, leg je op één uur tijd slechts \SI{5}{km} af. 
+De snelheid van een voorwerp kan volledig bepaald worden met behulp van de plaatsfunctie.
+Een voorwerp heeft immers snelheid als de plaats of positie verandert. 
 
 We behandelen eerst de snelheid in één dimensie. 
 Daarna kijken we naar de snelheid in twee dimensies, die wordt opgebouwd als samenstelling van twee (eendimensionale) snelheidscomponenten. 
@@ -74,11 +75,11 @@ De eenheid van snelheid is meter per seconde $[v]=\rm\,m/s$.
 
 In het traject van de zeilboot is de gemiddelde snelheid van de boot tussen de tijdstippen $t_1$ en $t_2$ gelijk aan 
 $\overline{v} =\frac{\Delta x}{\Delta t} =\frac{x_2-x_1}{t_2-t_1}=\frac{\SI{10}{\meter} - \SI{40}{\meter}}{\SI{15}{\second} - \SI{5}{\second}}= \frac{\SI{-30}{\meter}}{\SI{10}{\second}} = \SI{-3}{\meter\per\second}$. 
-Deze gemiddelde snelheid is negatief, wat betekent dat de zeilboot tegen de positieve richting-as is bewogen. 
+Deze gemiddelde snelheid is negatief, wat betekent dat de zeilboot tegen de zin van de referentie-as is bewogen. 
 
 
 \begin{quickquestion*}{}{}
-Kan je op de plaatsgrafiek van de zeilboot de gemiddelde snelheid tussen \(t_2\) en \(t_0\) aanduiden? 
+Hoe je op de plaatsgrafiek van de zeilboot de gemiddelde snelheid tussen \(t_1\) en \(t_2\) aanduiden? 
 \end{quickquestion*}
 
 
@@ -97,10 +98,10 @@ Als een raket opstijgt vanuit stilstand is de snelheid duidelijk groter dan nul.
 
 
 `Ja, maar', ga je zeggen, `de snelheidsmeter van mijn fiets zegt toch hoe hard ik ga?!' 
-Dat \textit{lijkt} inderdaad een ogenblikkelijke snelheid te zijn maar in werkelijkheid is dat steeds de gemiddelde snelheid over het tijdsinterval dat het sensortje op je wiel nodig heeft om één omwenteling te maken. 
+Dat \textit{lijkt} inderdaad een ogenblikkelijke snelheid te zijn, maar in werkelijkheid is dat steeds de gemiddelde snelheid over het tijdsinterval dat het sensortje op je wiel nodig heeft om één omwenteling te maken. 
 Je snelheidsmeter berekent dus de gemiddelde snelheid door je wielomtrek\footnote{Die je hebt moeten ingeven\ldots} te delen door de tijd van één omwenteling. 
-Als je plots remt gaat je snelheid afnemen maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. 
-Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de snelheidsverandering te kunnen registreren.
+Als je plots remt gaat je snelheid afnemen, maar je metertje gaat dit niet ogenblikkelijk kunnen aangeven. 
+Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen en zo de nieuwe snelheid te kunnen registreren.
 
 
 
@@ -124,7 +125,7 @@ Het moet wachten totdat het sensortje weer rond is geweest om de tijd te kennen 
 
 
 Hoe kan dit probleem opgelost worden? 
-Om de ogenblikkelijke snelheid op \(t_1 = \SI{5}{\second}\) te kennen, lijk het eerste (en misschien wel enige...) idee om te vertrekken van de gemiddelde snelheid tussen \(t_1\) en \(t_2\) die hierboven werd berekend. 
+Om de ogenblikkelijke snelheid op \(t_1 = \SI{5}{\second}\) te kennen, lijkt het eerste (en misschien wel enige...) idee om te vertrekken van de gemiddelde snelheid tussen \(t_1\) en \(t_2\) die hierboven werd berekent. 
 Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de snelheid op \(t_1 = 5\). 
 
 \[
@@ -145,6 +146,7 @@ Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de sne
 	  xlabel={Positie--as (in meter)},
 	  xtick distance=5,
 	  xticklabel={\tiny\SI[round-precision=0, round-mode=places]{\tick}{m}},
+	%   xticklabel={\tick}{m},
 	  width=14cm, height=4cm,
   ]
 
@@ -221,7 +223,7 @@ Deze gemiddelde snelheid kan je beschouwen als een erg ruwe schatting van de sne
 \end{image}
 \captionof{figure}{De gemiddelde snelheid voor \(t_1 = 5\) en \(t_3 = 15\)}
 
-Indien niet met \(t_2 = 15\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{10}{\second} \), zal deze gemiddelde snelheid beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
+Indien niet met \(t_2 = \SI{15}{\meter}\) de gemiddelde snelheid wordt berekent, maar bijvoorbeeld met \(t_l = \SI{10}{\second} \), zal deze gemiddelde snelheid vermoedelijk beter de ogenblikkelijke snelheid op \(t_1\) benaderen. 
 
 % Op de grafiek zien we dat \(x_l = 22\) en een rechtstreekse berekening levert dan dat de gemiddelde snelheid tussen \(t_1=5\) en \(t_l=8\) gegeven wordt door 
 
@@ -229,10 +231,11 @@ Indien niet met \(t_2 = 15\) de gemiddelde snelheid wordt berekent, maar bijvoor
 % \overline{v}=\frac{x_l-x_1}{t_l-t_1}=\frac{\SI{22}{\meter} - \SI{40}{\meter}}{\SI{10}{\second} - \SI{5}{\second}}=  \frac{\SI{-18}{\meter}}{\SI{5}{\second}} = \SI{-3.6}{\meter\per\second}
 % \]
 
-De gemiddelde snelheid is kleiner geworden en op de plaatsgrafiek schuift de zeilboot in de richting van \(t_1\). 
-De gemiddelde snelheid \(\bar{v} = \frac{x_l - x_1}{t_l-t_1}\) is een \textit{betere} benadering voor de ogenblikkelijke snelheid op \(t_a\). 
+% COMMENTAAR VINCENT: T2 BEHOUDEN IPV EEN TL EN TM (WSS INDD BETER --> VOLGEND JAAR WIJZIGEN; MET EEN ANDERE PLAATSFUNCTIE NATUURLIJK)
+Op de plaatsgrafiek schuift de zeilboot naar \(t_1\). 
+De gemiddelde snelheid \(\bar{v} = \frac{x_l - x_1}{t_l-t_1}\) is vermoedelijk een \textit{betere} benadering voor de ogenblikkelijke snelheid op \(t_1\). 
 Maar het is nog steeds een gemiddelde snelheid! 
-De lezer raadde het waarschijnlijk al...
+% De lezer raadde het waarschijnlijk al...
 
 Door de gemiddelde snelheid te berekenen voor \(t_m = 7\) wordt de benadering voor de ogenblikkelijke snelheid op \(t_1\) nog beter... 
 Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar... 
@@ -351,8 +354,9 @@ Op de grafiek komen de twee schepen nu wel erg dicht bij elkaar...
 
 
 De ogenblikkelijke snelheid wordt dus beter en beter benaderd door het tijdsinterval kleiner en kleiner en kleiner en kleiner\ldots te nemen. 
-Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval.
-Daarom wordt de ogenblikkelijke snelheid gedefinieerd als de \textbf{limiet van de gemiddelde snelheid} over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
+% Echter, hoe kort het tijdsinterval ook is, de snelheid zal veranderen gedurende dat hele kleine tijdsinterval. (aanpassing vincent)
+% Daarom wordt 
+De ogenblikkelijke snelheid gedefinieerd als de \textbf{limiet van de gemiddelde snelheid} over een tijdsinterval waarbij we dat interval naar nul laten gaan. 
 
 \begin{definition}
 	
@@ -360,12 +364,13 @@ De \textbf{ogenblikkelijke snelheid}  in één dimensie is de afgeleide van de p
 \[
 v=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}=\frac{dx}{dt}
 \]
-De notatie met een accent $v(t)=x'(t)$ of $v=x'$ wordt op dezelfde manier als in de wiskunde gebruikt. 
-De functie $v(t)$ geeft op elk moment $t$ de snelheid $v(t)$. 
+De notatie met een accent $v(t)=x'(t)$ of $v=x'$ wordt op dezelfde manier in de wiskunde gebruikt. 
+De functie $v(t)$ geeft op elk moment $t$ de snelheid $v$. 
 \end{definition}
 
 
-Grafisch kan je de afgeleide terugvinden als de richtingscoëfficiënt van de raaklijn. In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je de snelheid als de richtingscoëfficiënt van de raaklijn in het beschouwde punt. 
+Grafisch kan je de afgeleide interpreteren als de richtingscoëfficiënt van de raaklijn. 
+In een $x-t$ grafiek (de grafiek van de functie $x(t)$, $x$ in functie van $t$) vind je de snelheid als de richtingscoëfficiënt van de raaklijn in het beschouwde punt. 
 
 \begin{image}[0.4\textwidth]
 	\begin{tikzpicture}
@@ -412,12 +417,12 @@ Grafisch kan je de afgeleide terugvinden als de richtingscoëfficiënt van de ra
 		\end{axis}
 	\end{tikzpicture}
 \end{image}
-\captionof{figure}{De snelheid als rico aan de raaklijn}
+\captionof{figure}{De snelheid als richtingscoëfficiënt aan de raaklijn}
 
 
 \begin{definition}
 	% De \textbf{snelheidsfunctie} \(\vec{v}(t)\) geeft voor elk moment \(t\) de snelheidsvector \(\vec{v}\). \\
-	De snelheidsfunctie $v(t)$ geeft de component van de snelheid in functie van de tijd.% In één dimensie is \(\vec{v}\) een scalar en is de plaatsfuncie een grafiek waarop horizontaal de tijd wordt weergegeven en verticaal de grootte van de snelheid. 
+De snelheidsfunctie $v(t)$ geeft de component van de snelheid in functie van de tijd.% In één dimensie is \(\vec{v}\) een scalar en is de plaatsfuncie een grafiek waarop horizontaal de tijd wordt weergegeven en verticaal de grootte van de snelheid. 
 De snelheid op een welbepaald tijdstip \(t_a\) wordt genoteerd als 
 \[
 	v_a = v(t_a).
@@ -512,17 +517,17 @@ In een grafiek van de functie wordt op de horizontale as de tijd weergegeven en 
 
 
 \begin{remark}
-	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds ogenblikkelijke snelheid.
+	Het woord 'ogenblikkelijk' mag je weglaten. Wanneer we het over snelheid hebben, bedoelen we vanaf nu steeds de ogenblikkelijke snelheid.
 \end{remark}
 
 
 
 \begin{exercise}
 Hieronder staat opnieuw de plaatsfunctie \(x(t)\) van de zeilboot. Bepaal enkel met de grafiek en zonder te rekenen: 
-\begin{question} Waar ligt de zeilboot stil?                    \end{question}
+\begin{question} Waar is de snelheid \(0\)?         \end{question}
 \begin{question} Waar heeft de zeilboot een positieve snelheid? \end{question}
-\begin{question} waar is de snelheid negatief?                  \end{question}
-\begin{question} Op welk moment bewoog de zeilboot het snelst?  \end{question}
+\begin{question} Waar is de snelheid negatief?                  \end{question}
+\begin{question} Op welk moment beweegt de zeilboot het snelst?  \end{question}
 
 \begin{image}[0.5\textwidth]
 	\begin{tikzpicture}
@@ -636,9 +641,9 @@ v = \| \vec{v}\| = \sqrt{v_x^2 + v_y^2}
 
 \end{definition}
 
-De snelheid werd gedefinieerd als afgeleide van de plaatsfunctie.
-Uit de wiskunde weten we dat de afgeleide overeenkomt met de rico van de raaklijn. 
-In de volgende eigenschap van de snelheidsvector komt dit fysisch tot uiting. 
+% De snelheid werd gedefinieerd als afgeleide van de plaatsfunctie.
+% Uit de wiskunde weten we dat de afgeleide overeenkomt met de rico van de raaklijn. 
+% In de volgende eigenschap van de snelheidsvector komt dit fysisch tot uiting. 
 
 \begin{theorem}
 De snelheidsvector is altijd rakend aan de baan.
