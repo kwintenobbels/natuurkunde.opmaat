@@ -11,34 +11,32 @@
 Wanneer de snelheid van een voorwerpt verandert in de tijd, heeft het een \textit{versnelling}. 
 Een synoniem voor het woord versnelling is \textit{acceleratie}, dat het symbool \(\vec{a}\) van deze grootheid verklaart. 
 Acceleratie is soms handiger om te gebruiken, dat vermijdt verwarring met het begrip snelheid, wat helemaal niet hetzelfde is!
-
-
 \[
 \begin{array}{l}
-\vec{v} = \text{velocity = vitesse = snelheid} \\
-\vec{a} = \text{acceleration = acceleratie = versnelling = snelheids\textbf{verandering}}
+	\vec{v} = \text{velocity = vitesse = snelheid} \\
+	\vec{a} = \text{acceleration = acceleratie = versnelling = snelheids}\emph{verandering}
 \end{array}
 \]
 
-
-De vector \(\vec{a}\) grijpt aan op het versnellend voorwerp en wijst in de zin van de ogenblikkelijke bewegings\textbf{verandering}.
+De vector \(\vec{a}\) grijpt aan op het versnellend voorwerp en beschrijft de bewegings\textit{verandering}.
+% en wijst in de zin van de ogenblikkelijke bewegings\textbf{verandering}. = wat is hier de kip en wat het ei ...?
 
 \begin{definition}
 
-De gemiddelde versnelling \(\vec{a}\) tussen twee tijdstippen wordt gedefiniëerd als
+De gemiddelde versnelling \(\vec{a}\) tussen twee tijdstippen wordt gedefinieerd als
 \[
 \vec{a}=\frac{\Delta \vec{v}}{\Delta t}=\frac{\vec{v}_2-\vec{v}_1}{t_2-t_1}
 \]
-De eenheid van versnelling is meter per seconde, per seconde -- wat meter per seconde in het kwadraat geeft $[a]=\rm\,m/s^2$.
-
+De eenheid van versnelling is meter per seconde, per seconde -- wat meter per seconde in het kwadraat geeft $[a]=$\SI{}{m/s^2}.
 \end{definition}
+%\rm\,m/s^2
 
 Als de snelheid van een voorwerp wijzigt, dan wijzigt ook de snelheidsvector. 
 Afhankelijk van welk kenmerk van de snelheidsvector (en dus ook van de beweging) verandert, maakt men een onderscheid tussen twee verschillende soorten versnellingen:
 
 
 \begin{definition}
-Als enkel de \textit{grootte} van de snelheidsvector verandert, spreekt men over een \textbf{tangentiële versnelling \(\vec{a_t}\)}. In dit geval is de versnellingsvector tangentieel of evenwijdig met de snelheidsvector. Dit komt voor bij ééndimensionale bewegingen. Hierbij blijft de richting van de beweging onveranderd.
+Als enkel de \textit{grootte} van de snelheidsvector verandert, spreekt men over een \textbf{tangentiële versnelling \(\vec{a_t}\)}. In dit geval is de versnellingsvector tangentieel of evenwijdig met de snelheidsvector. Dit komt voor bij eendimensionale bewegingen. Hierbij blijft de richting van de beweging onveranderd.
 \end{definition}
 
 \begin{example}
@@ -363,41 +361,45 @@ Combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een s
 \end{image}
 \end{remark}
 
+% \begin{remark}
+% De zin van de snelheidsvector kan nooit plots veranderen omdat snelheid een grootheid is die enkel continu in de tijd kan veranderen. De zin van de snelheidsvector kan enkel wijzigen als de grootte van de snelheidsvector vermindert tot nul om dan nadien de tegengestelde zin uit te wijzen. In dit geval gaat het hier dus eveneens over de tangentiële versnelling.
+% \end{remark}
 
-\begin{remark}
-De zin van de snelheidsvector kan nooit plots veranderen omdat snelheid een grootheid is die enkel continu in de tijd kan veranderen. De zin van de snelheidsvector kan enkel wijzigen als de grootte van de snelheidsvector vermindert tot nul om dan nadien de tegengestelde zin uit te wijzen. In dit geval gaat het hier dus eveneens over de tangentiële versnelling.
-\end{remark}
+% Ben het niet eens met deze opmerking. Hoe de snelheidsvector verloop hangt af van welk model je gebruikt. We gebruiken heel veel situaties waarin de we snelheid discontinu behandelen. Zo laten we de snelheidsvector bij een bots instant van zin veranderen, zo je wilt zonder verandering van grootte. Je hebt dan een discontinu verloop voor de snelheid.
 
 % \begin{image}
 % \includegraphics{soortenversnelling}
 % \end{image}
 
-In al deze voorbeelden lijkt het alsof de versnellingsvector aan de snelheidsvector "trekt".
+% In al deze voorbeelden lijkt het alsof de versnellingsvector aan de snelheidsvector "trekt". = don't like this one ...
 
-\subsection*{Gemiddelde (tangentiële) versnelling bij ééndimensionale bewegingen}
+\subsection*{Gemiddelde versnelling bij eendimensionale bewegingen}
+%\subsection*{Gemiddelde (tangentiële) versnelling bij eendimensionale bewegingen} = tangentieel is overbodig, want volgt uit het feit dat het eendimensionaal is. Scheermes van Ockham toegepast ... :-)
 
 \begin{definition}
 
-Bij ééndimensionale bewegingen wordt de gemiddelde versnelling \(\overline{a}\) scalair gedefinieerd als
+Bij eendimensionale bewegingen wordt de gemiddelde versnelling \(\overline{a}\) gedefinieerd als
 \[
 \overline{a}=\frac{\Delta v}{\Delta t}=\frac{v_2-v_1}{t_2-t_1}
 \]
 \end{definition}
+%scalair gedefinieerd weggehaald. Je gaat niet naast een vectoriële ook een scalaire definitie installeren. Wat we volgens mij nu in de tekst wel aan het doen zijn. Moeten ergens aangeven dat we het over de component hebben.
 
 % \begin{denkvraag*}{}
 % Kan je uitleggen wat de eenheid meter per seconde, per seconde betekent? 
 % \end{denkvraag*}
 %%% Bizar: veroorzaakt [l.374] Missing number, treated as zero. at <to be read again> <- \c@depthICount
-\subsection*{Ogenblikkelijke versnelling bij ééndimensionale bewegingen}
 
-De gemiddelde versnelling \(\overline{a}\) geeft de verandering in snelheid \textit{tussen} twee tijdstippen \(t_1\) en \(t_2\).  Om de ogenblikkelijke versnelling \(a\) op één tijdstip \(t\) te bepalen wordt -net zoals bij de ogenblikkelijke snelheid- gebruik gemaakt van de afgeleide. 
+\subsection*{Ogenblikkelijke versnelling bij eendimensionale bewegingen}
+
+De gemiddelde versnelling \(\overline{a}\) geeft de verandering in snelheid \textit{tussen} twee tijdstippen \(t_1\) en \(t_2\).  Om de ogenblikkelijke versnelling \(a\) op één tijdstip \(t\) te bepalen wordt -- net zoals bij de ogenblikkelijke snelheid -- gebruik gemaakt van de afgeleide.
 
 \begin{definition}
 	De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de snelheidsfunctie \(v(t)\):
 	\[
 		a=\lim_{t\to t_0}\frac{v(t)-v(t_0)}{t-t_0} = \frac{dv}{dt}=\frac{d^2x}{dt^2}
 		\]
-		De notatie met een accent $a(t)=v'(t)$ of $a=v'$ wordt op dezelfde manier als in de wiskunde gebruikt. $a(t)$ is een functie die op elk moment de snelheid geeft. 
+		De notatie met een accent $a(t)=v'(t)$ of $a=v'$ wordt op dezelfde manier als in de wiskunde gebruikt. $a(t)$ is een functie die op elk moment de versnelling geeft. 
 	\end{definition}
 	
 	
@@ -405,9 +407,11 @@ De gemiddelde versnelling \(\overline{a}\) geeft de verandering in snelheid \tex
 	% \begin{image}
 	% \includegraphics{versnellingmetgrafiek}
 	% \end{image}
+
 \subsection*{Ogenblikkelijke versnelling bij tweedimensionale bewegingen}
 	
-In twee dimensies, kan men de versnelling opsplitsen in loodrechte x- en y-componenten. Daarmee kan men analoge redeneringen en gelijkaardige formules maken zoals in het 1D geval.
+% In twee dimensies, kan men de versnelling opsplitsen in loodrechte x- en y-componenten. Daarmee kan men analoge redeneringen en gelijkaardige formules maken zoals in het 1D geval.
+% is me niet heel duidelijk wat we hiermee zeggen ...
 	
 % \begin{image}
 % \includegraphics[width=0.8\textwidth]{versnelling2D}
@@ -415,30 +419,27 @@ In twee dimensies, kan men de versnelling opsplitsen in loodrechte x- en y-compo
 % \end{image}
 % BOVENSTAANDE SLIDE MET GPT NAAR TEX: 
 
-Versnelling wordt vectorieel beschreven met de versnellingsvector $\vec{a}$. 
-Scalair rekent men met de versnellingscomponenten $a_x$ en $a_y$. 
-De totale versnelling heeft het symbool $a$. 
-Bij 2D bewegingen is er altijd normale versnelling (mogelijk in combinatie met tangentiële versnelling).
+% Versnelling wordt vectorieel beschreven met de versnellingsvector $\vec{a}$. 
+% Scalair rekent men met de versnellingscomponenten $a_x$ en $a_y$. 
+% De totale versnelling heeft het symbool $a$. = vector van maken
+% Bij 2D bewegingen is er altijd normale versnelling (mogelijk in combinatie met tangentiële versnelling). = niet altijd waar. Ook een rechte baan kan je in 2D beschouwen en die heeft geen normale component voor de versnelling
 
-
+In twee dimensies kan de snelheid naast een verandering van grootte ook een verandering van richting hebben. Om die te beschrijven is een vector het aangewezen object.
 
 \begin{definition}
 	
-	De \textbf{versnellingsvector \(\vec{a}\)} van een bewegend punt wordt gedefinieerd als de afgeleide van de snelheidsvector naar de tijd:
-	
+	De \textbf{versnellingsvector \(\vec{a}\)} van een lichaam wordt gedefinieerd als de afgeleide van de snelheidsvector naar de tijd:
 	\[
 	\vec{a}(t) = \frac{d\vec{v}(t)}{dt},
 	\]
-	
 	en kan worden opgesplitst in versnellingscomponenten \(a_x\) en \(a_y\):
-	
+	% het hoef niet noodzakelijk over een bewegend punt te gaan. punt = lichaam/object/puntmassa = kan ook stilstaan
 	\[
-		\vec{a} = \frac{d\vec{v}}{dt} = \frac{d}{dt}(v_x \cdot \vec{e}_x + v_y \cdot \vec{e}_y) = \frac{dv_x}{dt} \cdot \vec{e}_x + \frac{dv_y}{dt} \cdot \vec{e}_y = \vec{a}_x + \vec{a}_y
+		\vec{a} = \frac{d\vec{v}}{dt} = \frac{d}{dt}(v_x \cdot \vec{e}_x + v_y \cdot \vec{e}_y) = \frac{dv_x}{dt} \cdot \vec{e}_x + \frac{dv_y}{dt} \cdot \vec{e}_y = a_x\cdot\vec{e}_x + a_y\cdot\vec{e}_y
 	\]
-	
-	De grootte van de totale versnelling wordt genoteerd met het symbool \(a\) en is gelijk aan 
+	De grootte van de versnelling wordt genoteerd met het symbool \(a\) en is gelijk aan 
 	\[
-	a = \| \vec{a}\| = \sqrt{(\vec{a}_x)^2 + (\vec{a}_y)^2}
+	a = \| \vec{a}\| = \sqrt{a_x^2 + a_y^2}
 	\]
 	
 	\begin{image}[0.5\textwidth]
@@ -469,65 +470,66 @@ Bij 2D bewegingen is er altijd normale versnelling (mogelijk in combinatie met t
 		
 	\end{definition}
 
-\begin{remark}
-	In bovenstaande figuur werd 'in het algemene geval' een versnellingsvector getekent als vector die aangrijpt op de puntmassa. 
-	In de bewegingen die we zullen bestuderen zal de versnellingsvector veroorzaakt zijn door de zwaartekracht of trekkracht. 
-	Bijgevolg is de richting verticaal of in de richting van de positievector.   
+% \begin{remark}
+% 	In bovenstaande figuur werd `in het algemene geval' een versnellingsvector getekend als vector die aangrijpt op de puntmassa. 
+% 	In de bewegingen die we zullen bestuderen zal de versnellingsvector veroorzaakt zijn door de zwaartekracht of trekkracht. 
+% 	Bijgevolg is de richting verticaal of in de richting van de positievector.   
 
-	\begin{image}
-		\begin{tikzpicture}
-			\draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
-			\draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
-			\coordinate (O) at (0,0);
+% 	\begin{image}
+% 		\begin{tikzpicture}
+% 			\draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
+% 			\draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+% 			\coordinate (O) at (0,0);
 	
-			\pgfmathsetmacro{\r}{3}       
-			\pgfmathsetmacro{\ang}{45} 
+% 			\pgfmathsetmacro{\r}{3}       
+% 			\pgfmathsetmacro{\ang}{45} 
 	
-			\coordinate (A) at (\ang :\r);
+% 			\coordinate (A) at (\ang :\r);
 	
-			\fill (A) circle (2pt);
+% 			\fill (A) circle (2pt);
 		
-			\draw[->, very thick, blue, -latex] (O) -- (A) node[midway, below right] { $\vec{r}$};
+% 			\draw[->, very thick, blue, -latex] (O) -- (A) node[midway, below right] { $\vec{r}$};
 	
-			% Versnellingsvector tekenen
-			\fill[xmgreen] ([yshift=3pt]A) circle (2pt);
-			\draw[->, very thick, xmgreen, -latex] 			(A) --++ (0, -1) node[pos=0.8, right, xshift=6pt]{ $\vec{a}$ };
-			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (1, 0) node[midway, above right] { $\vec{a}_x$};
-			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (0, -1) node[pos=0.8, left ] { $\vec{a}_y$};
+% 			% Versnellingsvector tekenen
+% 			\fill[xmgreen] ([yshift=3pt]A) circle (2pt);
+% 			\draw[->, very thick, xmgreen, -latex] 			(A) --++ (0, -1) node[pos=0.8, right, xshift=6pt]{ $\vec{a}$ };
+% 			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (1, 0) node[midway, above right] { $\vec{a}_x$};
+% 			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (0, -1) node[pos=0.8, left ] { $\vec{a}_y$};
 	
-			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0.5,0) node[midway, below] {$\vec{e}_x$};
-			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0,0.5) node[midway, left] {$\vec{e}_y$};
+% 			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0.5,0) node[midway, below] {$\vec{e}_x$};
+% 			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0,0.5) node[midway, left] {$\vec{e}_y$};
 
-			\node at (2,4) {De versnelling door de zwaartekracht};
-		\end{tikzpicture}
-		\hspace{1cm}
-		\begin{tikzpicture}
-			\draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
-			\draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
-			\coordinate (O) at (0,0);
+% 			\node at (2,4) {De versnelling door de zwaartekracht};
+% 		\end{tikzpicture}
+% 		\hspace{1cm}
+% 		\begin{tikzpicture}
+% 			\draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
+% 			\draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+% 			\coordinate (O) at (0,0);
 	
-			\pgfmathsetmacro{\r}{3}       
-			\pgfmathsetmacro{\ang}{45} 
+% 			\pgfmathsetmacro{\r}{3}       
+% 			\pgfmathsetmacro{\ang}{45} 
 	
-			\coordinate (A) at (\ang :\r);
+% 			\coordinate (A) at (\ang :\r);
 	
-			\fill (A) circle (2pt);
+% 			\fill (A) circle (2pt);
 		
-			\draw[->, very thick, blue, -latex] (O) -- (A) node[midway, below right] { $\vec{r}$};
+% 			\draw[->, very thick, blue, -latex] (O) -- (A) node[midway, below right] { $\vec{r}$};
 	
-			% Versnellingsvector tekenen
-			\fill[xmgreen] ([yshift=3pt]A) circle (2pt);
-			\draw[->, very thick, xmgreen, -latex] ([yshift=3pt]A) --++ (-1, -1) node[pos=0.8, above left, xshift=6pt]{ $\vec{a}$ };
-			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (-1, 0) node[midway, above right] { $\vec{a}_x$};
-			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (0, -1) node[pos=0.8, left ] { $\vec{a}_y$};
+% 			% Versnellingsvector tekenen
+% 			\fill[xmgreen] ([yshift=3pt]A) circle (2pt);
+% 			\draw[->, very thick, xmgreen, -latex] ([yshift=3pt]A) --++ (-1, -1) node[pos=0.8, above left, xshift=6pt]{ $\vec{a}$ };
+% 			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (-1, 0) node[midway, above right] { $\vec{a}_x$};
+% 			% \draw[->, very thick, xmgreen, dotted, -latex] 	(A) --++ (0, -1) node[pos=0.8, left ] { $\vec{a}_y$};
 	
-			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0.5,0) node[midway, below] {$\vec{e}_x$};
-			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0,0.5) node[midway, left] {$\vec{e}_y$};
+% 			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0.5,0) node[midway, below] {$\vec{e}_x$};
+% 			\draw[->, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0,0.5) node[midway, left] {$\vec{e}_y$};
 
-			\node at (2,4) {De versnelling door de trekkracht};
-		\end{tikzpicture}
-	\end{image}
-\end{remark}
+% 			\node at (2,4) {De versnelling door de trekkracht};
+% 		\end{tikzpicture}
+% 	\end{image}
+% \end{remark}
+% SORRY om dit even weg te halen maar het is te specifiek (er zijn nog andere mogelijkheden) en met te veel kennis van de tweede wet van newton die nodig is; kracht en versnelling zijn recht evenredig ...
 
 % Vectoriële notatie en definitie:
 	
@@ -564,7 +566,7 @@ Bij 2D bewegingen is er altijd normale versnelling (mogelijk in combinatie met t
 \begin{remark}
 	Het begrip versnelling in de fysica heeft niet dezelfde betekenis als hoe het begrip in de volksmond wordt gebruikt.
 	\begin{description}
-		\item[in de volksmond] 
+		\item[In de volksmond] 
 			\begin{itemize}
 				versnelling = vergroten van snelheid
 
@@ -572,12 +574,16 @@ Bij 2D bewegingen is er altijd normale versnelling (mogelijk in combinatie met t
 
 				bocht maken = richtingsverandering van de snelheid
 			\end{itemize}
-		\item[in de fysica]
+		\item[In de fysica]
 			versnelling = verandering van snelheid in eender welk opzicht
 	\end{description}
 
-	Fysisch zal men dus nooit spreken over een vertraging. Het vergroten of verkleinen van de snelheid moet bij ééndimensionale bewegingen tot uiting komen in de zin van de versnellingsvector ten op zichte van de zin van de snelheidsvector. Men kan dit ook zien aan het teken van de getalcomponent van de versnelling tegenover die van de snelheid.
-	Voor ééndimensionale bewegingen geldt dat als \(\vec{v}\) en \(\vec{a}\) dezelfde zin hebben (of hun getalcomponenten eenzelfde teken hebben) dat de snelheid (in absolute waarde) vergroot. Bij tegengestelde zin (of teken) is er in absolute waarde een verkleining van de snelheid.
+	De versnelling in de fysica is de grootheid $\vec{a}$ zoals die hierboven gedefinieerd is. We spreken van een vertraging wanneer de grootte van de snelheid afneemt. Dat kan voorkomen wanneer de snelheid (wat een vector is) en de versnelling (wat dus ook een vector is) een tegengestelde zin hebben. Hebben ze dezelfde zin, dan versnelt het voorwerp.
+
+	% Fysisch zal men dus nooit spreken over een vertraging. Het vergroten of verkleinen van de snelheid moet bij eendimensionale bewegingen tot uiting komen in de zin van de versnellingsvector ten opzichte van de zin van de snelheidsvector. Men kan dit ook zien aan het teken van de getalcomponent van de versnelling tegenover die van de snelheid.
+	% Voor eendimensionale bewegingen geldt dat als \(\vec{v}\) en \(\vec{a}\) dezelfde zin hebben (of hun getalcomponenten eenzelfde teken hebben) dat de snelheid (in absolute waarde) vergroot. Bij tegengestelde zin (of teken) is er in absolute waarde een verkleining van de snelheid.
+
+	% Fysisch zal men dus nooit spreken over een vertraging.  = toch wel, wanneer de grootte van de snelheid afneemt ..? De versnelling (als vector) en de snelheid (als vector) zijn dan tegengesteld
 
 \end{remark}
 
