@@ -36,20 +36,21 @@
 
 \subsection*{Positie en plaatsfunctie}
 
-Met behulp van een referentiestelsel kan elke plaats van een puntmassa in de ruimte worden beschreven met een \textbf{positie- of plaatsvector}, algemeen genoteerd door $\vec{r}$.
-Afhankelijk van het aantal dimensies waarin de beweging beschreven wordt, heeft deze plaatsvector één, twee of drie componenten volgens de gekozen assen, doorgaans \(\vec{x}\), \(\vec{y}\) en \(\vec{z}\) genaamd.
-De (scalaire) getalcomponenten van deze vectoren zijn de plaatscoördinaten \(x\),\(y\) en \(z\).
+Met behulp van een referentiestelsel kan elke plaats van een puntmassa in de ruimte worden beschreven met een \textbf{positie- of plaatsvector}, algemeen genoteerd door $\vec{r}$. Afhankelijk van het aantal dimensies waarin de beweging beschreven wordt, heeft deze plaatsvector één, twee of drie vectorcomponenten volgens de gekozen assen, doorgaans \(\vec{x}\), \(\vec{y}\) en \(\vec{z}\) genaamd. De getalcomponenten of kortweg componenten van deze vectoren zijn de plaatscoördinaten \(x\),\(y\) en \(z\). Dat zijn scalaire grootheden, omdat ze een getalcomponent en een eenheid bevatten.
 
 
 
 
 \begin{definition}
-	De \textbf{positie} van een puntmassa \(A\) wordt vectorieel beschreven met de \textbf{plaatsvector \(\vec{r}\)}. % of scalair met behulp van de coördinaten \(x\) en \(y\). 
-	Een plaatsvector \(\vec{r}\) kan ontbonden in de componenten volgens de assen.
-	Op die manier krijgt de puntmassa \(A\) coördinaten \(co(A) = (x,y)\).  
+	De positie van een puntmassa \(A\) wordt vectorieel beschreven met de \textbf{plaatsvector \(\vec{r}\)}. Het is de vector die van de oorsprong wijst naar het punt waar de massa zich bevindt. % of scalair met behulp van de coördinaten \(x\) en \(y\). 
+	Een plaatsvector \(\vec{r}\) kan ontbonden worden volgens de assen:
+	%Op die manier krijgt de puntmassa \(A\) coördinaten \(co(A) = (x,y)\).  % Het is de positie die beschreven kan worden met coördinaten, het is niet dat de massa die krijgt, zo lijkt me ...
 	\[
-	\vec{r} = \vec{x} + \vec{y} = \|\vec{x}\|\cdot\vec{e}_x + \|\vec{y}\|\cdot\vec{e}_y
+		%\vec{r} = \vec{x} + \vec{y} = \|\vec{x}\|\cdot\vec{e}_x + \|\vec{y}\|\cdot\vec{e}_y = nee ...!
+		\vec{r} = \vec{x} + \vec{y} = x\cdot\vec{e}_x + y\cdot\vec{e}_y	
 	\]
+	Hierin is \(co(A) = (x,y)\) de coördinaat van het punt en zijn $\vec{e}_x$ en $\vec{e}_y$ eenheidsvectoren volgens de assen.
+% ik heb \textbf{positie} weggehaald. Het is een begrip wat we op zich niet echt gedefinieerd hebben.
 
 \begin{image}[0.3\textwidth]
 	\begin{tikzpicture}
@@ -79,30 +80,27 @@ De (scalaire) getalcomponenten van deze vectoren zijn de plaatscoördinaten \(x\
 \end{definition}
 
 
-Als een puntmassa beweegt, verandert haar plaatsvector \(\vec{r}\).  
-De beweging van een puntmassa wordt beschreven door een \textit{functie} die de \textbf{plaats} \(\vec{r}\) weergeeft in functie van de \textbf{tijd}. 
-De \textbf{plaatsfunctie} \(\vec{r}\) = \(\vec{r}\)(t) geeft voor elk tijdstip \(t\) de positie \(\vec{r}\) waar de puntmassa zich bevindt. 
-In het algemeen is een dergelijke vectorfunctie ingewikkeld om te hanteren, daarom wordt er gewerkt met de tijdsafhankelijke getalcomponenten \(x(t)\),\(y(t)\) en \(z(t)\).
-Elke coördinaatfunctie geeft voor elk moment \(t\) de coördinaat van de puntmassa volgens een welbepaalde-as. 
-Al deze componentfuncties samen beschrijven de volledige beweging van de puntmassa. 
+Als een puntmassa beweegt, verandert haar plaatsvector \(\vec{r}\). De componenten ervan hangen dus af van de tijd. Elke coördinaatfunctie geeft voor elk moment \(t\) de coördinaat van de puntmassa volgens een welbepaalde-as. Al deze componentfuncties samen beschrijven op een equivalente manier de volledige beweging van de puntmassa. 
+% Een vectorfunctie wordt in de wiskunde in het humaniora niet behandeld en is hier dan ook een brug te ver. Zeker in de hoofdtekst. Ik zou hier een extra element van maken ...
+
+\begin{expandable}{remark}{Over vectorfuncties}
+	De beweging van een puntmassa wordt beschreven door een \textit{functie} die de \textbf{plaats} \(\vec{r}\) weergeeft in functie van de \textbf{tijd}. De \textbf{plaatsfunctie} \(\vec{r}\) = \(\vec{r}\)(t) geeft voor elk tijdstip \(t\) de positie \(\vec{r}\) waar de puntmassa zich bevindt. In het algemeen is een dergelijke vectorfunctie ingewikkeld om te hanteren, daarom wordt er gewerkt met de tijdsafhankelijke getalcomponenten \(x(t)\),\(y(t)\) en \(z(t)\).
+\end{expandable}
+
+Bij eendimensionale bewegingen is er slechts één as nodig om de beweging te beschrijven. Het is dan handig om met de componenten te werken, die tijdsafhankelijk kunnen zijn.%Op die as wordt de positie als scalar afgelezen, de waarde ervan is afhankelijk van de tijd \(t\). 
+\footnote{
+	In fysica gebruiken we wiskunde als `taal' om de wetmatigheden van de natuur uit te drukken. Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. $x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$, maar het symbool $t$. 
+	En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat die de beeldwaarden zijn van de functie \(f\), \(x\) is afhankelijk van \(t\).
+}
 
 
-Bij ééndimensionale bewegingen is er slechts één coördinaatas nodig om de beweging te beschrijven. 
-Op die as wordt de positie als scalar afgelezen, de waarde ervan is afhankelijk van de tijd \(t\). 
-\footnote{In fysica gebruiken we wiskunde als `taal' om de wetmatigheden van de natuur uit te drukken. 
-Wiskundige variabelen en objecten zoals functies krijgen nu een fysische betekenis. 
-$x(t)$ is dus niets anders dan een functie $f(x)$ of $y(x)$ zoals je die in wiskunde kent. 
-Alleen nemen wij nu niet voor de onafhankelijke variabele het symbool $x$, maar het symbool $t$. 
-En voor het symbool $f$ gebruiken wij nu het symbool $x$ omdat die de beeldwaarden zijn van de functie \(f\), \(x\) is afhankelijk van \(t\).}
-
-
-De positie op een welbepaald tijdstip $t_1$ wordt genoteerd als 
+De positie op een welbepaald tijdstip $t_1$ wordt genoteerd als
 \footnote{Natuurlijk kan de index 1 ook vervangen worden door andere indices. Voorbeelden zijn $x_0=x(t_0)$ en $x_2=x(t_2)$.} 
 \begin{eqnarray*}
-x_1=x(t_1)
+	x_1=x(t_1).
 \end{eqnarray*}
 
-In onderstaande figuur zie je de rechtlijnige tocht van een zeilship. 
+In onderstaande figuur zie je de rechtlijnige tocht van een zeilschip. 
 Op verschillende tijdstippen $t_0,t_1, t_2,\ldots$ wordt weergegeven waar het schip zich bevindt. 
 
 
@@ -271,8 +269,9 @@ De boot heeft natuurlijk ook op \textit{elk moment hiertussen} een positie \ldot
 	\captionof{figure}{De plaatsfunctie van de zeilboot voor elke \(t \in [0, 35]\)}
 
 \begin{definition} 
-	De \textbf{plaatsfunctie} \(\vec{x}(t)\) geeft voor elke moment \(t\) de positievector \(\vec{x}\). \\
-	In één dimensie heeft \(\vec{x}\) maar één getalcomponent, namelijk \(x\) die ook tijdsafhankelijk is. 
+	% De \textbf{plaatsfunctie} \(\vec{x}(t)\) geeft voor elke moment \(t\) de positievector \(\vec{x}\). \\
+	De plaatsfunctie $x(t)$ geeft voor elk moment $t$ de component $x$ van de positie van het voorwerp.
+	%In één dimensie heeft \(\vec{x}\) maar één getalcomponent, namelijk \(x\) die ook tijdsafhankelijk is. 
 	\(x(t)\) geeft de plaatsfunctie die je kan uitzetten in een grafiek met verticale \(x\)-as en horizontale \(t\)-as. 
 	De positie op een welbepaald tijdstip \(t_a\) wordt genoteerd als 
 	\[
@@ -321,18 +320,20 @@ De boot heeft natuurlijk ook op \textit{elk moment hiertussen} een positie \ldot
 \end{definition}
 
 
-\begin{remark} 
-	In één dimensie is het onderscheid tussen een 'vector' $\vec{x}$ en een 'getal' $x$ erg klein: beide kunnen volledig de positie beschrijven. 
-	In twee of drie dimensies kan je de positie wel beschrijven met één vector $\vec{x}$, maar heb je twee of drie getallen $x,y$ of $x,y,z$ nodig.
-\end{remark}
+% \begin{remark} 
+% 	In één dimensie is het onderscheid tussen een 'vector' $\vec{x}$ en een 'getal' $x$ erg klein: beide kunnen volledig de positie beschrijven. 
+% 	In twee of drie dimensies kan je de positie wel beschrijven met één vector $\vec{x}$, maar heb je twee of drie getallen $x,y$ of $x,y,z$ nodig.
+% \end{remark}
+% Vind ik een rare opmerking; wat willen we daar precies mee zeggen? De link tussen de vector en de component lijkt me veel zinvoller expliciet te vernoemen. Een vector is in één dimensie overkill ...
 	
 De \textbf{verplaatsing} tussen $t_1$ en $t_2$ is het verschil in positie tussen de twee tijdstippen $t_1$ en $t_2$, genoteerd met een $\Delta$\(\vec{r}\) (Delta, een Griekse hoofdletter D  van het Engelse 'displacement' of het Franse 'déplacement').
 
 \begin{definition}
 De \textbf{verplaatsing} \(\Delta \vec{r}\) is het verschil tussen twee posities:
 \[
-\Delta \vec{r}_{21} = \vec{r}_2 - \vec{r}_1
+\Delta \vec{r} = \vec{r}_2 - \vec{r}_1
 \]
+% Ik heb de index 12 weggehaald. Die is enkel zinvol in een situatie waarin meer dan twee posities een rol spelen?
 
 \tikzset{>={latex[scale=1.2]}}
 \begin{image}[0.3\textwidth]
@@ -371,10 +372,10 @@ De \textbf{verplaatsing} \(\Delta \vec{r}\) is het verschil tussen twee posities
 Zoals aangegeven in de figuur kan ook de verplaatsingsvector \(\Delta\vec{r}\) ontbonden worden. 
 
 \begin{align*}
-\Delta\vec{r}_{21} &= \vec{r}_2 - \vec{r}_1 \\ 
-					&= (x_2\cdot\vec{e}_x + y_2\cdot\vec{e}_y) - (x_1\cdot\vec{e}_x + y_1\cdot\vec{e}_y) \\
-					&= (x_2-x_1)\cdot\vec{e}_x + (y_2-y_1)\cdot\vec{e}_y \\
-					&= \Delta x \cdot\vec{e}_x + \Delta y \cdot\vec{e}_y
+	\Delta\vec{r} &= \vec{r}_2 - \vec{r}_1 \\
+				&= (x_2\cdot\vec{e}_x + y_2\cdot\vec{e}_y) - (x_1\cdot\vec{e}_x + y_1\cdot\vec{e}_y) \\
+				&= (x_2-x_1)\cdot\vec{e}_x + (y_2-y_1)\cdot\vec{e}_y \\
+				&= \Delta x \cdot\vec{e}_x + \Delta y \cdot\vec{e}_y
 \end{align*}
 
 
