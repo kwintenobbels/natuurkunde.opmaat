@@ -34,16 +34,15 @@ De eenheid van versnelling is meter per seconde, per seconde -- wat meter per se
 Als de snelheid van een voorwerp wijzigt, dan wijzigt ook de snelheidsvector. 
 Afhankelijk van welk kenmerk van de snelheidsvector (en dus ook van de beweging) verandert, maakt men een onderscheid tussen twee verschillende soorten versnellingen:
 
-
-\begin{definition}
+\begin{definition}{\textbf{(Werkdefinitie)}.}
 Als enkel de \textit{grootte} van de snelheidsvector verandert, spreekt men over een \textbf{tangentiële versnelling \(\vec{a_t}\)}. In dit geval is de versnellingsvector tangentieel of evenwijdig met de snelheidsvector. Dit komt voor bij eendimensionale bewegingen. Hierbij blijft de richting van de beweging onveranderd.
 \end{definition}
 
 \begin{example}
 Een verticaal omhoog geworpen basketbal versnelt tangentieel, de bal gaat eerst trager en trager en na het hoogste punt sneller en sneller. 
 Enkel de grootte van de snelheid verandert. De richting niet, want de bal blijft verticaal bewegen.
-De versnellingsvector staat evenwijdig met de snelheidsvector, dit volgt uit de constructie van \(\Delta(\vec{v})\). 
-Wegens de definitie van \(\vec{a}\) staan \(\vec(a)\) en \(\Delta(\vec{v})\) altijd in dezelfde richting en zin.
+De versnellingsvector staat evenwijdig met de snelheidsvector, dit volgt uit de constructie van \(\Delta\vec{v}\). 
+Wegens de definitie van de gemiddelde versnelling staan \(\vec{a}\) en \(\Delta\vec{v}\) in deze situatie in dezelfde richting en zin.
 
 \begin{image}[0.7\textwidth]
 	\begin{tikzpicture}[scale=1]
@@ -251,8 +250,8 @@ De snelheidsvector is enkel in de grootte en zin gewijzigd.
 %     \item Combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een schuin geworpen basketbal.
 % \end{itemize}
 
-\begin{definition}
-Als de \textit{richting} van de snelheidsvector verandert, spreekt men over een \textbf{normale versnelling \(\vec{a_n}\)}. 
+\begin{definition}{\textbf{(Werkdefinitie)}.}
+Als enkel de \textit{richting} van de snelheidsvector verandert, spreekt men over een \textbf{normale versnelling \(\vec{a_n}\)}. 
 In dit geval staat de versnellingsvector normaal of loodrecht op de snelheidsvector. Dit komt voor bij tweedimensionale cirkelbewegingen waarbij de grootte van de snelheid onveranderd blijft.
 \end{definition}
 
@@ -303,7 +302,7 @@ De auto ondergaat een normale versnelling.
 \end{example}
 
 \begin{remark}
-Combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een schuin geworpen basketbal.
+Een combinatie van de twee types versnelling is ook mogelijk, bijvoorbeeld bij een schuin geworpen basketbal. Ze worden dan gegeven door de vectorcomponenten van de versnelling volgens de snelheid en loodrecht op de snelheid.
 \begin{image}
 	\begin{tikzpicture}[xscale=0.5, yscale=0.5]
 		% \draw[thick,->] (0,0) -- (10,0) node[right] {$x$};
@@ -398,7 +397,7 @@ Bij eendimensionale bewegingen wordt de gemiddelde versnelling \(\overline{a}\) 
 De gemiddelde versnelling \(\overline{a}\) geeft de verandering in snelheid \textit{tussen} twee tijdstippen \(t_1\) en \(t_2\).  Om de ogenblikkelijke versnelling \(a\) op één tijdstip \(t\) te bepalen wordt -- net zoals bij de ogenblikkelijke snelheid -- gebruik gemaakt van de afgeleide.
 
 \begin{definition}
-	De ogenblikkelijke snelheid wordt gedefinieerd als de afgeleide van de snelheidsfunctie \(v(t)\):
+	De ogenblikkelijke versnelling wordt gedefinieerd als de afgeleide van de snelheidsfunctie \(v(t)\):
 	\[
 		a=\lim_{t\to t_0}\frac{v(t)-v(t_0)}{t-t_0} = \frac{dv}{dt}=\frac{d^2x}{dt^2}
 		\]
@@ -567,20 +566,18 @@ In twee dimensies kan de snelheid naast een verandering van grootte ook een vera
 
 
 \begin{remark}
-	Het begrip versnelling in de fysica heeft niet dezelfde betekenis als hoe het begrip in de volksmond wordt gebruikt.
+	Het begrip versnelling in de fysica heeft niet altijd dezelfde betekenis als in de volksmond.
+
+	\textbf{In de volksmond}:
 	\begin{description}
-		\item[In de volksmond] 
-			\begin{itemize}
-				versnelling = vergroten van snelheid
-
-				vertraging = verkleinen van de snelheid
-
-				bocht maken = richtingsverandering van de snelheid
-			\end{itemize}
-		\item[In de fysica]
-			versnelling = verandering van snelheid in eender welk opzicht
+		\item versnelling = vergroten van snelheid
+		\item vertraging = verkleinen van de snelheid
+		\item bocht maken = richtingsverandering van de snelheid
 	\end{description}
-
+	\textbf{In de fysica}:
+	\begin{description}
+		\item  versnelling = verandering van snelheid in eender welk opzicht
+	\end{description}
 	De versnelling in de fysica is de grootheid $\vec{a}$ zoals die hierboven gedefinieerd is. We spreken van een vertraging wanneer de grootte van de snelheid afneemt. Dat kan voorkomen wanneer de snelheid (wat een vector is) en de versnelling (wat dus ook een vector is) een tegengestelde zin hebben. Hebben ze dezelfde zin, dan versnelt het voorwerp.
 
 	% Fysisch zal men dus nooit spreken over een vertraging. Het vergroten of verkleinen van de snelheid moet bij eendimensionale bewegingen tot uiting komen in de zin van de versnellingsvector ten opzichte van de zin van de snelheidsvector. Men kan dit ook zien aan het teken van de getalcomponent van de versnelling tegenover die van de snelheid.
