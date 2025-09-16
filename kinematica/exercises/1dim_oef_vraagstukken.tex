@@ -10,10 +10,8 @@
 \begin{exercise}
     Een automobilist rijdt op een rechte baan gedurende \SI{1,5}{\hour} aan \SI{80}{\kilo\meter\per\hour} en daarna gedurende dezelfde tijdsduur aan
     \SI{70}{\kilo\meter\per\hour} in dezelfde zin.
-    \begin{enumerate}
-        \item Wat is zijn gemiddelde snelheid?
-        \item Met welke snelheid had hij moeten rijden om met een constante snelheid hetzelfde traject in dezelfde tijd af te leggen?
-    \end{enumerate}
+    \begin{question} Wat is zijn gemiddelde snelheid?                                                                                        \end{question}
+    \begin{question} Met welke snelheid had hij moeten rijden om met een constante snelheid hetzelfde traject in dezelfde tijd af te leggen? \end{question}
 \end{exercise}
 
 \begin{exercise}
@@ -102,13 +100,8 @@
 
 \begin{exercise}
     Op een bevroren meer komt een glijdende hockeyschijf na \SI{200}{m} tot stilstand. Als zijn initi\"ele snelheid \SI{3,00}{m/s} was, bepaal dan
-    \begin{enumerate}
-        \item de versnelling in de veronderstelling dat deze constant is,
-        \item de tijd die de schijf nodig heeft om tot stilstand te komen.
-    \end{enumerate}
-    \begin{oplossing}
-        $a=\frac{v_0^2}{2x}=0,0225\rm\,m/s^2$; $t=\frac{2x}{v_0}=\SI{133,33}{s}$
-    \end{oplossing}
+    \begin{question} Bepaal de versnelling in de veronderstelling dat deze constant is,  \begin{oplossing} $a= \frac{v_0^2}{2x}=\SI{0.0225}{\meter\per\second\squared}$;    \end{oplossing} \end{question}
+    \begin{question} Bepaal de tijd die de schijf nodig heeft om tot stilstand te komen. \begin{oplossing} $t=\frac{2x}{v_0}=\SI{133,33}{s}$                                \end{oplossing} \end{question}
 \end{exercise}
 
 \begin{exercise}
@@ -175,12 +168,70 @@
 
 \begin{exercise}
     Een deeltje beschrijft een eendimensionale beweging op de $x$-as. De positie als functie van de tijd is hiernaast weergegeven in een $x(t)$-diagram. Duid de onderstaande grafiek aan die het best het verloop weergeeft van de snelheidscomponent $v$ van dat deeltje als functie van de tijd. 
+
     \begin{image}
-        \includegraphics[width=\textwidth]{snelheidsverloop_o}
+        \begin{tikzpicture}[scale=1]
+            % Axes
+            \draw[->,thick] (0,0) -- (5,0) node[below right] {$t$};
+            \draw[->,thick] (0,0) -- (0,5) node[left] {$x$};
+            \filldraw (0,0) circle (2pt);
+          
+            % Curve (parabola-like)
+            \draw[thick,domain=0:4,smooth,variable=\t] 
+                 plot ({\t}, {0.3*(\t-1)^2 + 1});
+          
+            % Label at origin
+            \node[below left] at (0,0) {O};
+          \end{tikzpicture}
     \end{image}
-    \begin{image}
-        \includegraphics[width=0.93\textwidth]{snelheidsverloop}
-    \end{image}
+    \captionof{figure}{De grafiek van de plaatsfunctie $x(t)$-diagram}
+
+    % \begin{image}
+    %     \includegraphics[width=\textwidth]{snelheidsverloop_o}
+    % \end{image}
+
+
+\begin{image}
+    \begin{tikzpicture}
+
+		\begin{scope}[shift={(0,0)}]
+		  \draw[->] (0,0) -- (3.5,0) node[below right] {$t$};
+		  \draw[->] (0,-2) -- (0,2.5) node[left] {$v_x$};
+		  \fill (0,0) circle (1.2pt) node[left] {O};
+
+          \draw[thick] (0,-1.5) -- (3,2);
+		\end{scope}
+		
+		\begin{scope}[shift={(5,0)}]
+		  \draw[->] (0,0) -- (3.5,0) node[below right] {$t$};
+		  \draw[->] (0,-0.5) -- (0,2.5) node[left] {$v_x$};
+		  \fill (0,0) circle (1.2pt) node[left] {O};
+
+          \draw[thick] (0,1) -- (3,2);
+		\end{scope}
+		
+		\begin{scope}[shift={(10,0)}]
+		  \draw[->] (0,0) -- (3.5,0) node[below right] {$t$};
+		  \draw[->] (0,-2) -- (0,2.5) node[left] {$v_x$};
+		  \fill (0,0) circle (1.2pt) node[left] {O};
+
+          \draw[thick,domain=0:3,smooth,variable=\t] plot ({\t},{1.2*sin(120*\t)});
+		\end{scope}
+		
+		\begin{scope}[shift={(15,0)}]
+		  \draw[->] (0,0) -- (3.5,0) node[below right] {$t$};
+		  \draw[->] (0,-2) -- (0,2.5) node[left] {$v_x$};
+		  \fill (0,0) circle (1.2pt) node[left] {O};
+
+          \draw[thick] (0,1.5) -- (3,-1.5);
+		\end{scope}
+		
+	\end{tikzpicture}
+\end{image}
+
+    % \begin{image}
+    %     \includegraphics[width=0.93\textwidth]{snelheidsverloop}
+    % \end{image}
 \end{exercise}
 
 \begin{exercise}
@@ -213,20 +264,20 @@ Een deeltje beweegt in de zin van de $x$-as. De onderstaande grafiek geeft aan h
 \begin{question}
 De afstand afgelegd na \SI{15}{s} bedraagt:
 \wordChoice{
-    \choice{\SI{30}{m}}
-    \choice{\SI{120}{m}}
-    \choice{\SI{150}{m}}
-    \choice{\SI{240}{m}}
+    \choice{\SI{30}{\meter}}
+    \choice{\SI{120}{\meter}}
+    \choice{\SI{150}{\meter}}
+    \choice{\SI{240}{\meter}}
 }
 \end{question}
 \begin{question}
 Na \SI{30}{s} heeft het deeltje een welbepaalde afstand afgelegd. Hoe groot zou de constante snelheid van het deeltje moeten zijn om in \SI{30}{s} dezelfde afstand af te leggen?
 
 \wordChoice{
-    \choice{\SI{0,0}{m/s}}
-    \choice{\SI{6,0}{m/s}}
-    \choice{\SI{8,0}{m/s}}
-    \choice{\SI{12}{m/s}}
+    \choice{\SI{0,0}{\meter\per\second}}
+    \choice{\SI{6,0}{\meter\per\second}}
+    \choice{\SI{8,0}{\meter\per\second}}
+    \choice{\SI{12}{\meter\per\second}}
 }
 \end{question}
 \begin{question}
@@ -292,24 +343,42 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
 
 % Bron Serway 4yh edition oefening 77 chapter 2
 \begin{exercise}
-    ($\ast\ast\ast$) Maggie en Jennifer lopen de \SI{100}{m}. Beiden doen ze er exact \SI{10.2}{\second} over. Met een eenparige versnelling bereikt Maggie na \SI{2}{\second} haar maximale snelheid, Jennifer doet dat na \SI{3}{s}. Hun maximale snelheden houden ze aan voor de rest van de wedstrijd.
-    \begin{enumerate}
-        \item Wat zijn hun maximale snelheden?
-        \item Wat is de versnelling van iedere sprinter?
-        \item Wie heeft er voorsprong na \SI{6}{s}, en hoeveel?
-    \end{enumerate}
-    \begin{oplossing}
-        $v_1=\frac{2x_2}{2t_2-t_1}$;
-        $a=\frac{2x_2}{(2t_2-t_1)t_1}$;
-        $x_M-x_J=\frac{2x_2}{2t_2-t_{1,M}}(t-\frac{t_{1,M}}{2})-\frac{2x_2}{2t_2-t_{1,J}}(t-\frac{t_{1,J}}{2})$
-        
-        Snelheidsgrafiek van Jennifer:
-        \begin{image}
-            \includegraphics[width=0.5\textwidth]{sprinter}
-        \end{image}
-    \end{oplossing}
-\end{exercise}
+    ($\ast\ast\ast$) Maggie en Jennifer lopen de \SI{100}{m}. Beiden doen ze er exact \SI{10.2}{\second} over. 
+    Met een eenparige versnelling bereikt Maggie na \SI{2}{\second} haar maximale snelheid, Jennifer doet dat na \SI{3}{s}. 
+    Hun maximale snelheden houden ze aan voor de rest van de wedstrijd.
+    \begin{question} Wat zijn hun maximale snelheden?                 
+    \begin{oplossing} 
+        $v_1=\frac{2x_2}{2t_2-t_1}$ 
+    \end{oplossing} 
+    \end{question}
+    \begin{question} Wat is de versnelling van iedere sprinter?
+    \begin{oplossing} 
+        $a=\frac{2x_2}{(2t_2-t_1)t_1}$  
+    \end{oplossing} 
+    \end{question}
+    \begin{question} Wie heeft er voorsprong na \SI{6}{s}, en hoeveel? 
+    \begin{oplossing} $x_M-x_J=\frac{2x_2}{2t_2-t_{1,M}}(t-\frac{t_{1,M}}{2})-\frac{2x_2}{2t_2-t_{1,J}}(t-\frac{t_{1,J}}{2})$ 
 
+        % ERROR: PDF OK; GEEN HTML VAN ONDERSTAANDE IMAGE 
+        % \begin{image}
+        %     \begin{tikzpicture}[yscale=0.5]
+        %         \draw[->] (0,0) -- (14,0) node[right] {$t$ (s)};
+        %         \draw[->] (0,0) -- (0,13) node[above] {$v$ (m/s)};
+                
+        %         \draw[dashed] (3,0) -- (3,12);
+        %         \draw[dashed] (12,0) -- (12,12);
+                
+        %         \foreach \x in {0,3,12}
+        %             \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+                
+        %         \draw[thick] (0,0) -- (3,12) -- (12,12);
+        %     \end{tikzpicture}
+        % \end{image}
+        % \captionof{figure}{Snelheidsgrafiek van Jennifer}
+        % \includegraphics[width=0.5\textwidth]{sprinter}
+    \end{oplossing} 
+    \end{question}
+\end{exercise}
 
 
 \begin{exercise}
@@ -321,10 +390,8 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
 
 \begin{exercise}
     De snelheid van een trein verandert eenparig in 2 minuten van \SI{20}{\kilo\meter\per\hour} tot \SI{30}{\kilo\meter\per\hour}. De trein rijdt gedurende die tijd over een rechte spoorlijn.
-    \begin{enumerate}
-        \item Bepaal de versnelling.
-        \item Bepaal de afstand die de trein heeft afgelegd gedurende deze 2 minuten.
-    \end{enumerate}
+    \begin{question} Bepaal de versnelling.                                                  \end{question}
+    \begin{question} Bepaal de afstand die de trein heeft afgelegd gedurende deze 2 minuten. \end{question}
 \end{exercise}
 
 \begin{exercise}

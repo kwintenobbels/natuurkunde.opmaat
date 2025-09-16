@@ -1,0 +1,532 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head> <title>Vraagstukken vrije val</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='\aa:CssFile ' rel='stylesheet' type='text/css' /> 
+<meta content='1dim_oef_vraagstukken_valbeweging.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+<meta content='' name='author' /> 
+<meta content='version 2.5.1' name='ximera' /> 
+<link href='https://ximera.osu.edu/public/stylesheets/standalone.css' media='screen' rel='stylesheet' /> 
+<script async='' src='https://ximera.osu.edu/public/javascripts/standalone.min.js' type='text/javascript'></script> 
+</head><body> 
+<div class='preamble'>
+<script type='math/tex'>\newenvironment {prompt}{}{}
+\newcommand {\accordion }[0]{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\xmDefaultPreamble }[0]{xmPreamble.tex}
+\newcommand {\AfterLastShipout }[0]{\AddToHook {enddocument/afterlastpage}}
+\newcommand {\AtVeryEndDocument }[0]{\AddToHook {enddocument/afteraux}}
+\newcommand {\AtEndAfterFileList }[0]{\AddToHook {enddocument/info}}
+\newcommand {\AtVeryVeryEnd }[0]{\AddToHook {enddocument/end}}
+\newcommand {\multirowsetup }[0]{\raggedright }
+\newcommand {\tdplotsinandcos }[3]{\pgfmathsetmacro {#1}{sin(#3)}\pgfmathsetmacro {#2}{cos(#3)}}
+\newcommand {\tdplotdiv }[3]{\pgfmathsetmacro {#1}{#2/#3}}
+\newcommand {\tdplotcheckdiff }[5]{\par \par \pgfmathparse { abs(#2 - #1)&lt;#3 } \par \ifthenelse {\equal {\pgfmathresult }{1}}{#4}{#5} }
+\newcommand {\tdplotsetmaincoords }[2]{\pgfmathsetmacro {\tdplotmaintheta }{#1} \pgfmathsetmacro {\tdplotmainphi }{#2} \tdplotcalctransformmainscreen \tikzset {tdplot_main_coords/.style={x={(\raarot cm,\rbarot cm)},y={(\rabrot cm, \rbbrot cm)},z={(\racrot cm, \rbcrot cm)}}}}
+\newcommand {\tdplotcalctransformmainscreen }[0]{\tdplotsinandcos {\sintheta }{\costheta }{\tdplotmaintheta }\tdplotsinandcos {\sinphi }{\cosphi }{\tdplotmainphi }\tdplotmult {\stsp }{\sintheta }{\sinphi }\tdplotmult {\stcp }{\sintheta }{\cosphi }\tdplotmult {\ctsp }{\costheta }{\sinphi }\tdplotmult {\ctcp }{\costheta }{\cosphi }\pgfmathsetmacro {\raarot }{\cosphi }\pgfmathsetmacro {\rabrot }{\sinphi }\pgfmathsetmacro {\racrot }{0}\pgfmathsetmacro {\rbarot }{-\ctsp }\pgfmathsetmacro {\rbbrot }{\ctcp }\pgfmathsetmacro {\rbcrot }{\sintheta }\pgfmathsetmacro {\rcarot }{\stsp }\pgfmathsetmacro {\rcbrot }{-\stcp }\pgfmathsetmacro {\rccrot }{\costheta }}
+\newcommand {\tdplotcalctransformrotmain }[0]{\tdplotsinandcos {\sinalpha }{\cosalpha }{\tdplotalpha } \tdplotsinandcos {\sinbeta }{\cosbeta }{\tdplotbeta } \tdplotsinandcos {\singamma }{\cosgamma }{\tdplotgamma } \tdplotmult {\sasb }{\sinalpha }{\sinbeta } \tdplotmult {\sbsg }{\sinbeta }{\singamma } \tdplotmult {\sasg }{\sinalpha }{\singamma } \tdplotmult {\sasbsg }{\sasb }{\singamma } \tdplotmult {\sacb }{\sinalpha }{\cosbeta } \tdplotmult {\sacg }{\sinalpha }{\cosgamma } \tdplotmult {\sbcg }{\sinbeta }{\cosgamma } \tdplotmult {\sacbsg }{\sacb }{\singamma } \tdplotmult {\sacbcg }{\sacb }{\cosgamma } \tdplotmult {\casb }{\cosalpha }{\sinbeta } \tdplotmult {\cacb }{\cosalpha }{\cosbeta } \tdplotmult {\cacg }{\cosalpha }{\cosgamma } \tdplotmult {\casg }{\cosalpha }{\singamma } \tdplotmult {\cacbsg }{\cacb }{\singamma } \tdplotmult {\cacbcg }{\cacb }{\cosgamma } \pgfmathsetmacro {\raaeul }{\cacbcg - \sasg } \pgfmathsetmacro {\rabeul }{-\cacbsg - \sacg } \pgfmathsetmacro {\raceul }{\casb } \pgfmathsetmacro {\rbaeul }{\sacbcg + \casg } \pgfmathsetmacro {\rbbeul }{-\sacbsg + \cacg } \pgfmathsetmacro {\rbceul }{\sasb } \pgfmathsetmacro {\rcaeul }{-\sbcg } \pgfmathsetmacro {\rcbeul }{\sbsg } \pgfmathsetmacro {\rcceul }{\cosbeta } }
+\newcommand {\tdplotcalctransformmainrot }[0]{\tdplotsinandcos {\sinalpha }{\cosalpha }{\tdplotalpha } \tdplotsinandcos {\sinbeta }{\cosbeta }{\tdplotbeta } \tdplotsinandcos {\singamma }{\cosgamma }{\tdplotgamma } \tdplotmult {\sasb }{\sinalpha }{\sinbeta } \tdplotmult {\sbsg }{\sinbeta }{\singamma } \tdplotmult {\sasg }{\sinalpha }{\singamma } \tdplotmult {\sasbsg }{\sasb }{\singamma } \tdplotmult {\sacb }{\sinalpha }{\cosbeta } \tdplotmult {\sacg }{\sinalpha }{\cosgamma } \tdplotmult {\sbcg }{\sinbeta }{\cosgamma } \tdplotmult {\sacbsg }{\sacb }{\singamma } \tdplotmult {\sacbcg }{\sacb }{\cosgamma } \tdplotmult {\casb }{\cosalpha }{\sinbeta } \tdplotmult {\cacb }{\cosalpha }{\cosbeta } \tdplotmult {\cacg }{\cosalpha }{\cosgamma } \tdplotmult {\casg }{\cosalpha }{\singamma } \tdplotmult {\cacbsg }{\cacb }{\singamma } \tdplotmult {\cacbcg }{\cacb }{\cosgamma } \pgfmathsetmacro {\raaeul }{\cacbcg - \sasg } \pgfmathsetmacro {\rabeul }{\sacbcg + \casg } \pgfmathsetmacro {\raceul }{-\sbcg } \pgfmathsetmacro {\rbaeul }{-\cacbsg - \sacg } \pgfmathsetmacro {\rbbeul }{-\sacbsg + \cacg } \pgfmathsetmacro {\rbceul }{\sbsg } \pgfmathsetmacro {\rcaeul }{\casb } \pgfmathsetmacro {\rcbeul }{\sasb } \pgfmathsetmacro {\rcceul }{\cosbeta } }
+\newcommand {\tdplotsetrotatedcoords }[3]{\pgfmathsetmacro {\tdplotalpha }{#1} \pgfmathsetmacro {\tdplotbeta }{#2} \pgfmathsetmacro {\tdplotgamma }{#3} \tdplotcalctransformrotmain \par \tdplotmult {\raaeaa }{\raarot }{\raaeul } \tdplotmult {\rabeba }{\rabrot }{\rbaeul } \tdplotmult {\raceca }{\racrot }{\rcaeul } \tdplotmult {\raaeab }{\raarot }{\rabeul } \tdplotmult {\rabebb }{\rabrot }{\rbbeul } \tdplotmult {\racecb }{\racrot }{\rcbeul } \tdplotmult {\raaeac }{\raarot }{\raceul } \tdplotmult {\rabebc }{\rabrot }{\rbceul } \tdplotmult {\racecc }{\racrot }{\rcceul } \tdplotmult {\rbaeaa }{\rbarot }{\raaeul } \tdplotmult {\rbbeba }{\rbbrot }{\rbaeul } \tdplotmult {\rbceca }{\rbcrot }{\rcaeul } \tdplotmult {\rbaeab }{\rbarot }{\rabeul } \tdplotmult {\rbbebb }{\rbbrot }{\rbbeul } \tdplotmult {\rbcecb }{\rbcrot }{\rcbeul } \tdplotmult {\rbaeac }{\rbarot }{\raceul } \tdplotmult {\rbbebc }{\rbbrot }{\rbceul } \tdplotmult {\rbcecc }{\rbcrot }{\rcceul } \pgfmathsetmacro {\raarc }{\raaeaa + \rabeba + \raceca } \pgfmathsetmacro {\rabrc }{\raaeab + \rabebb + \racecb } \pgfmathsetmacro {\racrc }{\raaeac + \rabebc + \racecc } \pgfmathsetmacro {\rbarc }{\rbaeaa + \rbbeba + \rbceca } \pgfmathsetmacro {\rbbrc }{\rbaeab + \rbbebb + \rbcecb } \pgfmathsetmacro {\rbcrc }{\rbaeac + \rbbebc + \rbcecc } \tikzset {tdplot_rotated_coords/.append style={x={(\raarc cm,\rbarc cm)},y={(\rabrc cm, \rbbrc cm)},z={(\racrc cm, \rbcrc cm)}}}}
+\newcommand {\tdplotsetrotatedcoordsorigin }[1]{\tikzset {tdplot_rotated_coords/.append style={shift=#1}}}
+\newcommand {\tdplotresetrotatedcoordsorigin }[0]{\tikzset {tdplot_rotated_coords/.append style={shift={(0,0,0)}}}}
+\newcommand {\tdplotsetthetaplanecoords }[1]{\tdplotresetrotatedcoordsorigin \tdplotsetrotatedcoords {270 + #1}{270}{0}}
+\newcommand {\tdplotsetrotatedthetaplanecoords }[1]{\tdplotsetrotatedcoords {\tdplotalpha }{\tdplotbeta }{\tdplotgamma + #1}\tikzset {tdplot_rotated_coords/.append style={y={(\raarc cm,\rbarc cm)},z={(\rabrc cm, \rbbrc cm)},x={(\racrc cm, \rbcrc cm)}}}}
+\newcommand {\tdplotsetpolarplotrange }[4]{\pgfmathsetmacro {\tdplotlowerphi }{#3} \pgfmathsetmacro {\tdplotupperphi }{#4} \pgfmathsetmacro {\tdplotlowertheta }{#1} \pgfmathsetmacro {\tdplotuppertheta }{#2} }
+\newcommand {\tdplotresetpolarplotrange }[0]{\pgfmathsetmacro {\tdplotlowerphi }{0} \pgfmathsetmacro {\tdplotupperphi }{360} \pgfmathsetmacro {\tdplotlowertheta }{0} \pgfmathsetmacro {\tdplotuppertheta }{180} }
+\newcommand {\tdplotgetpolarcoords }[3]{\pgfmathsetmacro {\vxcalc }{#1} \pgfmathsetmacro {\vycalc }{#2} \pgfmathsetmacro {\vzcalc }{#3} \pgfmathsetmacro {\vcalc }{ sqrt((\vxcalc )^2 + (\vycalc )^2 + (\vzcalc )^2) } \par \pgfmathsetmacro {\vxycalc }{ sqrt((\vxcalc )^2 + (\vycalc )^2) } \par \pgfmathsetmacro {\tdplotrestheta }{asin(\vxycalc /\vcalc )} \pgfmathparse {\vzcalc &lt; 0} \ifthenelse {\equal {\pgfmathresult }{1}}{\pgfmathsetmacro {\tdplotrestheta }{180 - \tdplotrestheta } } {} \ifthenelse {\equal {\vxcalc }{0.0}}{\pgfmathparse {\vycalc &lt; 0} \ifthenelse {\equal {\pgfmathresult }{1}}{\pgfmathsetmacro {\tdplotresphi }{270} } {\pgfmathparse {\vycalc &gt; 0} \ifthenelse {\equal {\pgfmathresult }{1}}{\pgfmathsetmacro {\tdplotresphi }{90} } {\pgfmathsetmacro {\tdplotresphi }{0} } } } {\pgfmathsetmacro {\tdplotresphi }{atan(\vycalc /\vxcalc )} \pgfmathparse {\vxcalc &lt; 0} \ifthenelse {\equal {\pgfmathresult }{1}}{\pgfmathsetmacro {\tdplotresphi }{\tdplotresphi +180} } { } \par \pgfmathparse {\tdplotresphi &lt; 0} \ifthenelse {\equal {\pgfmathresult }{1}}{\pgfmathsetmacro {\tdplotresphi }{\tdplotresphi +360} } {} } }
+\newcommand {\textscale  }[2]{\leavevmode \begingroup \relscale {#1}#2\endgroup }
+\newcommand {\officialeuro  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}e}}
+\newcommand {\eurobars  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}A}}
+\newcommand {\eurobarsnarrow  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}B}}
+\newcommand {\eurobarswide  }[0]{{\fontencoding {U}\fontfamily {eurosym}\selectfont {}C}}
+\newcommand {\p }[0]{}
+\newcommand {\captionnewline }[0]{\\\relax }
+\newcommand {\memcaptioninfo }[4]{}
+\newcommand {\captiongroup }[0]{\setcaptiontype }
+\newcommand {\LTcaptype }[0]{table}
+\newcommand {\showtodonotes }[0]{disable}
+\newcommand {\todo }[1]{\typeout {TODO #1}}
+\newcommand {\tcbpkgprefix }[0]{}
+\newcommand {\blue }[1]{{\color {blue}#1}}
+\newcommand {\red }[1]{{\color {red}#1}}
+\newcommand {\CancelColor }[0]{\color {xmaccent!50!black}}
+\newcommand {\important }[1]{\ensuremath {\fcolorbox {black}{white}{$#1$}}}
+\newcommand {\pdfnl }[0]{}
+\newcommand {\handoutnl }[0]{}
+\newcommand {\importantcell }[1]{\ensuremath {#1}}
+\newcommand {\xmPlotsColor }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={blue,no marks,samples=100}, plotred/.style={red,no marks,samples=100}, plotgreen/.style={green,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
+\newcommand {\xmPlotsBlackWhite }[0]{ \pgfplotsset { plot1/.style={black,loosely dashed,no marks,samples=100}, plot2/.style={black,loosely dotted,no marks,samples=100}, plotresult/.style={black,no marks,samples=100}, plotblue/.style={black,no marks,samples=100}, plotred/.style={black,dotted,no marks,samples=100}, plotgreen/.style={black,dashed,no marks,samples=100}, plotpurple/.style={black,dashdotted,no marks,samples=100} } }
+\newcommand {\xmPlotsColorAndStyle }[0]{ \pgfplotsset { plot1/.style={darkgray,no marks,samples=100}, plot2/.style={lightgray,no marks,samples=100}, plotresult/.style={blue,no marks,samples=100}, plotblue/.style={xmblue,no marks,samples=100}, plotred/.style={xmred,dashed,thick,no marks,samples=100}, plotgreen/.style={xmgreen,dotted,very thick,no marks,samples=100}, plotpurple/.style={purple,no marks,samples=100} } }
+\newcommand {\geqnoslant }[0]{\geq }
+\newcommand {\geq }[0]{\geqslant }
+\newcommand {\leqnoslant }[0]{\leq }
+\newcommand {\leq }[0]{\leqslant }
+\newcommand {\emph }[1]{\textit {#1}}
+\newcommand {\ds }[0]{\displaystyle }
+\newcommand {\ts }[0]{\textstyle }
+\newcommand {\bron }[1]{\begin {scriptsize} \emph {#1} \end {scriptsize}}
+\newcommand {\R }[0]{\ensuremath {\mathbb {R}}}
+\newcommand {\Rnul }[0]{\ensuremath {\mathbb {R}_0}}
+\newcommand {\Reen }[0]{\ensuremath {\mathbb {R}\setminus \{1\}}}
+\newcommand {\Rnuleen }[0]{\ensuremath {\mathbb {R}\setminus \{0,1\}}}
+\newcommand {\Rplus }[0]{\ensuremath {\mathbb {R}^+}}
+\newcommand {\Rmin }[0]{\ensuremath {\mathbb {R}^-}}
+\newcommand {\Rnulplus }[0]{\ensuremath {\mathbb {R}_0^+}}
+\newcommand {\Rnulmin }[0]{\ensuremath {\mathbb {R}_0^-}}
+\newcommand {\Rnuleenplus }[0]{\ensuremath {\mathbb {R}^+\setminus \{0,1\}}}
+\newcommand {\N }[0]{\ensuremath {\mathbb {N}}}
+\newcommand {\Nnul }[0]{\ensuremath {\mathbb {N}_0}}
+\newcommand {\Z }[0]{\ensuremath {\mathbb {Z}}}
+\newcommand {\Znul }[0]{\ensuremath {\mathbb {Z}_0}}
+\newcommand {\Zplus }[0]{\ensuremath {\mathbb {Z}^+}}
+\newcommand {\Zmin }[0]{\ensuremath {\mathbb {Z}^-}}
+\newcommand {\Znulplus }[0]{\ensuremath {\mathbb {Z}_0^+}}
+\newcommand {\Znulmin }[0]{\ensuremath {\mathbb {Z}_0^-}}
+\newcommand {\C }[0]{\ensuremath {\mathbb {C}}}
+\newcommand {\Cnul }[0]{\ensuremath {\mathbb {C}_0}}
+\newcommand {\Cplus }[0]{\ensuremath {\mathbb {C}^+}}
+\newcommand {\Cmin }[0]{\ensuremath {\mathbb {C}^-}}
+\newcommand {\Cnulplus }[0]{\ensuremath {\mathbb {C}_0^+}}
+\newcommand {\Cnulmin }[0]{\ensuremath {\mathbb {C}_0^-}}
+\newcommand {\Q }[0]{\ensuremath {\mathbb {Q}}}
+\newcommand {\Qnul }[0]{\ensuremath {\mathbb {Q}_0}}
+\newcommand {\Qplus }[0]{\ensuremath {\mathbb {Q}^+}}
+\newcommand {\Qmin }[0]{\ensuremath {\mathbb {Q}^-}}
+\newcommand {\Qnulplus }[0]{\ensuremath {\mathbb {Q}_0^+}}
+\newcommand {\Qnulmin }[0]{\ensuremath {\mathbb {Q}_0^-}}
+\newcommand {\perdef }[0]{\overset {\mathrm {def}}{=}}
+\newcommand {\pernot }[0]{\overset {\mathrm {notatie}}{=}}
+\newcommand {\perinderdaad }[0]{\overset {!}{=}}
+\newcommand {\perhaps }[0]{\overset {?}{=}}
+\newcommand {\degree }[0]{^\circ }
+\DeclareMathOperator {\dom }{dom}
+\DeclareMathOperator {\codom }{codom}
+\DeclareMathOperator {\bld }{bld}
+\DeclareMathOperator {\graf }{graf}
+\DeclareMathOperator {\rico }{rico}
+\DeclareMathOperator {\co }{co}
+\DeclareMathOperator {\gr }{gr}
+\DeclareMathOperator {\bgsin }{bgsin}
+\DeclareMathOperator {\bgcos }{bgcos}
+\DeclareMathOperator {\bgtan }{bgtan}
+\DeclareMathOperator {\bgcot }{bgcot}
+\DeclareMathOperator {\bgsinh }{bgsinh}
+\DeclareMathOperator {\bgcosh }{bgcosh}
+\DeclareMathOperator {\bgtanh }{bgtanh}
+\DeclareMathOperator {\bgcoth }{bgcoth}
+\newcommand {\d }[0]{\mathrm {d}}
+\newcommand {\dx }[0]{\d x}
+\newcommand {\dd }[1]{\frac {\mathrm {d}}{\mathrm {d}#1}}
+\newcommand {\ddx }[0]{\dd {x}}
+\newcommand {\afg }[1]{\frac {\mathrm {d}}{\mathrm {d}x} \left (#1\right ) }
+\newcommand {\xmshortabstract }[0]{}
+\newcommand {\theabstract }[0]{}
+\newcommand {\xmopje }[1]{\iftoggle {showxmopje}{#1}{}}
+\newcommand {\formulevb }[2]{ {\centering \par \begin {xmdiv}{xmformulevb} \begin {tabular}{lcl} \important {#1} &amp; &amp; {$#2$} \end {tabular} \end {xmdiv} } }
+\newcommand {\xmcolorbox }[2]{ \HCode {\Hnewline &lt;div class="xmcolorbox"&gt;\Hnewline }#2\HCode {\Hnewline &lt;/div&gt;\Hnewline } }
+\newcommand {\xmopmerking }[1]{ \HCode {\Hnewline &lt;div class="xmopmerking"&gt;\Hnewline }#1\HCode {\Hnewline &lt;/div&gt;\Hnewline } }
+\newcommand {\proofname }[0]{Bewijs}
+\newcommand {\xmonlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
+\newcommand {\onlineChoice }[1]{\pdfOnly {\wordchoicegiventrue }\wordChoice {#1}\pdfOnly {\wordchoicegivenfalse }}
+\newcommand {\TJa }[0]{\nlentext { Ja }{ Yes }}
+\newcommand {\TNee }[0]{\nlentext { Nee }{ No }}
+\newcommand {\TJuist }[0]{\nlentext { Juist }{ True }}
+\newcommand {\TFout }[0]{\nlentext { Fout }{ False }}
+\newcommand {\choiceTrue }[0]{{\wordChoice {\choice [correct]{\TJuist }\choice {\TFout }}}}
+\newcommand {\choiceFalse }[0]{{\wordChoice {\choice {\TJuist }\choice [correct]{\TFout }}}}
+\newcommand {\choiceYes }[0]{{\wordChoice {\choice [correct]{\TJa }\choice {\TNee }}}}
+\newcommand {\choiceNo }[0]{{\wordChoice {\choice {\TJa }\choice [correct]{\TNee }}}}
+\newcommand {\choiceEen }[0]{{\wordChoice {\choice [correct]{een }\choice {geen }}}}
+\newcommand {\choiceGeen }[0]{{\wordChoice {\choice {een }\choice [correct]{geen }}}}
+\newcommand {\choiceminimumverticalsize }[0]{\vphantom {$\tfrac {2}{2}$}}
+\newcommand {\setchoicedefanswer }[0]{ \ifdefined \HCode \else \let \inlinechoice \inlinechoicedefanswer \fi }
+\newcommand {\xmsection }[0]{\subsection }
+\newcommand {\xmsubsection }[0]{\subsubsection }
+\newcommand {\activitychapter }[1]{ \typeout {ACTIVITYCHAPTER #1} \chapterstyle \activity {#1} }
+\newcommand {\activitysection }[1]{ \typeout {ACTIVITYSECTION #1} \sectionstyle \activity {#1} }
+\newcommand {\practicesection }[1]{ \typeout {PRACTICESECTION #1} \sectionstyle \activity {#1} }
+\newcommand {\hypertarget }[1]{\HCode {&lt;a class="ximera-label" id="#1"&gt;&lt;/a&gt;}}
+\newcommand {\hyperlink }[2]{\HCode {&lt;a class="reference reference-keeptext" href="\##1"&gt;}#2\HCode {&lt;/a&gt;}}
+\newcommand {\figurename }[0]{Figuur}
+\newcommand {\tablename }[0]{Tabel}
+\newcommand {\printFull }[0]{ \hintstrue \handoutfalse \toggletrue {showonline} }
+\newcommand {\onlyOnline }[1]{\ifdefined \HCode #1\fi }
+\newcommand {\nl }[0]{\Hnewline }
+\newcommand {\basicOnly }[0]{}
+\newcommand {\basicSkip }[0]{}
+\newcommand {\tab }[0]{\quad }
+\newcommand {\instructorNotes }[0]{\setbox 0\vbox \bgroup }
+\newcommand {\nlen }[2]{#1}
+\newcommand {\nlentext }[2]{\text {#1}}
+\newcommand {\nlentextbf }[2]{\textbf {#1}}
+\newcommand {\TWaar }[0]{\nlentext { Waar }{ True }}
+\newcommand {\TOnwaar }[0]{\nlentext { Vals }{ False }}
+\newcommand {\Ten }[0]{\nlentext { en }{ and }}
+\newcommand {\Tof }[0]{\nlentext { of }{ or }}
+\newcommand {\Tdus }[0]{\nlentext { dus }{ so }}
+\newcommand {\Tendus }[0]{\nlentext { en dus }{ and thus }}
+\newcommand {\Tvooralle }[0]{\nlentext { voor alle }{ for all }}
+\newcommand {\Took }[0]{\nlentext { ook }{ also }}
+\newcommand {\Tals }[0]{\nlentext { als }{ when }}
+\newcommand {\Twant }[0]{\nlentext { want }{ as }}
+\newcommand {\Tmaal }[0]{\nlentext { maal }{ times }}
+\newcommand {\Toptellen }[0]{\nlentext { optellen }{ add }}
+\newcommand {\Tde }[0]{\nlentext { de }{ the }}
+\newcommand {\Thet }[0]{\nlentext { het }{ the }}
+\newcommand {\Tis }[0]{\nlentext { is }{ is }}
+\newcommand {\Tmet }[0]{\nlentext { met }{ where }}
+\newcommand {\Tnooit }[0]{\nlentext { nooit }{ never }}
+\newcommand {\Tmaar }[0]{\nlentext { maar }{ but }}
+\newcommand {\Tniet }[0]{\nlentext { niet }{ not }}
+\newcommand {\Tuit }[0]{\nlentext { uit }{ from }}
+\newcommand {\Ttov }[0]{\nlentext { t.o.v. }{ w.r.t. }}
+\newcommand {\Tzodat }[0]{\nlentext { zodat }{ such that }}
+\newcommand {\Tdeth }[0]{\nlentext {de }{th }}
+\newcommand {\Tomdat }[0]{\nlentext {omdat }{because }}
+\newcommand {\Im }[1]{\text {Im}#1}
+\newcommand {\Re }[1]{\text {Re}#1}
+\newcommand {\xmdivEnvironmentStart }[3]{\ifdefined \HCode \HCode {\Hnewline &lt;div class="#2"&gt;}\fi \problemEnvironmentStart {#1}{#3}}
+\newcommand {\xmdivEnvironmentEnd }[0]{\problemEnvironmentEnd \ifdefined \HCode \HCode {\Hnewline &lt;/div&gt;}\fi }
+\newcommand {\xmFixFormatLength }[0]{}
+\newcommand {\xmFixFormatPosition }[0]{l}
+\newcommand {\declaretranslationfallback }[0]{\declaretranslation {fallback}}
+\newcommand {\definetranslationfallback }[0]{\definetranslation {fallback}}
+\newcommand {\redefinetranslationfallback }[0]{\redefinetranslation {fallback}}
+\newcommand {\addtranslationfallback }[0]{\addtranslation {fallback}}
+\newcommand {\kader }[1]{\framebox {\begin {minipage}[t]{0.98\textwidth }#1\end {minipage}}}
+\newcommand {\cleartoleftpage }[0]{\clearpage \ifodd \value {page}\hbox {}\newpage \fi }
+\newcommand {\xmorganisatienaam }[0]{}
+\newcommand {\xmcursusnaam }[0]{}
+\newcommand {\xmafdelingsnaam }[0]{}
+\newcommand {\xmsource }[0]{ \ifonlineTF { \begin {xmdiv}{xmsource} Gebaseerd op cursus SPC 2021 \end {xmdiv} }{ \renewcommand {\xmorganisatienaam }{{\smaller Gebaseerd op cursus SPC 2021}} } }
+\newcommand {\usetotcountfile }[1]{\InputIfFileExists {#1}{\message {TotCount inputs file '#1'}}{\PackageWarning {totcount}{File '#1' does not exist!}\message {\space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space Ignoring \string \usetotcountfile {#1}.}}}
+\newcommand {\marginnotetextwidth }[0]{}
+\newcommand {\marginnotevadjust }[0]{}
+\newcommand {\marginfont }[0]{}
+\newcommand {\raggedleftmarginnote }[0]{\raggedleft }
+\newcommand {\raggedrightmarginnote }[0]{\raggedright }
+\newcommand {\pt }[1]{\leavevmode \marginnote [\hfill \textbf {/#1}]{\hfill /#1}\addtocounter {totaantal}{#1}}
+\newcommand {\xmDefaultPrintstyle }[0]{xmPrintstyle.sty}
+\newcommand {\luastring }[1]{"\luatexluaescapestring {#1}"}
+\newcommand {\luastringO }[1]{\luastring {\unexpanded \expandafter {#1}}}
+\newcommand {\luastringN }[1]{\luastring {\unexpanded {#1}}}
+\newcommand {\RestoreMathJaxEnvironment }[1]{\expandafter \let \csname #1\expandafter \endcsname \csname mathjax-#1\endcsname \expandafter \let \csname end#1\expandafter \endcsname \csname mathjax-end#1\endcsname }
+\newcommand {\DeclareMicrotypeVariants }[1]{}
+\newcommand {\DeclareMicrotypeAlias }[2]{}
+\newcommand {\LoadMicrotypeFile }[1]{}
+\newcommand {\DeclareMicrotypeFilePrefix }[1]{}
+\newcommand {\DeclareMicrotypeBabelHook }[2]{}
+\newcommand {\microtypesetup }[1]{}
+\newcommand {\microtypecontext }[1]{}
+\newcommand {\textmicrotypecontext }[2]{#2}
+\newcommand {\leftprotrusion }[1]{#1}
+\newcommand {\rightprotrusion }[1]{#1}
+\newcommand {\noprotrusionifhmode }[0]{}
+\newcommand {\lsstyle }[0]{}
+\newcommand {\lslig }[1]{#1}
+\newcommand {\maketitle }[0]{}
+\newcommand {\problem }[0]{ }
+\newcommand {\exercise }[0]{ }
+\newcommand {\question }[0]{ }
+\newcommand {\exploration }[0]{ }
+\newcommand {\ConfigureTheoremEnv }[1]{\renewenvironment {#1}[1][]{\refstepcounter {problem}\ifthenelse {\equal {###1}{}}{}{\HCode {&lt;span class="theorem-like-title"&gt;}###1\HCode {&lt;/span&gt;}}}{} \ConfigureEnv {#1}{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {&lt;div class="theorem-like problem-environment #1" id="problem\arabic {identification}" titletext=" \GetTranslation {#1}"&gt;}}{\ifvmode \IgnorePar \fi \EndP \HCode {&lt;/div&gt;}\IgnoreIndent }{}{}}
+\newcommand {\dialogue }[0]{\begin {description}}
+\newcommand {\foldable }[0]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {&lt;div id="foldable\arabic {identification}" class="foldable"&gt;}}
+\newcommand {\unfoldable }[1]{\HCode {&lt;span class="unfoldable"&gt;}#1\HCode {&lt;/span&gt;}}
+\newcommand {\selectAll }[0]{\refstepcounter {problem}}
+\newcommand {\freeResponse }[0]{\refstepcounter {problem}}
+\newcommand {\javascript }[0]{\NoFonts }
+\newcommand {\sageCell }[0]{\NoFonts }
+\newcommand {\sageOutput }[0]{\NoFonts }
+\newcommand {\sagesilent }[0]{\NoFonts }
+\newcommand {\ungraded }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {&lt;div class="ungraded"&gt;}\IgnoreIndent }
+\newcommand {\accordion }[0]{\ifvmode \IgnorePar \fi \EndP \HCode {&lt;div class="accordion"&gt;} }
+\newcommand {\expandable }[2]{\stepcounter {identification}\ifvmode \IgnorePar \fi \EndP \HCode {&lt;div class="accordion"&gt;\Hnewline }\HCode {&lt;h3 class="#1"&gt;}#2\HCode {&lt;/h3&gt;\Hnewline }\HCode {&lt;div id="accordion-item\arabic {identification}" class="accordion-item #1-content"&gt;\Hnewline } }
+\newcommand {\paragraph }[1]{\HCode {&lt;span class="paragraphHead"&gt;}#1\HCode {&lt;/span&gt;}\par \IgnorePar }
+\newcommand {\subparagraph }[1]{\HCode {&lt;span class="subparagraphHead"&gt;}#1\HCode {&lt;/span&gt;}\par \IgnorePar }
+\newcommand {\outcome }[1]{\HCode {&lt;span class="learning-outcome"&gt;#1&lt;/span&gt;} }
+\newcommand {\javascriptCode }[0]{\NoFonts }
+\newcommand {\ref }[1]{\HCode {&lt;a class="reference" href="\##1"&gt;#1&lt;/a&gt;}}</script><style type='text/css'></style></div>
+<style> .activity-body pre { white-space: pre; background-color: lightgray; } .xmyoutube { aspect-ratio: 16/9; min-width: 75%; } .image-environment img { width: unset; } </style> 
+     <div class='maketitle'></div>    
+<div class='xmsource'> 
+Gebaseerd op cursus SPC 2021 
+</div> 
+<div class='accordion'> 
+<h3 class='remark'>Verbeteringen/fouten/onduidelijkheden/...?</h3> 
+<div class='accordion-item remark-content' id='accordion-item1'> 
+
+<!--  l. 8  --><p class='noindent'>Deze open-source cursus is in ontwikkeling. <strong>De aanbevelingen van leerlingen om
+dit materiaal te verbeteren zijn erg welkom via info@wiskunde.opmaat.org</strong>
+<br class='newline' />Dit kan gaan over: </p>
+<ul class='itemize1'>     
+<li class='itemize'>Een voorbeeld dat onduidelijk is.
+</li>
+<li class='itemize'>Onnauwkeurigheden, schrijffouten, ...
+</li>
+<li class='itemize'>Een tussenstap die beter uitgelegd moet worden.
+</li>
+<li class='itemize'>Een uitleg die je op youtube, wikipedia of aan de kersttafel gevonden hebt
+die ophelderend was.
+</li>
+<li class='itemize'>...</li></ul>
+</div> 
+</div> 
+
+<div class='problem-environment exercise' id='problem2' numbered=' ' role='article' titletext=' Exercise'>  Welke afstand wordt er door een bungeejumper na een vrije val van \(2\mathord {,}5\) \(\mathrm {s}\) afgelegd? <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item3'> 
+  <span class='mathjax-inline'>\(x=\frac {1}{2}gt^2=\SI {31}{m}\)</span> </div> 
+</div> 
+
+</div>
+<div class='problem-environment exercise' id='problem4' numbered=' ' role='article' titletext=' Exercise'>  Uit een punt op \(28\mathord {,}0\) \(\mathrm {m}\) boven de grond wordt een bal verticaal omhoog geworpen met
+een snelheid van \(12\) \(\mathrm {m}/\mathrm {s}\).   <div class='problem-environment question' id='problem5' numbered=' ' role='article' titletext=' Question'>   Bepaal de door de bal bereikte hoogte boven de grond; <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item6'> 
+  <span class='mathjax-inline'>\(v=0\Rightarrow x=x_0+\frac {v_0^2}{2g}=\SI {35,34}{m}\)</span> </div> 
+</div> 
+     </div>   <div class='problem-environment question' id='problem7' numbered=' ' role='article' titletext=' Question'>
+Bepaal de tijd nodig om de grond te bereiken; <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item8'> 
+  <span class='mathjax-inline'>\(x=0\Rightarrow t=\frac {v_0+\sqrt {v_0^2+2gx_0}}{g}=\SI {3,91}{s}\)</span></div> 
+</div> 
+     </div>   <div class='problem-environment question' id='problem9' numbered=' ' role='article' titletext=' Question'>   Bepaal de snelheid bij het
+bereiken van de grond. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item10'> 
+  <span class='mathjax-inline'>\(v=-\sqrt {v_0^2+2gx_0}=\SI {-26,33}{m/s}\)</span> </div> 
+</div> 
+     </div>    </div>
+<div class='problem-environment exercise' id='problem11' numbered=' ' role='article' titletext=' Exercise'>  Een pijl wordt verticaal van de grond omhooggeschoten en bereikt na \(2\mathord {,}8\) \(\mathrm {s}\) het hoogste
+punt. Bepaal deze hoogte. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item12'> 
+  Op het hoogste punt is de snelheid van de pijl nul.
+Aangezien we weten hoe lang hij onderweg is en de pijl per seconde \(9\mathord {,}81\) \(\mathrm {m}/\mathrm {s}^{2}\) trager omhoog
+vliegt, kunnen we hieruit de beginsnelheid bepalen.
+<!--  l. 29  --><p class='noindent'>We kiezen de referentie-as met de oorsprong op de grond. De versnellingscomponent
+is dan het tegengestelde van de valversnelling, <span class='mathjax-inline'>\(a=-g\)</span>. </p><div aria-labelledby='image-alt-0' class='image-environment' role='img'><div aria-labelledby='image-alt-1' class='image-environment' role='img'><img alt='PIC' src='./xmPictures/55p44.jpg' /> </div></div> We krijgen: <div class='mathjax-env mathjax-equation*'>\begin{equation*} v=0\Leftrightarrow v_0-gt=0\Leftrightarrow v_0=gt \end{equation*}</div> Dat is in grootte
+gelijk aan \(27\) \(\mathrm {m}/\mathrm {s}\). Nu dat we ook de beginsnelheid kennen, vinden we de afgelegde afstand,
+                                                                  
+
+                                                                  
+wat ook de maximale hoogte is: <div class='mathjax-env mathjax-equation*'>\begin{equation*} x=v_0t-\frac {1}{2}gt^2=(gt)t-\frac {1}{2}gt^2=\frac {1}{2}gt^2 \end{equation*}</div> Vullen we de getalwaardes in, dan vinden we
+\(38\) \(\mathrm {m}\)
+<!--  l. 43  --><p class='noindent'>Merk op dat deze afstand gelijk is aan de afstand die de pijl vanuit rust
+zou afleggen bij een vrije val die \(2\mathord {,}8\) \(\mathrm {s}\) duurt. Dat is niet heel verwonderlijk; de
+vertraging naar boven toe is namelijk gelijk aan de versnelling bij het vallen naar
+beneden. Wiskundig loopt de symmetrieas van een parabool door de top. </p></div> 
+</div> 
+
+</div>
+<div class='problem-environment exercise' id='problem13' numbered=' ' role='article' titletext=' Exercise'>  Een parachutist in vrije val bereikt een uiteindelijke valsnelheid van \(50\) \(\mathrm {m}/\mathrm {s}\). Neem aan
+dat een geopende parachute voor een constante vertraging van \(30\) \(\mathrm {m}/\mathrm {s}^{2}\) zorgt. <script type='text/javascript'> function footnotefun(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "blue"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>  <span style='position=relative; vertical-align=baseline;'> <button onclick='footnotefun(&quot;footnotei&quot;)' style='background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;'> <sup>[1]
+</sup></button>  <span id='footnotei' style='display:none; min-width:20em; position:relative; left:2px; padding:5px; color:blue; word-wrap:break-word; z-index=9999; overflow=auto;'>  <span style='color:#4D00B2;'>(Dit is een heel ruwe benadering. In feite hangt de vertraging door de
+parachute namelijk af van de snelheid en is die afhankelijkheid bovendien
+voor grote snelheden sterker dan voor kleine.)</span></span></span>  Wil er bij het neerkomen
+geen kans op letsel bestaan, dan mag de landingssnelheid niet groter dan \(5\mathord {,}0\) \(\mathrm {m}/\mathrm {s}\)
+zijn.
+<!--  l. 50  --><p class='noindent'>Wat is de minimumhoogte voor het openen van de parachute? </p><div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item14'> 
+  Aangezien we de
+versnelling en begin- en eindsnelheid kennen, kunnen we de tijd die nodig is om de
+eindsnelheid te bereiken, berekenen: <div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} v=v_0+at&amp;\Leftrightarrow &amp;t=\frac {v-v_0}{a} \end{eqnarray*}</div></div>
+<!--  l. 56  --><p class='noindent'>De afgelegde afstand is dan met de gemiddelde snelheid te berekenen: </p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} x&amp;=&amp;\overline {v}t\\ &amp;=&amp;\frac {v_0+v}{2}\cdot \frac {v-v_0}{a}\\ &amp;=&amp;\frac {v^2-v_0^2}{2a}\\ &amp;=&amp;\SI {41,25}{m} \end{eqnarray*}</div></div>
+</div> 
+</div> 
+   </div>
+<div class='problem-environment exercise' id='problem15' numbered=' ' role='article' titletext=' Exercise'>  Iemand laat een meloen vallen vanop een hoogte van \(20\) \(\mathrm {m}\). Op hetzelfde moment schiet
+je een pijl verticaal omhoog vanop de grond. De pijl treft de meloen na \(1\mathord {,}0\) \(\mathrm {s}\).   <div class='problem-environment question' id='problem16' numbered=' ' role='article' titletext=' Question'>   Geef in
+één assenstelsel een verzorgde schets van de grafiek van de plaats in functie van de
+tijd voor beide objecten. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item17'> 
+  De plaatsfunctie van de meloen gelijkstellen aan die van de
+afgeschoten pijl, geeft (we kiezen de <span class='mathjax-inline'>\(y\)</span>-as omhoog waardoor de versnelling de negatieve
+valversnelling is): <div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} y_0-\frac {1}{2}gt^2&amp;=&amp;v_0t-\frac {1}{2}gt^2 \end{eqnarray*}</div></div>
+</div> 
+</div> 
+   </div>   <div class='problem-environment question' id='problem18' numbered=' ' role='article' titletext=' Question'>   Met welke snelheid heb je de pijl afgeschoten? <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item19'> 
+  Oplossen naar <span class='mathjax-inline'>\(v_0\)</span> geeft: <span class='mathjax-inline'>\(v_0=\frac {y_0}{t}=\SI {20}{m/s}\)</span> </div> 
+</div> 
+
+</div>
+</div>
+<div class='problem-environment exercise' id='problem20' numbered=' ' role='article' titletext=' Exercise'>  (<span class='mathjax-inline'>\(\ast \ast \ast \)</span>) Wanneer de pelikaan naar vis duikt, trekt hij zijn vleugels in om als een steen
+verticaal naar beneden te vallen.
+<!--  l. 83  --><p class='noindent'>Stel een pelikaan duikt vanaf \(25\) \(\mathrm {m}\) hoogte en verandert onderweg dus niet meer van
+koers. Als het een vis \(0\mathord {,}15\) \(\mathrm {s}\) kost om te vluchten, wat is dan de hoogte waarop
+de vis de pelikaan minstens moet opmerken, wil de vis nog kans maken te
+ontsnappen?
+</p><!--  l. 85  --><p class='noindent'>Neem aan dat de vis zich aan het wateroppervlak bevindt.
+</p>
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item21'> 
+ We kiezen de referentie-as naar beneden, met de oorsprong op de positie
+waar de pelikaan begint aan zijn duik De versnelling is dan gelijk aan de
+valversnelling.
+<!--  l. 90  --><p class='noindent'>We kennen de afstand waarover de pelikaan valt zodat we de tijd die de pelikaan
+                                                                  
+
+                                                                  
+nodig heeft om het wateroppervlak te bereiken, de valtijd, kunnen berekenen uit <span class='mathjax-inline'>\(x_2=\frac {1}{2}gt_2^2 \)</span>:
+</p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} t_2=\sqrt {\frac {2x_2}{g}} \end{eqnarray*}</div></div>
+<!--  l. 94  --><p class='noindent'>De pelikaan heeft namelijk geen beginsnelheid.
+</p><!--  l. 96  --><p class='noindent'>Gedurende een tijd <span class='mathjax-inline'>\(t_1=t_2-\Delta t\)</span> (15 honderdste van een seconde minder dan de valtijd) mag de
+pelikaan vallen zonder door de vis te worden opgemerkt. De afstand boven het
+wateroppervlak is dan: </p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} x_2-x_1&amp;=&amp;x_2-\frac {1}{2}gt_1^2\\ &amp;=&amp;x_2-\frac {1}{2}g\left (t_2-\Delta t\right )^2\\ &amp;=&amp;\SI {3,2}{m} \end{eqnarray*}</div></div>
+</div> 
+</div> 
+   </div>
+<div class='problem-environment exercise' id='problem22' numbered=' ' role='article' titletext=' Exercise'>  (<span class='mathjax-inline'>\(\ast \ast \ast \)</span>) Een verticaal vallende steen legt in de laatste seconde, voor hij de grond bereikt,
+\(100\) \(\mathrm {m}\) af. Men veronderstelt dat hij vanuit rust vertrok.   <div class='problem-environment question' id='problem23' numbered=' ' role='article' titletext=' Question'>   Bepaal de snelheid op het
+ogenblik dat hij de grond bereikt. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item24'> 
+
+<!--  l. 112  --><p class='noindent'>We kiezen de <span class='mathjax-inline'>\(x\)</span>-as naar beneden zodat de versnelling de valversnelling is, <span class='mathjax-inline'>\(a=g\)</span>. Als we <span class='mathjax-inline'>\(x_1\)</span>
+beschouwen als de beginpositie van de beweging die de steen uitvoert in de laatste
+honderd meter, kunnen we de snelheid vinden waarmee de steen hieraan ‘begint’.
+</p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} &amp;&amp;\Delta x=v_1\Delta t+\frac {1}{2}g\Delta t^2\\ &amp;\Leftrightarrow &amp;v_1=\frac {\Delta x-\frac {1}{2}g\Delta t^2}{\Delta t} \end{eqnarray*}</div></div>
+<div aria-labelledby='image-alt-1' class='image-environment' role='img'><div aria-labelledby='image-alt-2' class='image-environment' role='img'><img alt='PIC' src='./xmPictures/valbeweging.png' /> </div></div> Met de formule voor de snelheid van een EVRB, vinden we de snelheid op het
+einde van het interval. <div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} v_2&amp;=&amp;v_1+g\Delta t\\ &amp;=&amp;\frac {\Delta x-\frac {1}{2}g\Delta t^2}{\Delta t}+g\Delta t\\ &amp;=&amp;\cdots \\ &amp;=&amp;\overline {v}+g\frac {\Delta t}{2}\\ &amp;=&amp;\SI {105}{m/s} \end{eqnarray*}</div></div>
+<!--  l. 128  --><p class='noindent'>Je kan dit ook afleiden door gebruik te maken van de formule voor gemiddelde
+snelheid, <span class='mathjax-inline'>\(\overline {v}=\frac {v_1+v_2}{2}\)</span>.
+</p></div> 
+</div> 
+   </div>  <div class='problem-environment question' id='problem25' numbered=' ' role='article' titletext=' Question'>   Bepaal de hoogte vanwaar de steen viel en de tijd die hij daarvoor nodig had.
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item26'> 
+ Omdat we de snelheid kennen, kunnen we de tijd vinden die de steen nodig heeft
+gehad om aan deze snelheid te komen. Vervolgens vinden we dan ook de afstand.
+<div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} t_2=\frac {v_2}{g}=\frac {\overline {v}}{g}+\frac {\Delta t}{2}=\SI {10,7}{s}\\ x_2=\frac {1}{2}gt_2^2=\SI {561}{m} \end{eqnarray*}</div></div>
+</div> 
+</div> 
+   </div>    </div>
+<div class='problem-environment exercise' id='problem27' numbered=' ' role='article' titletext=' Exercise'>  (<span class='mathjax-inline'>\(\ast \ast \ast \)</span>) Van de Empire Stage Building in New York komt op \(250\) \(\mathrm {m}\) een ijskegel los en valt
+naar beneden.   <div class='problem-environment question' id='problem28' numbered=' ' role='article' titletext=' Question'>   Na hoeveel tijd en met welke snelheid bereikt het ijskegeltje
+uiteindelijk de grond? <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item29'> 
+
+<dl class='enumerate-enumitem'><dt class='enumerate-enumitem'>
+Gegeven 
+</dt><dd class='enumerate-enumitem'><span class='mathjax-inline'>\(x_3=\SI {250}{m}\)</span><br class='newline' /><span class='mathjax-inline'>\(\Delta t=t_2-t_1=\SI {2,0}{s}\)</span><br class='newline' /><span class='mathjax-inline'>\(\Delta x=x_2-x_1=\SI {100}{m}\)</span>
+</dd>     
+<dt class='enumerate-enumitem'>
+Gevraagd 
+</dt><dd class='enumerate-enumitem'><span class='mathjax-inline'>\(t_3,v_3,t_1\)</span> en <span class='mathjax-inline'>\(x_1\)</span></dd></dl>
+<!--  l. 152  --><p class='noindent'>Omdat de beweging enkel naar beneden is, is de beschrijving gemakkelijk met een <span class='mathjax-inline'>\(x\)</span>-as
+naar beneden gericht. De versnellingscomponent <span class='mathjax-inline'>\(a\)</span> is dan gelijk aan de valversnelling <span class='mathjax-inline'>\(g\)</span>.
+Omdat de kegel vanuit rust vertrekt, vinden we de valtijd uit <span class='mathjax-inline'>\(x=\frac {1}{2}gt^2\)</span>: </p><div class='mathjax-env mathjax-equation*'>\begin{equation*} t=\sqrt {\frac {2x}{g}} \end{equation*}</div> De valtijd bepaalt de
+eindsnelheid: <div class='mathjax-env mathjax-equation*'>\begin{equation*} v=gt=g\sqrt {\frac {2x}{g}}=\sqrt {2gx} \end{equation*}</div>
+</div> 
+</div> 
+   </div>   <div class='problem-environment question' id='problem30' numbered=' ' role='article' titletext=' Question'>   Hoelang en over welke afstand moet de ijskegel al gevallen zijn om in de
+daaropvolgende \(2\) \(\mathrm {s}\) een afstand te kunnen afleggen van \(100\) \(\mathrm {m}\)? <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item31'> 
+
+                                                                  
+
+                                                                  
+<div aria-labelledby='image-alt-2' class='image-environment' role='img'><div aria-labelledby='image-alt-3' class='image-environment' role='img'><img alt='PIC' src='./xmPictures/opdr16p28.jpg' /> </div></div> Invullen van de gegevens geeft <span class='mathjax-inline'>\(t_3=\SI {7,1}{s}\)</span> en <span class='mathjax-inline'>\(v_3=\SI {70}{m/s}=\SI {252}{km/h}\)</span>.
+<!--  l. 171  --><p class='noindent'>Uit de plaatsfunctie kunnen we de beginsnelheid <script type='text/javascript'> function footnotefun(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "blue"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>  <span style='position=relative; vertical-align=baseline;'> <button onclick='footnotefun(&quot;footnoteii&quot;)' style='background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;'> <sup>[2] </sup></button>  <span id='footnoteii' style='display:none; min-width:20em; position:relative; left:2px; padding:5px; color:blue; word-wrap:break-word; z-index=9999; overflow=auto;'>  <span style='color:#4D00B2;'>(Voor de honderd
+meter is de beginsnelheid <span class='mathjax-inline'>\(v_1\)</span>.)</span></span></span>  halen. De beginsnelheid <span class='mathjax-inline'>\(v_1\)</span> is immers de enige
+onbekende in de vergelijking: <script type='text/javascript'> function footnotefun(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "blue"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>  <span style='position=relative; vertical-align=baseline;'> <button onclick='footnotefun(&quot;footnoteiii&quot;)' style='background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;'> <sup>[3] </sup></button>  <span id='footnoteiii' style='display:none; min-width:20em; position:relative; left:2px; padding:5px; color:blue; word-wrap:break-word; z-index=9999; overflow=auto;'>  <span style='color:#4D00B2;'>(Hoe komen we aan deze uitdrukking? De
+plaatsfunctie toegepast op de honderd meter geeft: <span class='mathjax-inline'>\(x_2=x_1+v_1t+\frac {1}{2}gt^2\)</span> waarin de variabele <span class='mathjax-inline'>\(t\)</span> de
+verstreken tijd tussen tussen de posities <span class='mathjax-inline'>\(x_1\)</span> en <span class='mathjax-inline'>\(x_2\)</span> weergeeft. In dit geval stellen
+we die echter voor door <span class='mathjax-inline'>\(\Delta t\)</span>. Ook is <span class='mathjax-inline'>\(\Delta x=x_2-x_1\)</span>.)</span></span></span>  </p><div class='mathjax-env mathjax-equation*'>\begin{equation*} \Delta x=v_1\Delta t+\frac {1}{2}g\Delta t^2\\ \end{equation*}</div> Dus: <span class='mathjax-inline'>\(v_1=\frac {2\Delta x-g\Delta t^2}{2\Delta t}\)</span>. <script type='text/javascript'> function footnotefun(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "blue"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>  <span style='position=relative; vertical-align=baseline;'> <button onclick='footnotefun(&quot;footnoteiv&quot;)' style='background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;'> <sup>[4] </sup></button>  <span id='footnoteiv' style='display:none; min-width:20em; position:relative; left:2px; padding:5px; color:blue; word-wrap:break-word; z-index=9999; overflow=auto;'>  <span style='color:#4D00B2;'>(Als we de uitdrukking
+uitwerken: <span class='mathjax-inline'>\(v_1=\frac {2\Delta x-g\Delta t^2}{2\Delta t}=\frac {\Delta x}{\Delta t}-g\frac {\Delta t}{2}=\bar {v}-g\frac {\Delta t}{2}\)</span>, is te zien dat <span class='mathjax-inline'>\(v_1\)</span> één seconde eerder dan de gemiddelde snelheid
+bereikt wordt. De gemiddelde snelheid is immers <span class='mathjax-inline'>\(\bar {v}=\frac {v_1+v_2}{2}\)</span> en wordt dus halverwege de
+valtijd van de honderd meter bereikt. Bovendien toont deze uitwerking dat
+we het vraagstuk ook anders hadden kunnen oplossen. Uit <span class='mathjax-inline'>\(\frac {\Delta x}{\Delta t}=\frac {v_1+v_2}{2}=\frac {v_1+(v_1+g\Delta t)}{2}\)</span> is immers <span class='mathjax-inline'>\(v_1\)</span> te
+bepalen.)</span></span></span>
+<!--  l. 177  --><p class='noindent'>Omdat de kegel vanuit rust begint te vallen en per seconde \(9\mathord {,}81\) \(\mathrm {m}/\mathrm {s}\) sneller valt, vinden we
+de valtijd als <span class='mathjax-inline'>\(t_1=\frac {v_1}{g}\)</span>: </p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} t_1=\frac {2\Delta x-g\Delta t^2}{2g\Delta t}&amp;=&amp;\frac {2\cdot 100\rm \,m-9,81\rm \,m/s^2\cdot (2,0\rm \,s)^2}{2\cdot 9,81\rm \,m/s^2\cdot 2,0\rm \,s}=\SI {4,1}{s} \end{eqnarray*}</div></div>
+<!--  l. 181  --><p class='noindent'>De bijbehorende afgelegde weg is dan <span class='mathjax-inline'>\(x_1=\frac {1}{2}gt_1^2=\SI {82}{m}\)</span>.
+</p></div> 
+</div> 
+   </div>
+</div>
+<div class='problem-environment exercise' id='problem32' numbered=' ' role='article' titletext=' Exercise'>  (<span class='mathjax-inline'>\(\ast \ast \ast \)</span>) Een zieke man zit voor een raam dat \(1\mathord {,}20\) \(\mathrm {m}\) hoog is. Een steen wordt vanop de grond
+opgeworpen en passeert het raam een keer opwaarts en een keer neerwaarts. De man
+ziet de steen in totaal voor exact één seconde.
+<div class='problem-environment question' id='problem33' numbered=' ' role='article' titletext=' Question'>  Bepaal de snelheid waarmee de steen de onderkant van het raam bereikt. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item34'> 
+  <span class='mathjax-inline'>\(\Delta x= v_1\Delta t-\frac {1}{2}g\Delta t^2\)</span> zodat <span class='mathjax-inline'>\(v_1=\bar {v}+g\frac {\Delta t}{2}=\SI {4,85}{m/s}\)</span>
+(<span class='mathjax-inline'>\(\Delta t = \SI {0,5}{s}\)</span>) </div> 
+</div> 
+     </div>
+<div class='problem-environment question' id='problem35' numbered=' ' role='article' titletext=' Question'>  Toon aan dat het met deze gegevens niet mogelijk is te berekenen hoe hoog het
+raam boven de grond is gelegen. <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item36'> 
+  Naast de hoogte van het raam boven de grond, zijn
+ook de benodigde tijd en de beginsnelheid onbekende grootheden. Met maar twee
+vergelijkingen die een EVRB beschrijven (<span class='mathjax-inline'>\(x=x_0+v_0t+\frac {1}{2}at^2\)</span> en <span class='mathjax-inline'>\(v=v_0+at\)</span>), zijn deze onbekenden niet vast te
+leggen. In een meer fysische uitleg kan je je realiseren dat eenzelfde snelheid
+aan de onderkant van het raam voor een grotere hoogte boven de grond te
+realiseren is met een grotere snelheid waarmee de steen opgeworpen wordt. </div> 
+</div> 
+     </div>
+</div>
+<div class='problem-environment exercise' id='problem37' numbered=' ' role='article' titletext=' Exercise'>  (<span class='mathjax-inline'>\(\ast \ast \ast \)</span>) Een student gooit een sleutelbos verticaal omhoog naar een medebewoonster in
+een raam \(4\mathord {,}00\) \(\mathrm {m}\) hoger. De sleutels worden \(1\mathord {,}50\) \(\mathrm {s}\) later opgevangen.   <div class='problem-environment question' id='problem38' numbered=' ' role='article' titletext=' Question'>   Wat was de snelheid
+waarmee de sleutels omhoog werden gegooid? <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item39'> 
+  <span class='mathjax-inline'>\(v_0=\frac {x+\frac {1}{2}gt^2}{t}=10,02\rm \,m/s\)</span></div> 
+</div> 
+     </div>   <div class='problem-environment question' id='problem40' numbered=' ' role='article' titletext=' Question'>   Welke snelheid had de
+sleutelbos vlak voordat hij werd opgevangen? <div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item41'> 
+
+<!--  l. 211  --><p class='noindent'><span class='mathjax-inline'>\(v=v_0-gt=\frac {x}{t}-\frac {1}{2}gt=\SI {-4,69}{m/s}\)</span>
+</p><!--  l. 213  --><p class='noindent'>Merk op dat de sleutelbos wordt opgevangen bij het terug naar beneden komen. De
+snelheidscomponent is immers negatief. </p></div> 
+</div> 
+     </div>    </div>
+<div class='problem-environment exercise' id='problem42' numbered=' ' role='article' titletext=' Exercise'>  (<span class='mathjax-inline'>\(\ast \ast \ast \)</span>) Een voorwerp wordt verticaal omhoog geworpen en bereikt na een tijd <span class='mathjax-inline'>\(t\)</span> een
+hoogte <span class='mathjax-inline'>\(h\)</span>. Toon aan dat de maximale hoogte <span class='mathjax-inline'>\(h_{\text {max}}\)</span> die het voorwerp bereikt, wordt gegeven
+door: <div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} h_{\text {max}}&amp;=&amp;\frac {(gt^2+2h)^2}{8gt^2}. \end{eqnarray*}</div></div>
+                                                                  
+
+                                                                  
+<div class='accordion'> 
+<h3 class='xmoplossing'></h3> 
+<div class='accordion-item xmoplossing-content' id='accordion-item43'> 
+ We zoeken eerst een uitdrukking voor de maximale hoogte. Op het hoogste punt is
+de snelheid nul zodat: <div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} v&amp;=&amp;0\\ &amp;\Updownarrow &amp;\\ v_0-gt&amp;=&amp;0\\ &amp;\Updownarrow &amp;\\ t&amp;=&amp;\frac {v_0}{g} \end{eqnarray*}</div></div>
+<!--  l. 233  --><p class='noindent'>Deze tijd is dus de tijd die het voorwerp nodig heeft om het hoogste punt te bereiken.
+Als we de oorsprong van de <span class='mathjax-inline'>\(y\)</span>-as op de grond kiezen en naar boven gericht, dan vinden
+we de maximale hoogte door dit tijdstip in de plaatsfunctie in te vullen:
+</p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} y_{max}&amp;=&amp;y(t_{max})\\ &amp;=&amp;v_0\cdot \left (\frac {v_0}{g}\right )-\frac {1}{2}g\left (\frac {v_0}{g}\right )^2\\ &amp;=&amp;\frac {v_0^2}{2g} \end{eqnarray*}</div></div>
+<!--  l. 239  --><p class='noindent'>Doordat we weten hoe hoog het voorwerp zich bevindt na een tijd <span class='mathjax-inline'>\(t_1\)</span>, kunnen we de
+beginsnelheid <span class='mathjax-inline'>\(v_0\)</span> bepalen: </p><div class='eqnarray'><div class='mathjax-env mathjax-eqnarray*'>\begin{eqnarray*} y_1&amp;=&amp;v_0t_1-\frac {1}{2}gt_1^2\\ &amp;\Updownarrow &amp;\\ v_0&amp;=&amp;\frac {2y_1+gt_1^2}{2t_1} \end{eqnarray*}</div></div>
+<!--  l. 245  --><p class='noindent'>Substitutie hiervan in de uitdrukking voor de maximale hoogte geeft de te bewijzen
+uitdrukking. </p></div> 
+</div> 
+     </div>
+                                                                  
+
+                                                                  
+</body> 
+ 
+</html>
+                                                                  
+
+

@@ -65,17 +65,16 @@
 
 \begin{exercise}
     Iemand laat een meloen vallen vanop een hoogte van \SI{20}{m}. Op hetzelfde moment schiet je een pijl verticaal omhoog vanop de grond. De pijl treft de meloen na \SI{1,0}{s}. 
-    \begin{enumerate}
-        \item Geef in \'e\'en assenstelsel een verzorgde schets van de grafiek van de plaats in functie van de tijd voor beide objecten.
-        \item Met welke snelheid heb je de pijl afgeschoten? 
-    \end{enumerate}
-    \begin{oplossing}
-        De plaatsfunctie van de meloen gelijkstellen aan die van de afgeschoten pijl, geeft (we kiezen de $y$-as omhoog waardoor de versnelling de negatieve valversnelling is):
-        \begin{eqnarray*}
-           y_0-\frac{1}{2}gt^2&=&v_0t-\frac{1}{2}gt^2
-        \end{eqnarray*}
-        Oplossen naar $v_0$ geeft: $v_0=\frac{y_0}{t}=\SI{20}{m/s}$.
-    \end{oplossing}
+    \begin{question} Geef in \'e\'en assenstelsel een verzorgde schets van de grafiek van de plaats in functie van de tijd voor beide objecten. 
+        \begin{oplossing} 
+            De plaatsfunctie van de meloen gelijkstellen aan die van de afgeschoten pijl, geeft (we kiezen de $y$-as omhoog waardoor de versnelling de negatieve valversnelling is):
+            \begin{eqnarray*}
+               y_0-\frac{1}{2}gt^2&=&v_0t-\frac{1}{2}gt^2
+            \end{eqnarray*}
+        \end{oplossing} 
+    \end{question}
+    \begin{question} Met welke snelheid heb je de pijl afgeschoten?  \begin{oplossing} Oplossen naar $v_0$ geeft: $v_0=\frac{y_0}{t}=\SI{20}{m/s}$ \end{oplossing} \end{question}
+
 \end{exercise}
 
 \begin{exercise}
@@ -107,75 +106,83 @@
 
 \begin{exercise}
     ($\ast\ast\ast$) Een verticaal vallende steen legt in de laatste seconde, voor hij de grond bereikt, \SI{100}{m} af. Men veronderstelt dat hij vanuit rust vertrok.
-    \begin{enumerate}
-        \item Bepaal de snelheid op het ogenblik dat hij de grond bereikt.
-        \item Bepaal de hoogte vanwaar de steen viel en de tijd die hij daarvoor nodig had.
-    \end{enumerate}
+    \begin{question} Bepaal de snelheid op het ogenblik dat hij de grond bereikt.                 
+        \begin{oplossing}
 
-    \begin{oplossing}
-        We kiezen de $x$-as naar beneden zodat de versnelling de valversnelling is, $a=g$. Als we $x_1$ beschouwen als de beginpositie van de beweging die de steen uitvoert in de laatste honderd meter, kunnen we de snelheid vinden waarmee de steen hieraan `begint'.
-        \begin{eqnarray*}
-            &&\Delta x=v_1\Delta t+\frac{1}{2}g\Delta t^2\\
-            &\Leftrightarrow&v_1=\frac{\Delta x-\frac{1}{2}g\Delta t^2}{\Delta t}
-        \end{eqnarray*}
-        \begin{image}
-            \includegraphics{valbeweging}
-        \end{image}
-        Met de formule voor de snelheid van een EVRB, vinden we de snelheid op het einde van het interval.
-        \begin{eqnarray*}
-            v_2&=&v_1+g\Delta t\\
-            &=&\frac{\Delta x-\frac{1}{2}g\Delta t^2}{\Delta t}+g\Delta t\\
-            &=&\cdots\\
-            &=&\overline{v}+g\frac{\Delta t}{2}\\
-            &=&\SI{105}{m/s}
-        \end{eqnarray*}
-        Je kan dit ook afleiden door gebruik te maken van de formule voor gemiddelde snelheid, $\overline{v}=\frac{v_1+v_2}{2}$.
+            We kiezen de $x$-as naar beneden zodat de versnelling de valversnelling is, $a=g$. Als we $x_1$ beschouwen als de beginpositie van de beweging die de steen uitvoert in de laatste honderd meter, kunnen we de snelheid vinden waarmee de steen hieraan `begint'.
+            \begin{eqnarray*}
+                &&\Delta x=v_1\Delta t+\frac{1}{2}g\Delta t^2\\
+                &\Leftrightarrow&v_1=\frac{\Delta x-\frac{1}{2}g\Delta t^2}{\Delta t}
+            \end{eqnarray*}
+            \begin{image}
+                \includegraphics{valbeweging}
+            \end{image}
+            Met de formule voor de snelheid van een EVRB, vinden we de snelheid op het einde van het interval.
+            \begin{eqnarray*}
+                v_2&=&v_1+g\Delta t\\
+                &=&\frac{\Delta x-\frac{1}{2}g\Delta t^2}{\Delta t}+g\Delta t\\
+                &=&\cdots\\
+                &=&\overline{v}+g\frac{\Delta t}{2}\\
+                &=&\SI{105}{m/s}
+            \end{eqnarray*}
+            Je kan dit ook afleiden door gebruik te maken van de formule voor gemiddelde snelheid, $\overline{v}=\frac{v_1+v_2}{2}$.
         
-        Omdat we de snelheid kennen, kunnen we de tijd vinden die de steen nodig heeft gehad om aan deze snelheid te komen. Vervolgens vinden we dan ook de afstand.
-        \begin{eqnarray*}
-            t_2=\frac{v_2}{g}=\frac{\overline{v}}{g}+\frac{\Delta t}{2}=\SI{10,7}{s}\\
-            x_2=\frac{1}{2}gt_2^2=\SI{561}{m}
-        \end{eqnarray*}
-    \end{oplossing}
+        \end{oplossing}
+    \end{question}
+    \begin{question} Bepaal de hoogte vanwaar de steen viel en de tijd die hij daarvoor nodig had.
+        \begin{oplossing}
+            Omdat we de snelheid kennen, kunnen we de tijd vinden die de steen nodig heeft gehad om aan deze snelheid te komen. Vervolgens vinden we dan ook de afstand.
+            \begin{eqnarray*}
+                t_2=\frac{v_2}{g}=\frac{\overline{v}}{g}+\frac{\Delta t}{2}=\SI{10,7}{s}\\
+                x_2=\frac{1}{2}gt_2^2=\SI{561}{m}
+            \end{eqnarray*}
+        \end{oplossing}
+    \end{question}
 \end{exercise}
 
 \begin{exercise}
     ($\ast\ast\ast$) Van de Empire Stage Building in New York komt op \SI{250}{m} een ijskegel los en valt naar beneden.
-    \begin{enumerate}
-        \item Na hoeveel tijd en met welke snelheid bereikt het ijskegeltje uiteindelijk de grond?
-        \item Hoelang en over welke afstand moet de ijskegel al gevallen zijn om in de daaropvolgende \SI{2}{s} een afstand te kunnen afleggen van \SI{100}{m}?
-    \end{enumerate}
-    \begin{oplossing}
-        \begin{enumerate}
-            \item[Gegeven]$x_3=\SI{250}{m}$\newline$\Delta t=t_2-t_1=\SI{2,0}{s}$\newline$\Delta x=x_2-x_1=\SI{100}{m}$
-            \item[Gevraagd]$t_3,v_3,t_1$ en $x_1$
-        \end{enumerate}
-
-        Omdat de beweging enkel naar beneden is, is de beschrijving gemakkelijk met een $x$-as naar beneden gericht. De versnellingscomponent $a$ is dan gelijk aan de valversnelling $g$. Omdat de kegel vanuit rust vertrekt, vinden we de valtijd uit $x=\frac{1}{2}gt^2$:
-        \begin{equation*}   
-            t=\sqrt{\frac{2x}{g}}
-        \end{equation*}
-        De valtijd bepaalt de eindsnelheid:
-        \begin{equation*}
-            v=gt=g\sqrt{\frac{2x}{g}}=\sqrt{2gx}
-        \end{equation*}
-        \begin{image}
-            \includegraphics{opdr16p28}
-        \end{image}
-        Invullen van de gegevens geeft $t_3=\SI{7,1}{s}$ en $v_3=\SI{70}{m/s}=\SI{252}{km/h}$.
-
-        Uit de plaatsfunctie kunnen we de beginsnelheid\footnote{Voor de honderd meter is de beginsnelheid $v_1$.} halen. De beginsnelheid $v_1$ is immers de enige onbekende in de vergelijking:\footnote{Hoe komen we aan deze uitdrukking? De plaatsfunctie toegepast op de honderd meter geeft: $x_2=x_1+v_1t+\frac{1}{2}gt^2$ waarin de variabele $t$ de verstreken tijd tussen tussen de posities $x_1$ en $x_2$ weergeeft. In dit geval stellen we die echter voor door $\Delta t$. Ook is $\Delta x=x_2-x_1$.}
-        \begin{equation*}
-            \Delta x=v_1\Delta t+\frac{1}{2}g\Delta t^2\\
-        \end{equation*}
-        Dus: $v_1=\frac{2\Delta x-g\Delta t^2}{2\Delta t}$.\footnote{Als we de uitdrukking uitwerken: $v_1=\frac{2\Delta x-g\Delta t^2}{2\Delta t}=\frac{\Delta x}{\Delta t}-g\frac{\Delta t}{2}=\bar{v}-g\frac{\Delta t}{2}$, is te zien dat $v_1$ \'e\'en seconde eerder dan de gemiddelde snelheid bereikt wordt. De gemiddelde snelheid is immers $\bar{v}=\frac{v_1+v_2}{2}$ en wordt dus halverwege de valtijd van de honderd meter bereikt. Bovendien toont deze uitwerking dat we het vraagstuk ook anders hadden kunnen oplossen. Uit $\frac{\Delta x}{\Delta t}=\frac{v_1+v_2}{2}=\frac{v_1+(v_1+g\Delta t)}{2}$ is immers $v_1$ te bepalen.}
+    \begin{question} Na hoeveel tijd en met welke snelheid bereikt het ijskegeltje uiteindelijk de grond?                                                             
+        \begin{oplossing}
+            \begin{enumerate}
+                \item[Gegeven]$x_3=\SI{250}{m}$\newline$\Delta t=t_2-t_1=\SI{2,0}{s}$\newline$\Delta x=x_2-x_1=\SI{100}{m}$
+                \item[Gevraagd]$t_3,v_3,t_1$ en $x_1$
+            \end{enumerate}
+    
+            Omdat de beweging enkel naar beneden is, is de beschrijving gemakkelijk met een $x$-as naar beneden gericht. De versnellingscomponent $a$ is dan gelijk aan de valversnelling $g$. Omdat de kegel vanuit rust vertrekt, vinden we de valtijd uit $x=\frac{1}{2}gt^2$:
+            \begin{equation*}   
+                t=\sqrt{\frac{2x}{g}}
+            \end{equation*}
+            De valtijd bepaalt de eindsnelheid:
+            \begin{equation*}
+                v=gt=g\sqrt{\frac{2x}{g}}=\sqrt{2gx}
+            \end{equation*}
         
-        Omdat de kegel vanuit rust begint te vallen en per seconde \SI{9,81}{m/s} sneller valt, vinden we de valtijd als $t_1=\frac{v_1}{g}$:
-        \begin{eqnarray*}
-            t_1=\frac{2\Delta x-g\Delta t^2}{2g\Delta t}&=&\frac{2\cdot100\rm\,m-9,81\rm\,m/s^2\cdot(2,0\rm\,s)^2}{2\cdot9,81\rm\,m/s^2\cdot2,0\rm\,s}=\SI{4,1}{s}
-        \end{eqnarray*}
-        De bijbehorende afgelegde weg is dan $x_1=\frac{1}{2}gt_1^2=\SI{82}{m}$.
-    \end{oplossing}
+        \end{oplossing}
+    \end{question}
+    \begin{question} Hoelang en over welke afstand moet de ijskegel al gevallen zijn om in de daaropvolgende \SI{2}{s} een afstand te kunnen afleggen van \SI{100}{m}?
+        \begin{oplossing}
+
+            \begin{image}
+                \includegraphics{opdr16p28}
+            \end{image}
+            Invullen van de gegevens geeft $t_3=\SI{7,1}{s}$ en $v_3=\SI{70}{m/s}=\SI{252}{km/h}$.
+    
+            Uit de plaatsfunctie kunnen we de beginsnelheid\footnote{Voor de honderd meter is de beginsnelheid $v_1$.} halen. De beginsnelheid $v_1$ is immers de enige onbekende in de vergelijking:\footnote{Hoe komen we aan deze uitdrukking? De plaatsfunctie toegepast op de honderd meter geeft: $x_2=x_1+v_1t+\frac{1}{2}gt^2$ waarin de variabele $t$ de verstreken tijd tussen tussen de posities $x_1$ en $x_2$ weergeeft. In dit geval stellen we die echter voor door $\Delta t$. Ook is $\Delta x=x_2-x_1$.}
+            \begin{equation*}
+                \Delta x=v_1\Delta t+\frac{1}{2}g\Delta t^2\\
+            \end{equation*}
+            Dus: $v_1=\frac{2\Delta x-g\Delta t^2}{2\Delta t}$.\footnote{Als we de uitdrukking uitwerken: $v_1=\frac{2\Delta x-g\Delta t^2}{2\Delta t}=\frac{\Delta x}{\Delta t}-g\frac{\Delta t}{2}=\bar{v}-g\frac{\Delta t}{2}$, is te zien dat $v_1$ \'e\'en seconde eerder dan de gemiddelde snelheid bereikt wordt. De gemiddelde snelheid is immers $\bar{v}=\frac{v_1+v_2}{2}$ en wordt dus halverwege de valtijd van de honderd meter bereikt. Bovendien toont deze uitwerking dat we het vraagstuk ook anders hadden kunnen oplossen. Uit $\frac{\Delta x}{\Delta t}=\frac{v_1+v_2}{2}=\frac{v_1+(v_1+g\Delta t)}{2}$ is immers $v_1$ te bepalen.}
+            
+            Omdat de kegel vanuit rust begint te vallen en per seconde \SI{9,81}{m/s} sneller valt, vinden we de valtijd als $t_1=\frac{v_1}{g}$:
+            \begin{eqnarray*}
+                t_1=\frac{2\Delta x-g\Delta t^2}{2g\Delta t}&=&\frac{2\cdot100\rm\,m-9,81\rm\,m/s^2\cdot(2,0\rm\,s)^2}{2\cdot9,81\rm\,m/s^2\cdot2,0\rm\,s}=\SI{4,1}{s}
+            \end{eqnarray*}
+            De bijbehorende afgelegde weg is dan $x_1=\frac{1}{2}gt_1^2=\SI{82}{m}$.
+        
+        \end{oplossing}
+    \end{question}
+
 \end{exercise}
 % Bron Fysica Vandaag 2 p. 92
 
@@ -197,17 +204,15 @@
 
 \begin{exercise}
     ($\ast\ast\ast$) Een student gooit een sleutelbos verticaal omhoog naar een medebewoonster in een raam \SI{4,00}{m} hoger. De sleutels worden \SI{1,50}{s} later opgevangen.
-    \begin{enumerate}
-        \item Wat was de snelheid waarmee de sleutels omhoog werden gegooid?
-        \item Welke snelheid had de sleutelbos vlak voordat hij werd opgevangen?
-    \end{enumerate}
-    \begin{oplossing}
-        $v_0=\frac{x+\frac{1}{2}gt^2}{t}=10,02\rm\,m/s$ 
+    \begin{question} Wat was de snelheid waarmee de sleutels omhoog werden gegooid?  \begin{oplossing} $v_0=\frac{x+\frac{1}{2}gt^2}{t}=10,02\rm\,m/s$\end{oplossing} \end{question}
+    \begin{question} Welke snelheid had de sleutelbos vlak voordat hij werd opgevangen? 
+        \begin{oplossing} 
 
         $v=v_0-gt=\frac{x}{t}-\frac{1}{2}gt=\SI{-4,69}{m/s}$
 
         Merk op dat de sleutelbos wordt opgevangen bij het terug naar beneden komen. De snelheidscomponent is immers negatief.
-    \end{oplossing}
+        \end{oplossing} 
+    \end{question}
 \end{exercise}
 % Bron Herman Van Bouwel
 
