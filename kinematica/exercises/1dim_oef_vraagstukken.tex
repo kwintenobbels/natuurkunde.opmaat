@@ -343,37 +343,42 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
 
 % Bron Serway 4yh edition oefening 77 chapter 2
 \begin{exercise}
-    ($\ast\ast\ast$) Maggie en Jennifer lopen de \SI{100}{m}. Beiden doen ze er exact \SI{10.2}{\second} over. Met een eenparige versnelling bereikt Maggie na \SI{2}{\second} haar maximale snelheid, Jennifer doet dat na \SI{3}{s}. Hun maximale snelheden houden ze aan voor de rest van de wedstrijd.
-    \begin{question} Wat zijn hun maximale snelheden?                  \begin{oplossing} $v_1=\frac{2x_2}{2t_2-t_1}$                                                                             \end{oplossing} \end{question}
-    \begin{question} Wat is de versnelling van iedere sprinter?        \begin{oplossing} $a=\frac{2x_2}{(2t_2-t_1)t_1}$                                                                          \end{oplossing} \end{question}
-    \begin{question} Wie heeft er voorsprong na \SI{6}{s}, en hoeveel? 
-        \begin{oplossing} $x_M-x_J=\frac{2x_2}{2t_2-t_{1,M}}(t-\frac{t_{1,M}}{2})-\frac{2x_2}{2t_2-t_{1,J}}(t-\frac{t_{1,J}}{2})$ 
-
-        \begin{image}
-            \begin{tikzpicture}[yscale=0.5]
-                \draw[->] (0,0) -- (14,0) node[right] {$t$ (s)};
-                \draw[->] (0,0) -- (0,13) node[above] {$v$ (m/s)};
-                
-                \draw[dashed] (3,0) -- (3,12);
-                \draw[dashed] (12,0) -- (12,12);
-                
-                \foreach \x in {0,3,12}
-                    \draw (\x,0) -- (\x,-0.2) node[below] {\x};
-                
-                \draw[thick] (0,0) -- (3,12) -- (12,12);
-            \end{tikzpicture}
-            \captionof{figure}{Snelheidsgrafiek van Jennifer}
-            % \includegraphics[width=0.5\textwidth]{sprinter}
-        \end{image}
-    
-        \end{oplossing} 
+    ($\ast\ast\ast$) Maggie en Jennifer lopen de \SI{100}{m}. Beiden doen ze er exact \SI{10.2}{\second} over. 
+    Met een eenparige versnelling bereikt Maggie na \SI{2}{\second} haar maximale snelheid, Jennifer doet dat na \SI{3}{s}. 
+    Hun maximale snelheden houden ze aan voor de rest van de wedstrijd.
+    \begin{question} Wat zijn hun maximale snelheden?                 
+    \begin{oplossing} 
+        $v_1=\frac{2x_2}{2t_2-t_1}$ 
+    \end{oplossing} 
     \end{question}
+    \begin{question} Wat is de versnelling van iedere sprinter?
+    \begin{oplossing} 
+        $a=\frac{2x_2}{(2t_2-t_1)t_1}$  
+    \end{oplossing} 
+    \end{question}
+    \begin{question} Wie heeft er voorsprong na \SI{6}{s}, en hoeveel? 
+    \begin{oplossing} $x_M-x_J=\frac{2x_2}{2t_2-t_{1,M}}(t-\frac{t_{1,M}}{2})-\frac{2x_2}{2t_2-t_{1,J}}(t-\frac{t_{1,J}}{2})$ 
 
-
-
-
+        % ERROR: PDF OK; GEEN HTML VAN ONDERSTAANDE IMAGE 
+        % \begin{image}
+        %     \begin{tikzpicture}[yscale=0.5]
+        %         \draw[->] (0,0) -- (14,0) node[right] {$t$ (s)};
+        %         \draw[->] (0,0) -- (0,13) node[above] {$v$ (m/s)};
+                
+        %         \draw[dashed] (3,0) -- (3,12);
+        %         \draw[dashed] (12,0) -- (12,12);
+                
+        %         \foreach \x in {0,3,12}
+        %             \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+                
+        %         \draw[thick] (0,0) -- (3,12) -- (12,12);
+        %     \end{tikzpicture}
+        % \end{image}
+        % \captionof{figure}{Snelheidsgrafiek van Jennifer}
+        % \includegraphics[width=0.5\textwidth]{sprinter}
+    \end{oplossing} 
+    \end{question}
 \end{exercise}
-
 
 
 \begin{exercise}
