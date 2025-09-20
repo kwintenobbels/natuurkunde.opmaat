@@ -617,7 +617,6 @@ div.quickquestion:before {
 	border: 1px solid var(--border-color);
 	border-left: 12px solid var(--border-color);
 	padding: 1em;
-	margin-top: 1em;
 }
 
 /*
