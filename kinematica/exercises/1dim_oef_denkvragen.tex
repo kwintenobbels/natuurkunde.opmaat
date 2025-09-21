@@ -80,10 +80,40 @@
 
 \begin{exercise}
 	Teken de overeenkomstige $x(t)$- en $a(t)$-grafiek bij de gegeven $v(t)$-grafiek. Ga ervan uit dat $x_0=\SI{0}{m}$.
-	\begin{image}[0.3\textwidth]
-		\includegraphics[width=\textwidth]{v(t)}
-	\end{image}
+
+	\begin{image}
+    \begin{tikzpicture}[xscale=0.5]
+        \draw[->] (0,0) -- (32,0) node[right, font=\Large] {$t$};
+        \draw[->] (0,0) -- (0,13) node[left, font=\Large] {$v$};
+        
+        % \draw[dashed] (0,12) -- (5,12);
+        % \draw[dashed] (5,0) -- (5,12);
+        \draw[dashed] (15,4) -- (15,0) node[below] {$t_1$};
+        
+        % \foreach \x in {0,5,15,30}
+        %     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+        % \foreach \y in {4,8,12}
+        %     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+        
+        \draw[thick] (0,8) -- (15,4) -- (30,4);
+		
+		% Define and label the origin
+  		\coordinate (O) at (0,0);
+  		\node[left] at (O) {$O$};
+
+  		% Draw a small filled circle at O
+  		\node at (O) [circle, fill, inner sep=1.5pt]{};
+
+    \end{tikzpicture}	
+    \end{image}
+    \captionof{figure}{Snelheidsverloop in functie van de tijd}
+
 \end{exercise}
+
+% Old one
+% \begin{image}[0.3\textwidth]
+% 	\includegraphics[width=\textwidth]{v(t)}
+% \end{image}
 
 \begin{exercise}
 	De snelheid van een deeltje voldoet aan $v=at$ waarin $a$ constant en negatief is. De plaats van het deeltje wordt voorgesteld door $x$. Aangenomen wordt dat $x=0\rm\,m$ op het ogenblik $t=0\rm\,s$. 
@@ -164,9 +194,47 @@
 
 \begin{exercise}
 	Een lichaam wordt verticaal omhoog geworpen. De referentieas is omhoog gericht. Welke van de volgende $v(t)$-diagrammen geeft dan het juiste verloop van de snelheid weer?
-	\begin{image}[.92\textwidth]
-		\includegraphics[width=\textwidth]{vw}
-	\end{image}
+
+	\begin{multipleChoice}
+		\choice{
+			\begin{tikzpicture}[scale=0.5]
+			  	\draw[->] (0,-2) -- (0,3) node[left]{$v$};
+				\draw[->] (0,0) -- (4,0) node[right]{$t$};
+				\node[below left] at (0,0) {$O$};
+				\draw[blue,thick, domain=0:4, samples=100] plot (\x,{abs(-1.25*\x+2.5)});
+			\end{tikzpicture}
+		}
+		\choice[correct]{
+			\begin{tikzpicture}[scale=0.5]
+				\draw[->] (0,-2) -- (0,3) node[left]{$v$};
+				\draw[->] (0,0) -- (4,0) node[right]{$t$};
+				\node[below left] at (0,0) {$O$};
+				\draw[blue,thick, domain=0:3.2, samples=100] plot (\x,{-1.25*\x+2.5});
+			\end{tikzpicture}
+		}
+		\choice{
+			\begin{tikzpicture}[scale=0.5]
+				\draw[->] (0,-3) -- (0,2) node[left]{$v$};
+				\draw[->] (0,0) -- (4,0) node[right]{$t$};
+				\node[below left] at (0,0) {$O$};
+				\draw[blue,thick, domain=0:3.2, samples=100] plot (\x,{1.25*\x-2.5});
+			\end{tikzpicture}
+		}
+		\choice{
+			\begin{tikzpicture}[scale=0.5]
+				\draw[->] (0,-2) -- (0,3) node[left]{$v$};
+				\draw[->] (0,0) -- (4.5,0) node[right]{$t$};
+				\node[below left] at (0,0) {$O$};
+				\draw[blue,thick, domain=0:4, samples=100] plot (\x,{-abs(-1.25*\x+2.5)+2.5});
+			\end{tikzpicture}	
+		}
+	\end{multipleChoice}
+
+% Old one
+% 	\begin{image}[.92\textwidth]
+% 		\includegraphics[width=\textwidth]{vw}
+% 	\end{image}
+
 	\begin{oplossing}
 		Het juist antwoord is (b). De versnelling is constant waardoor de snelheid lineair moet verlopen in de tijd. Aangezien de referentieas naar boven is gekozen, moet de snelheid in het naar boven bewegen positief zijn. Dat is het geval bij (b).
 	\end{oplossing}
