@@ -15,9 +15,43 @@ Om een cirkelbeweging te beschrijven, hebben we enkele begrippen nodig die je ev
 \begin{equation*}
 	f=\frac{1}{T}
 \end{equation*}
-Als laatste hebben we nog het begrip \emph{hoeksnelheid}. 
+Als laatste hebben we nog het begrip \textit{hoeksnelheid}. 
+
 \begin{image}
-	\includegraphics[width=0.35\textwidth]{ecb_hoeksnelheid}
+
+	\begin{tikzpicture}[scale=3]
+		\def\R{1}          % circle radius
+		\def\angA{0}       % first radius angle
+		\def\angB{40}      % second radius angle
+		\def\angC{80}      % third point on arc (for arrow)
+	  
+		\coordinate (O) at (0,0);
+	  
+		\draw[thick] (O) circle (\R);
+	  
+		\coordinate (A) at (\angA:\R);
+		\coordinate (B) at (\angB:\R);
+		\coordinate (C) at (\angC:\R);
+	  
+		\draw[dashed] (O) -- (A);
+		\draw[dashed] (O) -- (B);
+		\draw[dashed] (O) -- (C) node[midway, left]{\(r\)};
+	  
+		% Arc marking (between B and C, with arrow)
+		% \pgfmathsetmacro{\Rarc}{\R + 0.05}
+		\draw[->] ($(B)+(\R/15, \R/15)$) arc[start angle=\angB, end angle=\angC, radius=\R];
+	  
+		% Angle label Δθ (between A and B)
+		\pic [draw, pic text = $\Delta \theta$, angle eccentricity=1.5] {angle = B--O--C};
+	  
+		% Labels and points
+		\fill (O) circle (0.8pt) node[left] {$O$};
+		\fill (A) circle (0.7pt);
+		\fill (B) circle (0.7pt);
+		\fill (C) circle (0.7pt);
+	  
+	  \end{tikzpicture}
+	% \includegraphics[width=0.35\textwidth]{ecb_hoeksnelheid}
 \end{image}
 Verschillende punten op je fietswiel hebben verschillende snelheden als hun afstand tot het centrum verschilt. Het ventieldopje moet immers in eenzelfde tijd meer afstand afleggen dat het sensortje van je snelheidsmeter. Toch bestaat het wiel uit \'e\'en geheel. Als je naar de omwentelingshoek kijkt die een straal vanuit het centrum door een punt op het wile maakt, dan is die voor alle punten gelijk. Hoe sneller het wiel draait, hoe groter ook de omwentelingshoek is die een straal gemaakt heeft. Daarom defini\"eren we de hoeksnelheid $\omega$ als de verandering van de omwentelingshoek tot de benodigde tijd.\footnote{De letter $\omega$ is de kleine letter van $\Omega$ en de laatste letter in het Griekse alfabet. Spreek $\omega$ uit als omega. Een $\omega$ is geen w, zoals ook een w geen $\omega$ is. O wee ($\omega$?) als je je op het examen in juni vergist \ldots}
 \begin{equation*}
@@ -32,7 +66,45 @@ De eenheid is radialen per seconde, $[\omega]=\rm rad/s$. Aangezien een volledig
 
 We beschouwen een punt dat een cirkelbeweging maakt met straal $r$. We voeren een assenstelsel in met de oorsprong in het middelpunt van de cirkel.
 \begin{image}
-	\includegraphics[width=0.4\textwidth]{ecb_positie}
+	\begin{tikzpicture}
+		% Parameters
+		\def\R{3}       % circle radius
+		\def\ang{50}    % angle theta (degrees)
+	  
+		% Circle
+		\draw (0,0) circle (\R);
+	  
+		% Axes
+		\draw[->] (-\R-0.5,0) -- (\R+1,0) node[right] {$x$};
+		\draw[->] (0,-\R-0.5) -- (0,\R+1) node[above] {$y$};
+
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (\R,0);
+	  
+		\fill (0,0) circle (2pt) node[below left] {$O$};
+	  
+		% Point A on x-axis
+		\fill (\R,0) circle (2pt) node[below right] {$A$};
+	  
+		% Point P on circle (polar coordinates)
+		\coordinate (P) at (\ang:\R);
+		\fill (P) circle (2pt) node[above right] {$(x,y)$};
+	  
+		% Radius vector r
+		\draw[->] (0,0) -- (P) node[midway,above left] {$\vec{r}$};
+	  
+		% Dotted projections
+		\draw[dashed] (P) -- (\ang:\R |- 0,0); % vertical projection
+		\draw[dashed] (P) -- (\ang:\R -| 0,0); % horizontal projection
+	  
+		% Basis vectors e_x, e_y
+		\draw[->] (0,0) -- (1.2,0) node[midway,below] {$\vec{e}_x$};
+		\draw[->] (0,0) -- (0,1.2) node[midway,left] {$\vec{e}_y$};
+
+		\pic [draw, pic text = $ \theta$, angle eccentricity=1.5] {angle = A--O--P};
+	  
+	  \end{tikzpicture}
+	% \includegraphics[width=0.4\textwidth]{ecb_positie}
 \end{image}
 Als we de omwentelingshoek $\theta$ meten vanaf de positieve $x$-as en en het tijdstip $t_0=0$ nemen, kunnen we de doorlopen omwentelingshoek als volgt in functie van de tijd schrijven.
 \begin{equation*}
