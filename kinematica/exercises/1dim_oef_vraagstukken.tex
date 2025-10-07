@@ -151,9 +151,13 @@
 \begin{exercise}
     Een auto vertrekt vanuit rust en bereikt na \SI{3,0}{km} een snelheid van \SI{450}{\kilo\meter\per\hour} We onderstellen de versnelling constant en de baan recht. Bereken de versnelling en de tijd, nodig om die \SI{3,0}{km} af te leggen.
 \begin{oplossing}
-    % \item[gegeven]$x=3000\rm\,m$\newline $v=125\rm\,m/s$
-    % \item[gevraagd]$a$, $t$
-    % \item[oplossing]
+    Er is gegeven dat 
+    \begin{itemize}
+        \item \( \Delta x  = \SI{3000}{\meter}\)
+        \item \(v_0 = 0\)
+        \item \(v_1 = \SI{125}{\meter\per\second}\)
+    \end{itemize}
+
     Omdat voor een EVRB de gemiddelde snelheid gegeven wordt door $\overline{v}=\frac{v_0+v}{2}$ en we de afgelegde afstand kennen, kunnen we de benodigde tijd gemakkelijk vinden. We kiezen $t_0=0$, $x_0=0$. De beginsnelheid is nul zodat:
     \begin{eqnarray*}
         \Delta x &=& \overline{v}\Delta t \\
@@ -593,7 +597,7 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
         \end{itemize}
 
         De beweging is een EVRB. Door de gegeven beginwaarden te gebruiken vinden we: 
-        \(
+        \[
         \begin{array}{rcl}
             x &=& t + \frac{1}{2}at^2 \\ 
             &\Downarrow&\\
@@ -602,7 +606,7 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
             a &=& \frac{2\Delta x}{(\Delta t)^2} = \SI{50}{\meter\per\second\squared}
             
         \end{array}
-        \)
+        \]
     \end{oplossing}
 \end{exercise}
 
@@ -617,77 +621,115 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
             \item \(x_0 = 0\)
         \end{itemize}
         Een rechtstreekse berekening levert: 
-        \(
+        \[
         \begin{array}{rcl}
             x&=& \frac{1}{2}a t^2 = \frac{1}{2}\frac{\Delta v}{\Delta t}t^2\\
             &\Downarrow&\\
             \Delta x &=& \frac{\Delta v \cdot (\Delta t)^2}{2\Delta t} = \frac{\Delta v \Delta t}{2} = \frac{(v_1 - v_2)\Delta t}{2} = \frac{v_1}{2} \delta t = \SI{83,3}{\meter}
             
-        \end{array}\)
+        \end{array}
+        \]
     \end{oplossing}
 \end{exercise}
 
-\begin{exercise}
-    Een auto vertrekt vanuit rust en bereikt na \SI{3,0}{km} een snelheid van \SI{450}{\kilo\meter\per\hour} We onderstellen de versnelling constant en de baan recht. Bereken de versnelling en de tijd, nodig om die \SI{3,0}{km} af te leggen.
-    \begin{oplossing}
-    % \footnote{$t=\frac{2x}{v}=48\rm\,s$, $a=\frac{v^2}{2x}=2,6\rm\,m/s^2$}
-    % \item[gegeven]$x=3000\rm\,m$\newline $v=125\rm\,m/s$
-    % \item[gevraagd]$a$, $t$
-    % \item[oplossing]
-    Omdat voor een EVRB de gemiddelde snelheid gegeven wordt door $\overline{v}=\frac{v_0+v}{2}$ en we de afgelegde afstand kennen, kunnen we de benodigde tijd gemakkelijk vinden. We kiezen $t_0=0$, $x_0=0$. De beginsnelheid is nul zodat:
-    \begin{eqnarray*}
-    \Delta x &=& \overline{v}\Delta t \\
-    &\Downarrow & \\
-    t &=& \frac{x}{\left(\frac{v}{2}\right)} = \frac{2x}{v}
-    \end{eqnarray*}
-    Invullen van de gegevens levert een tijd van \SI{48}{s}. Met het formuletje voor de snelheid vinden we de versnelling door de tijd te substitueren:
-    \begin{eqnarray*}
-    v &=& at \\
-    &\Updownarrow&\\
-    a &=& \frac{v}{t}=\frac{v}{\left(\frac{2x}{v}\right)}\\
-    &=& \frac{v^2}{2x}
-    \end{eqnarray*}
-    Invullen van de gegeven grootheden levert een versnelling van \SI{2,6}{m/s^2}.
-    \end{oplossing}
-\end{exercise}
 
 \begin{exercise}
     Een vliegtuig landt met een snelheid van \SI{100}{m/s}. Op de ladingsbaan heeft het een vertraging van \SI{5,0}{m/s^2}. Welke afstand heeft het vliegtuig nodig om tot stilstand te komen?
+    \begin{oplossing}
+        Er is gegeven dat: 
+        \begin{itemize}
+            \item \(v_0 = \SI{100}{\meter\per\second}\)
+            \item \(a = \SI{-5}{\meter\per\second\squared}\)
+            \item \(v_1 = 0\)
+            \item \(x_0 = 0\)
+        \end{itemize}
+        Het vliegtuig beweegt volgens een EVRB. We hebben volgende bewegingsvergelijkingen: 
+        
+        \[\left\{
+            \begin{array}{rcl}
+            x&=& x_0 + v_0t+\frac{1}{2}at_1^2 \\
+            v&=& v_0 + at
+            \end{array}
+        \right.
+        \]
+        Uit de snelheidsvergelijking halen we \(t_1 = \frac{-v_0}{a}\). Invullen in de eerste vergelijking levert: 
+        \[
+        \begin{array}{rcl}
+            x_1 &=& v_0t_1 + \frac{1}{2}at_1^2\\
+            &=& \frac{-v_0^2}{a} + \frac{av_0^2}{2a^2}\\
+            &=& \frac{-v_0^2}{a} + \frac{v_0^2}{2a}\\
+            &=& \frac{-v_0^2}{2a}\\
+            &=& \SI{1000}{\meter}
+        \end{array}
+        \]
+    \end{oplossing}
 \end{exercise}
 
 \begin{exercise}
     Een trein vertrekt uit een station en rijdt op een recht spoor met een eenparig versnelde beweging waarvan de versnelling \SI{0,50}{m/s^2} bedraagt. 
     Hoe groot is de afstand die de trein heeft afgelegd als zijn snelheid \SI{72,0}{\kilo\meter\per\hour} bedraagt?
+    \begin{oplossing}
+        Er is gegeven dat 
+        \begin{itemize}
+            \item \(v_0 = 0\)
+            \item \(a = \SI{0.5}{\meter\per\second\squared} \) 
+            \item \(v_1 = \SI{20}{\meter\per\second}\)
+            \item \(x_0 = 0\)
+        \end{itemize}
+        
+        De trein beweegt volgends een EVRB. Uit de snelheidsfunctie \(v_1 = v_0 +at\) halen we dat \(t_1 = \frac{v_1}{a}\). Deze gevonden \(t_1\) substitueren we in de plaatsfunctie: 
+        \[
+        \begin{array}{rcl}
+            x1 &=& x_0 + v_0t_1 + \frac{1}{2}at_1^2\\
+            &=& \frac{1}{2}a (\frac{v_1}{a})^2 \\
+            &=& \frac{v_1^2}{2a}\\
+            &=& \SI{400}{\meter}
+
+            
+        \end{array}\]
+    \end{oplossing}
 \end{exercise}
 
 \begin{exercise}
     Twee personen A en B voeren op dezelfde rechte en vanuit dezelfde beginstand een eenparige beweging uit. A vertrekt \SI{100}{s} eerder dan B. Met een snelheid die dubbel zo groot is als die van A haalt B, op \SI{400}{m} van het vertrekpunt, A in. Bereken beide snelheden en stel ze grafisch voor.
-    %\begin{oplossing}
-    %\item[gegeven]$x_0=1,00\cdot10^3\rm\,m$\newline$t_0=100\rm\,s$\newline$v_b=-2v_a$\newline$x=400\rm\,m$
-    %\item[gevraagd]$v_a$, $v_b$
-    %\item[oplossing]De bewegingsvergelijkingen voor A en B worden gegeven door:
-    %\begin{eqnarray}
-    %A:\qquad x&=&v_at \label{verg A}\\
-    %B:\qquad x&=&x_0+v_b(t-t_0)\nonumber\\
-    %&=&x_0-2v_a(t-t_0) \label{verg B}
-    %\end{eqnarray}
-    %De grafiek van beide functies ziet er als volgt uit:
-    %\begin{image}}[h]
-    %\centering\includegraphics[width=0.6\textwidth]{38p40}
-    %\end{image}}
-    %\newline
-    %Als we voor $x$ de ontmoetingsplaats van \SI{400}{m} nemen, hebben we twee vergelijkingen (\ref{verg A}), (\ref{verg B}) en twee onbekenden $t$, $v_a$. Dit kunnen we oplossen door een variabele te substitueren. We nemen de tijd, $(\ref{verg A})\Leftrightarrow t=\frac{x}{v_a}$ en substitueren deze in vergelijking (\ref{verg B}):
-    %\begin{eqnarray*}
-    %x&=&x_0-2v_a(t-t_0)\\
-    %&=&x_0-2v_a\left(\frac{x}{v_a}-t_0\right)\\
-    %&\Updownarrow&\\
-    %v_a&=&\frac{3x-x_0}{2t_0}=1,0\rm\,m/s
-    %\end{eqnarray*}
-    %En de snelheid van B:
-    %\begin{equation}
-    % v_b=-2v_a=\frac{x_0-3x}{t_0}=-2,0\rm\,m/s
-    %\end{equation} 
-    %\end{oplossing}
+    \begin{oplossing}
+    % \item[gegeven]$x_0=1,00\cdot10^3\rm\,m$\newline$t_0=100\rm\,s$\newline$v_b=-2v_a$\newline$x=400\rm\,m$
+    % \item[gevraagd]$v_a$, $v_b$
+    % \item[oplossing]De bewegingsvergelijkingen voor A en B worden gegeven door:
+
+    % \begin{eqnarray}
+    % A:\qquad x&=&v_at \label{verg A}\\
+    % B:\qquad x&=&x_0+v_b(t-t_0)\nonumber\\
+    % &=&x_0-2v_a(t-t_0) \label{verg B}
+    % \end{eqnarray}
+
+    \[
+    \left\{
+        \begin{array}{rcl}
+            x&=&v_at\\
+            x&=&x_0+v_b(t-t_0)\\
+            &=& x_0-2v_a(t-t_0)
+        \end{array}
+    \right.
+    \]
+
+    De grafiek van beide functies ziet er als volgt uit:
+    % \begin{image}[h]
+    % \centering\includegraphics[width=0.6\textwidth]{38p40}
+    % \end{image}
+    \newline
+    Als we voor $x$ de ontmoetingsplaats van \SI{400}{m} nemen, hebben we twee vergelijkingen en twee onbekenden $t$, $v_a$. Dit kunnen we oplossen door een variabele te substitueren. We nemen de tijd, $\Leftrightarrow t=\frac{x}{v_a}$ en substitueren deze in vergelijking %(\ref{verg B}):
+    \begin{eqnarray*}
+    x&=&x_0-2v_a(t-t_0)\\
+    &=&x_0-2v_a\left(\frac{x}{v_a}-t_0\right)\\
+    &\Updownarrow&\\
+    v_a&=&\frac{3x-x_0}{2t_0}=1,0\rm\,m/s
+    \end{eqnarray*}
+    En de snelheid van B:
+    \begin{equation}
+    v_b=-2v_a=\frac{x_0-3x}{t_0}=-2,0\rm\,m/s
+    \end{equation} 
+    \end{oplossing}
 \end{exercise}
 
 \begin{exercise}
