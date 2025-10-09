@@ -238,7 +238,7 @@
 
 \begin{exercise}
         Een trein vertrekt om 12u00 in het station a en rijdt naar het station b, op \SI{15}{\kilo\meter} van a gelegen. 
-        De eerste \SI{1000}{m} worden afgelegd met een EVRB en de verkregen snelheid is \SI{72}{\kilo\meter\per\hour}. 
+        De eerste \SI{1000}{\meter} worden afgelegd met een EVRB en de verkregen snelheid is \SI{72}{\kilo\meter\per\hour}. 
         Die snelheid blijft constant tot op \SI{250}{\meter} van b. Hier begint de trein te vertragen. Om hoe laat komt de trein in station b toe? Maak de $v(t)$-grafiek.
 
         \begin{oplossing}
@@ -263,7 +263,8 @@
         \end{itemize}
 
         Er geldt
-        \(
+        \renewcommand{\arraystretch}{2.5}
+        \[
         \begin{array}{rcl}
         \Delta t &=& \Delta t_1 + \Delta t_2 + \Delta t_3 \\
         &=& \frac{\Delta x_1}{\overline{v}_1} + \frac{\Delta x_2}{\overline{v}_2} + \frac{\Delta x_3}{\overline{v}_3}\\
@@ -273,9 +274,12 @@
         &=& \SI{100}{\second} + \SI{687.5}{\second} + \SI{25}{\second}\\ 
         &=& \SI{813}{\second}
         \end{array} 
-        \)
+        \]
+        \renewcommand{\arraystretch}{1}
 
-        \SI{813}{\second} komt overeen met \(13\) minuten en \SI{33}{\second}. De trein komt aan om \(12\)u\(12\)m\(33\)s
+
+        % \SI{813}{\second} komt overeen met \(13\) minuten en \SI{33}{\second}. 
+        De trein komt aan om \(12\)u\(12\)m\(33\)s
 
         \end{oplossing}
 \end{exercise}
@@ -691,8 +695,18 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
 \end{exercise}
 
 \begin{exercise}
-    Twee personen A en B voeren op dezelfde rechte en vanuit dezelfde beginstand een eenparige beweging uit. A vertrekt \SI{100}{s} eerder dan B. Met een snelheid die dubbel zo groot is als die van A haalt B, op \SI{400}{m} van het vertrekpunt, A in. Bereken beide snelheden en stel ze grafisch voor.
+    Twee personen A en B voeren op dezelfde rechte en vanuit dezelfde beginstand een eenparige beweging uit. 
+    A vertrekt \SI{100}{s} eerder dan B. Met een snelheid die dubbel zo groot is als die van A haalt B, op \SI{400}{m} van het vertrekpunt, A in. 
+    Bereken beide snelheden en stel ze grafisch voor.
+
     \begin{oplossing}
+    Er is gegeven dat 
+    \begin{itemize}
+        \item \(\SI{1}{\meter}\)
+        \item \(t_{0,B} = \SI{100}{\second}\)
+        \item \(v_b = 2v_a\)
+        \item \(x = \SI{400}{\meter}\)
+    \end{itemize}
     % \item[gegeven]$x_0=1,00\cdot10^3\rm\,m$\newline$t_0=100\rm\,s$\newline$v_b=-2v_a$\newline$x=400\rm\,m$
     % \item[gevraagd]$v_a$, $v_b$
     % \item[oplossing]De bewegingsvergelijkingen voor A en B worden gegeven door:
@@ -706,39 +720,98 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
     \[
     \left\{
         \begin{array}{rcl}
-            x&=&v_at\\
-            x&=&x_0+v_b(t-t_0)\\
-            &=& x_0-2v_a(t-t_0)
+            x(t) &=&v_at\\
+            x(t) &=&x_0+v_b(t-t_0) = x_0-2v_a(t-t_0)
         \end{array}
     \right.
     \]
 
     De grafiek van beide functies ziet er als volgt uit:
-    % \begin{image}[h]
-    % \centering\includegraphics[width=0.6\textwidth]{38p40}
-    % \end{image}
-    \newline
-    Als we voor $x$ de ontmoetingsplaats van \SI{400}{m} nemen, hebben we twee vergelijkingen en twee onbekenden $t$, $v_a$. Dit kunnen we oplossen door een variabele te substitueren. We nemen de tijd, $\Leftrightarrow t=\frac{x}{v_a}$ en substitueren deze in vergelijking %(\ref{verg B}):
-    \begin{eqnarray*}
+    
+    \begin{image}[0.5\textwidth]
+        \begin{tikzpicture}
+            \draw (-0.5, 0) -- (5,0) node[right]{$t$};
+            \draw (0, -0.5) -- (0,5) node[above]{$x$};
+
+            \coordinate (O)  at (0, 0); 
+            \coordinate (A2) at (5, 5); 
+            \coordinate (B1) at (1.5, 0); 
+            \coordinate (B2) at (4, 5); 
+
+            \draw[name path=lijn1] (0,0) -- (A2) node[pos=0.9, right]{\(A\)};
+            \draw[name path=lijn2] (B1) -- (B2) node[pos=0, below]{\(\SI{100}{\second}\)} node[pos=0.9, above left]{\(B\)};
+
+            \path[name intersections={of=lijn1 and lijn2}];
+
+            \fill[red] (intersection-1) circle (3pt) node{\(S\)};
+
+
+            \draw[dashed] (intersection-1) -- (intersection-1 |- O) node[below]{\(\Delta t\)};
+            \draw[dashed] (intersection-1) -- (intersection-1 -| O) node[left]{\(\SI{400}{\meter}\)};
+        \end{tikzpicture}
+    \end{image}
+
+    Als we voor $x$ de ontmoetingsplaats van \SI{400}{m} nemen, hebben we twee vergelijkingen en twee onbekenden $t$, $v_a$. 
+    Dit kunnen we oplossen door een variabele te substitueren. We nemen de tijd, $\Leftrightarrow t=\frac{x}{v_a}$ en substitueren deze in vergelijking:
+
+    \[
+    \begin{array}{rcl}
     x&=&x_0-2v_a(t-t_0)\\
     &=&x_0-2v_a\left(\frac{x}{v_a}-t_0\right)\\
     &\Updownarrow&\\
-    v_a&=&\frac{3x-x_0}{2t_0}=1,0\rm\,m/s
-    \end{eqnarray*}
+    v_a&=&\frac{3x-x_0}{2t_0}=\SI{1}{\meter\per\second}
+    \end{array}
+    \]
+
     En de snelheid van B:
-    \begin{equation}
-    v_b=-2v_a=\frac{x_0-3x}{t_0}=-2,0\rm\,m/s
-    \end{equation} 
+
+    \[
+    v_b=-2v_a=\frac{x_0-3x}{t_0}= \SI{-2}{\meter\per\second}
+    \]
+
     \end{oplossing}
+
 \end{exercise}
 
 \begin{exercise}
-    Aan het begin van een rechte landingsbaan, start een vliegtuig vanuit rust en versnelt met een constante versnelling langs de grond alvorens op te stijgen. Het legt \SI{600}{m} af in \SI{12}{s}. Bepaal de versnelling, de snelheid na \SI{12}{s} en de afstand afgelegd gedurende de twaalfde seconde.
+    Aan het begin van een rechte landingsbaan, start een vliegtuig vanuit rust en versnelt met een constante versnelling langs de grond alvorens op te stijgen. 
+    Het legt \SI{600}{m} af in \SI{12}{s}. 
+    Bepaal de versnelling, de snelheid na \SI{12}{s} en de afstand afgelegd gedurende de twaalfde seconde.
 
     \begin{oplossing}
-        $a=\frac{2x}{t^2}=\SI{8,33}{m/s^2}$,
-        $v=\frac{2x}{t}=\SI{100}{m/s}$,
-        $x(t=12)-x(t=11)=\frac{1}{2}a(t_{12}^2-t_{11}^2)=\SI{95,8}{m}$
+    Er is gegeven dat 
+    \begin{itemize}
+        \item \(v_0 = 0\)
+        \item \(x_0 = 0\)
+        \item \(x_1 = \SI{600}{\meter}\)
+        \item \(t_1 = \SI{12}{\second}\)
+    \end{itemize}
+
+    Het vliegtuig beweegt volgens een EVRB waarvoor 
+    \[
+    \begin{array}{rcl}
+        x_1 &=& \frac{1}{2}at_1^2\\
+        & \Downarrow & \\
+        a &=& \frac{2x_1}{t_1^2} = \SI{8,33}{\meter\per\second\squared}
+    \end{array}\]
+
+    De snelheid vinden we door deze bekomen \(t_1\) te substitueren in de snelheidsfunctie: 
+
+    \[
+    v_1 = v_0 + at = \SI{100}{\meter\per\second}
+    \]
+
+    De afgelegde weg is gelijk aan 
+
+    \[
+    \begin{array}{rcl}
+        \Delta x &=& x_1 - x_2 \\
+        &=& x_1 - \frac{1}{2}at_2^2 \\
+        &=& \SI{600}{\meter} - \SI{500}{\meter} \\
+        &=& \SI{96}{\meter} \\
+
+    
+    \end{array}\]
     \end{oplossing}
 \end{exercise}
 
@@ -747,28 +820,37 @@ Welke figuur geeft kwalitatief het verloop van de versnellingscompent van het de
 \begin{exercise}
 
     Een auto die $\SI{60}{km/h}$ rijdt, raakt een boom; de voorkant van de auto wordt in elkaar gedrukt en de bestuurder komt na $\SI{70}{cm}$ tot stilstand. Welke gemiddelde vertraging onderging de bestuurder tijdens de botsing?% Druk je antwoord uit in $g$, waarbij $g=\SI{9,81}{m/s^2}$.
-    % \textit{Gegeven}  $v_0=\SI{16,7}{m/s}$%%%\newline$x=\SI{0,70}{m}$
-    % \textit{Gevraagd} $a$
-    % \textit{Oplossing} 
     \begin{oplossing} 
-    Om de (constante) vertraging te vinden, hebben we de snelheidsverandering en de benodigde tijd nodig. De verandering in snelheid kennen we; de eindsnelheid van de auto moet nul worden maar de duur is niet onmiddellijk gegeven. Omdat de eindsnelheid nul is, kunnen we wel uit de snelheidsvergelijking van een eenparig veranderlijke beweging een \emph{uitdrukking} vinden voor die tijd die we vervolgens kunnen substitueren in de plaatsvergelijking. De enige onbekende is dan de gezochte versnelling.\footnote{M.b.v. de formule $\overline{v}=\frac{v_0+v}{2}$ voor de gemiddelde snelheid en de definitie voor de gemiddelde snelheid $\overline{v}=\frac{\Delta x}{\Delta t}$ is het antwoord sneller te vinden. Ga maar na \ldots}
-    %%%\newline
-    %%%\newline
+    Er is gegeven dat 
+    \begin{itemize}
+        \item \( v_0 = \SI{16,7}{\meter\per\second}\)
+        \item \(v_1 = 0\)
+        \item \(\Delta x = \SI{0.7}{\meter}\)
+    \end{itemize}
+    Om de (constante) vertraging te vinden, hebben we de snelheidsverandering en de benodigde tijd nodig. 
+    De verandering in snelheid kennen we; de eindsnelheid van de auto moet nul worden maar de duur is niet onmiddellijk gegeven. 
+    Omdat de eindsnelheid nul is, kunnen we wel uit de snelheidsvergelijking van een eenparig veranderlijke beweging een \textit{uitdrukking} vinden voor die tijd die we vervolgens kunnen substitueren in de plaatsvergelijking. De enige onbekende is dan de gezochte versnelling.\footnote{M.b.v. de formule $\overline{v}=\frac{v_0+v}{2}$ voor de gemiddelde snelheid en de definitie voor de gemiddelde snelheid $\overline{v}=\frac{\Delta x}{\Delta t}$ is het antwoord sneller te vinden. Ga maar na \ldots}
+
     Uit $v(t)=0$ of $0=v_0+at$ halen we een uitdrukking voor de tijd die nodig is om tot stilstand te komen:
-    \begin{align*}
-    t&=-\frac{v_0}{a}
-    \end{align*}
+    \[
+    t =-\frac{v_0}{a}
+    \]
+
     Substitutie van deze tijd in de plaatsfunctie levert:
-    \begin{align*}
-    x&=v_0t+\frac{1}{2}at^2\\
-    &=v_0\left(-\frac{v_0}{a}\right)+\frac{1}{2}a\left(-\frac{v_0}{a}\right)^2\\
+
+    \[
+    \begin{array}{rcl}
+    x&=&v_0t+\frac{1}{2}at^2\\
+    &=&v_0\left(-\frac{v_0}{a}\right)+\frac{1}{2}a\left(-\frac{v_0}{a}\right)^2\\
     %&=&-\frac{v_0^2}{a}+\frac{v_0^2}{2a}\\
-    &=-\frac{v_0^2}{2a}\\
-    \end{align*}
+    &=&-\frac{v_0^2}{2a}\\
+    \end{array}
+    \]
     De versnelling is dan gelijk aan:
-    \begin{align*}
-    a&=-\frac{v_0^2}{2x}
-    \end{align*}
+    \[
+    a = -\frac{v_0^2}{2x}
+    \]
+
     Invullen van de gegevens levert $a=\SI{-198}{m/s^2}$.%, wat gelijk is aan $20g$.
     \end{oplossing}
     \end{exercise}
