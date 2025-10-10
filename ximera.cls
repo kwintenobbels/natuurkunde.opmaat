@@ -4,6 +4,8 @@
 %%
 %% The original source files were:
 %%
+
+
 %% ximera.dtx  (with options: `classXimera')
 %% src/banner.dtx  (with options: `classXimera')
 %% src/options.dtx  (with options: `classXimera')
