@@ -1,8 +1,345 @@
-%% TOTO; fix %%% \documentclass{ximera}
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
 
 \begin{document}
-        \author{Bert Lambregs}
-        \xmtitle{Oefeningen (andere)}
+	\author{Bart Lambregs}
+	\xmtitle{Oefeningen 2 dimensionaal}{}
+    \xmsource\xmuitleg
+
+
+%  EERST ALLE OEFEINGEN DIE UIT IMPORT 
+
+% kin_theorie_I_1.tex
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+
+ Vergelijk de begrippen \emph{verplaatsing} en \emph{afgelegde weg} met elkaar. Geef dus enkele gelijkenissen en enkele verschillen. 
+\begin{oplossing}
+% \newline
+Zie p. 12 van het handboek en voorbeeld 3 op pagina 13.
+
+De twee begrippen hebben gemeen dat ze beide 
+\begin{enumerate}
+	\item een fysische grootheid zijn;
+	\item een verandering in de positie beschrijven;
+	\item als eenheid de meter hebben;
+	\item een gelijke numerieke waarde voor de grootte hebben als de beweging in \'e\'en dimensie volgens eenzelfde zin plaatsvindt.
+\end{enumerate}
+
+Een verschil tussen de begrippen is
+
+\begin{enumerate}
+	\item dat de verplaatsing een vectorie\"ele grootheid is, daar waar de afgelegde weg een scalaire grootheid is. 
+	\item dat de verplaatsing gedefinieerd is als het verschil tussen de eind- en de beginpositie ($\vec{\Delta r}=\vec{r}_2-\vec{r}_1$) en de netto verandering in de ruimte weergeeft terwijl de afgelegde weg de totaal aantal afgelegde meters gemeten langs de baan weergeeft. Het is de lengte van de route.
+	\item dat de numerieke waarde van de grootte kan verschillen, ook als de beweging in \'e\'en dimensie plaatsvindt.
+\end{enumerate}
+
+\end{oplossing}
+
+\end{exercise}
+
+% 2d_abstract_1
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+
+
+ De plaatsvector van een deeltje wordt (voor $t\geq0$) gegeven door
+\begin{equation*}
+	\vec{r}=-t\vec{e}_x+(t-1)^2\vec{e}_y
+\end{equation*}
+\begin{enumerate}
+\item Geef de baanvergelijking.
+
+\begin{oplossing}
+	$y(x)=(x+1)^2$
+\end{oplossing}
+
+\item Wanneer is \'e\'en van de snelheidscomponenten nul?
+
+\begin{oplossing}
+	De snelheidscomponent volgens de $x$-as is nooit nul. Die volgens de $y$-as is nul wanneer: $2(t-1)=0$ oftewel wanneer $t=1$.
+\end{oplossing}
+
+\item Hoe groot is dan de snelheid?
+
+\begin{oplossing}
+	$v(1)=\sqrt{v_x^2(1)+v_y^2(1)}=\sqrt{(-1)^2+0^2}=1\,\text{s}$
+\end{oplossing}
+
+\item Waar is het deeltje dan?
+
+\begin{oplossing}
+	$\vec{r}(1)=-\vec{e}_x$
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-3.2773087503908354,
+xmax=1.9347255210454852,
+ymin=-0.5305920286290815,
+ymax=4.946070914425411,
+xtick={-3,-2,...,1},
+ytick={0,1,...,4},]
+\clip(-3.2773087503908354,-0.5305920286290815) rectangle (1.9347255210454852,4.946070914425411);
+\draw [samples=50,rotate around={0:(-1,0)},xshift=-1cm,yshift=0cm,line width=2pt,domain=-4:4)] plot (\x,{(\x)^2/2/0.5});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{oplossing}
+
+\item Geef de versnellingsvector.
+
+\begin{oplossing}
+	$\vec{a}=2\vec{e}_y$, ($\vec{v}=-\vec{e}_x+2(t-1)\vec{e}_y$)
+\end{oplossing}
+
+\item Raakt de versnellingsvector aan de baan? Licht toe.
+
+\begin{oplossing}
+	Nee, de versnellingsvector is niet rakend aan de baan. Hij is altijd verticaal ge\"ori\"enteerd terwijl de afgeleide van de baanvergelijking ($y'=2(x+1)$) overal bestaat en dus nergens een verticale helling heeft.
+\end{oplossing}
+
+\end{enumerate}
+
+\end{exercise}
+
+
+
+% 2d_abstract_I_2
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+
+
+ De co\"ordinaten van een puntmassa veranderen als volgt:
+\begin{eqnarray*}
+	x(t)=3t^2\qquad y(t)=2t^4
+\end{eqnarray*}
+\begin{enumerate}
+\item Bepaal de positie van het voorwerp na \SI{2,0}{s}.% en na $4,0\rm\,s$.
+\item Bepaal de vergelijking van de baan van het deeltje.
+\item Op welk ogenblik bedraagt de grootte van de snelheid \SI{10}{m/s}?
+\item Teken de snelheidsvector op de baan op dat ogenblik. Welke hoek maakt ze met de $x$-as?
+\end{enumerate}
+
+\begin{oplossing}
+\begin{itemize}
+	\item[(a)] De plaatsvector op $t=\SI{2,0}{s}$ is $\vec{r}=12\,\vec{e}_x+32\,\vec{e}_y$.
+	\item[(b)] De vergelijking van de baan vinden we door de paramater $t$ te elimineren uit de uitdrukkingen voor $x(t)$ en $y(t)$.
+\end{itemize}
+\begin{eqnarray*}
+x=3t^2\Leftrightarrow t^2&=&\frac{x}{3}\\
+&\Downarrow&\mathrm{substitutie}\\
+y&=&2t^4=2\left(\sqrt{\frac{x}{3}}\right)^4=\frac{2}{9}x^2
+\end{eqnarray*}
+Aangezien $x(t)$ niet negatief kan worden, is de baan een halve parabool.
+
+De grootte van de snelheid vinden we met stelling van Pythagoras, omdat we immers de componenten van de snelheid kunnen bepalen.
+\begin{eqnarray*}
+v(t)&=&\sqrt{v_x^2(t)+v_y^2(t)}\\
+&=&\sqrt{(6t)^2+\left(8t^3\right)^2}\\
+\end{eqnarray*}
+Om te weten wanneer die gelijk aan \SI{10}{m/s}, lossen we de volgende vergelijking op naar $t$.
+\begin{eqnarray*}
+10=\sqrt{(6t)^2+\left(8t^3\right)^2}&\Leftrightarrow&t=\pm 1
+\end{eqnarray*}
+Als we alleen positieve tijdstippen bekijken, houden we $t=\SI{1}{s}$ over. 
+
+De snelheidsvector is getekend in de figuur.
+% \begin{figure}[ht!]
+% \begin{picture}(390,160)(0,0)
+% \put(130,0){\includegraphics[width=0.3\textwidth]{dyn/exercises/12p53}}
+% \put(200,30){$\vec{v}_x$}
+% \put(200,65){$\vec{v}$}
+% \put(150,70){$\vec{v}_y$}
+% \put(205,120){$y(x)$}
+% \end{picture}
+% \end{figure}
+
+De hoek vinden we uit $\tan\alpha=\frac{v_y}{v_x}$ als $\alpha=\bgtan\!{\left(\frac{8}{6}\right)}=0,93\rm\,rad=\SI{55,13}{\degree}$.
+\end{oplossing}
+
+
+\end{exercise}
+
+
+
+% 2d_I_1 % FV 14 p. 88
+\begin{exercise}
+
+% 14 p. 88
+ Twee duikers duiken horizontaal van een duikplatform. De bovenste duiker A start tweemaal hoger boven het water dan de onderste duiker. De horizontale beginsnelheid van de onderste duiker is tweemaal zo groot als die van de bovenste. De duikers komen terecht in het water op horizontale afstanden $x_a$ en $x_b$ van de plank. Wat is de verhouding van de horizontale afstanden?
+%\newline
+%\newline
+%\begin{tabularx}{\textwidth}{XXXX}
+%(a) $\displaystyle\frac{x_a}{x_b}=\frac{1}{\sqrt{2}}$&(b) $\displaystyle\frac{x_a}{x_b}=1$&(c) $\displaystyle\frac{x_a}{x_b}=\sqrt{2}$&(d) $\displaystyle\frac{x_a}{x_b}=2$
+%\end{tabularx}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.6\textwidth]{dyn/exercises/14p88}
+%\end{figure}
+\begin{minipage}[t]{.3\textwidth}
+\begin{enumerate}
+\item $\displaystyle\frac{x_a}{x_b}=\frac{1}{\sqrt{2}}$
+\item $\displaystyle\frac{x_a}{x_b}=1$
+\item $\displaystyle\frac{x_a}{x_b}=\sqrt{2}$
+\item $\displaystyle\frac{x_a}{x_b}=2$
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.5\textwidth}
+	\raisebox{1ex-\height}{%
+		\includegraphics[width=\textwidth]{dyn/exercises/14p88}} 
+\end{minipage}
+\begin{oplossing}
+% \newline
+In verticale zin hebben beide duikers geen beginsnelheid en versnellen ze met de valversnelling. In verticale zin voeren ze dus een EVRB uit. De valtijd vind je dan uit $y=\frac{1}{2}gt^2$, nl. $t=\sqrt{\frac{2y}{g}}$.
+
+In horizontale zin hebben de duikers geen versnelling en houden dus (volgens de wet van de traagheid) hun initi\"ele snelheid aan. De afgelegde weg volgens de horizontale $x$-as vinden we dan ook met $x=v_0t$ waarin $v_0$ de (horizontale) beginsnelheid is en waarin we $t$ door de valtijd kunnen vervangen.
+
+Gebruik nu dat $y_a=2y_b$ en $v_{0b}=2v_{0a}$ en bereken de gevraagde verhouding.
+\end{oplossing}
+
+\end{exercise}
+
+
+
+% 2d_I_2 % FV 6 p. 92 
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+
+[6 p. 92]  
+\begin{minipage}[t]{.5\textwidth}
+Een bal K gooi je vooruit en een bal L gooi je tegelijk naar beneden. Ze komen tegelijk aan in M. Met welke snelheid heb je bal L gegooid?
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.4\textwidth}
+	\raisebox{1ex-\height}{%
+		\includegraphics[width=\textwidth]{dyn/exercises/6p92}} 
+\end{minipage}
+\begin{oplossing}
+% \newline
+In horizontale zin voert bal K een ERB uit. Hij heeft dan ook 3 seconden nodig om M te bereiken. Die tijd is ook de valtijd voor L en kunnen we gebruiken om $v_0$ in verticale zin te bepalen. Uit $0=y_0+v_0t-\frac{1}{2}gt^2$ (de as staat omhoog gericht) vinden we 
+\begin{eqnarray*}
+v_0&=&\frac{\frac{1}{2}gt^2-y_0}{t}
+\end{eqnarray*}
+of $v_0=\SI{-10,29}{m/s}$. Merk op dat die beginsnelheid negatief is. De zin is tegengesteld aan de omhoog gerichte $y$-as.
+\end{oplossing}
+
+\end{exercise}
+
+% buffel
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+
+ Een buffel tracht loodrecht een $300\rm\,m$ brede rivier over te steken met een snelheid van $1,00\rm\,m/s$. Als de stroomsnelheid $1,50\rm\,m/s$ is, in welke tijd bereikt hij dan de overzijde en hoe ver zal hij afgedreven zijn? Construeer de snelheidsvectoren en bereken de grootte van de resulterende snelheid.
+\begin{oplossing}
+
+\begin{itemize}
+	\item[\textit{Gegeven}]$d=300\rm\,m$, $v_y=1,00\rm\,m/s$, $v_x=1,50\rm\,m/s$.
+	\item[\textit{Gevraagd}]$t$, $x$, $v$
+	\item[\textit{Oplossing}]De snelheden worden in onderstaande figuur weergegeven.
+\end{itemize}
+\begin{image}
+\includegraphics[width=0.7\textwidth]{dyn/exercises/4p49}
+\end{image}
+De tijd die nodig is om de overkant te bereiken vinden we eenvoudigweg door de afstand te delen door de snelheid die de buffel loodrecht op oever heeft. De snelheid van de stroming heeft hierop immers geen invloed.
+\begin{eqnarray*}
+t=\frac{d}{v_y}=300\rm\,s
+\end{eqnarray*}
+Gedurende die tijd is hij door de stroming meegevoerd zodat we de afstand die hij is afgedreven kunnen berekenen als volgt.
+\begin{eqnarray*}
+x=v_xt=450\rm\,m
+\end{eqnarray*}
+De grootte van de resulterende snelheid vinden we met de stelling van Pythagoras: $v=\sqrt{v_x^2+v_y^2}=1,8\rm\,m/s$.
+\end{oplossing}
+
+\end{exercise}
+
+
+
+% veerman
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+
+ Een veerman tracht een stromende rivier loodrecht over te roeien. Hij slaagt erin ten opzicht van het water een snelheid van $2,00\rm\,m/s$ te ontwikkelen -- de stroomsnelheid is \SI{1,25}{m/s}. Als de rivier \SI{150}{m} breed is, bereken dan
+\begin{enumerate}
+\item onder welke hoek ten opzichte van de loodlijn op de oever hij steeds moet blijven roeien;
+\item in hoeveel tijd hij de overzijde bereikt.
+\end{enumerate}
+\begin{oplossing}
+
+\begin{itemize}
+	\item[Gegeven]$v_1=2,00\rm\,m/s$\newline$v_2=1,25\rm\,m/s$\newline$d=150\rm\,m$
+	\item[Gevraagd]$\alpha$, $t$
+\end{itemize}
+
+De component, tegengesteld aan de stroomrichting, van de snelheid waarmee de veerman roeit ten opzichte van het water, moet even groot zijn als de stroomsnelheid zodat hij in de richting van de rivier resulterend
+geen snelheid zal hebben. 
+\begin{image}
+\includegraphics[width=0.45\textwidth]{dyn/exercises/vectoren_veerman}
+\end{image}
+
+De hoek vinden we dan als volgt (zie figuur):
+\begin{eqnarray*}
+\sin{\alpha}&=&\frac{v_2}{v_1}\\
+&\Downarrow&\\
+\alpha&=&\bgsin\left(\frac{v_2}{v_1}\right)\\
+&=&38,7^\circ
+\end{eqnarray*}
+De tijd nodig om de overzijde te bereiken vinden we door zijn snelheid loodrecht op de oever -- zijn resulterende snelheid $v$ -- te bekijken:
+\begin{eqnarray*}
+%v&=&v_1\cos{\alpha}\qquad\left(=v_1\cos\left(\bgsin\left(\frac{v_2}{v_1}\right)\right)=v_1\sqrt{1-\left(\frac{v_2}{v_1}\right)^2}=\sqrt{v_1^2-v_2^2}\right)\\
+%&\Downarrow&\\
+t&=&\frac{d}{v}=\frac{d}{\sqrt{v_1^2-v_2^2}}=96,1{\rm\,s}
+\end{eqnarray*}
+\end{oplossing}
+
+
+\end{exercise}
+
+
+
+% 2d_mk_1
+\begin{exercise}
+
+% !TEX root = ../main.tex
+
+
+\pt{4}De co\"ordinaten van een deeltje zijn als functie van de tijd:
+$x=t^2$; $y=t^2$.
+\begin{enumerate}
+\item Dan is de versnelling steeds evenwijdig aan de $x$-as;
+\item Dan is de versnelling steeds evenwijdig aan de $y$-as;
+\item Dan maakt de versnelling steeds een hoek van $45^\circ$ met de $x$-as;
+\item Dan wordt het deeltje niet versneld.
+\end{enumerate}
+
+\end{exercise}
+
+
+% VANAF HIER BART_E2DIM_NOIMPORT.TEX 
 
 
 \begin{exercise} Bespreek de horizontale worp.
@@ -20,20 +357,21 @@ Hoe kan je uit deze formule besluiten dat de versnelling bij een ECB een middelp
 \end{exercise}
 
 \begin{exercise}
+
 \begin{enumerate}
-	\item\label{ECB_formule} Bewijs dat de versnelling van een ECB gegeven wordt door $\vec{a}=-\omega^2\cdot\vec{r}$. Hierin is $\omega$ de hoeksnelheid en $\vec{r}$ de plaatsvector van de ECB.
-	\item Hoe kan je uit de formule voor de versnelling in \ref{ECB_formule} besluiten dat de versnelling bij een ECB een middelpuntzoekende versnelling is?
+\item \label{ECB_formule} Bewijs dat de versnelling van een ECB gegeven wordt door $\vec{a}=-\omega^2\cdot\vec{r}$. Hierin is $\omega$ de hoeksnelheid en $\vec{r}$ de plaatsvector van de ECB.
+\item Hoe kan je uit de formule voor de versnelling in besluiten dat de versnelling bij een ECB een middelpuntzoekende versnelling is? % hier stond ref ECB label 
 \end{enumerate}
 
 \begin{oplossing}
 Voor (a):
-	\begin{enumerate}
-		\item[1p] Kiezen assenstelsel met oorsprong in middelpunt van de cirkel
-		\item[1p] $\vec{r}=$
-		\item[1p] $\frac{d^2 \vec{r}}{dt^2}=$
-		\item[1p] $=-\omega^2\cdot\vec{r} $
-		\item[1p] Uitleg/kadering, niet enkel opeenvolging van formules
-	\end{enumerate}
+\begin{enumerate}
+\item[1p] Kiezen assenstelsel met oorsprong in middelpunt van de cirkel
+\item[1p] $\vec{r}=$
+\item[1p] $\frac{d^2 \vec{r}}{dt^2}=$
+\item[1p] $=-\omega^2\cdot\vec{r} $
+\item[1p] Uitleg/kadering, niet enkel opeenvolging van formules
+\end{enumerate}
 Voor (b) twee punten, voor argument voor de zin en argument voor de richting
 \end{oplossing}
 
@@ -63,18 +401,24 @@ Voor (b) twee punten, voor argument voor de zin en argument voor de richting
 
 \subsection{Vraagstukken}
 
-	
 
-%%TODO%% \import{./lib/}{buffel}
-%%TODO%% \import{./lib/}{veerman}
-%%TODO%% \import{./lib/}{2d_mk_1}
+
+% }{uffel}
+
+
+% }{eerman}
+
+
+% }{d_mk_1}
+
+
 
 
 
 
 \begin{exercise} De beweging van een voorwerp wordt beschreven door volgende co\"ordinaatfuncties:
 \begin{eqnarray*}
-	x(t)=5t+3\qquad y(t)=-4t^2+t
+x(t)=5t+3\qquad y(t)=-4t^2+t
 \end{eqnarray*}
 \begin{enumerate}
 %\item Bepaal de positie van het voorwerp na $2,0\rm\,s$ en na $4,0\rm\,s$.
@@ -120,11 +464,11 @@ wand treffen:
 \item in het punt (3);
 \item in het punt (4).
 \end{enumerate}
-%%\begin{figure}[h]
-\begin{center}
+
+\begin{image}
 \includegraphics[width=0.8\textwidth]{afgeschotenpijl.jpg}
-\end{center}
-%%\end{figure}
+\end{image}
+
 \begin{oplossing}
 We gebruiken de baanvergelijking van de
 horizontale worp. Voor eenzelfde horizontale afstand $x$ moeten we
@@ -182,10 +526,10 @@ Dit is nogal snel, het is namelijk $1667\rm\,km/h$.
 % \newline
 
 Op $51^\circ$ noorderbreedte\footnote{Onze school ligt op $50^\circ 52'36,69"$ noorderbreedte.} maken we ook een cirkelbeweging maar nu met een andere straal. De straal is nu de afstand van het punt op het aardoppervlak tot aan de rotatieas van de aarde, zie figuur. 
-%%\begin{figure}[h]
-\centering
+\begin{image}
+% \centering
 \includegraphics[width=0.4\textwidth]{aardehoeksnelheid2}
-%%\end{figure}
+\end{image}
 %%%\begin{figure}[H]
 %\begin{picture}(320,160)(0,0)
 %\put(115,0){\includegraphics[scale=1.0]{aardehoeksnelheid}}
@@ -456,14 +800,14 @@ $\vec{v}_0$ die een hoek $\varphi$ maakt met de horizontale
 In de veronderstelling dat de luchtweerstand verwaarloosbaar is, dan
 ziet het verloop van de horizontale snelheidscomponente $v_x$ als
 functie van de tijd er als volgt uit:
-%%\begin{figure}[h]
-\begin{flushright}
+\begin{image}
+% \begin{flushright}
 \includegraphics[width=0.22\textwidth, angle=0]{horiz_snelheidscomp_a}
 \includegraphics[width=0.22\textwidth, angle=0]{horiz_snelheidscomp_b}
 \includegraphics[width=0.22\textwidth, angle=0]{horiz_snelheidscomp_c}
 \includegraphics[width=0.22\textwidth, angle=0]{horiz_snelheidscomp_d}
-\end{flushright}
-%%\end{figure}
+% \end{flushright}
+\end{image}
 
 \end{exercise}
 
@@ -471,11 +815,9 @@ functie van de tijd er als volgt uit:
 een kogel die op het ogenblik \mbox{$t=0$~s} afgeschoten wordt
 vanuit de oorsprong. De aangeduide punten geven om de \mbox{100 ms}
 de plaats van de kogel aan.
-%%\begin{figure}[h]
-\begin{center}
+\begin{image}
 \includegraphics[width=0.7\textwidth]{horiz_snelheidscomp}
-\end{center}
-%%\end{figure}
+\end{image}
 
 
 De horizontale snelheidscomponent van de kogel is gelijk aan?
@@ -494,11 +836,11 @@ en glijdt langs het beijzeld dak naar beneden. Hij vertrekt vanuit
 rust op de top van het dak dat $8,2~\rm m$ lang is met een
 versnelling van $5,0~\rm m/s^2$. De rand van het dak bevindt zich
 $3,0~\rm m$ boven de grond die met een pak sneeuw bedekt is.
-%%\begin{figure}[h]
-\begin{center}
+\begin{image}
+% \begin{center}
 \includegraphics[width=0.55\textwidth]{kerstman}
-\end{center}
-%%\end{figure}
+% \end{center}
+\end{image}
 \begin{enumerate}
 \item Hoe groot is de snelheid van de kerstman waarmee hij van het
 dak vliegt?
@@ -511,6 +853,8 @@ y=x\tan\varphi-\frac{g}{2v_0^2\cos^2\varphi}x^2
 \end{enumerate}
 
 \end{exercise}
+
+
 
 
 \end{document}
