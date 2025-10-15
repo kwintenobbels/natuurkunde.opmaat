@@ -10,21 +10,80 @@
 \begin{exercise}
     Welke afstand wordt er door een bungeejumper na een vrije val van \SI{2,5}{s} afgelegd?
     \begin{oplossing}
-        $x=\frac{1}{2}gt^2=\SI{31}{m}$
+
+    Er is gegeven dat 
+    \begin{itemize}
+        \item De beweging is een EVRB mat \(|a| = g\). 
+        \item \(v_0 = 0\)
+        \item \(x_0 = 0\)
+    \end{itemize}
+
+    Met de plaatsfunctie vinden we dan:
+    \[
+    x_1 = x_0 + v_0 t + \frac{1}{2} a t^2 = \frac{1}{2} g t^2 = \SI{30,7}{\meter}
+    \]
+
     \end{oplossing}
 \end{exercise}
 
 \begin{exercise}
     Uit een punt op \SI{28,0}{m} boven de grond wordt een bal verticaal omhoog geworpen met een snelheid van \SI{12}{m/s}. 
-    \begin{question} Bepaal de door de bal bereikte hoogte boven de grond; \begin{oplossing} $v=0\Rightarrow x=x_0+\frac{v_0^2}{2g}=\SI{35,34}{m}$ \end{oplossing} \end{question}
-    \begin{question} Bepaal de tijd nodig om de grond te bereiken;              \begin{oplossing} $x=0\Rightarrow t=\frac{v_0+\sqrt{v_0^2+2gx_0}}{g}=\SI{3,91}{s}$\end{oplossing} \end{question}
-    \begin{question} Bepaal de snelheid bij het bereiken van de grond.          \begin{oplossing} $v=-\sqrt{v_0^2+2gx_0}=\SI{-26,33}{m/s}$ \end{oplossing} \end{question}
+    \begin{question} Bepaal de door de bal bereikte hoogte boven de grond; 
+        \begin{oplossing} 
+            Er is gegeven dat 
+            \begin{itemize}
+                \item De beweging is een EVRB mat \(|a| = g\). 
+                \item \(v_0 = \SI{12}{\meter\per\second}\)
+                \item \(x_0 = \SI{28}{\meter}\)
+            \end{itemize}
+
+            De tijd \(t_1\) waarop de bal de hoogste positie bereikt, vinden we door de snelheid op dat moment gelijk aan nul te stellen:
+            \[
+            v = v_0 - g t_1 = 0 \Rightarrow t_1 = \frac{v_0}{g} 
+            \]
+            De hoogte op dat moment vinden we door deze tijd in de plaatsfunctie in te vullen:
+            \[
+            x = x_0 + v_0 t_1 - \frac{1}{2} g t_1^2 = x_0+\frac{v_0^2}{2g} = \SI{35,3}{\meter}
+            \]
+
+            $v=0\Rightarrow x=x_0+\frac{v_0^2}{2g}=\SI{35,34}{m}$ 
+        \end{oplossing} 
+    \end{question}
+
+    \begin{question} 
+        Bepaal de tijd nodig om de grond te bereiken;              
+        \begin{oplossing} 
+
+            Stel \(x_2 = 0\), dan vinden we de tijd \(t_2\) door de plaatsfunctie op te lossen naar \(t\):
+            \(
+            \begin{array}{rcl}
+                0 & = & x_0 + v_0 t_2 - \frac{1}{2} g t_2^2 \\
+                &\Downarrow& \\
+                t_2 & = & \frac{v_0 \pm \sqrt{v_0^2 + 2 g x_0}}{g}
+            \end{array}
+            \)
+
+            Voor een tweedegraadsvergelijking zijn er twee oplossingen. 
+            We kiezen de positieve oplossing omdat tijd niet negatief kan zijn.
+            De bal bereikt de grond na \SI{3,91}{\second}.
+        \end{oplossing} 
+    \end{question}
+
+    \begin{question} 
+        Bepaal de snelheid bij het bereiken van de grond.          
+        \begin{oplossing} 
+            We kunnen de snelheid op het moment dat de bal de grond raakt, vinden door de tijd \(t_2\) in de snelheidsfunctie in te vullen:
+            \[
+            v = v_0 - g t_2 = -\sqrt{v_0^2 + 2 g x_0} = \SI{-26,3}{\meter\per\second}
+            \]
+        \end{oplossing} 
+    \end{question}
 \end{exercise}
 
 \begin{exercise}
     Een pijl wordt verticaal van de grond omhooggeschoten en bereikt na \SI{2,8}{s} het hoogste punt. Bepaal deze hoogte.
     \begin{oplossing}
-        Op het hoogste punt is de snelheid van de pijl nul. Aangezien we weten hoe lang hij onderweg is en de pijl per seconde \SI{9,81}{m/s^2} trager omhoog vliegt, kunnen we hieruit de beginsnelheid bepalen. 
+        Op het hoogste punt is de snelheid van de pijl nul. Aangezien we weten hoe lang hij onderweg is en de pijl per seconde \SI{9,81}{\meter\per\second\squared} trager omhoog vliegt, kunnen we hieruit de beginsnelheid bepalen. 
         
         We kiezen de referentie-as met de oorsprong op de grond. De versnellingscomponent is dan het tegengestelde van de valversnelling, $a=-g$.
         \begin{image}
@@ -65,15 +124,47 @@
 
 \begin{exercise}
     Iemand laat een meloen vallen vanop een hoogte van \SI{20}{m}. Op hetzelfde moment schiet je een pijl verticaal omhoog vanop de grond. De pijl treft de meloen na \SI{1,0}{s}. 
-    \begin{question} Geef in \'e\'en assenstelsel een verzorgde schets van de grafiek van de plaats in functie van de tijd voor beide objecten. 
+    \begin{question} Geef in één assenstelsel een verzorgde schets van de grafiek van de plaats in functie van de tijd voor beide objecten. 
         \begin{oplossing} 
-            De plaatsfunctie van de meloen gelijkstellen aan die van de afgeschoten pijl, geeft (we kiezen de $y$-as omhoog waardoor de versnelling de negatieve valversnelling is):
-            \begin{eqnarray*}
-               y_0-\frac{1}{2}gt^2&=&v_0t-\frac{1}{2}gt^2
-            \end{eqnarray*}
+            % \begin{image}
+            %     \begin{tikzpicture}
+            %         \begin{axis}[
+            %             xlabel={Tijd $t$ (\si{\second})},
+            %             ylabel={Hoogte $x$ (\si{\meter})},
+            %             axis lines=middle,
+            %             xmin=0, xmax=1.2,
+            %             ymin=0, ymax=20,
+            %             grid=both,
+            %             minor tick num=1,
+            %             width=10cm, height=8cm,
+            %             legend pos=north east,
+            %             legend style={font=\small}
+            %         ]
+            %         % Meloen: x = 20 - 0.5 * 9.81 * t^2
+            %         \addplot[domain=0:1.2, samples=100, blue, thick] {20 - 0.5 * 9.81 * x^2};
+            %         \addlegendentry{Meloen}
+            %         % Pijl: x = 20 * t - 0.5 * 9.81 * t^2
+            %         \addplot[domain=0:1.2, samples=100, red, thick] {20 * x - 0.5 * 9.81 * x^2};
+            %         \addlegendentry{Pijl}
+            %         % Ontmoetingspunt na t=1.0 s
+            %         \addplot[mark=*, mark size=2pt, only marks, black] coordinates {(1, 15.095)};
+            %         \end{axis}
+            %         \end{tikzpicture}
+            % \end{image}
+
+
         \end{oplossing} 
     \end{question}
-    \begin{question} Met welke snelheid heb je de pijl afgeschoten?  \begin{oplossing} Oplossen naar $v_0$ geeft: $v_0=\frac{y_0}{t}=\SI{20}{m/s}$ \end{oplossing} \end{question}
+    \begin{question} 
+        Met welke snelheid heb je de pijl afgeschoten?  
+        \begin{oplossing} 
+            De plaatsfunctie van de meloen gelijkstellen aan die van de afgeschoten pijl, geeft (we kiezen de $y$-as omhoog waardoor de versnelling de negatieve valversnelling is):
+            \[
+               y_0-\frac{1}{2}gt^2 = v_0t-\frac{1}{2}gt^2
+            \]
+            Oplossen naar $v_0$ geeft: $v_0=\frac{y_0}{t}=\SI{20}{\meter\per\second}$ 
+        \end{oplossing} 
+    \end{question}
 
 \end{exercise}
 
@@ -204,7 +295,27 @@
 
 \begin{exercise}
     ($\ast\ast\ast$) Een student gooit een sleutelbos verticaal omhoog naar een medebewoonster in een raam \SI{4,00}{m} hoger. De sleutels worden \SI{1,50}{s} later opgevangen.
-    \begin{question} Wat was de snelheid waarmee de sleutels omhoog werden gegooid?  \begin{oplossing} $v_0=\frac{x+\frac{1}{2}gt^2}{t}=10,02\rm\,m/s$\end{oplossing} \end{question}
+    \begin{question} 
+        Wat was de snelheid waarmee de sleutels omhoog werden gegooid?  
+        \begin{oplossing} 
+            Er is gegeven dat 
+            \begin{itemize}
+                \item De beweging is een EVRB mat \(|a| = -g\). 
+                \item \(\Delta x = \SI{4}{\meter}\)
+                \item \(\Delta t = \SI{1,5}{\second}\)
+            \end{itemize}
+            
+            Er geldt: 
+            \[
+            \overline{v} = \frac{\Delta x}{\Delta t} = \frac{v_0 + v}{2} = \frac{v_0 + v_0 - gt}{2} = v_0 - \frac{1}{2}gt
+            \]
+
+            Hieruit volgt 
+            \[
+            v_0 = \frac{\Delta x}{\Delta t} + \frac{1}{2}gt = \SI{10,0}{\meter\per\second}
+            \]
+        \end{oplossing} 
+    \end{question}
     \begin{question} Welke snelheid had de sleutelbos vlak voordat hij werd opgevangen? 
         \begin{oplossing} 
 
