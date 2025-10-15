@@ -139,8 +139,47 @@ We krijgen dan voor de plaatsvector, de snelheid en de versnelling:
 	\vec{a}&=&-\omega^2\vec{r}\label{versnelling}
 \end{eqnarray}
 Deze laatste gelijkheid is erg belangrijk. We vinden dat de versnelling steeds naar het middelpunt van de cirkel is ge\"ori\"enteerd \ldots! We noemen het bijgevolg een centripetale\footnote{Dit is niet hetzelfde als centrifugaal.} of middelpuntzoekende versnelling.
+
 \begin{image}
-	\includegraphics[width=0.4\textwidth]{ecb_versnelling}
+	
+\begin{tikzpicture}[scale=1]
+    \def\radius{2}
+    \coordinate (center) at (0,0);
+    \def\vlength{1.5} 
+    \def\alength{0.4}
+    \def\imgsize{1cm} 
+    
+    \draw[thin,->] (-3,0) -- (3,0) node[right] {$x$};
+    \draw[thin,->] (0,-3) -- (0,3) node[above] {$y$};
+    
+    % \foreach \x in {1,...,5}
+    %     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+    % \foreach \y in {1,...,5}
+    %     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+    
+    
+    \draw[thick] (center) circle (\radius);
+	\fill (center) circle (2pt) node[below left] {$O$};
+
+    \foreach \angle in {45, 135, 225, 315} {
+        \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
+        
+        \node at ($(center) + (\angle:\radius + 0.4)$) {\(P_{\angle^\circ}\)};
+        
+        \fill[blue] (P\angle) circle (2pt);
+        
+        \draw[->, blue, very thick, -latex] 
+        (P\angle) --++ (\angle+90:\vlength)
+        node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+        
+        % Centripetal acceleration vector (toward center)
+        \fill[xmgreen] (P\angle) circle (2pt);
+        \draw[->, xmgreen, very thick, -latex] 
+            (P\angle) -- ($(P\angle)!\alength!(center)$)
+            node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
+    }
+    
+    \end{tikzpicture}
 \end{image}
 Je zou dit resultaat opmerkelijk kunnen noemen aangezien de snelheid een constante grootte heeft.
 \begin{eqnarray}
@@ -150,10 +189,76 @@ Je zou dit resultaat opmerkelijk kunnen noemen aangezien de snelheid een constan
 	&\Updownarrow&\nonumber\\
 	v&=&r\omega\label{snelheid}
 \end{eqnarray}
-Echter verandert de richting van de snelheid en aangezien de versnelling de verandering van de snelheid is, moet er een versnelling zijn. Deze is naar het centrum ge\"ori\"enteerd omdat een fractie van een seconde later het object -- in vergelijking met de baan die het zou afleggen moest het volgens de snelheid die het op een bepaald moment heeft, voortbewegen -- iets dichter naar het centrum moet zijn gekomen. De snelheidsvector is in grootte niet veranderd maar wel gedraaid, in de richting van het centrum. Moest bovendien de versnelling niet loodrecht op de snelheid staan, dan zou de versnelling een component volgens de snelheid hebben wat zou betekenen dat de snelheid in die richting zou moeten toenemen.
+Echter verandert de richting van de snelheid en aangezien de versnelling de verandering van de snelheid is, moet er een versnelling zijn. 
+Deze is naar het centrum ge\"ori\"enteerd omdat een fractie van een seconde later het object -- in vergelijking met de baan die het zou afleggen moest het volgens de snelheid die het op een bepaald moment heeft, voortbewegen -- iets dichter naar het centrum moet zijn gekomen. 
+De snelheidsvector is in grootte niet veranderd maar wel gedraaid, in de richting van het centrum. 
+Moest bovendien de versnelling niet loodrecht op de snelheid staan, dan zou de versnelling een component volgens de snelheid hebben wat zou betekenen dat de snelheid in die richting zou moeten toenemen.
+
 \begin{image}
-	\includegraphics[width=0.4\textwidth]{ballnostring}
+	
+\begin{tikzpicture}[scale=1]
+    \def\radius{2}
+    \coordinate (center) at (0,0);
+    \def\vlength{1.2} 
+    \def\alength{0.4}
+    \def\imgsize{1cm} 
+    
+    \draw[thin,->] (-3,0) -- (3,0) node[right] {$x$};
+    \draw[thin,->] (0,-3) -- (0,3) node[above] {$y$};
+    
+    % \foreach \x in {1,...,5}
+    %     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+    % \foreach \y in {1,...,5}
+    %     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+    
+    
+    \draw[dashed] (center) circle (\radius);
+	\fill (center) circle (2pt) node[below left] {$O$};
+
+    \foreach \angle in {-45, 0, 45, 125} {
+        \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
+        
+        \node at ($(center) + (\angle:\radius + 0.4)$) {\(P_{\angle^\circ}\)};
+        
+        \fill[blue] (P\angle) circle (2pt);
+        
+        \draw[->, blue, very thick, -latex] 
+        (P\angle) --++ (\angle+90:\vlength)
+        node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+        
+        % Centripetal acceleration vector (toward center)
+
+        \fill[xmgreen] (P\angle) circle (2pt);
+        \draw[->, xmgreen, very thick, -latex] 
+            (P\angle) -- ($(P\angle)!\alength!(center)$)
+            node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
+		
+
+		\ifnum \angle=125{
+			\draw[dashed] (P\angle) --++ (\angle+90:6);
+
+			\draw[->, blue, very thick, -latex] 
+			($(P\angle) + (\angle+90:2)$) --++ (\angle+90:\vlength)
+			node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+
+			\draw[->, blue, very thick, -latex] 
+			($(P\angle) + (\angle+90:4)$) --++ (\angle+90:\vlength)
+			node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+
+    	}
+		% \else
+		\fi 
+
+	}
+    
+    \end{tikzpicture}
 \end{image}
+
+% \begin{image}
+% 	\includegraphics[width=0.4\textwidth]{ballnostring}
+% \end{image}
+
+
 Toelichting figuur: Moest er geen versnelling naar het centrum zijn -- bv. in het geval dat een touwtje met een ronddraaiend object aan, knapt -- dan zou de snelheid niet veranderen en het object op een rechte baan in het verlengde van de snelheid met een constante snelheid voortbewegen.
 
 Uit (\ref{hoeksnelheid}), (\ref{versnelling}) en (\ref{snelheid}) vinden we nog:
