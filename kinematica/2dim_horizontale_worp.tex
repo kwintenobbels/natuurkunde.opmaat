@@ -7,13 +7,14 @@
 	\xmtitle{De horizontale worp}{}
     \xmsource\xmuitleg
 
-Hier een extra zin. 
 
-
-We bekijken een voorbeeld van een tweedimensionale beweging. Wanneer een object horizontaal met een bepaalde beginsnelheid wordt gekatapulteerd, noemen we die beweging een horizontale worp. 
+Wanneer een object horizontaal met een bepaalde beginsnelheid wordt gekatapulteerd, noemen we die beweging een horizontale worp. 
 
 Wij beschouwen de worp in het luchtledige.
 \begin{image}[0.6\textwidth]
+
+	% TODO: NOG DE STARTPOSITIE MET V_0 INVOEGEN.
+
 	\begin{tikzpicture}[xscale=0.5, yscale=0.5]
 		% \draw[thick,->] (0,0) -- (10,0) node[right] {$x$};
 		% \draw[thick,->] (0,0) -- (0,10) node[above] {$y$};
@@ -35,9 +36,10 @@ Wij beschouwen de worp in het luchtledige.
 		\draw[thick, orange, domain=0:10, samples=50, smooth, dotted] 
 			plot (\x, {tan(\theta)*\x - ( \g / (2 * \v * \v * cos(\theta)^2) ) * (\x)^2 + \hoogte});
 		
+
+
 		% Ball positions + velocity vectors in a single loop
-		\foreach \x in {1,3,...,9} {
-	
+		\foreach \x in {0,1,3,...,9} {
 	
 			% y-coordinate
 			\pgfmathsetmacro{\y}{tan(\theta)*\x - ( \g / (2 * \v * \v * cos(\theta)^2) ) * (\x)^2 + \hoogte}
@@ -104,11 +106,11 @@ In de beschrijving kunnen we de $x$-as horizontaal en de $y$-as verticaal naar b
 \end{equation*}
 
 
-De baanvergelijking vinden we zoals eerder vermelt, door $t$ in functie van $x$ te schrijven $x=v_0t\Leftrightarrow t=\frac{x}{v_0}$ en dit in $y(t)$ te substitueren:
+De baanvergelijking vinden we zoals eerder vermeld, door $t$ in functie van $x$ te schrijven $x=v_0t\Leftrightarrow t=\frac{x}{v_0}$ en dit in $y(t)$ te substitueren:
 \begin{eqnarray*}
 	y=\frac{1}{2}gt^2=\frac{1}{2}g\left(\frac{x}{v_0}\right)^2=\frac{g}{2v_0^2}x^2
 \end{eqnarray*}
-De baan is dus een parabool.
+De baan is dus (een stuk van) een parabool.
 
 \begin{example}
 	Een vliegtuig vliegt met een snelheid van \SI{450}{km/h} op een hoogte van \SI{920}{m}.
