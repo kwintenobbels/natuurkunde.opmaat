@@ -1,6 +1,6 @@
 # Natuurkunde Op Maat
 
-Een **open-source natuurkundecursus** voor het 6de jaar secundair onderwijs. Meer informatie over dit initiatief is beschikbaar via onze [website](https://wiskunde.opmaat.org/website/inhoud/cursussen/natuurkunde)
+Een **open-source cursus natuurkunde** voor het 6de jaar secundair onderwijs. Meer informatie over dit initiatief is beschikbaar via onze [website](https://wiskunde.opmaat.org/website/inhoud/cursussen/natuurkunde)
 
 Deze cursus wordt gebruikt in het Sint-Pieterscollege Leuven en is vrij beschikbaar via [interactieve webpagina's](https://wiskunde.opmaat.org/nat6/SPC/semester1/kinematica/basis_versnelling). Hier is onder 'download' ook een **papieren versie** beschikbaar. 
 
