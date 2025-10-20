@@ -196,21 +196,27 @@ Deze laatste gelijkheid is zeer belangrijk. We vinden dat de versnelling steeds 
     \draw[thick] (center) circle (\radius);
 	\fill (center) circle (2pt) node[below left] {$O$};
 
-    \foreach \angle in {45, 135, 225, 315} {
+    \foreach \angle in {45} {
         \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
         
         \node at ($(center) + (\angle:\radius + 0.4)$) {\(P_{\angle^\circ}\)};
         
         \fill[blue] (P\angle) circle (2pt);
         
+        \draw[->, red, very thick, -latex] 
+        (center) --++ (P\angle)
+        node[thick, pos=0.6, font=\normalsize, sloped, below] {$\vec{r}$};
+
+
         \draw[->, blue, very thick, -latex] 
         (P\angle) --++ (\angle+90:\vlength)
         node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
         
+		% slechte code; scope en \draw[shift] werte niet 
         % Centripetal acceleration vector (toward center)
-        \fill[xmgreen] (P\angle) circle (2pt);
-        \draw[->, xmgreen, very thick, -latex] 
-            (P\angle) -- ($(P\angle)!\alength!(center)$)
+			\fill[xmgreen] ($(P\angle) + (-1mm,1mm)$) circle (2pt);
+			\draw[->, xmgreen, very thick, -latex] 
+            ($(P\angle) + (-1mm,1mm)$) -- ($($(P\angle) + (-1mm,1mm)$)!\alength!(center)$)
             node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
     }
     
