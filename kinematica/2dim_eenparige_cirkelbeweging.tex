@@ -96,28 +96,32 @@ We beschouwen een punt dat een cirkelbeweging maakt met straal $r$. We voeren ee
 		\draw[->] (-\R-0.5,0) -- (\R+1,0) node[right] {$x$};
 		\draw[->] (0,-\R-0.5) -- (0,\R+1) node[above] {$y$};
 
+		\draw[->, -latex, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0.5,0) node[red, midway, below] {$\vec{e}_x$};
+		\draw[->, -latex, thick, red, transform canvas={shift={(-0.05,-0.05)}}] (O) -- (0,0.5) node[red, midway, left] {$\vec{e}_y$};
+
 		\coordinate (O) at (0,0);
 		\coordinate (A) at (\R,0);
 	  
 		\fill (0,0) circle (2pt) node[below left] {$O$};
 	  
 		% Point A on x-axis
-		\fill (\R,0) circle (2pt) node[below right] {$A$};
+		% \fill (\R,0) circle (2pt) node[below right] {$A$};
 	  
 		% Point P on circle (polar coordinates)
 		\coordinate (P) at (\ang:\R);
-		\fill (P) circle (2pt) node[above right] {$(x,y)$};
+		\fill (P) circle (1pt) node[above right] {$(x,y)$};
 	  
 		% Radius vector r
-		\draw[->] (0,0) -- (P) node[midway,above left] {$\vec{r}$};
+		\draw[->, -latex, very thick] (0,0) -- (P) node[midway,above left] {$\vec{r}$};
 	  
-		% Dotted projections
+		% Dotted lines
 		\draw[dashed] (P) -- (\ang:\R |- 0,0); % vertical projection
 		\draw[dashed] (P) -- (\ang:\R -| 0,0); % horizontal projection
+
+		% Dotted projections
+		\draw[->, -latex, thick] (O) -- (\ang:\R |- 0,0) node[midway, below] {\(x\)}; % vertical projection
+		\draw[->, -latex, thick] (O) -- (\ang:\R -| 0,0) node[midway, left] {\(y\)}; % horizontal projection
 	  
-		% Basis vectors e_x, e_y
-		\draw[->] (0,0) -- (1.2,0) node[midway,below] {$\vec{e}_x$};
-		\draw[->] (0,0) -- (0,1.2) node[midway,left] {$\vec{e}_y$};
 
 		\pic [draw, pic text = $ \theta$, angle eccentricity=1.5] {angle = A--O--P};
 	  
@@ -192,21 +196,27 @@ Deze laatste gelijkheid is zeer belangrijk. We vinden dat de versnelling steeds 
     \draw[thick] (center) circle (\radius);
 	\fill (center) circle (2pt) node[below left] {$O$};
 
-    \foreach \angle in {45, 135, 225, 315} {
+    \foreach \angle in {45} {
         \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
         
         \node at ($(center) + (\angle:\radius + 0.4)$) {\(P_{\angle^\circ}\)};
         
         \fill[blue] (P\angle) circle (2pt);
         
+        \draw[->, red, very thick, -latex] 
+        (center) --++ (P\angle)
+        node[thick, pos=0.6, font=\normalsize, sloped, below] {$\vec{r}$};
+
+
         \draw[->, blue, very thick, -latex] 
         (P\angle) --++ (\angle+90:\vlength)
         node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
         
+		% slechte code; scope en \draw[shift] werte niet 
         % Centripetal acceleration vector (toward center)
-        \fill[xmgreen] (P\angle) circle (2pt);
-        \draw[->, xmgreen, very thick, -latex] 
-            (P\angle) -- ($(P\angle)!\alength!(center)$)
+			\fill[xmgreen] ($(P\angle) + (-1mm,1mm)$) circle (2pt);
+			\draw[->, xmgreen, very thick, -latex] 
+            ($(P\angle) + (-1mm,1mm)$) -- ($($(P\angle) + (-1mm,1mm)$)!\alength!(center)$)
             node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
     }
     
@@ -229,69 +239,75 @@ Maar tegelijk ook niet omdat we hier te maken hebben met een richtingsveranderen
  De snelheidsvector is in grootte niet veranderd maar wel gedraaid, in de richting van het centrum. 
  Moest bovendien de versnelling niet loodrecht op de snelheid staan, dan zou de versnelling een component volgens de snelheid hebben wat zou betekenen dat de snelheid in die richting zou moeten veranderen van grootte.
 
-\begin{image}
+
+
+
+
+%  TODO; betere versie onderstaande tikz (touwtje zoals in de text; bij ERB a =0 zetten en op knappunt met versnelling al weg)
+% \begin{image}
 	
-\begin{tikzpicture}[scale=1]
-    \def\radius{2}
-    \coordinate (center) at (0,0);
-    \def\vlength{1.2} 
-    \def\alength{0.4}
-    \def\imgsize{1cm} 
+% \begin{tikzpicture}[scale=1]
+%     \def\radius{2}
+%     \coordinate (center) at (0,0);
+%     \def\vlength{1.2} 
+%     \def\alength{0.4}
+%     \def\imgsize{1cm} 
     
-    \draw[thin,->] (-3,0) -- (3,0) node[right] {$x$};
-    \draw[thin,->] (0,-3) -- (0,3) node[above] {$y$};
+%     \draw[thin,->] (-3,0) -- (3,0) node[right] {$x$};
+%     \draw[thin,->] (0,-3) -- (0,3) node[above] {$y$};
     
-    % \foreach \x in {1,...,5}
-    %     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
-    % \foreach \y in {1,...,5}
-    %     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
+%     % \foreach \x in {1,...,5}
+%     %     \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+%     % \foreach \y in {1,...,5}
+%     %     \draw (0,\y) -- (-0.2,\y) node[left] {\y};
     
     
-    \draw[dashed] (center) circle (\radius);
-	\fill (center) circle (2pt) node[below left] {$O$};
+%     \draw[dashed] (center) circle (\radius);
+% 	\fill (center) circle (2pt) node[below left] {$O$};
 
-    \foreach \angle in {-45, 0, 45, 125} {
-        \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
+%     \foreach \angle in {-45, 0, 45, 125} {
+%         \coordinate (P\angle) at ($(center) + (\angle:\radius)$);
         
-        \node at ($(center) + (\angle:\radius + 0.4)$) {\(P_{\angle^\circ}\)};
+%         \node at ($(center) + (\angle:\radius + 0.4)$) {\(P_{\angle^\circ}\)};
         
-        \fill[blue] (P\angle) circle (2pt);
+%         \fill[blue] (P\angle) circle (2pt);
         
-        \draw[->, blue, very thick, -latex] 
-        (P\angle) --++ (\angle+90:\vlength)
-        node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+%         \draw[->, blue, very thick, -latex] 
+%         (P\angle) --++ (\angle+90:\vlength)
+%         node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
         
-        % Centripetal acceleration vector (toward center)
+%         % Centripetal acceleration vector (toward center)
 
-        \fill[xmgreen] (P\angle) circle (2pt);
-        \draw[->, xmgreen, very thick, -latex] 
-            (P\angle) -- ($(P\angle)!\alength!(center)$)
-            node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
+%         \fill[xmgreen] (P\angle) circle (2pt);
+%         \draw[->, xmgreen, very thick, -latex] 
+%             (P\angle) -- ($(P\angle)!\alength!(center)$)
+%             node[thick, pos=0.8, font=\tiny, sloped, above] {$\vec{a}$};
 		
 
-		\ifnum \angle=125{
-			\draw[dashed] (P\angle) --++ (\angle+90:6);
+% 		\ifnum \angle=125{
+% 			\draw[dashed] (P\angle) --++ (\angle+90:6);
 
-			\draw[->, blue, very thick, -latex] 
-			($(P\angle) + (\angle+90:2)$) --++ (\angle+90:\vlength)
-			node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+% 			\draw[->, blue, very thick, -latex] 
+% 			($(P\angle) + (\angle+90:2)$) --++ (\angle+90:\vlength)
+% 			node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
 
-			\draw[->, blue, very thick, -latex] 
-			($(P\angle) + (\angle+90:4)$) --++ (\angle+90:\vlength)
-			node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
+% 			\draw[->, blue, very thick, -latex] 
+% 			($(P\angle) + (\angle+90:4)$) --++ (\angle+90:\vlength)
+% 			node[thick, pos=0.6, font=\tiny, sloped, above] {$\vec{v}$};
 
-    	}
-		% \else
-		\fi 
+%     	}
+% 		% \else
+% 		\fi 
 
-	}
+% 	}
     
-    \end{tikzpicture}
-\end{image}
-
-% \begin{image}
-% 	\includegraphics[width=0.4\textwidth]{ballnostring}
+%     \end{tikzpicture}
 % \end{image}
+
+\begin{image}
+	\includegraphics[width=0.4\textwidth]{ballnostring}
+\end{image}
+% \captionof{figure}{De snelheid is rakend}
 
 
 Toelichting figuur: Moest er geen versnelling naar het centrum zijn -- bv. in het geval dat een touwtje met een ronddraaiend object aan, knapt -- dan zou de snelheid niet veranderen en het object op een rechte baan in het verlengde van de snelheid met een constante snelheid voortbewegen.
