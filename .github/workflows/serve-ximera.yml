@@ -180,5 +180,45 @@ jobs:
           # echo "Recent git log:"
           # git log --oneline --graph --decorate --all -n 10
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
+
+  publish-ximera:
+    name: Run serve for public version
+    needs: serve-ximera-preview
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  
+    continue-on-error: true
+    container: *serve-container
+    environment: production
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Download final artifact
+      - name: Restore artifacts from previous job
+        uses: actions/download-artifact@v4
+        with:
+          name: htmlexport
+          path: .          
+
+      - name: "XIMERA BUILD: Serve to ximeraserver (to public URL)"
+        env:
+          XIMERA_NAME: nat6  
+          XIMERA_URL: https://natuurkunde.opmaat.org
+        run: |
+          echo "Serving to $XIMERA_URL$XIMERA_NAME"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"          
+          xmlatex name
+          xmlatex frost $XM_TO_PROCESS   
+          xmlatex serve $XM_TO_PROCESS
+          # echo "Recent git log:"
+          # git log --oneline --graph --decorate --all -n 10
+          echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
+          echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
+
+          
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
