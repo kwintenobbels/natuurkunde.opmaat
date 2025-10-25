@@ -181,8 +181,8 @@ jobs:
           # git log --oneline --graph --decorate --all -n 10
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME "
 
-  publish-ximera:
-    name: Run serve for public version
+  publish-ximera-natuurkunde:
+    name: Run serve for natuurkunde.opmaat.org
     needs: serve-ximera-preview
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  
