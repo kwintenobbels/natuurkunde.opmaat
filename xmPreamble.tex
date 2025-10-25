@@ -1432,6 +1432,19 @@ Dit kan gaan over:
         ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
         ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
     },
+    natuurkunde/.pic={
+        \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {N}
+        ++(0.2,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {A}
+        ++(0.15,0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {T}
+        ++(0.23,0)   node[font=\fontfamily{cmr}\selectfont\large] {U}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.03) node[font=\fontfamily{cmr}\selectfont\small] {R}
+        ++(0.23,-0.03) node[font=\fontfamily{cmr}\selectfont\large] {K}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {N}
+        ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
+        ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
+    },
     opmaat/.pic={
         \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {O}
         ++(0.25,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {P}
@@ -1442,6 +1455,10 @@ Dit kan gaan over:
     },
     wiskundeopmaat/.pic={
         \pic at (0,0) {wiskunde};
-        \pic at (0.1,-0.4) {opmaat};
+        \pic at (0.1,-0.37) {opmaat};
+    },
+    natuurkundeopmaat/.pic={
+        \pic at (0,0) {natuurkunde};
+        \pic at (0.45,-0.32) {opmaat};
     }
 }
