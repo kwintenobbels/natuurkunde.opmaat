@@ -1462,3 +1462,22 @@ Dit kan gaan over:
         \pic at (0.45,-0.32) {opmaat};
     }
 }
+
+
+% ========================================================================
+% PACKAGE VOOR TODO'S EN OPMERKNGEN PER AUTEUR 
+
+\usepackage{fixme} % Use 'draft' mode to show notes; 'final' hides them
+\fxsetup{
+    status=draft, % Display notes
+    author={Author}, % Default author name
+    layout=inline, % Options: inline, margin, footnote
+    theme=color, % Color-coded notes based on type
+    % outertheme=boxed,
+    }
+    
+    \FXRegisterAuthor{vincent}{vincentopmerking}{\color{cyan}Vincent} 
+    \FXRegisterAuthor{bart}{bartopmerking}{\color{yellow}Bart} 
+    \FXRegisterAuthor{kwinten}{kwintenopmerking}{\color{magenta}Kwinten} 
+    \FXRegisterAuthor{tikz}{tikzopmerking}{\color{green}TIKZ} 
+% ========================================================================
