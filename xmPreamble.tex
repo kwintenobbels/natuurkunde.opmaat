@@ -1414,3 +1414,67 @@ Dit kan gaan over:
 % \input{preamble.tex}
 % \def\adhocpreambleloaded{true}
 % \typeout{Loaded preamble.tex from xmPreamble (\adhocpreambleloaded)}%
+
+
+
+
+
+% VOOR DE LOGO's TIKZPICTURES 
+
+\tikzset{
+    wiskunde/.pic={
+        \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {W}
+        ++(0.2,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {I}
+        ++(0.15,0.04) node[font=\fontfamily{cmr}\selectfont\normalsize] {S}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\large] {K}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {N}
+        ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
+        ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
+    },
+    natuurkunde/.pic={
+        \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {N}
+        ++(0.2,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {A}
+        ++(0.15,0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {T}
+        ++(0.23,0)   node[font=\fontfamily{cmr}\selectfont\large] {U}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.03) node[font=\fontfamily{cmr}\selectfont\small] {R}
+        ++(0.23,-0.03) node[font=\fontfamily{cmr}\selectfont\large] {K}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {N}
+        ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
+        ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
+    },
+    scheikunde/.pic={
+        \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {S}
+        ++(0.22,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {C}
+        ++(0.25,0.05) node[font=\fontfamily{cmr}\selectfont\normalsize] {H}
+        ++(0.23,0.05)   node[font=\fontfamily{cmr}\selectfont\large] {E}
+        ++(0.2,0) node[font=\fontfamily{cmr}\selectfont\normalsize] {I}
+        ++(0.2,0) node[font=\fontfamily{cmr}\selectfont\large] {K}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {N}
+        ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
+        ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
+    },
+    opmaat/.pic={
+        \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {O}
+        ++(0.25,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {P}
+        ++(0.3,0.1) node[font=\fontfamily{cmr}\selectfont\large] {M}
+        ++(0.25,0.03) node[font=\fontfamily{cmr}\selectfont\small] {A}
+        ++(0.18,-0.07) node[font=\fontfamily{cmr}\selectfont\large] {A}
+        ++(0.2,0.04) node[font=\fontfamily{cmr}\selectfont\large] {T};
+    },
+    wiskundeopmaat/.pic={
+        \pic at (0,0) {wiskunde};
+        \pic at (0.1,-0.37) {opmaat};
+    },
+    natuurkundeopmaat/.pic={
+        \pic at (0,0) {natuurkunde};
+        \pic at (0.45,-0.32) {opmaat};
+    },
+    scheikundeopmaat/.pic={
+        \pic at (0,0) {scheikunde};
+        \pic at (0.45,-0.35) {opmaat};
+    }
+}
