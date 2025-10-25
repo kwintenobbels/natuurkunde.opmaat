@@ -1419,7 +1419,7 @@ Dit kan gaan over:
 
 
 
-%  LOGO IN TIKZ 
+% VOOR DE LOGO's TIKZPICTURES 
 
 \tikzset{
     wiskunde/.pic={
@@ -1445,6 +1445,18 @@ Dit kan gaan over:
         ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
         ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
     },
+    scheikunde/.pic={
+        \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {S}
+        ++(0.22,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {C}
+        ++(0.25,0.05) node[font=\fontfamily{cmr}\selectfont\normalsize] {H}
+        ++(0.23,0.05)   node[font=\fontfamily{cmr}\selectfont\large] {E}
+        ++(0.2,0) node[font=\fontfamily{cmr}\selectfont\normalsize] {I}
+        ++(0.2,0) node[font=\fontfamily{cmr}\selectfont\large] {K}
+        ++(0.23,0.06) node[font=\fontfamily{cmr}\selectfont\normalsize] {U}
+        ++(0.2,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {N}
+        ++(0.23,0) node[font=\fontfamily{cmr}\selectfont\large] {D}
+        ++(0.24,-0.06) node[font=\fontfamily{cmr}\selectfont\small] {E};
+    },
     opmaat/.pic={
         \draw (0,0) node[font=\fontfamily{cmr}\selectfont\large] {O}
         ++(0.25,-0.1) node[font=\fontfamily{cmr}\selectfont\normalsize] {P}
@@ -1460,5 +1472,9 @@ Dit kan gaan over:
     natuurkundeopmaat/.pic={
         \pic at (0,0) {natuurkunde};
         \pic at (0.45,-0.32) {opmaat};
+    },
+    scheikundeopmaat/.pic={
+        \pic at (0,0) {scheikunde};
+        \pic at (0.45,-0.35) {opmaat};
     }
 }
