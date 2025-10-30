@@ -1,7 +1,5 @@
 # 🤝 Bijdragen aan Natuurkunde Op Maat
 
-Iedereen kan bijdragen aan het leermateriaal. 
-
 ## 🔄 Werkwijze: issues en branches
 
 We werken via **korte branches** die vertrekken en eindigen in de main-branch. 
