@@ -21,10 +21,10 @@ De eenvoudigste werkwijze is middels 'create a branch for this issue':
     *  interactieve webpagina's 🌐
     *  Pdf-versies per cursus en webpagina, met en zonder antwoorden. 📕
     * Slides 📽️
--  Met de licentie is het toegelaten voor leerkrachten/scholen/... om het materiaal aan te passen naar eigen stijl of noden van de klas. 
+-  Leerkrachten/scholen/... kunnen het materiaal aanpassen naar eigen stijl of noden van de klas. 
 -  De copyright op het materiaal berust bij Natuurkunde Op Maat. 
 
 ## Oorsprong
 De cursus Natuurkunde vertrok als een **schip van Theseus** uit het eigen materiaal van Bart Lambregs. 
-Indien er ook anderen een startpunt willen leveren waarop het open-source project kan verbouwen zijn deze voorwaarden (inzake behoud copyright, naamsvermeling, ...) uiteraard bespreekbaar. 
+Indien ook anderen een startpunt willen leveren waarop het open-source project kan verbouwen zijn deze voorwaarden (inzake behoud copyright, naamsvermeling, ...) uiteraard bespreekbaar. 
 
