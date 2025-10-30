@@ -24,5 +24,5 @@ De eenvoudigste werkwijze is middels 'create a branch for this issue':
 
 ## ⛵️Oorsprong
 De cursus Natuurkunde vertrok als een **schip van Theseus** uit het eigen materiaal van Bart Lambregs. 
-Indien ook anderen een startpunt willen leveren waarop het open-source project kan verbouwen zijn deze voorwaarden (inzake behoud copyright, naamsvermeling, ...) uiteraard bespreekbaar. 
+Indien ook anderen een startpunt willen leveren waarop het open-source project kan verderbouwen zijn deze voorwaarden (inzake behoud copyright, naamsvermeling, ...) uiteraard bespreekbaar. 
 
