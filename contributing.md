@@ -23,6 +23,6 @@ De eenvoudigste werkwijze is middels 'create a branch for this issue':
 -  De copyright op het materiaal berust bij Natuurkunde Op Maat. 
 
 ## ⛵️Oorsprong
-De cursus Natuurkunde vertrok als een **schip van Theseus** uit het eigen materiaal van Bart Lambregs. 
+De cursus Natuurkunde vertrok als een **schip van Theseus** uit het eigen materiaal van [Bart Lambregs](https://www.kuleuven.be/wieiswie/nl/person/00133146). 
 Indien ook anderen een startpunt willen leveren waarop het open-source project kan verderbouwen zijn deze voorwaarden (inzake behoud copyright, naamsvermeling, ...) uiteraard bespreekbaar. 
 
