@@ -8,7 +8,7 @@ De eenvoudigste werkwijze is middels 'create a branch for this issue':
 -  **Maak een issue**: Start elke aanpassing met een issue, hierin kan je kort beschrijven wat je wijzigt. Bijvoorbeeld: dtfout-horizontaleworp 
 -  **Branch per issue**: Gebruik "Create branch from issue" rechts onderaan, Github maakt dat een branch voor het issue en nummert deze automatisch. Momenteel zitten we dan op '141-dtfout-horizontaleworp' 
 - **Voor wijzigingen en verbetering door**: In de branch kan je de code aanpassen. ✏️
-- **Zet een Pull request open**: 
+- **Zet een pull request open**: 
   - Druk op de knop 'create pull request' 
   - Beschrijf kort wat er verandert en waarom.
   - Je wijzigingen worden ingevoegd en verschijnen online. 
