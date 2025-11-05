@@ -1002,10 +1002,10 @@ img.brandlogo {
     max-width: 20vw;
 }
 
-img.xourselogo{
-	/* display: contents; */
+/* img.xourselogo{
+	display: contents; 
 	max-height: unset;
-}
+} */
 
 
 .title-xourse, .title-activity {
