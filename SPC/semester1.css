@@ -1,0 +1,38 @@
+/*  UITWISKELING KLEUREN */
+
+
+/* #009bd DONKERBLAUW (ACTUALITEIT) */
+/* ##f0811a ORANJE (BIBWIJZER) */
+/* #dd3333 ROOD (MODERNISERING SO) */
+/* #d15399 ROOS (ONDER DE LOEP)  */
+/* #1c8fa2 APPELBLAUWZEEGROEN (REDACTIONEEL) */
+/* #81BA27 GROEN (SPINNENWEB) */
+/* #5690b7 NOG EEN BLAUW (VERSCHENEN IN VECTOR) */
+/* #C9053F LOGO ROOD  */
+/* #F0C1BF LOGO TRANSPARANT UNDERLINE */
+/* #ebe9eb grijs tint van de website  */
+
+
+
+/* 
+:root {
+	--main-title: #C9053F;
+	--menu-part: #C9053F;
+	--accent: #F0C1BF;
+	--definition: #81BA27;
+	--exercises: #1c8fa2;
+	--menu-1: #d15399;
+	--menu-2:  #d15399;
+} */
+
+img.brandlogo {
+	border-radius: 10px;	
+	max-height: 6rem;
+}
+
+img.xourselogo {
+	max-height: 6rem;
+	max-width: 20vw;
+	border-radius: 10px;
+}
+

@@ -997,13 +997,13 @@ span.xmqa1 {
 
 
 img.brandlogo {
-	display: none;      /* ONLY natuurkunde xourse-logo ! */
+	display: contents;      /* ONLY natuurkunde xourse-logo ! */
     max-height: 6rem;
     max-width: 20vw;
 }
 
 img.xourselogo{
-	display: block;
+	display: contents;
 	max-height: unset;
 }
 
