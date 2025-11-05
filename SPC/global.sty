@@ -2,7 +2,7 @@
 \providecommand{\xmorganisatienaam}{}
 \providecommand{\xmcursusnaam}{}
 \providecommand{\xmafdelingsnaam}{}
-\renewcommand{\xmcursusnaam}{{\textsc{Natuurkunde 6de jaar}}}
+\renewcommand{\xmcursusnaam}{{\textsc{6de jaar doorstroom}}}
 \renewcommand{\xmorganisatienaam}{{\textsc{}}}
 \renewcommand{\xmafdelingsnaam}{{\textsc{Wiskunde Op Maat}}}
 
@@ -17,7 +17,13 @@
 \renewcommand{\maketitle}{
   % Maak onderscheid tussen (volledige) xourses of (aparte) activities
   \ifdefined\isXourse  
-      \xmPrintFrontPage{\@title}
+      % \xmPrintBasicFrontPage{\@title}
+      \xmPrintBasicFrontPage
+  
+      % Show open source attribution page
+      \xmPrintOpenSourcePage
+
+      \xmLicentievoorwaarden
   
       % Toon INHOUDSOPGAVE 
       \thispagestyle{empty}
