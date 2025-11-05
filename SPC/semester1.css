@@ -1,3 +1,6 @@
+/* Import global.css first - this ensures global.css loads before semester1.css overrides */
+@import url('global.css');
+
 /*  UITWISKELING KLEUREN */
 
 
