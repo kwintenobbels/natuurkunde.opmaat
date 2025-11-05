@@ -25,14 +25,18 @@
 	--menu-2:  #d15399;
 } */
 
+/* Override global.css styles for logo - ensure semester1.css loads after global.css */
 img.brandlogo {
-	border-radius: 10px;	
-	max-height: 6rem;
+	border-radius: 10px !important;	
+	max-height: 6rem !important;
+	max-width: 20vw !important;
+	display: block !important;
 }
 
 img.xourselogo {
-	max-height: 6rem;
-	max-width: 20vw;
-	border-radius: 10px;
+	max-height: 6rem !important;
+	max-width: 20vw !important;
+	border-radius: 10px !important;
+	display: block !important;
 }
 
