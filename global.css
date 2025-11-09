@@ -1,10 +1,14 @@
+/* INHOUDSOPGAVE GRIJS #9cb3c0  */
+/* RGB voor in variable:  */
+
+
 :root {
 --definition-red: 0;
---definition-green: 255;
---definition-blue: 0;
+--definition-green: 128;
+--definition-blue: 43;
 
---definition-background-perc: 0.05;
---definition-border-perc: 0.45;
+--definition-background-perc: 0.1;
+--definition-border-perc: 1;
 
 --notation-background-perc: 0.05;
 --notation-border-perc: 0.45;
@@ -30,22 +34,22 @@
 --explanation-background-perc: 0.01;
 --explanation-border-perc: 0.75;
 
---example-red: 29;
---example-green: 141;
---example-blue: 176;
+--example-red: 156;
+--example-green: 179;
+--example-blue: 192;
 
 --example-background-perc: 0.1;
---example-border-perc: 1;
+--example-border-perc: 0.75;
 
 --exercise-background-perc: 0.05;
---exercise-border-perc: 1.2;
+--exercise-border-perc: 1;
 
 --denkvraag-background-perc: 0.2;
 --denkvraag-border-perc: 0;
 
---remark-red: 221;
---remark-green: 138;
---remark-blue: 47;
+--remark-red: 173;
+--remark-green: 161;
+--remark-blue: 135;
 
 --remark-background-perc: 0.1;
 --remark-border-perc: 1;
@@ -54,7 +58,7 @@
 --warning-border-perc: 0.65;
 
 --uitweiding-background-perc: 0.1;
---uitweiding-border-perc: 0.15;	
+--uitweiding-border-perc: 0.5;	
 }
 
 /*  Mmm Ximera used non-existent sagemath version ??? */
@@ -514,11 +518,10 @@ div.quickquestion:before {
 	);	
 	
 	background-color: var(--background-color);
-	border: 0px solid var(--border-color);
-	border-left: 0px solid var(--border-color);
-	border-radius: 1cm;
-	padding-bottom: 1px;
-    padding-left: 10px;
+	border: 1px solid var(--border-color);
+	/* border-left: 0px solid var(--border-color); */
+	border-radius: 5px;
+	padding: 10px;
 }
 
 /* hack to get rid of dubious dummy image */
@@ -529,9 +532,11 @@ div.quickquestion:before {
 
 /* prevent too many befores when itemize inside denkvraag ! */
 .denkvraag > .trivlist > dd:before {
-	content: 'Om eens over te denken ... ';
+	content: 'Om eens over na te denken ... ';
+	display: block;
+	text-align: center;
 	font-weight: bold;
-	margin-left:1cm
+	text-align: center;
 }
 
 
@@ -858,7 +863,8 @@ div[class*="-content"] {
 .xmhint.ui-state-default, .xmhint.ui-widget-content .xmhint.ui-state-default,
 .xmoplossing.ui-state-default, .xmoplossing.ui-widget-content .xmoplossing.ui-state-default,
 .xmuitkomst.ui-state-default, .xmuitkomst.ui-widget-content .xmuitkomst.ui-state-default {
-	background-color: #1D8DB0;
+	/* background-color: var(--border-color, #1D8DB0); */
+	background-color:#526a80;
 	color: white;
 	font-family: sans-serif;
 	font-weight: normal;
@@ -971,7 +977,9 @@ span.xmqa1 {
 
 .main-inhoud .toc-search {
     background-color: #526a80;
-}
+	display: none;
+} 
+
 
 .toc-search .btn {
     background: transparent;
@@ -984,13 +992,70 @@ span.xmqa1 {
     color: white;
 }
 
+
+/* This is the TOC itself */
+.main-inhoud .toc {
+    grid-area: toc;
+    overflow: auto;
+    resize: horizontal;
+    width: 30rem;
+    max-width: 100%;
+    max-width: min(100vw, 80ch);
+    padding: 0;
+    margin-left: 2px;
+}
+
+.main-toc ul {
+	list-style-type: none;
+	margin: 3px;
+	padding: 0px;
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+  }
+
+/* ul li, ol, li {
+    line-height: 140%;
+} */
+
+  toc li {
+	padding: 2px;
+  }
+  
+  .toc li::before {
+	content: attr(data-nav-counter) "  ";
+	padding: 0 0 0 0.4rem;
+	min-width: 2rem;
+	display: inline-block;
+	text-align: left;
+  }
+
+/* part nummer gecentreerd in voorstukje */
+.toc .card.activity-card.part::before {
+    text-align: center;
+}
+/* THIS ARE THE \PARTS  */
 .toc .part {
     font-size: larger;
     background-color: #9cb3c0;
+	border-radius: 5px;
+}
+
+/* THIS ARE THE ACTIVITY CHAPTERS */
+.toc .card {
+    display: initial;
+    flex: initial;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+	border-radius: 8px;
 }
 
 .toc .activity-card.active {
-    background-color: #383f47 !important;
+    /* background-color: #383f47 !important; */
+	background-color: #526a80 !important; 
     color: white;
     border-color: #292b2c;
 }
@@ -1014,6 +1079,7 @@ img.brandlogo {
 
 .main-inhoud .activity-title {
 	background-color: #526a80;
+	display: none;
 }
 
 
