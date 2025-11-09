@@ -1,5 +1,5 @@
 /* Import global.css first - this ensures global.css loads before semester1.css overrides */
-@import url('global.css');
+/* @import url('global.css'); */
 
 /*  UITWISKELING KLEUREN */
 
@@ -33,13 +33,13 @@ img.brandlogo {
 	border-radius: 10px !important;	
 	max-height: 6rem !important;
 	max-width: 20vw !important;
-	display: block !important;
+	/* display: block !important; */
 }
 
 img.xourselogo {
+	border-radius: 10px !important;
 	max-height: 6rem !important;
 	max-width: 20vw !important;
-	border-radius: 10px !important;
-	display: block !important;
+	/* display: block !important; */
 }
 
