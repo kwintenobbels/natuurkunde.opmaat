@@ -972,6 +972,9 @@ span.xmqa1 {
 .main-title {
     background-color: #526a80;
     color: white;
+	position: sticky !important;
+	top: 0;
+	z-index: 5;
 }
 
 
@@ -1003,6 +1006,10 @@ span.xmqa1 {
     max-width: min(100vw, 80ch);
     padding: 0;
     margin-left: 2px;
+    position: sticky !important;
+    top:  100px;
+    align-self: flex-start;
+    max-height: 100vh;
 }
 
 .main-toc ul {
@@ -1013,6 +1020,14 @@ span.xmqa1 {
 	flex-flow: column;
 	width: 100%;
   }
+
+.main-inhoud .main-toc {
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 0px;
+    align-self: flex-start;
+    max-height: 100vh;
+}
 
 /* ul li, ol, li {
     line-height: 140%;
