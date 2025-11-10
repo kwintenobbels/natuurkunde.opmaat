@@ -1007,7 +1007,7 @@ span.xmqa1 {
     padding: 0;
     margin-left: 2px;
     position: sticky !important;
-    top:  100px;
+    top:  112px;
     align-self: flex-start;
     max-height: 100vh;
 }
@@ -1085,6 +1085,8 @@ img.brandlogo {
 	display: contents; 
 	max-height: unset;
 } */
+
+
 
 
 .title-xourse, .title-activity {
