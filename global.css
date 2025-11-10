@@ -1215,3 +1215,13 @@ iframe.xmyoutube {
 p:last-child {
 	margin-bottom: 0;      /* remove the gap */
 }
+
+
+
+/* animatie voor volgende pagina  */
+.page-link.pulsate {
+    animation: pulsate-page-link 0.5s infinite alternate;
+    animation-timing-function: linear;
+    text-shadow: 0 0 8px #ccc;
+	animation: none;
+}
