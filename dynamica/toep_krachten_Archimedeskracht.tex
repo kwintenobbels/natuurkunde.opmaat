@@ -3,6 +3,7 @@
 %\addPrintStyle{..}
 
 
+
 \begin{document}
 	\author{Bart Lambregs}
 	\xmtitle{De opwaartse stuwkracht in een vloeistof of Archimedeskracht}{}
@@ -20,25 +21,25 @@ Deze kracht (van vloeistof op voorwerp) noemt men ook de Archimedeskracht.
 De verklaring ligt in het feit dat de hydrostatische druk onder het voorwerp groter is dan de druk boven het voorwerp. 
 In feite is de Archimedeskracht dus de nettokracht van alle drukkrachten die de vloeistof op het voorwerp zet. 
 Er kan proefondervindelijk en theoretisch aangetoond worden dat de grootte van deze kracht gelijk is aan die van de zwaartekracht op de verplaatste vloeistof (= wet van
-Archimedes). 
+Archimedes).
 Dit komt neer op:
 
-\({\ F}_{s} = {\ F}_{A} = m_{vl} \bullet g = \rho_{vl} \bullet V_{verplaatst} \bullet g\)
+\(F_{s} = F_{A} = m_{vl} \cdot g = \rho_{vl} \cdot V_{verplaatst} \cdot g\)
 
 Omdat de verplaatste vloeistof gelijk is aan het volume van het stuk voorwerp dat zich onder het vloeistofoppervlak bevindt, kan eveneens gezegd worden dat:
 
-\({\mathbf{\ \ }\mathbf{F}}_{\mathbf{s}}\mathbf{=}{\mathbf{\ }\mathbf{F}}_{\mathbf{A}}\mathbf{=}\mathbf{\rho}_{\mathbf{vl}}\mathbf{\bullet}\mathbf{V}_{\mathbf{ond}}\mathbf{\bullet g\ }\)
+\(\vec{F}_{s}=\vec{F}_{A}=\rho_{vl}\,V_{ond}\,g\)
 met \(V_{ond}\) het ondergedompeld deel van het voorwerp. 
 
 Om de grootte, richting en zin van de versnelling van een ondergedompeld voorwerp te bepalen, dient men de wetten van Newton toe te passen.
 Hierin onderscheidt men een aantal gevallen:
 
 \begin{itemize}
-\item Zinken: \({\overrightarrow{a}}_{y}\) is naar beneden gericht (en
-  \({\overrightarrow{F}}_{ry}\) ook, de neerwaartse krachten zijn samen
+\item Zinken: \(\vec{a}_{y}\) is naar beneden gericht (en
+  \(\vec{F}_{ry}\) ook, de neerwaartse krachten zijn samen
   sterker dan de opwaartse)
-\item Stijgen: \({\overrightarrow{a}}_{y}\) is naar boven gericht (en
-  \({\overrightarrow{F}}_{ry}\) ook, de opwaartse krachten zijn samen
+\item Stijgen: \(\vec{a}_{y}\) is naar boven gericht (en
+  \(\vec{F}_{ry}\) ook, de opwaartse krachten zijn samen
   sterker dan de neerwaartse)
 \item Zweven: voorwerp volledig ondergedompeld en \(a_{y} = 0\) (en dus is
   \(F_{ry} = 0\))
@@ -48,7 +49,7 @@ Hierin onderscheidt men een aantal gevallen:
 
 Speciaal geval: Heel vaak werken op een ondergedompeld voorwerp slechts twee krachten, de Archimedeskracht (naar boven) en de zwaartekracht (naar onder) met bijbehorende formules:
 
-\[{\ F}_{A} = \rho_{vl} \cdot V_{ond} \cdot g \]
+\[F_{A} = \rho_{vl} \cdot V_{ond} \cdot g \]
 
 \[ F_z = m_{vw} \cdot g = \rho_{vw} \cdot V_{vw} \cdot g \]
 
@@ -75,8 +76,76 @@ Speciaal geval: Heel vaak werken op een ondergedompeld voorwerp slechts twee kra
 \end{image}
 
 
-Speciaal geval: ondergedompeld voorwerp ondervindt enkel \({\ \overrightarrow{F}}_{A}\) en \({\ \overrightarrow{F}}_{z}\). 
+Speciaal geval: ondergedompeld voorwerp ondervindt enkel \(\vec{F}_{A}\) en \(\vec{F}_{z}\).
 Het ondergedompeld volume is ingekleurd.
 
+
+
+\begin{image}
+  \begin{tikzpicture}
+    \def\H{2.5}      % container height
+    \def\W{2.5}      % container width
+    \def\h{0.9*\H}   % water level height
+    \def\my{0.33*\H} % mass y position
+    \def\mh{0.28*\H} % mass height
+    \def\mw{0.35*\H} % mass width
+    
+    % CONTAINER
+    \draw[water] (-\W/2,0) rectangle++ (\W,\h); %,rounded corners=2
+    \draw[thick,line cap=round] (-\W/2,\H) |-++ (\W,-\H) --++ (0,\H);
+    
+    % MASS
+    \draw[dashed]
+      (-0.64*\W,\my) -- (0.64*\W,\my)
+      (-0.64*\W,\my+\mh) -- (0.64*\W,\my+\mh);
+    \draw[mass] (-\mw/2,\my) rectangle++ (\mw,\mh) node[midway] {$m$};
+    \draw[force] (0.30*\mw,\my+0.7*\mh) --++ (0,\mh) node[below=4,right=0] {$\vbF_2$};
+    \draw[force] (0.25*\mw,\my+0.2*\mh) --++ (0,-0.7*\mh) node[right=0] {$\vbF_1$};
+    \draw[force] (-0.3*\mw,\my+0.3*\mh) --++ (0,-1.1*\mh) node[above=2,left=0] {$m\vb{g}$};
+    
+    % AXIS depth
+    \draw[->,thick]
+      (-0.64*\W,\H) --++ (0,-1.1*\H);
+    \tick{-0.64*\W,\h}{0} node[left] {$0$};
+    \tick{-0.64*\W,\my+\mh}{0} node[left] {$h_1$};
+    \tick{-0.64*\W,\my}{0} node[left] {$h_2$};
+    
+    % AXIS pressure
+    \draw[->,thick]
+      (0.64*\W,\H) --++ (0,-1.1*\H) node[right] {$P$};
+    \tick{0.64*\W,\h}{180} node[right] {$P_\mathrm{atm}$};
+    \tick{0.64*\W,\my+\mh}{180} node[right] {$P_1$};
+    \tick{0.64*\W,\my}{180} node[right] {$P_2$};
+    
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+    \def\H{1.4}          % container height
+    \def\W{2.2}          % container width
+    \def\h{0.8*\H}       % water level height
+    \def\my{\h-0.36*\mh} % mass y position
+    \def\mh{0.60*\H}     % mass height
+    \def\mw{0.64*\H}     % mass width
+    \def\F{0.60*\H}      % force magnitude
+    
+    % CONTAINER
+    \draw[water,rounded corners=2] (-\W/2,\h) |-++ (\W,-\h) --++ (0,\h);
+    \draw[mydarkblue] (-\W/2,\h) --++ (\W,0);
+    \draw[myred] (\W/2,{\h-(\h-(\my))*\mw/\W}) --++ (-0.05*\W,0);
+    
+    % MASS
+    \draw[dashed] (-0.57*\W,\my) --++ (0.5*\W,0);
+    \draw[{Latex[length=2.5,width=2.5]}-{Latex[length=2.5,width=2.5]}]
+      (-0.55*\W,\h) --++ (0,{\my-\h}) node[midway,left=0] {$h_\mathrm{sub}$};
+    \draw[mass] (-\mw/2,\my) rectangle++ (\mw,\mh) node[midway,above=-5] {$m$};
+    \draw[force] (0.30*\mw,\my+0.7*\mh) --++ (0,\F) node[below=4,right=0] {$\vbF_\mathrm{b}$};
+    \draw[force] (-0.3*\mw,\my+0.2*\mh) --++ (0,-0.7*\F) node[above=2,left=0] {$m\vb{g}$};
+    \draw[mydarkblue,dashed] (-\W/2,\h) --++ (\W,0);
+    \draw[thick,rounded corners=2,line cap=round] (-\W/2,\H) |-++ (\W,-\H) --++ (0,\H);
+    
+  \end{tikzpicture}
+\end{image}
+\captionof{figure}{De Archimedeskracht \protect \footnotemark}
+\footnotetext{\Tikzsource{https://tikz.net/category/physics/}{Izaak Neutelings}}
 
 \end{document}

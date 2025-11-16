@@ -123,6 +123,101 @@
 \providecommand{\p}{} % default nothing ; potentially usefull for slides: redefine as \pause
 %providecommand{\p}{\pause}
 
+
+
+% ================================================================================================================
+%  HIER PREAMBLE VOOR TIKZPICTURES VAN TIKZ.NET 
+% ================================================================================================================
+
+\usepackage{physics}
+
+\DeclareRobustCommand{\Tikzsource}[2]{Deze afbeelding is een afgeleid werk van \href{#1}{#2} en gelicenceerd onder \href{https://creativecommons.org/licenses/by-sa/4.0/legalcode.en}{CC BY-SA 4.0} }
+
+
+% ERROR DAT \DD AL GEDEFINIEERD IS --> EEN PAKKET HIERNA 
+\let\dd\relax
+
+
+% dit voor rechterhandregel
+\colorlet{pinkskin}{pink!25}
+\colorlet{brownskin}{pink!5!brown!45}
+\colorlet{myred}{red!90!black}
+\colorlet{myblue}{blue!90!black}
+\colorlet{mypurple}{blue!50!red!80!black!80}
+\colorlet{Bcol}{violet!90}
+\colorlet{BFcol}{red!60!black}
+\colorlet{veccol}{green!45!black}
+\colorlet{Icol}{blue!70!black}
+\colorlet{mucol}{red!90!black}
+\tikzstyle{BField}=[->,line width=2,Bcol]
+\tikzstyle{current}=[->,Icol] %thick,
+\tikzstyle{force}=[->,line width=2,BFcol]
+\tikzstyle{vector}=[->,line width=2,veccol]
+\tikzstyle{thick vector}=[->,line width=2,veccol]
+\tikzstyle{mu vector}=[->,line width=2,mucol]
+\tikzstyle{velocity}=[->,line width=2,veccol]
+\tikzstyle{charge+}=[very thin,draw=black,top color=red!50,bottom color=red!90!black,shading angle=20,circle,inner sep=0.5]
+
+
+
+% dit voor normaalkracht 
+
+\colorlet{myred}{red!65!black}
+\colorlet{acol}{red!50!blue!80!black!80}
+\tikzstyle{ground}=[preaction={fill,top color=black!10,bottom color=black!5,shading angle=20},
+                    fill,pattern=north east lines,draw=none,minimum width=0.3,minimum height=0.6]
+\tikzstyle{mass}=[line width=0.6,red!30!black,fill=red!40!black!10,rounded corners=1,
+                  top color=red!40!black!20,bottom color=red!40!black!10,shading angle=20]
+\tikzstyle{rope}=[brown!70!black,line width=1.2,line cap=round] %very thick
+
+
+
+\tikzstyle{force}=[->,myred,thick,line cap=round]
+\newcommand{\vbF}{\vb{F}}
+\newboolean{showforces}
+\setboolean{showforces}{true}
+
+
+% dit voor Archimedeskracht 
+
+\colorlet{mydarkblue}{blue!50!black}
+\colorlet{myblue}{blue!30}
+\colorlet{myred}{red!65!black}
+\colorlet{vcol}{green!45!black}
+\colorlet{watercol}{blue!80!cyan!10!white}
+\colorlet{darkwatercol}{blue!80!cyan!20!white}
+\colorlet{metalcol}{blue!40!black!10!white}
+\tikzstyle{force}=[->,myred,very thick,line cap=round]
+\tikzstyle{vvec}=[->,very thick,vcol,line cap=round]
+\tikzstyle{ground}=[preaction={fill,top color=black!10,bottom color=black!5,shading angle=20},
+                    fill,pattern=north east lines,draw=none,minimum width=0.3,minimum height=0.6]
+\tikzstyle{mass}=[line width=0.6,red!30!black,fill=red!40!black!10,rounded corners=1,
+                  top color=red!40!black!20,bottom color=red!40!black!10,shading angle=20]
+\tikzstyle{rope}=[brown!70!black,line width=1.2,line cap=round] %very thick
+\tikzstyle{piston}=[blue!50!black,top color=blue!30,bottom color=blue!50,middle color=blue!20,shading angle=0]
+\tikzstyle{water}=[draw=mydarkblue,top color=watercol!90,bottom color=watercol!90!black,shading angle=5]
+\tikzstyle{vertical water}=[water,
+  top color=watercol!90!black!90,bottom color=watercol!90!black!90,middle color=watercol!80,shading angle=90]
+\tikzstyle{dark water}=[draw=mydarkblue,top color=darkwatercol,bottom color=darkwatercol!80!black,shading angle=5]
+\tikzstyle{metal}=[draw=metalcol!20!black,top color=metalcol,bottom color=metalcol!90!black,shading angle=10]
+\tikzstyle{width}=[{Latex[length=3,width=3]}-{Latex[length=3,width=3]}]
+\tikzstyle{force}=[->,myred,thick,line cap=round]
+\tikzstyle{Fproj}=[force,myred!40]
+% \newcommand{\vbF}{\vb{F}}
+\tikzstyle{rope}=[brown!20!black,double=brown!70!black,double distance=1,line width=0.3] %very thick
+%\def\rope#1{ \draw[black,line width=2.3] #1; \draw[rope] #1; }
+\def\tick#1#2{\draw[thick] (#1)++(#2:0.1) --++ (#2-180:0.2)}
+
+
+\usetikzlibrary{arrows.meta}
+
+
+
+% ================================================================================================================
+% ================================================================================================================
+
+
+
 \usepackage{caption} % captionof
 %\usepackage{pdflscape}    % landscape environment
 

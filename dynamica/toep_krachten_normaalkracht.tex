@@ -3,6 +3,8 @@
 %\addPrintStyle{..}
 
 
+
+
 \begin{document}
 	\author{Bart Lambregs}
 	\xmtitle{De normaalkracht (contactkracht)}{}
@@ -14,5 +16,26 @@ De normaalkracht \({\overrightarrow{F}}_{n}\) staat altijd loodrecht op het gron
 Er is geen formule om de grootte van de normaalkracht uit te rekenen. 
 De grootte ervan dient altijd bepaald te worden uit de toepassing van en het redeneren met de wetten van Newton. 
 In sommige eenvoudige situaties kan het zijn dat \(F_{n} = F_{z}\), \textbf{maar dit is zeker niet altijd het geval! Enkel met behulp van de wetten van Newton is er uitsluitsel!}
+
+\begin{image}
+	\begin{tikzpicture}
+		\def\W{2.0} % ground width
+		\def\D{0.2} % ground depth
+		\def\h{0.6} % mass height
+		\def\w{0.8} % mass width
+		\draw[ground] (-\W/2,0) rectangle++ (\W,-\D);
+		\draw (-\W/2,0) --++ (\W,0);
+		\draw[mass] (-\w/2,0) rectangle++ (\w,\h) node[midway] {$m$};
+		\ifthenelse{\boolean{showforces}}{
+		  \draw[->] (1.0*\w,0.5*\h) --++ (0,0.9*\h) node[below=4,right=0] {$y$};
+		  \draw[force] (-0.3*\w,0.0*\h) --++ (0, 1.4*\h) node[left] {$\vbF_\mathrm{N}$};
+		  \draw[force] ( 0.3*\w,0.5*\h) --++ (0,-1.4*\h) node[right=5,below=-3] {$\vbF_\mathrm{g} = -mg\vu{y}$};
+		  %\draw[force] (0,0.9*\h) --++ (0, 1.0*\h) node[left] {$\vbF_\mathrm{N}$};
+		  %\draw[force] (0,0.1*\h) --++ (0,-1.0*\h) node[right=5,below=-2] {$\vbF_\mathrm{g} = -mg\vu{y}$};
+		}{}
+	  \end{tikzpicture}
+\end{image}
+\captionof{figure}{De normaalkracht \protect \footnotemark}
+\footnotetext{\Tikzsource{https://tikz.net/category/physics/}{Izaak Neutelings}}
 
 \end{document}
