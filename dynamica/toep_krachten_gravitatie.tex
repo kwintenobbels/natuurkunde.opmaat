@@ -3,6 +3,8 @@
 %\addPrintStyle{..}
 
 
+
+
 \begin{document}
 	\author{Bart Lambregs}
 	\xmtitle{De gravitatiekracht of zwaartekracht (veldkracht)}{}
@@ -15,24 +17,61 @@
   \includegraphics{toep_coulomb}
 \end{image}
 
-De \textbf{grootte} van de gravitatiekracht \({\overrightarrow{F}}_{G}\) tussen twee puntmassa's \(m_{1}\) en \(m_{2}\) met een afstand \(r\ \) tussenbeiden is gelijk is aan:
+De \textbf{grootte} van de gravitatiekracht \(\vec{F}_{G}\) tussen twee puntmassa's \(m_{1}\) en \(m_{2}\) met een afstand \(r\ \) tussenbeiden is gelijk is aan:
 
-\[\mathbf{F}_{\mathbf{G}}\mathbf{= G \bullet}\frac{\mathbf{m}_{\mathbf{1}}{\mathbf{.}\mathbf{m}}_{\mathbf{2}}}{\mathbf{r}^{\mathbf{2}}}\ \text{met} \ G = 6,67 \bullet \SI{1e-11}{\newton\meter\squared\per\kilo\gram\squared} = gravitatieconstante\]
+\[F_{G}=G\,\frac{m_{1}\,m_{2}}{r^{2}}\ \text{met}\ G=\SI{6,67e-11}{\newton\meter\squared\per\kilo\gram\squared}=\text{gravitatieconstante}\]
 
 In realistische situaties bij voorwerpen met afmetingen is \(r\) de afstand tussen de zwaartepunten van die voorwerpen. 
 Vaak valt het zwaartepunt samen met het midden van het voorwerp (zeker bij voorwerpen met homogene massaverdeling).
+
+
+\begin{image}
+	\begin{tikzpicture}
+		\def\d{4.1}  % distance r
+		\def\r{0.3}  % small radius ball
+		\def\R{0.38} % large radius ball
+		\def\F{0.95} % force magnitude
+		\def\u{0.4}  % unit vector magnitude
+		\def\ang{5}  % angle lin
+		\coordinate (M1) at (0,0);
+		\coordinate (M2) at (\ang:\d);
+		
+		% SETUP
+		\draw[measure,-]
+		  (M1) --++ (\ang+90:1.6*\R)
+		  (M2) --++ (\ang+90:1.6*\R);
+		\draw[measure] ($(M1)+(\ang+90:1.35*\R)$) --++ (M2)
+		  node[midway,circle,fill=white,inner sep=0] {$r$};
+		\draw[dashed] (M1) -- (M2);
+		\draw[mass] (M1) circle(\r) node[scale=0.9] {$m_1$};
+		\draw[mass] (M2) circle(\R) node[scale=0.9] {$m_2$};
+		
+		% FORCES
+		\draw[force] (M1)++(\ang-8:0.9*\r) --++ (\ang:\F)
+		  node[anchor=90,inner sep=4] {$\vbF_{21}$}; % = -G\dfrac{m_1m_2}{r^2}\vu{r}_{21}
+		\draw[force] (M2)++(\ang-172:0.9*\R) --++ (\ang:-\F)
+		  node[anchor=130,inner sep=3] {$\vbF_{12}$}; % = -G\dfrac{m_1m_2}{r^2}\vu{r}_{12}
+		\draw[unit] (M1)++(\ang+8:\r+0.02) --++ (\ang:\u)
+		  node[pos=0.8,above=-1] {$\vu{r}_{12}$};
+		\draw[unit] (M2)++(\ang+172:\R+0.02) --++ (\ang:-\u)
+		  node[pos=0.6,above=-1] {$\vu{r}_{21}$};
+		
+	  \end{tikzpicture}
+	\end{image}
+	\captionof{figure}{De gravitatiekracht \protect \footnotemark}
+	\footnotetext{\Tikzsource{https://tikz.net/category/physics/}{Izaak Neutelings}}
 
 In de context van hemellichamen wordt gravitatiekracht vaak zwaartekracht genoemd. 
 Dit verschilt enkel in benaming, maar beide benamingen weerspiegelen identiek hetzelfde krachtfenomeen. 
 In het Engels of Frans bestaat er geen woord voor ``zwaartekracht'', zij kennen enkel \emph{gravity} of \emph{gravité}.
 
-In een gravitatieveld \(\overrightarrow{g}\) is er een eenvoudigere formule:
-\(\ {\overrightarrow{\mathbf{F}}}_{\mathbf{G}}\mathbf{=}{\overrightarrow{\mathbf{F}}}_{\mathbf{z}}\mathbf{= m \bullet}\overrightarrow{\mathbf{g}}\mathbf{\ }\)
+In een gravitatieveld \(\vec{g}\) is er een eenvoudigere formule:
+\(\ \vec{F}_{G}=\vec{F}_{z}=m\,\vec{g}\ \)
 
 Rond een hemellichaam met massa \(M\) geldt:
-\(g = \frac{G \bullet M}{r²}\) 
+\(g = \frac{G\,M}{r^{2}}\) 
 Op het aardoppervlak, levert dit:
-\(g_{A} = 9,81\frac{N}{kg} \approx 10\frac{N}{kg}\)
+\(g_{A} = \SI{9,81}{\newton\per\kilo\gram} \approx \SI{10,0}{\newton\per\kilo\gram}\)
 
 
 
@@ -51,11 +90,11 @@ Op het aardoppervlak, levert dit:
 	Een ander argument dat Newton gebruikte om zijn voorstel voor de formule van de universele gravitatiekracht te corroboreren\footnote{Een moeilijk woord dat `met argumenten staven' betekent.}, was een redenering over de versnelling van de maan.\footnote{Zijn berekeningen borg hij op omdat ze niet strookte met de realiteit. Enkele jaren later bleek echter dat de door astronomen gebruikte afstand tot de maan fout was. Een nieuwe waarde toonde aan dat Newton een correcte redenering had gebruikt.} Ze gaat als volgt. De maan maakt een nagenoeg cirkelvormige beweging. Haar versnelling is dus te berekenen met de formule voor de versnelling van een ECB. We hebben dan de omlooptijd en de afstand tot de maan nodig. De straal van de cirkelbeweging van de maan is ongeveer 60 keer de straal van de aarde.
 	\begin{eqnarray*}
 		a&=&r\omega^2=r\left(\frac{2\pi}{T}\right)^2\\
-		&=&6370\cdot10^3\rm\,m\cdot60\cdot\left(\frac{2\pi}{27,3\cdot24\cdot60\cdot60\rm\,s}\right)^2=0,0027\rm\,m/s^2
+		&=&\SI{6370e3}{\meter}\cdot60\cdot\left(\frac{2\pi}{\SI{27,3}{\day}}\right)^2=\SI{0,0027}{\meter\per\second\squared}
 	\end{eqnarray*}
-	Dit getal komt overeen met een omgekeerd kwadratische afhankelijkheid van de straal. Nemen we namelijk de valversnelling op aarde, $9,81\rm\,m/s^2$ en delen we deze door $60^2$ (de maan bevindt zich immers 60 keer zo ver), dan krijgen we hetzelfde getal.
+	Dit getal komt overeen met een omgekeerd kwadratische afhankelijkheid van de straal. Nemen we namelijk de valversnelling op aarde, \(\SI{9,81}{\meter\per\second\squared}\) en delen we deze door \(60^2\) (de maan bevindt zich immers 60 keer zo ver), dan krijgen we hetzelfde getal.
 	\begin{eqnarray*}
-		a=\frac{9,81\rm\,m/s^2}{60^2}=0,0027\rm\,m/s^2
+		a=\frac{\SI{9,81}{\meter\per\second\squared}}{60^2}=\SI{0,0027}{\meter\per\second\squared}
 	\end{eqnarray*}
 	Hiermee had Newton een argument om aan te nemen dat de gravitatiekracht omgekeerd evenredig moet zijn met het kwadraat van de onderlinge afstand tussen de massa's.
 	
@@ -74,7 +113,7 @@ Op het aardoppervlak, levert dit:
 	De evenredigheidscoöefficiënt $G$ wordt de
 	\textit{gravitatieconstante} genoemd.
 	\begin{eqnarray}\nonumber
-	G&=&6,67\cdot10^{-11}\rm\,\frac{Nm^2}{kg^2}
+	G&=&\SI{6,67e-11}{\newton\meter\squared\per\kilo\gram\squared}
 	\end{eqnarray}
 	\end{minipage}}
 	\end{center}

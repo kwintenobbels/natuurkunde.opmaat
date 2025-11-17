@@ -9,7 +9,7 @@
     \xmsource\xmuitleg
 
 
-= weerstandskracht \({\overrightarrow{F}}_{w}\) op een voorwerp van een
+= weerstandskracht \(\vec{F}_{w}\) op een voorwerp van een
 medium of middenstof waarin of waartegen het zich bevindt
 
 % \includegraphics[width=2.08889in,height=1.81111in,alt={E:\textbackslash School updated tot en met 27\_08\_2012\textbackslash Fysica 6de jaar\textbackslash Afbeeldingen\textbackslash wrijving.gif}]{media/image8.gif}\textbf{Schuifwrijvingskracht}
@@ -26,11 +26,11 @@ Voor de schuifwrijvingskracht \({\overrightarrow{F}}_{w}\) wordt vastgesteld dat
 \item\ldots indien het voorwerp een rechtlijnige beweging maakt:
 \end{enumerate}
 
-De zin van \({\overrightarrow{F}}_{w}\) is tegen de zin van de beweging en de grootte van \({\overrightarrow{F}}_{w}\) is recht evenredig is met de grootte van de normaalkracht en tegelijk afhankelijk van hoe goed of slecht de materialen van het voorwerp en vlakke ondergrond over mekaar schuiven.
+De zin van \(\vec{F}_{w}\) is tegen de zin van de beweging en de grootte van \(\vec{F}_{w}\) is recht evenredig is met de grootte van de normaalkracht en tegelijk afhankelijk van hoe goed of slecht de materialen van het voorwerp en vlakke ondergrond over mekaar schuiven.
 
-Er geldt dan: \(F_{w} = \mu \bullet F_{n}\) met \(\mu\) de schuifwrijvingsfactor of schuifwrijvingscoëfficiënt (op te zoeken in tabellen)
+Er geldt dan: \(F_{w} = \mu \cdot F_{n}\) met \(\mu\) de schuifwrijvingsfactor of schuifwrijvingscoëfficiënt (op te zoeken in tabellen)
 
-Bovenstaande omkaderde formule is dus de maximale waarde van de schuifwrijvingskracht, waardoor de formule beter te schrijven is als: \(F_{w,max} = \mu \bullet F_{n}\). 
+Bovenstaande omkaderde formule is dus de maximale waarde van de schuifwrijvingskracht, waardoor de formule beter te schrijven is als: \(F_{w,max} = \mu \cdot F_{n}\). 
 Men kan overigens aantonen dat deze laatste formule ook klopt bij bewegingen die niet rechtlijnig zijn (zie verder voor voorbeelden). 
 \textit{(zie ook animatie Hans Bekaert: ``wrijving'')}
 
@@ -38,9 +38,9 @@ Men kan overigens aantonen dat deze laatste formule ook klopt bij bewegingen die
 \def\labelenumi{\alph{enumi})}
 \setcounter{enumi}{2}
 \item
-  \ldots indien het voorwerp een ECB maakt: \({\overrightarrow{F}}_{w}\)
+  \ldots indien het voorwerp een ECB maakt: \(\vec{F}_{w}\)
   heeft die grootte zodat
-  \(F_{r} = m \bullet a = m \bullet \frac{v^{2}}{r} = m \bullet \omega ² \bullet r\)
+  \(F_{r} = m \cdot a = m \cdot \frac{v^{2}}{r} = m \cdot \omega^{2} \cdot r\)
 \end{enumerate}
 
 Bij het maken van een bocht (bijvoorbeeld ECB) is er in sommige gevallen schuifwrijvingskracht die bijdraagt tot de middelpuntzoekende kracht. 
@@ -64,5 +64,48 @@ Bovenvermelde formules zijn enkel van toepassing voor schuifwrijving! \textbf{Ro
 \end{remark}
   
 
+\begin{image}
+
+% HORIZONTAL ground - lift
+\begin{tikzpicture}
+  \def\W{3.6}  % ground width
+  \def\D{0.2}  % ground depth
+  \def\H{1.9}  % human height
+  \def\h{0.8}  % mass height
+  \def\w{1.0}  % mass width
+  \def\mx{0.10*\W} % mass x coordinate
+  
+  % SETUP
+  \draw[ground] (-0.5*\W,0) rectangle++ (\W,-\D);
+  \draw (-0.5*\W,0) --++ (\W,0);
+  \draw[mass] (\mx,0) rectangle++ (\w,\h) node[midway] {$m$};
+  
+  % PERSON
+  \coordinate (H) at (0,0.75*\H);
+  \draw[thick,line cap=round]
+    (H)++(-165:0.3) to[out=-140,in=60]++ (-130:0.3)
+    to[out=65,in=-90,looseness=1.0]++ (80:0.45) to[out=90,in=120,looseness=1.4]++ (20:0.2); % pony tail
+  \draw[thick,fill=white] (H) circle (0.3);
+  \draw[thick,line cap=round] (H)++(-140:0.3) to[out=80,in=-120,looseness=1.8]++ (40:0.6); % hair
+  \draw[thick] (H)++(-120:0.3) coordinate (N) to[out=-115,in=40]++ (-130:0.36*\H) coordinate (P);
+  \draw[thick,line cap=round] (N)++(-115:0.03) to[out=-60,in=170] (1.04*\mx,\h);
+  \draw[thick,line cap=round] (N)++(-115:0.03) to[out=-70,in=170] (\mx,0.92*\h);
+  \draw[thick,line cap=round] (P) to[out=-120,in=30,looseness=1.3] (-0.35*\W,0);
+  \draw[thick,line cap=round] (P) to[out=-50,in=30,looseness=1.8] (-0.22*\W,0);
+  
+  % FORCES
+  \ifthenelse{\boolean{showforces}}{
+    \draw[<->] (\mx+1.4*\w,2.1*\h) node[below=2,left=0] {$y$}
+      |-++ (0.7*\h,-0.7*\h) node[right=0] {$x$};
+    \draw[force] (\mx+0.3*\w,0.05*\h) --++ (0, 1.3*\h) node[above] {$\vbF_\mathrm{N}$};
+    \draw[force] (\mx+0.8*\w,0.50*\h) --++ (0,-1.3*\h) node[right=5,below=-3] {$-mg\vu{y}$};
+    \draw[force] (\mx+0.9*\w,0.80*\h) --++ ( 0.9*\h,0) node[right] {$\vbF$};
+    \draw[force] (\mx+0.1*\w,0.10*\h) --++ (-0.9*\h,0) node[right=6,above=1] {$\vbF_\mathrm{f}$};
+  }{}
+  
+\end{tikzpicture}
+\end{image}
+\captionof{figure}{De wrijvingskracht \protect \footnotemark}
+\footnotetext{\Tikzsource{https://tikz.net/category/physics/}{Izaak Neutelings}}
 
 \end{document}
