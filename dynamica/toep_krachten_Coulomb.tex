@@ -23,6 +23,34 @@ is gelijk is aan:
   \includegraphics{toep_coulomb2}
 \end{image}
 
+
+\begin{image}
+  \begin{tikzpicture}
+
+    \def\a{2.5}
+    \def\R{0.33}
+    \def\F{1.8}
+    
+    \coordinate (L) at (-\a,0);
+    \coordinate (R) at (+\a,0);
+      
+    % FORCES
+    \draw[force] (L) --++ (+\F,0) node[above left] {$\mathbf{F}_{21}$};
+    \draw[force] (R) --++ (-\F,0) node[above right] {$\mathbf{F}_{12}$};
+    
+    % CHARGES
+    \draw[charge+] (L) circle (\R) node[scale=1.2] {$+$};
+    \draw[charge-] (R) circle (\R) node[scale=1.2] {$-$};
+    \draw[<->]     (L)++(\R,-1.1*\R) --++ (2*\a-2*\R,0) node[midway,below] {r};
+    \node[above] at (-\a,\R) {$q_1$};
+    \node[above] at (+\a,\R) {$q_2$};
+    
+  \end{tikzpicture}
+\end{image}
+\captionof{figure}{De Coulombkracht \protect \footnotemark}
+\footnotetext{\Tikzsource{https://tikz.net/category/physics/}{Izaak Neutelings}}
+
+
 In realistische situaties bij ladingen met afmetingen is r de afstand tussen de middelpunten van die ladingen.
 
 In een elektrisch veld \(\vec{E}\) is er een eenvoudigere formule:

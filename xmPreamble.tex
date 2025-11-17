@@ -213,6 +213,72 @@
 
 
 
+
+
+% dit voor veerkracht 
+
+% % \usepackage{physics}
+% % \usepackage{tikz}
+\usepackage[outline]{contour} % glow around text
+\usetikzlibrary{patterns,snakes}
+% \usetikzlibrary{arrows.meta} % for arrow size STAAT HIERBOVEN AL 
+\contourlength{0.4pt}
+
+\colorlet{xcol}{blue!70!black}
+\colorlet{darkblue}{blue!40!black}
+\colorlet{myred}{red!65!black}
+\tikzstyle{mydashed}=[xcol,dashed,line width=0.25,dash pattern=on 2.2pt off 2.2pt]
+\tikzstyle{axis}=[->,thick] %line width=0.6
+\tikzstyle{ell}=[{Latex[length=3.3,width=2.2]}-{Latex[length=3.3,width=2.2]},line width=0.3]
+\tikzstyle{dx}=[-{Latex[length=3.3,width=2.2]},darkblue,line width=0.3]
+\tikzstyle{ground}=[preaction={fill,top color=black!10,bottom color=black!5,shading angle=20},
+                    fill,pattern=north east lines,draw=none,minimum width=0.3,minimum height=0.6]
+\tikzstyle{mass}=[line width=0.6,red!30!black,fill=red!40!black!10,rounded corners=1,
+                  top color=red!40!black!20,bottom color=red!40!black!10,shading angle=20]
+\tikzstyle{spring}=[line width=0.8,blue!7!black!80,snake=coil,segment amplitude=5,segment length=5,line cap=round]
+\tikzset{>=latex} % for LaTeX arrow head
+\tikzstyle{force}=[->,myred,very thick,line cap=round]
+% \def\tick#1#2{\draw[thick] (#1)++(#2:0.1) --++ (#2-180:0.2)}yle{..}
+
+
+
+% dit voor Coulombkracht 
+
+\tikzstyle{charge}=[thin,top color=red!50,bottom color=red!70,shading angle=20]
+\tikzstyle{charge+}=[thin,top color=red!50,bottom color=red!90!black,shading angle=20]
+\tikzstyle{charge-}=[thin,top color=blue!50,bottom color=blue!80,shading angle=20]
+\tikzstyle{force}=[->,very thick,orange!80!black]
+\tikzstyle{vector}=[->,very thick,green!45!black]
+
+
+
+% dit voor gravitatiekracht 
+
+\colorlet{myred}{red!65!black}
+\colorlet{mygreen}{green!60!black}
+\colorlet{mydarkred}{red!50!black}
+\colorlet{mydarkblue}{blue!40!black}
+\tikzstyle{measure}=[{Latex[length=4,width=3]}-{Latex[length=4,width=3]},line width=0.4,mydarkblue]
+\tikzstyle{ground}=[preaction={fill,top color=black!10,bottom color=black!5,shading angle=20},
+                    fill,pattern=north east lines,draw=none,minimum width=0.3,minimum height=0.6]
+\tikzstyle{mass}=[line width=0.6,red!30!black,fill=red!40!black!10,rounded corners=1,
+                  top color=red!40!black!20,bottom color=red!40!black!10,shading angle=20]
+\tikzstyle{rope}=[brown!70!black,line width=1.2,line cap=round] %very thick
+\tikzstyle{force}=[->,myred,thick,line cap=round]
+\tikzstyle{unit}=[->,mygreen,thick,line cap=round]
+\tikzset{fieldlines/.style={mydarkred,decoration={markings,mark=at position #1 with {\arrow{latex}}},
+                            postaction={decorate},line width=0.7},
+         fieldlines/.default=0.55}
+% \newcommand{\vbF}{\vb{F}}
+
+
+%wrijving 
+% NIETS VOOR MOETEN BIJZETTEN 
+
+
+% KERNKRACHTEN
+
+
 % ================================================================================================================
 % ================================================================================================================
 
