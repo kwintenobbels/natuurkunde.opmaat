@@ -1,3 +1,6 @@
+% =============================================================================
+% 1. HEADER & PACKAGE INFORMATION
+% =============================================================================
 %
 % Layout / Formattering voor de PDF versie van de
 % Zomercursus Wiskunde KU Leuven
@@ -11,21 +14,25 @@
 % 1/2023: layout gemoderniseerd (op basis van het Overleaf Template voor Bachelorpapers Wetenschappen)
 %
 
-\usepackage{silence}
-%Disable all warnings issued by latex starting with "You have..."
-\WarningFilter{latex}{You have requested package}    % because we typically request ../printstyle (or ./printstyle)
-
 \NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
 [1994/12/01]% LaTeX date must be December 1994 or later
 %%%\ProvidesPackage{printstyle}[2023/01/12 v0.7]   
 %\ProcessOptions\relax
 
+% =============================================================================
+% 2. PACKAGE IMPORTS
+% =============================================================================
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}    % because we typically request ../printstyle (or ./printstyle)
+
+% Font packages
 \usepackage{stix}
 \renewcommand{\familydefault}{\sfdefault}    % sans-serif by default
 % BUT CAUSES WARNINGS
 % Font shape `T1/cmss/m/sc' in size <9> not available
 % (Font)	Font shape `T1/cmr/m/sc' tried instead.
-
 
 % Alternative font: a version of Bitstream Vera% Sans.
 %\let\warning\relax
@@ -42,16 +49,39 @@
 %\usepackage{bold-extra}
 %\usepackage{anyfontsize}
 
-
+% Date/time packages
 \usepackage[yyyymmdd]{datetime}    % for \currenttime
 %\usepackage{totpage}  % for LastPage  (ie Page n of M)
 
+% Layout packages
 \usepackage{textpos}   % voorpagina
 \usepackage{pdflscape} % include posters
-
 %\usepackage{rotating}
 
-\newcommand{\dfn}[1]{\textbf{#1}\index{#1}}
+% Utility packages
+\usepackage{afterpage}
+\usepackage{fancyhdr} % Nodig voor de 'fancy' hoofdingen
+\usepackage{extramarks}
+\usepackage{titlesec}
+\usepackage{qrcode}
+\usepackage{currfile}
+\usepackage{marginnote}
+\usepackage{pifont}
+
+% Color/box packages
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\tcbuselibrary{skins,theorems}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,  
+    urlcolor=xmblue,
+}
+
+% =============================================================================
+% 3. PAGE LAYOUT & DIMENSIONS
+% =============================================================================
 
 %% Size of the page
 \usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, a4paper]{geometry}
@@ -75,6 +105,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5 pt}
 
+% Boolean flags for print options
 \providebool{parttoc}    % needs minitoc; NOT implemented
 \providebool{printpartfrontpage}
 \providebool{printactivitytitle}
@@ -82,17 +113,32 @@
 \providebool{printactivityurl}
 \providebool{printcontinuouspagenumbers}
 
-
-
 % for PDF by activity, it makes sense not to include the title, as it is in the header already
 \printactivitytitletrue   % overwrite AFTER loading printstyle ...
-
 
 % Store original \title and \maketitle 
 %\let\othertitle\title
 \let\othermaketitle\maketitle
 
 % % Redefine maketitle to give course packet title page and toc.
+
+% =============================================================================
+% 4. COLOR DEFINITIONS
+% =============================================================================
+
+% kleuren voor voorpagina/header/footer
+%\definecolor{green}{RGB}{172,196,0}
+%\definecolor{bluetitle}{RGB}{252,175,59}    % wiskundeplan accent
+\definecolor{bluetitle}{RGB}{29,141,176}
+\definecolor{blueaff}{RGB}{0,0,128}
+%\definecolor{blueline}{RGB}{82,189,236}
+%\definecolor{blueKUL}{RGB}{252,175,59}  % Wiskundeplan
+\definecolor{blueKUL}{rgb}{0.114, 0.553, 0.69}  % KU Leuven Blauw
+\colorlet{blueline}{blueKUL!20}
+
+% =============================================================================
+% 5. COURSE METADATA & CUSTOMIZATION COMMANDS
+% =============================================================================
 
 %
 % provide defaults for frontpage/headers/footers
@@ -120,15 +166,14 @@
     \xmorganisatienaam\ (\xmcursusversie)
 }
 
-% kleuren voor voorpagina/header/footer
-%\definecolor{green}{RGB}{172,196,0}
-%\definecolor{bluetitle}{RGB}{252,175,59}    % wiskundeplan accent
-\definecolor{bluetitle}{RGB}{29,141,176}
-\definecolor{blueaff}{RGB}{0,0,128}
-%\definecolor{blueline}{RGB}{82,189,236}
-%\definecolor{blueKUL}{RGB}{252,175,59}  % Wiskundeplan
-\definecolor{blueKUL}{rgb}{0.114, 0.553, 0.69}  % KU Leuven Blauw
-\colorlet{blueline}{blueKUL!20}
+% Update het maketitle commando in chapterstyle: toevoegen in inhoudsopgave en counters resetten
+% Deze counters worden gebruikt om de juiste nummering te tonen bij de definities etc
+% Deze worden handmatig verhoogt, gereset (= beheert) om compatibel te zijn met de handmatige telling online
+\providecommand\xmbaseurl{https://set.kuleuven.be/ximera-wis/demo/}
+
+% =============================================================================
+% 6. FRONT PAGE DESIGN
+% =============================================================================
 
 % print een titelblad, globaal of per module (gebaseerd op bovenstaande parameters \xmXXX)
 \newcommand{\xmPrintFrontPage}[1]{
@@ -183,13 +228,249 @@
 }
 }
 
-\usepackage{afterpage}
-\usepackage{fancyhdr} % Nodig voor de 'fancy' hoofdingen
-\usepackage{extramarks}
+
+
+\newcommand{\xmPrintBasicFrontPage}[1]{
+{
+
+\thispagestyle{empty}
+\cleardoublepage
+\thispagestyle{empty}
+
+\vspace*{3cm}
+
+\begin{center}
+\begin{image}[\textwidth]
+    \tikz\pic {natuurkundeopmaat};
+\end{image}
+
+\vspace*{2cm}
+
+{\Huge \xmcursusnaam}\\[1cm]
+
+{\Large 2025-2026}
+\end{center}
+
+
+% % Course name and title below logo
+% \begin{textblock}{160}(-6,140)
+%     \textblockcolour{}
+%     \vspace{-\parskip}
+%     \centering
+% \fontsize{18}{20}\selectfont\xmcursusnaam\\[1.5cm]
+% \fontsize{36}{40}\selectfont\bfseries{
+%     \xmmodulenummer
+%     \bigskip 
+%     \textsc{#1}
+%     }
+
+% \end{textblock}
+
+% % Simple black line at bottom
+% \begin{textblock}{191}(-24,220)
+%     \rule{580pt}{2pt}
+%     \vspace{0.5cm}
+%     \flushright\fontsize{10}{12}\selectfont(Versie \xmcursusversie)
+% \end{textblock}
+% %
+% \vfill
+
+% \afterpage{\thispagestyle{empty}}         
+
+}
+}
+
+% =============================================================================
+% 6.5. OPEN SOURCE ATTRIBUTION PAGE
+% =============================================================================
+
+\newcommand{\xmPrintOpenSourcePage}{
+\thispagestyle{empty}
+\cleardoublepage
+\thispagestyle{empty}
+
+\vspace*{\fill}
+
+% \begin{center}
+    {\Huge Open-Source Leermateriaal}
+    
+    \vspace{2cm}
+
+    Deze cursus wordt ontwikkeld als open-source project en is vrij te gebruiken. 
+    Alle code is beschikbaar via \href{\linkGithub}{Github}. 
+    Naast deze pdf-versie zijn er ook kosteloos interactieve webpagina's beschikbaar. 
+    Hier je door op 'wijzig' te drukken vanuit de browser met overleaf het materiaal verbeteren. 
+
+
+    % Try to input .shortlog file, handle gracefully if missing
+    % Check multiple possible locations (root, parent directory)
+    \IfFileExists{.shortlog}{%
+        % Input file defines \gitcommithash and \gitcontributorslist
+        \input{.shortlog}
+        Tot op heden -\gitcommithash - werd dit materiaal mogelijk gemaakt door: 
+        
+        \begin{itemize}
+            \gitcontributorslist
+        \end{itemize}
+
+        Iedereen die een bijdrage levert wordt hier automatisch ingevoegd. 
+    }{%
+        \IfFileExists{../.shortlog}{%
+            % Try parent directory (for files in subdirectories like SPC/)
+            \input{../.shortlog}
+            \textbf{As of commit number:} \gitcommithash
+            
+            \vspace{1cm}
+            
+            \textbf{Contributors:}
+            
+            \begin{itemize}
+                \gitcontributorslist
+            \end{itemize}
+        }{%
+            \textbf{As of commit number:} \textit{(Git information not available)}
+            
+            \vspace{1cm}
+            
+            \textbf{Contributors:}
+            
+            \begin{itemize}
+                \item \textit{(Contributor information not available)}
+            \end{itemize}
+        }
+    }
+% \end{center}
+
+\vspace*{\fill}
+
+
+\afterpage{\thispagestyle{empty}}
+
+}
+
+
+% =============================================================================
+% =============================================================================
+
+\newcommand{\xmLicentievoorwaarden}{
+% \chapter{Licentievoorwaarden} 
+% \label{rechten}
+% \pagestyle{plain}
+
+\thispagestyle{empty}
+\cleardoublepage
+\thispagestyle{empty}
+
+{\Huge Licentievoorwaarden}
+
+
+Dit werk is gelicenseerd onder CC BY-NC-SA 4.0, voluit: 
+\begin{center}
+Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen 4.0 Internationaal. 
+\end{center}
+Op deze pagina worden enkele van de belangrijkste kenmerken en voorwaarden van de volledige licentie belicht. Die vereenvoudigde versie (akte) is ontleend aan 
+\begin{center}
+\url{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.nl}. 
+\end{center}
+We raden aan om alle voorwaarden van de volledige licentie te bestuderen voordat je het gelicenseerde materiaal gebruikt. De volledige, juridische tekst vind je op
+\begin{center}
+\url{http://creativecommons.org/licenses/by-nc-sa/4.0/nl/legalcode}. 
+\end{center}
+
+\par
+
+{\bf Je bent vrij om:}
+\begin{itemize}
+\item[]
+{\bf Delen} - het materiaal te kopi\"eren, te verspreiden en door te geven via elk medium of bestandsformaat.
+\item[]
+{\bf Bewerken} - te remixen, te veranderen en afgeleide werken te maken.
+\item[]
+De licentiegever kan deze toestemming niet intrekken zolang aan de licentievoorwaarden voldaan wordt.
+\end{itemize}
+
+\par
+
+{\bf Onder de volgende voorwaarden:} 
+\begin{itemize}
+\item[]
+{\bf Naamsvermelding} - De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+\item[]
+{\bf Niet-commercieel} - Je mag het werk niet gebruiken voor commerci\"ele doeleinden.
+\item[]
+{\bf Gelijk delen} - Als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd, moet je het veranderde materiaal verspreiden onder dezelfde licentie als het originele werk.
+\item[]
+{\bf Geen aanvullende restricties} — Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat.
+\end{itemize}
+
+\par
+
+{\bf Let op:} 
+
+Tikzpictures zijn gelicenseerd onder CC BY-SA 4.0 en zijn ook afzonderlijk beschikbaar via een eigen Github repository. 
+Dit betreft eigen afbeeldingen alsook herwerkingen van diverse bronnen (Tikz.net, LaTeX StackExchange, ...).
+Elke Tikzpicture is van bronvermelding voorzien. 
+
+
+
+{\bf Let op:} 
+
+Voor elementen van het materiaal die zich in het publieke domein bevinden, en voor vormen van gebruik die worden toegestaan via een uitzondering of beperking in de Auteurswet, hoef je je niet aan de voorwaarden van de licentie te houden. 
+
+Er worden geen garanties afgegeven. Het is mogelijk dat de licentie je niet alle gebruiksvrijheden geeft die nodig zijn voor het beoogde gebruik. Bijvoorbeeld, andere rechten zoals publiciteits-, privacy- en morele rechten kunnen het gebruik van een werk beperken.
+
+}
+% =============================================================================
+% 7. HEADERS & FOOTERS
+% =============================================================================
 
 \renewcommand{\headrulewidth}{3pt}
 
 \def\mymoduletitle{}   % will be set by \part
+
+% Print een zwarte BLOB  rechts op de pagina bij elke nieuwe activity
+%    ( handig bij het bladeren door de PDF ... ?)
+\ifdefined\xmprintblob   % deprecated; does not work anymore ...? (2/2023)
+\setlength{\unitlength}{18mm}
+%\newcommand{\blob}{\rule[-.2\unitlength]{1\unitlength}{.25\unitlength}}
+\newcommand{\blob}{{\color{gray}\rule{.5\unitlength}{.2\unitlength}}} 
+\newcommand\rblob{
+    \begin{picture}(0,0)
+%        \put(1,-\value{titlenumber}){\begin{sideways}\@title \thetitlenumber\end{sideways} \blob}
+        \put(1,-\value{titlenumber}){\thetitlenumber\;\blob}
+
+    \end{picture}
+}
+
+\newcommand\lblob{
+    \begin{picture}(0,0)
+        \put(-3,-\value{titlenumber}){\blob\;\thetitlenumber}
+    \end{picture}
+}
+
+\newcommand\rbigblob{
+    \begin{picture}(0,0)
+    \put(0,-0.2)
+     {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
+           \colorbox{blueline}{\makebox(1,0.56){\selectfont\bfseries\color{white}\thetitlenumber}}   % Mmm, WRONG for sections
+     }
+    \end{picture}
+}
+\newcommand\lbigblob{
+    \begin{picture}(0,0)
+    \put(-1.15,-0.2)
+     {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
+	     \colorbox{blueline}{\makebox(1,0.56){\selectfont\bfseries\color{white}\thetitlenumber}}
+     }
+    \end{picture}
+}
+\else
+\newcommand\blob{}
+\newcommand\rblob{}
+\newcommand\lblob{}
+\newcommand\lbigblob{}
+\newcommand\rbigblob{}
+\fi
 
 \fancypagestyle{otherpage}{%  op de eerste pagina BOLD titel in BLAUW
     \renewcommand{\headrulewidth}{0.4pt}
@@ -281,49 +562,9 @@
 
 \pagestyle{otherpage}
 
-% Print een zwarte BLOB  rechts op de pagina bij elke nieuwe activity
-%    ( handig bij het bladeren door de PDF ... ?)
-\ifdefined\xmprintblob   % deprecated; does not work anymore ...? (2/2023)
-\setlength{\unitlength}{18mm}
-%\newcommand{\blob}{\rule[-.2\unitlength]{1\unitlength}{.25\unitlength}}
-\newcommand{\blob}{{\color{gray}\rule{.5\unitlength}{.2\unitlength}}} 
-\newcommand\rblob{
-    \begin{picture}(0,0)
-%        \put(1,-\value{titlenumber}){\begin{sideways}\@title \thetitlenumber\end{sideways} \blob}
-        \put(1,-\value{titlenumber}){\thetitlenumber\;\blob}
-
-    \end{picture}
-}
-
-\newcommand\lblob{
-    \begin{picture}(0,0)
-        \put(-3,-\value{titlenumber}){\blob\;\thetitlenumber}
-    \end{picture}
-}
-
-\newcommand\rbigblob{
-    \begin{picture}(0,0)
-    \put(0,-0.2)
-     {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
-           \colorbox{blueline}{\makebox(1,0.56){\selectfont\bfseries\color{white}\thetitlenumber}}   % Mmm, WRONG for sections
-     }
-    \end{picture}
-}
-\newcommand\lbigblob{
-    \begin{picture}(0,0)
-    \put(-1.15,-0.2)
-     {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
-	     \colorbox{blueline}{\makebox(1,0.56){\selectfont\bfseries\color{white}\thetitlenumber}}
-     }
-    \end{picture}
-}
-\else
-\newcommand\blob{}
-\newcommand\rblob{}
-\newcommand\lblob{}
-\newcommand\lbigblob{}
-\newcommand\rbigblob{}
-\fi
+% =============================================================================
+% 8. DOCUMENT STRUCTURE & COUNTERS
+% =============================================================================
 
 \makeatletter
 %
@@ -334,6 +575,9 @@
   % Maak onderscheid tussen (volledige) xourses of (aparte) activities
   \ifdefined\isXourse  
       \xmPrintFrontPage{\@title}
+  
+      % Show open source attribution page
+      \xmPrintOpenSourcePage
   
       % Toon INHOUDSOPGAVE 
       \thispagestyle{empty}
@@ -357,7 +601,6 @@
   \afterpage{\thispagestyle{otherpage}}  
 } % end \renewcommand maketitle (voor MAIN FRONTPAGE)
 
-
 %
 % Counting stuff:
 % complex, because online, Ximera counts chapters/sections itself
@@ -377,7 +620,6 @@
 %
 % defaults: will be overwitten infra
 %
-\usepackage{titlesec}
 
 %\counterwithin{subsubsection}{sectiontitlenumber}
 
@@ -390,19 +632,10 @@
 \titleformat{\subsubsection}[hang]{\normalfont\bfseries}{\thesubsubsection}{1em}{}
 \titleformat{\paragraph}[hang]{\normalfont\bfseries}{\theparagraph}{1em}{}
 
-
 %\titleformat*{\subsubsection}{\normalfont\large\sffamily\bfseries}
 \titlespacing*{\subsection}{0pt}{1.25ex plus 1ex minus .2ex}{0.2em}
 
 %\usepackage{regexpatch}% http://ctan.org/pkg/regexpatch
-\usepackage{qrcode}
-\usepackage{currfile}
-\usepackage{marginnote}
-
-% Update het maketitle commando in chapterstyle: toevoegen in inhoudsopgave en counters resetten
-% Deze counters worden gebruikt om de juiste nummering te tonen bij de definities etc
-% Deze worden handmatig verhoogt, gereset (= beheert) om compatibel te zijn met de handmatige telling online
-\providecommand\xmbaseurl{https://set.kuleuven.be/ximera-wis/demo/}
 
 \renewcommand\chapterstyle{%
   \def\maketitle{%
@@ -512,8 +745,6 @@
 \fi
 \fi
 
-\makeatletter
-
 \def\@part[#1]#2{%
     \def\mymoduletitle{#1}   % set module title for use in header
 	\setcounter{titlenumber}{0}  % teller voor 'chapters' per part (defined in  ximera.cls)
@@ -578,12 +809,9 @@
 
 \makeatother
 
-%% image environment: resize en center
-% \let\image\relax
-% \let\endimage\relax
-% \NewEnviron{image}[1][3in]{% 
-%   \begin{center}\resizebox{#1}{!}{\BODY}\end{center}% resize and center
-% }
+% =============================================================================
+% 9. TABLE OF CONTENTS
+% =============================================================================
 
 % Nederlandse titel van 'Contents'
 \renewcommand{\contentsname}{Inhoudsopgave}
@@ -591,13 +819,20 @@
 %\renewcommand{\thepart}{\arabic{part}}
 %\renewcommand{\thetitlenumber}{\thepart.\arabic{titlenumber}}
 %\renewcommand{\thesectiontitlenumber}{\thetitlenumber.\arabic{sectiontitlenumber}}
+
+% =============================================================================
+% 10. THEOREM TITLE HELPER
+% =============================================================================
+
 % Commando om de nummering bij de titels van theorems juist in te stellen, wordt hieronder gebruikt
 \newcommand{\theoremtitle}[1]{%
     \ifdefined\isXourse\thetitlenumber.\arabic{#1}\else\arabic{#1}\fi%
 }
 
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable,skins}
+% =============================================================================
+% 11. THEOREM ENVIRONMENTS - DEFINITIONS & SETUP
+% =============================================================================
+
 % Herdefinieer enkele omgevingen (PAS OP: enkel voor PDF, voor html: zie css..!!!)
 % Moet in printStyles, want in preamble zorgt dit voor problemen
 % remove italics def
@@ -613,6 +848,7 @@
 
 \theoremstyle{definition} % Bold titels
 
+% Definition-like environments (green)
 \makeatletter
 \let\definition\relax
 \let\c@definition\relax
@@ -673,6 +909,7 @@
     % before upper={\vspace*{-0.45cm}},
 }
 
+% Theorem-like environments (green, darker border)
 \makeatletter
 \let\proposition\relax
 \let\c@proposition\relax
@@ -712,7 +949,6 @@
     breakable,
     % before upper={\vspace*{-0.45cm}},
 }
-
 
 \makeatletter
 \let\corollary\relax
@@ -767,6 +1003,7 @@
     % before upper={\vspace*{-0.45cm}},
 }
 
+% Proof environment (commented out)
 %\newcounter{proof}
 %\makeatletter
 %\let\proof\relax
@@ -789,6 +1026,7 @@
 %before upper={\vspace*{-0.45cm}},
 %}
 
+% Explanation environment
 \makeatletter
 \let\explanation\relax
 \let\c@explanation\relax
@@ -808,6 +1046,10 @@
     breakable,
     % before upper={\vspace*{-0.45cm}},
 }
+
+% =============================================================================
+% 12. EXAMPLE & EXERCISE ENVIRONMENTS
+% =============================================================================
 
 \makeatletter
 \let\example\relax
@@ -862,6 +1104,10 @@
     breakable,
     % before upper={\vspace*{-0.45cm}},
 }
+
+% =============================================================================
+% 13. REMARK & WARNING ENVIRONMENTS
+% =============================================================================
 
 \makeatletter
 \let\remark\relax
@@ -918,6 +1164,9 @@
     % before upper={\vspace*{-0.45cm}},
 }
 
+% =============================================================================
+% 14. QUESTION ENVIRONMENT
+% =============================================================================
 
 % remove italics def
 \makeatletter
@@ -939,6 +1188,10 @@
 \AtBeginEnvironment{warning}{\setcounter{question}{0}\setcounter{hint}{0}}
 \AtBeginEnvironment{exercise}{\setcounter{question}{0}\setcounter{hint}{0}}
 \AtBeginEnvironment{example}{\setcounter{question}{0}\setcounter{hint}{0}\handoutfalse}    % print oplossingen in voorbeelden
+
+% =============================================================================
+% 15. EXTENSION ENVIRONMENTS
+% =============================================================================
 
 \ifdefined\isXourse
    \ifdefined\xmuitweiding
@@ -1007,6 +1260,10 @@
 }
 }
 
+% =============================================================================
+% 16. FEEDBACK & SOLUTION ENVIRONMENTS
+% =============================================================================
+
 % Feedback
 % Renew feedback
 \ifhandout%
@@ -1022,8 +1279,6 @@
 }
 \fi
 
-\usepackage{pifont}
-
 % Expandable printed a bit smaller (TBI)
 \let\expandable\relax
 \let\endexpandable\relax
@@ -1033,86 +1288,6 @@
 % \ding{228}  % small black right-pointing triangle
 
 \NewEnviron{expandable}[2]{\begin{#1}\ding{228} #2 \nl\smaller\BODY\end{#1}}
-
-\renewcommand{\youtube}[1]{YouTube link: \url{https://www.youtube.com/watch?v=#1} \hfill \qrcode{https://www.youtube.com/watch?v=#1}} 
-
-%% Compress dialogue
-\renewenvironment{dialogue}{%
-   \renewcommand\descriptionlabel[1]{\hspace{\labelsep}\textbf{##1:}}
-   \small\begin{description}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]%
-}{%
-   \end{description}\normalsize%
-}
-%
-%
-
-\renewcommand{\theHexercise}{\thetitlenumber.\theexercise}   % for hyperref ...
-\renewcommand{\theHdefinition}{\thetitlenumber.\thedefinition}   % for hyperref ...
-\renewcommand{\theHproposition}{\thetitlenumber.\theproposition}   % for hyperref ...
-\renewcommand{\theHexample}{\thetitlenumber.\theexample}   % for hyperref ...
-\renewcommand{\theHremark}{\thetitlenumber.\theremark}   % for hyperref ...
-\renewcommand{\theHsubsection}{\thetitlenumber.\thesubsection}   % for hyperref ...
-
-
-
-\let\oldhypertarget\hypertarget
-\let\oldhyperlink\hyperlink
-\renewcommand{\hypertarget}[2]{%
-  \label{ht@#1}\oldhypertarget{#1}{#2}%
-}
-\renewcommand{\hyperlink}[2]{%
-  \ifcsname r@ht@#1\endcsname\oldhyperlink{#1}{#2}\else#2\fi
-}
-
-% Gecopieerd van ximera.cls, o.a. om te vernederlandsen
-\providecommand{\multipleChoiceLabel}{\hskip \labelsep\small\bfseries \nlen{Meerkeuze:}{Multiple Choice:}}
-\makeatletter
-\renewenvironment{multipleChoice}[1][]
-{% Environment Start Code
-\setkeys{multipleChoice}{#1}%
-\recordvariable{\mc@id}%
-\begin{trivlist}
-\item[\multipleChoiceLabel]\hfil
-\begin{xmmulticols}
-\begin{enumerate}
-}% Note this means that \item has to be the first line after \begin{multipleChoice}.
-{% Environment End Code
-\end{enumerate}
-\end{xmmulticols}
-\end{trivlist}
-}
-
-%\renewenvironment{multipleChoice@}[1][]{}{)}    % not needed: is in ximera.cls
-
-
-\renewcommand{\wordChoice}[1]{%
-\let\choicetemp\choice% Assign a "choicetemp" command to duplicate choice.
-\ifwordchoicegiven% If wordchoice option is on, we need to juggle around some definitions.
-\let\choice\otherchoice%
-#1
-\else% If it isn't the regular "choice" command should work.
-\let\choice\inlinechoice%
-\begin{multipleChoice@}%
-#1%
-\end{multipleChoice@}%
-\fi%
-\let\choice\choicetemp% Now that choicetmp has been manipulated to what we want, replace choice with it.
-}%
-
-
-\renewenvironment{selectAll}[1][]
-{\begin{trivlist}\item[\hskip \labelsep\small\bfseries \nlen{Meerkeuze (selecteer alle correcte antwoorden):}{Multiple Choice (select all correct answers);}]\hfil\begin{enumerate}}
-    {\end{enumerate}\end{trivlist}}
-
-\makeatother
-
-% Plots in kleur (set in preamble ...?)
-%\xmPlotsColor
-
-\hypersetup{
-    colorlinks=true,  
-    urlcolor=xmblue,
-}
 
 %
 % Evalueer \ifhandout PER INSTANCE van de environment
@@ -1143,130 +1318,85 @@
 \fi
 }    
 
+% =============================================================================
+% 17. INTERACTIVE ELEMENTS
+% =============================================================================
 
-%
-% localize newpages-between-activities based on \ifnonewpage
-%
-%
-% make ifnonewpage local
-%   (resumes and overwrites what's in xourse.cls)
-%
+\renewcommand{\youtube}[1]{YouTube link: \url{https://www.youtube.com/watch?v=#1} \hfill \qrcode{https://www.youtube.com/watch?v=#1}} 
+
+%% Compress dialogue
+\renewenvironment{dialogue}{%
+   \renewcommand\descriptionlabel[1]{\hspace{\labelsep}\textbf{##1:}}
+   \small\begin{description}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]%
+}{%
+   \end{description}\normalsize%
+}
+
+% Gecopieerd van ximera.cls, o.a. om te vernederlandsen
+\providecommand{\multipleChoiceLabel}{\hskip \labelsep\small\bfseries \nlen{Meerkeuze:}{Multiple Choice:}}
 \makeatletter
-\@ifclassloaded{xourse}    % only in xourses !!  (this could replace \isXourse )
-{
-\AddToHook{begindocument}{%
-\let\otherinput\input
-\typeout{xourse resets activity to use nonewpage}
-\renewcommand{\activity}[2][]{%
-    \setkeys{activity}{#1}%
-    \renewcommand{\input}[1]{}%
-    \ifnonewpage%
-       \begingroup\skip@preamble\otherinput{#2}\endgroup\par\vspace{\topsep}%
-    \else%
-       \begingroup\skip@preamble\otherinput{#2}\endgroup\clearpage%
-    \fi%
-    \let\input\otherinput%
-}%
-\ifxake%
-\typeout{ifxake resets activity to no-op}
-\renewcommand\activity[2][]{}%
+\renewenvironment{multipleChoice}[1][]
+{% Environment Start Code
+\setkeys{multipleChoice}{#1}%
+\recordvariable{\mc@id}%
+\begin{trivlist}
+\item[\multipleChoiceLabel]\hfil
+\begin{xmmulticols}
+\begin{enumerate}
+}% Note this means that \item has to be the first line after \begin{multipleChoice}.
+{% Environment End Code
+\end{enumerate}
+\end{xmmulticols}
+\end{trivlist}
+}
+
+%\renewenvironment{multipleChoice@}[1][]{}{)}    % not needed: is in ximera.cls
+
+\renewcommand{\wordChoice}[1]{%
+\let\choicetemp\choice% Assign a "choicetemp" command to duplicate choice.
+\ifwordchoicegiven% If wordchoice option is on, we need to juggle around some definitions.
+\let\choice\otherchoice%
+#1
+\else% If it isn't the regular "choice" command should work.
+\let\choice\inlinechoice%
+\begin{multipleChoice@}%
+#1%
+\end{multipleChoice@}%
 \fi%
+\let\choice\choicetemp% Now that choicetmp has been manipulated to what we want, replace choice with it.
+}%
+
+\renewenvironment{selectAll}[1][]
+{\begin{trivlist}\item[\hskip \labelsep\small\bfseries \nlen{Meerkeuze (selecteer alle correcte antwoorden):}{Multiple Choice (select all correct answers);}]\hfil\begin{enumerate}}
+    {\end{enumerate}\end{trivlist}}
+
+\makeatother
+
+% =============================================================================
+% 18. HYPERREF CONFIGURATION
+% =============================================================================
+
+\renewcommand{\theHexercise}{\thetitlenumber.\theexercise}   % for hyperref ...
+\renewcommand{\theHdefinition}{\thetitlenumber.\thedefinition}   % for hyperref ...
+\renewcommand{\theHproposition}{\thetitlenumber.\theproposition}   % for hyperref ...
+\renewcommand{\theHexample}{\thetitlenumber.\theexample}   % for hyperref ...
+\renewcommand{\theHremark}{\thetitlenumber.\theremark}   % for hyperref ...
+\renewcommand{\theHsubsection}{\thetitlenumber.\thesubsection}   % for hyperref ...
+
+\let\oldhypertarget\hypertarget
+\let\oldhyperlink\hyperlink
+\renewcommand{\hypertarget}[2]{%
+  \label{ht@#1}\oldhypertarget{#1}{#2}%
 }
+\renewcommand{\hyperlink}[2]{%
+  \ifcsname r@ht@#1\endcsname\oldhyperlink{#1}{#2}\else#2\fi
 }
-{} % not in xourse
-\makeatother
 
-
-% right align columns in matrices
-% from https://tex.stackexchange.com/questions/119511/align-values-in-bmatrix
-\makeatletter
-\renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-    \array{*\c@MaxMatrixCols #1}}
-\makeatother
-
-\makeatletter
-\newtheoremstyle{indented}
-{3pt}% space before
-{3pt}% space after
-{\addtolength{\@totalleftmargin}{3.5em}
-    \addtolength{\linewidth}{-3.5em}
-    \parshape 1 3.5em \linewidth}% body font
-{-3.5em}% indent
-{\bfseries}% header font
-{.}% punctuation
-{.5em}% after theorem header
-{}% header specification (empty for default)
-\makeatother
-
-\theoremstyle{indented}
-
-\ifhints{
-    \makeatletter
-    \let\hint\relax
-    \let\c@hintrelax
-    \let\endhint\relax
-    \makeatother
-    \newtheorem{hint}{\nlen{Hint}{Hint}}
-    \renewcommand{\thedefinition}{\theoremtitle{hint}}% titel instellen
-    \tcolorboxenvironment{hint}{
-        boxrule=0pt,
-        boxsep=0pt,
-        colback={\colorexample!4!white},
-        enhanced jigsaw,
-        %    borderline west={2pt}{0pt}{\colordefinition!45!black},
-        sharp corners,
-        before skip=1pt,
-        after skip=2pt,
-        breakable,
-    }%
-    %    \begin{trivlist}\item[\hskip \labelsep\small\bfseries Hint:\hspace{2ex}]
-        %        \small%\slshape
-        %        \stepcounter{hintLevel}
-        %        \BODY
-        %    \end{trivlist}
-    %    \addtocounter{hintLevel}{-1}
-}\else
-\newcounter{hint}   % counter needed because it is reset .... !
-\iftikzexport   % anders worden de tikz tekeningen in hints niet gegenereerd ?
-\setbox0\vbox\bgroup
-\stepcounter{hintLevel}
-\BODY
-\egroup\ignorespacesafterend
-\addtocounter{hintLevel}{-1}
-\fi % ifhandout
-\fi %ifhints
-
-%\renewcommand{\important}[1]{\ensuremath{\fcolorbox{kuaccent}{kuaccent!50!white}{$#1$}}}
-\renewcommand{\important}[1]{\ensuremath{\fcolorbox{\colordefinition!45!black}{\colordefinition!2!white}{$#1$}}}
-
-\renewcommand{\formulevb}[2]{
-
-  \begin{minipage}[c]{0.5\textwidth}\makebox[\textwidth][c]{\fcolorbox{\colordefinition!45!black}{\colordefinition!2!white}{$#1$}} \end{minipage}
-%   \begin{minipage}{\dimexpr(\textwidth-0.5\textwidth)\relax}\makebox[\textwidth][c]{\colorbox{\colordefinition!5!white}{$#2$}} \end{minipage}
-  \begin{minipage}{\dimexpr(\textwidth-0.5\textwidth)\relax}\makebox[\textwidth][c]{\fcolorbox{\colorexample!45!black}{\colorexample!2!white}{$#2$}} \end{minipage}
-  }
-
-\renewcommand{\Im}[1]{\text{Im}#1}
-\renewcommand{\Re}[1]{\text{Re}#1}
-
-%%% quickquestion environment instellen  (NIET MEER NODIG met \DeclareTcbTheorem infra)
-% \newtheoremstyle{minimal}%              % Name
-% {}%                                     % Space above
-% {}%                                     % Space below
-% {}%                                     % Body font
-% {}%                                     % Indent amount
-% {\bfseries}%                            % Theorem head font
-% {}%                                    % Punctuation after theorem head
-% { }%                                    % Space after theorem head, ' ', or \newline
-% %{\thmname{#1}\thmnumber{ #2}\thmnote{ \textbf{#3}}}%
-% {\thmname{#1}: }%
-% \theoremstyle{minimal}
-
-\tcbuselibrary{skins,theorems}
+% =============================================================================
+% 19. SPECIAL QUESTION BOXES
+% =============================================================================
 
 \def\qqarc{5pt}   % grootte van het boogje boven en onder de quyickquestion en denkvraag 
-
 
 \ifprintquickquestion
 \DeclareTcbTheorem{quickquestion}{Vlugge Vraag}{
@@ -1331,10 +1461,136 @@
     },
 }{qq}
 
+% =============================================================================
+% 20. HINT ENVIRONMENT
+% =============================================================================
+
+\makeatletter
+\newtheoremstyle{indented}
+{3pt}% space before
+{3pt}% space after
+{\addtolength{\@totalleftmargin}{3.5em}
+    \addtolength{\linewidth}{-3.5em}
+    \parshape 1 3.5em \linewidth}% body font
+{-3.5em}% indent
+{\bfseries}% header font
+{.}% punctuation
+{.5em}% after theorem header
+{}% header specification (empty for default)
+\makeatother
+
+\theoremstyle{indented}
+
+\ifhints{
+    \makeatletter
+    \let\hint\relax
+    \let\c@hintrelax
+    \let\endhint\relax
+    \makeatother
+    \newtheorem{hint}{\nlen{Hint}{Hint}}
+    \renewcommand{\thedefinition}{\theoremtitle{hint}}% titel instellen
+    \tcolorboxenvironment{hint}{
+        boxrule=0pt,
+        boxsep=0pt,
+        colback={\colorexample!4!white},
+        enhanced jigsaw,
+        %    borderline west={2pt}{0pt}{\colordefinition!45!black},
+        sharp corners,
+        before skip=1pt,
+        after skip=2pt,
+        breakable,
+    }%
+    %    \begin{trivlist}\item[\hskip \labelsep\small\bfseries Hint:\hspace{2ex}]
+        %        \small%\slshape
+        %        \stepcounter{hintLevel}
+        %        \BODY
+        %    \end{trivlist}
+    %    \addtocounter{hintLevel}{-1}
+}\else
+\newcounter{hint}   % counter needed because it is reset .... !
+\iftikzexport   % anders worden de tikz tekeningen in hints niet gegenereerd ?
+\setbox0\vbox\bgroup
+\stepcounter{hintLevel}
+\BODY
+\egroup\ignorespacesafterend
+\addtocounter{hintLevel}{-1}
+\fi % ifhandout
+\fi %ifhints
+
+% =============================================================================
+% 21. UTILITY COMMANDS
+% =============================================================================
+
+%\renewcommand{\important}[1]{\ensuremath{\fcolorbox{kuaccent}{kuaccent!50!white}{$#1$}}}
+\renewcommand{\important}[1]{\ensuremath{\fcolorbox{\colordefinition!45!black}{\colordefinition!2!white}{$#1$}}}
+
+\renewcommand{\formulevb}[2]{
+
+  \begin{minipage}[c]{0.5\textwidth}\makebox[\textwidth][c]{\fcolorbox{\colordefinition!45!black}{\colordefinition!2!white}{$#1$}} \end{minipage}
+%   \begin{minipage}{\dimexpr(\textwidth-0.5\textwidth)\relax}\makebox[\textwidth][c]{\colorbox{\colordefinition!5!white}{$#2$}} \end{minipage}
+  \begin{minipage}{\dimexpr(\textwidth-0.5\textwidth)\relax}\makebox[\textwidth][c]{\fcolorbox{\colorexample!45!black}{\colorexample!2!white}{$#2$}} \end{minipage}
+  }
+
+\renewcommand{\Im}[1]{\text{Im}#1}
+\renewcommand{\Re}[1]{\text{Re}#1}
+
+% =============================================================================
+% 22. MATRIX ALIGNMENT
+% =============================================================================
+
+% right align columns in matrices
+% from https://tex.stackexchange.com/questions/119511/align-values-in-bmatrix
+\makeatletter
+\renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+    \array{*\c@MaxMatrixCols #1}}
+\makeatother
+
+% =============================================================================
+% 23. ACTIVITY MANAGEMENT
+% =============================================================================
+
+%
+% localize newpages-between-activities based on \ifnonewpage
+%
+%
+% make ifnonewpage local
+%   (resumes and overwrites what's in xourse.cls)
+%
+\makeatletter
+\@ifclassloaded{xourse}    % only in xourses !!  (this could replace \isXourse )
+{
+\AddToHook{begindocument}{%
+\let\otherinput\input
+\typeout{xourse resets activity to use nonewpage}
+\renewcommand{\activity}[2][]{%
+    \setkeys{activity}{#1}%
+    \renewcommand{\input}[1]{}%
+    \ifnonewpage%
+       \begingroup\skip@preamble\otherinput{#2}\endgroup\par\vspace{\topsep}%
+    \else%
+       \begingroup\skip@preamble\otherinput{#2}\endgroup\clearpage%
+    \fi%
+    \let\input\otherinput%
+}%
+\ifxake%
+\typeout{ifxake resets activity to no-op}
+\renewcommand\activity[2][]{}%
+\fi%
+}
+}
+{} % not in xourse
+\makeatother
+
+% =============================================================================
+% 24. MISCELLANEOUS
+% =============================================================================
 
 \setlength{\belowcaptionskip}{1em} % adds 1em space *after* every caption
 
-
+% =============================================================================
+% 25. GLOBAL STYLE LOADING
+% =============================================================================
 
 % load global.sty if present
 \IfFileExists{global.sty}{
