@@ -1,0 +1,36 @@
+\begin{exercise}
+
+Een speelgoedwagentje beweegt in een horizontale cirkel met straal $2l$ en heeft een tijd $T$ nodig om een volledige cirkel te beschrijven. Dit kan omdat aan het wagentje een veer vastgemaakt is. De lengte van de veer in niet uitgerekte toestand is $l$. Het wagentje versnelt waarbij de straal van de beschreven cirkel gelijk wordt aan $3l$.
+
+De tijd die het wagentje nu nodig heeft om een volledige cirkel te beschrijven is dan gelijk aan:
+\begin{multipleChoice}
+    \choice{$T$}
+    \choice{$\frac{3}{4}T$}
+    \choice[correct]{$\sqrt{\frac{3}{4}}T$}
+    \choice{$\sqrt{\frac{4}{3}}T$}
+\end{multipleChoice}
+
+\begin{oplossing}
+    De veerkracht zorgt voor de middelpuntzoekende kracht. We leiden hieruit een uitdrukking af voor de periode:
+    \begin{eqnarray*}
+        F&=&ma\\
+        &\Downarrow&\\
+        k\Delta l &=& mr\omega^2\\
+        &=&  mr\left(\frac{2\pi}{T}\right)^2\\
+        &\Updownarrow&\\
+        T^2&=&\frac{4\pi^2mr}{k\Delta l}
+    \end{eqnarray*}
+    De verhouding van het kwadraat van de periodes wordt dan:
+    \begin{eqnarray*}
+        \frac{T'^2}{T^2}&=&\frac{4\pi^2mr'}{k\Delta l'}\cdot\frac{k\Delta l}{4\pi^2mr}\\
+        &&\\
+        &=&\frac{3l(2l-l)}{(3l-l)2l}\\
+        &&\\
+        &=&\frac{3}{4}\\
+        &\Downarrow&\\
+        T'&=&\sqrt{\frac{3}{4}}\,T
+    \end{eqnarray*}
+\end{oplossing}
+\end{exercise}
+
+% Bron: ...?

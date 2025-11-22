@@ -1,20 +1,36 @@
-
 \begin{exercise}
 
-% !TEX root = ../main.tex
+ Een hockeyschijf of puck krijgt op een bevroren vijver een horizontale slag waardoor hij met een snelheid van \SI{20,5}{m/s} vertrekt. Na hoeveel meter komt de puck tot rust als de wrijvingsfactor tussen de puck en het ijs \SI{0,18}{} bedraagt?
 
-
-
- Een doos van \SI{12}{kg} wordt losgelaten op een helling van \SI{20}{\degree} en glijdt met een versnelling van \SI{0,30}{m/s^2} hellingafwaarts. 
-\begin{enumerate}
-	\item\pt{1}Teken alle krachten die op de doos aangrijpen.
-	\item\pt{4}Hoe groot is de wrijvingskracht die de doos afremt?
-  	\item\pt{1}Hoe groot is de glijdende wrijvingsco\"effici\"ent?
-\end{enumerate}
 \begin{oplossing}
-$F_w=m(g\sin{\alpha}-a)=36,7\rm\,N$ 
-\newline
-$\mu=\frac{g\sin{\alpha}-a}{g\cos{\alpha}}=0,33$
+    De wrijvingskracht is de enige kracht volgens de horizontale richting en vormt dus de resulterende kracht. We kiezen de referentieas horizontaal en met de beginsnelheid mee.
+    \begin{image}
+        \includegraphics[width=0.7\textwidth]{hockeypuck}
+    \end{image}
+    Omdat de wrijvingskracht tegengesteld is aan de $x$-as, geldt $F_{w,x}=-F_w$. Met $F_w=\mu F_n$ vinden we voor de versnelling:
+    \begin{eqnarray}
+    -F_w &=& ma\nonumber\\
+    &\Downarrow& \nonumber\\
+    -\mu mg &=&ma\nonumber\\
+    &\Updownarrow& \nonumber\\
+    a &=& -\mu g\label{a}
+    \end{eqnarray}
+    De tijd uit de vergelijkingen voor een EVRB elimineren, waarbij de eindsnelheid $v$ en de beginpositie $x_0$ nul zijn, levert:
+    \begin{eqnarray}
+    v&=&v_0+at\nonumber\\
+    x&=&x_0+v_0t+\frac{1}{2}at^2\nonumber\\
+    &\Downarrow&\nonumber\\
+    0&=&v_0+at\Leftrightarrow t=-\frac{v_0}{a}\nonumber\\
+    x&=&v_0\left(-\frac{v_0}{a}\right)+\frac{1}{2}a\left(-\frac{v_0}{a}\right)^2\nonumber\\
+    &\Downarrow&\nonumber\\
+    a&=&-\frac{v_0^2}{2x}\label{-v_0^2/2x}
+    \end{eqnarray}
+    Vergelijking (\ref{-v_0^2/2x}) samen met (\ref{a}) levert dan:
+    \begin{eqnarray}
+    \mu &=& \frac{v_0^2}{2gx}\label{remvgl}\\
+    &&\nonumber\\
+    &=& 0,178\nonumber
+    \end{eqnarray}
 \end{oplossing}
 
 \end{exercise}
