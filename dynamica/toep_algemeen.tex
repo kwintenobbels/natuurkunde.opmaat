@@ -29,7 +29,45 @@
 	\end{enumerate}
 	
 	(Indien de versnelling gevraagd wordt, bedoelt men natuurlijk de totale versnelling. Indien uit de vergelijkingen versnellingscomponenten voortvloeien, dienen ze samengesteld te worden conform de werkwijze gezien bij kinematica.)
-	
+
+	\begin{oplossing}
+		\textbf{Gegeven:}
+		\begin{itemize}
+			\item $m = \SI{2,0}{kg}$
+			\item $F_1 = \SI{7,0}{N}$ ($\downarrow$)
+			\item $F_2 = \SI{5,0}{N}$ ($\leftarrow$)
+			\item $F_3 = \SI{8,0}{N}$ ($\nearrow$ met $\alpha = \ang{30}$)
+		\end{itemize}
+		
+		\textbf{Gevraagd:} $\vec{a}$ (grootte en richting)
+		
+		\textbf{Oplossing:}
+		
+		We passen de tweede wet van Newton toe: $\vec{F}_r = \sum \vec{F} = m \cdot \vec{a}$.
+		We ontbinden de krachten in x- en y-componenten (x-as naar rechts, y-as naar boven):
+		
+		\begin{align*}
+			X: \quad F_{3x} - F_2 &= m \cdot a_x \\
+			Y: \quad F_{3y} - F_1 &= m \cdot a_y
+		\end{align*}
+		
+		We isoleren de versnellingscomponenten en vullen de waarden in:
+		\begin{align*}
+			a_x &= \frac{F_3 \cos \alpha - F_2}{m} = \frac{8,0 \cos \ang{30} - 5,0}{2,0} = \SI{0,96}{m/s^2} \\
+			a_y &= \frac{F_3 \sin \alpha - F_1}{m} = \frac{8,0 \sin \ang{30} - 7,0}{2,0} = \SI{-1,5}{m/s^2}
+		\end{align*}
+		
+		De grootte van de totale versnelling is:
+		\[
+			a = \sqrt{a_x^2 + a_y^2} = \sqrt{(0,96)^2 + (-1,5)^2} = \SI{1,78}{m/s^2}
+		\]
+		
+		De richting (hoek $\beta$ met de horizontale):
+		\[
+			\beta = \arctan\left(\frac{a_y}{a_x}\right) = \arctan\left(\frac{-1,5}{0,96}\right) = \ang{-57,3}
+		\]
+	\end{oplossing}
+
 	\textbf{Uitkomsten:} \SI{1,78}{m/s^2}; \ang{57,3} t.o.v.\ de horizontale.
     \end{example}
 
