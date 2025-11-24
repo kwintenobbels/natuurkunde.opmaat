@@ -1,0 +1,30 @@
+\begin{exercise}
+
+Een cirkelvormige renbaan is onder een helling van \SI{30}{\degree} gebouwd. De straal van de cirkel is \SI{50}{m}. Met welke snelheid moet een auto rijden om in de baan te blijven? Veronderstel dat de baan spekglad is.
+
+\begin{oplossing}
+De krachten die op de auto aangrijpen, zijn de zwaartekracht en de normaalkracht. In de $y$-richting is er geen versnelling omdat de auto in een horizontaal vlak beweegt. We kiezen dan ook een assenstelsel met de $y$-as verticaal georiënteerd. De $x$-as kunnen we in de richting van het centrum van de cirkel nemen. 
+\begin{image}
+    \centering\includegraphics[width=0.6\textwidth]{renbaan}
+\end{image}
+De $y$-component van de normaalkracht moet dus even groot zijn als de zwaartekracht. De $x$-component van de normaalkracht is dan ook de resulterende kracht en levert de middelpuntzoekende kracht. De $x$-component van de normaalkracht kunnen we m.b.v. de hoek en de zwaartekracht schrijven.
+
+De $x$-component van de normaalkracht:
+\begin{eqnarray*}
+    \tan{\varphi}&=&\frac{F_{n,x}}{F_{n,y}}\\
+    &\Updownarrow&\\
+    F_{n,x}&=&F_{n,y}\tan{\varphi}\\
+    &=&mg\tan{\varphi}
+\end{eqnarray*}
+We passen de tweede wet van Newton toe:
+\begin{eqnarray*}
+    \vec{F}&=&m\vec{a}\\
+    &\Downarrow&\\
+    F_{n,x}&=&ma\\
+    mg\tan{\varphi}&=&\frac{mv^2}{r}\\
+    %&\Downarrow&\\
+    v&=&\sqrt{gr\tan{\varphi}}
+\end{eqnarray*}
+De gegevens invullen levert een snelheid van \SI{17}{m/s}.
+\end{oplossing}
+\end{exercise}

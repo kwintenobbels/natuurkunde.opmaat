@@ -1,0 +1,138 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Vraagstukken Wetten van Newton toegepast}{}
+    \xmsource\xmuitleg
+
+% Lukt nog niet met relatieve verwijzing. Zou handiger zijn ... 
+% \input{./lib/dyn_II_1.tex}
+% \input{./lib/dyn_II_2.tex}
+% \input{./lib/dyn_III_1.tex}
+% \input{./lib/dyn_II_3.tex}
+
+\begin{exercise}
+     Waarom kan de wrijvingswet bij glijdende wrijving zeker niet geschreven worden als $\vec{F}_w=\mu\vec{F}_n$?
+\begin{oplossing}
+    De formule geldt niet vectorieel. Ze geeft enkel een relatie tussen de groottes van de krachten, $F_w=\mu F_n$ (zonder pijltjes dus). De normaalkracht staat (per definitie) loodrecht op het ondersteunend oppervlak, de wrijvingskracht is (per definitie) evenwijdig met het ondersteunend oppervlak. De richtingen zijn dus niet gelijk.
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+
+ Een hockeyschijf of puck krijgt op een bevroren vijver een horizontale slag waardoor hij met een snelheid van \SI{20,5}{m/s} vertrekt. Na hoeveel meter komt de puck tot rust als de wrijvingsfactor tussen de puck en het ijs \SI{0,18}{} bedraagt?
+
+\begin{oplossing}
+    De wrijvingskracht is de enige kracht volgens de horizontale richting en vormt dus de resulterende kracht. We kiezen de referentieas horizontaal en met de beginsnelheid mee.
+    \begin{image}
+        \includegraphics[width=0.7\textwidth]{hockeypuck}
+    \end{image}
+    Omdat de wrijvingskracht tegengesteld is aan de $x$-as, geldt $F_{w,x}=-F_w$. Met $F_w=\mu F_n$ vinden we voor de versnelling:
+    \begin{eqnarray}
+    -F_w &=& ma\nonumber\\
+    &\Downarrow& \nonumber\\
+    -\mu mg &=&ma\nonumber\\
+    &\Updownarrow& \nonumber\\
+    a &=& -\mu g\label{a}
+    \end{eqnarray}
+    De tijd uit de vergelijkingen voor een EVRB elimineren, waarbij de eindsnelheid $v$ en de beginpositie $x_0$ nul zijn, levert:
+    \begin{eqnarray}
+    v&=&v_0+at\nonumber\\
+    x&=&x_0+v_0t+\frac{1}{2}at^2\nonumber\\
+    &\Downarrow&\nonumber\\
+    0&=&v_0+at\Leftrightarrow t=-\frac{v_0}{a}\nonumber\\
+    x&=&v_0\left(-\frac{v_0}{a}\right)+\frac{1}{2}a\left(-\frac{v_0}{a}\right)^2\nonumber\\
+    &\Downarrow&\nonumber\\
+    a&=&-\frac{v_0^2}{2x}\label{-v_0^2/2x}
+    \end{eqnarray}
+    Vergelijking (\ref{-v_0^2/2x}) samen met (\ref{a}) levert dan:
+    \begin{eqnarray}
+    \mu &=& \frac{v_0^2}{2gx}\label{remvgl}\\
+    &&\nonumber\\
+    &=& 0,178\nonumber
+    \end{eqnarray}
+\end{oplossing}
+
+\end{exercise}
+
+
+\begin{exercise}
+ Een doos van \SI{12}{kg} wordt losgelaten op een helling van \SI{20}{\degree} en glijdt met een versnelling van \SI{0,30}{m/s^2} hellingafwaarts. 
+\begin{enumerate}
+	\item\pt{1}Teken alle krachten die op de doos aangrijpen.
+	\item\pt{4}Hoe groot is de wrijvingskracht die de doos afremt?
+  	\item\pt{1}Hoe groot is de glijdende wrijvingscoëfficiënt?
+\end{enumerate}
+\begin{oplossing}
+	$F_w=m(g\sin{\alpha}-a)=\SI{36,7}{N}$ 
+	\newline
+	$\mu=\frac{g\sin{\alpha}-a}{g\cos{\alpha}}=\SI{0,33}{}$
+\end{oplossing}
+\end{exercise}
+
+
+\begin{exercise}
+ Drie voorwerpen zijn aan elkaar verbonden met touwtjes. De wrijvingsfactor tussen de tafel en het erop liggend voorwerp $V$ is $\mu$.
+\begin{image}
+    \includegraphics[width=0.6\textwidth]{drie_voorwerpen}
+\end{image}
+Veronderstel dat er geen wrijving is in de katrollen en dat de massa van de katrollen te verwaarlozen is. Bepaal de versnelling van het voorwerp. (Bron: 16de VFO 2004)
+
+\begin{oplossing}
+Om de versnelling van het voorwerp te vinden kunnen we de tweede wet van Newton toepassen op de drie massa's. We tekenen de krachtendiagrammen op elk van de massa's (zie figuur). 
+\begin{image}
+    \includegraphics[width=0.6\textwidth]{drie_voorwerpen_krachten}
+\end{image}
+Voor $m_1$ vinden we, met de keuze van de $x$-as verticaal naar beneden:
+\begin{eqnarray}
+F_{z,1}-F_{s,21}=m_1a\label{m_1}
+\end{eqnarray}
+Voor $m_3$ vinden we, met nu de keuze van de $x$-as verticaal naar boven:
+\begin{eqnarray}
+F_{s,23}-F_{z,3}=m_3a\label{m_3}
+\end{eqnarray}
+Voor $m_2$ vinden we, met de keuze van de $x$-as horizontaal naar links:
+\begin{eqnarray}
+F_{s,12}-F_w-F_{s,32}=m_2a\label{m_2}
+\end{eqnarray}
+Volgens de derde wet van Newton kunnen we de overeenkomstige spankrachten aan mekaar gelijk stellen: $F_{s,21}=F_{s,12}$ en $F_{s,32}=F_{s,23}$. Samen met $F_w=\mu F_n$ en $F_z=ma$ hebben we drie vergelijkingen en drie onbekenden. Oplossen naar de versnelling levert:
+\begin{eqnarray*}
+a=\frac{m_1-m_2-\mu m_3}{m_1+m_2+m_3}g=1,2\rm\,m/s^2
+\end{eqnarray*}
+
+Realiseer je dat de keuze van de $x$-as bij het bepalen van de componenten van de krachten de tekens bepalen van die componenten -- en ook die van de versnelling. Als je bijvoorbeeld tweemaal $a$ schrijft (in vergelijking (\ref{m_1}) en (\ref{m_3})) moet het ook effectief over dezelfde versnelling gaan, en niet over versnellingen die elkaars tegengestelde zijn. Met de $x$-as verticaal naar beneden georiënteerd voor $m_1$, zal de versnelling voor $m_1$ positief zijn als de massa naar beneden versnelt (wat hij doet; $m_1>m_3$). Voor $m_3$ moet je dan de $x$-as verticaal omhoog kiezen, wil je dat $a$ evenzeer positief is of dus dezelfde betekenis heeft.
+
+Merk ook op dat uit vergelijking (\ref{m_1}) volgt dat $m_1$ niet met de zwaartekracht aan $m_2$ trekt! De massa $m_1$ versnelt, waarvoor een resulterende kracht nodig is. 
+\end{oplossing}
+
+\end{exercise}
+
+\begin{exercise}
+Een blok van \SI{4,0}{kg} heeft een beginsnelheid van \SI{8,0}{m/s} aan de voet van een helling van \SI{30,0}{\degree}. De wrijvingskracht die de beweging afremt is \SI{15}{N} groot.
+\begin{enumerate}
+    \item Teken en benoem de krachten die op het blok aangrijpen.
+    \item Welke afstand zal het blok afleggen eer het tot rust komt?
+    \item Zal het daarna terug naar beneden glijden?
+    \item Hoe groot is de wrijvingsfactor?
+\end{enumerate}
+\begin{oplossing}
+    De krachtendiagrammen/het systeem vrijgemaakt:
+    \begin{image}
+        \includegraphics[width=0.49\textwidth]{blok_helling_2}
+        \includegraphics[width=0.49\textwidth]{blok_helling_2componenten}
+    \end{image}
+
+    $a=-\frac{F_w+mg\sin\varphi}{m}=\SI{-8,66}{m/s^2}$
+    \newline
+    $x=-\frac{v_0^2}{2a}=\frac{mv_0^2}{2(F_w+mg\sin\varphi)}=\SI{3,70}{m}$
+    \newline
+    $F_{zx}>F_w$ zodat het blok terug naar beneden komt. 
+    \newline
+    $\mu=\frac{F_w}{mg\cos\varphi}=0,44$
+\end{oplossing}
+\end{exercise}
+
+
+\end{document}

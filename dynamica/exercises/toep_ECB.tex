@@ -1,0 +1,243 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Vraagstukken Dynamica van de eenparig cirkelvormige beweging}{}
+    \xmsource\xmuitleg
+
+% Lukt voorlopig niet met relatieve verwijzingen ...?
+% \input{./lib/dyn_ECB_theorie_I_1}
+% \input{./lib/dyn_ECB_I_1.tex}
+% \input{./lib/dyn_ECB_II_2.tex}
+% \input{./lib/dyn_ECB_III_1.tex}
+% \input{./lib/dyn_ECB_II_3.tex}
+% \input{./lib/dyn_ECB_III_2.tex}
+% \input{./lib/dyn_ECB_II_4.tex}
+% \input{./lib/dyn_ECB_III_3.tex}
+
+\begin{exercise}
+
+ Welk lichaam is verantwoordelijk voor de middelpuntzoekende kracht in de onderstaande gevallen? Noem eveneens waar het mogelijk is, de naam van de kracht die de middelpuntzoekende kracht levert bij:
+\begin{enumerate}
+    \item de modder op de buitenomtrek van een draaiend fietswiel;
+    \item een trein die een bocht neemt;
+    \item een auto die een bocht neemt bij een horizontaal wegdek;
+    \item het ronddraaien in een horizontaal vlak van een steen aan een touw;
+    \item de verandering van de stroomrichting van het water in een bocht van een rivier;
+    \item een persoon in een ronddraaiende ton waarvan de bodem weggezakt is;
+    \item de beweging van de maan op haar baan rond de aarde;
+    \item de beweging van de elektronen rond de kern in een atoom.
+\end{enumerate}
+\end{exercise}
+
+% Bron: oud handboek Fysica Vandaag
+
+\begin{exercise}
+ Een steen wordt aan een touwtje rondgeslingerd met een snelheid die in grootte constant is.
+\begin{enumerate}
+	\item\pt{2}Heeft de steen een versnelling?
+	\item\pt{2}Ondervindt de steen een resulterende kracht?
+\end{enumerate}
+%Leg uit.
+\end{exercise}
+
+\begin{exercise}
+
+Welke snelheid moet een achtbaanwagentje bovenaan in een lus minstens hebben, willen de passagiers niet naar beneden vallen? Neem aan dat de kromtestraal van de lus \SI{7,0}{m} bedraagt.
+% \begin{image}
+% 	\includegraphics[width=0.9\textwidth]{gewonden-ontsporing-achtbaan-vs_res}
+% \end{image}
+
+\begin{oplossing}
+	De snelheid moet groot genoeg zijn zodat de zwaartekracht er niet in slaagt de passagiers sneller uit de bocht te trekken dan noodzakelijk. Hoe trager de passagiers gaan, hoe minder groot de middelpuntzoekende kracht moet zijn om die beweging tot stand te brengen. 
+
+	Bij een snelheid die groot genoeg is, helpt de normaalkracht (door de wagentjes op de passagiers uitgeoefend) de zwaartekracht om een middelpuntzoekende kracht te genereren. De minimale snelheid vinden we dan ook wanneer de normaalkracht wegvalt en enkel de zwaartekracht de middelpuntzoekende kracht levert. Uit $\vec{F}=m\vec{a}$ volgt
+	\begin{equation*}
+		mg=\frac{mv^2}{r}
+	\end{equation*}
+	Zodat: $v_{\text{min}}=\sqrt{rg}=\SI{8,29}{m/s}=\SI{29,8}{km/h}$.
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+
+Een munt met een massa van \SI{3,0}{g} ligt op een blokje van \SI{20,0}{g}. Het geheel ligt op een draaiende schijf op \SI{12,0}{cm} van de rotatieas. Als de wrijvingscoëfficiënt tussen de munt en het blokje \SI{0,52}{} is, en de wrijvingscoëfficiënt tussen het blokje en de schijf \SI{0,75}{} is, welke hoeksnelheid mag de schijf dan maximaal hebben zodat noch de munt noch het blokje wegschuift?
+\begin{image}
+	\includegraphics[width=.5\linewidth]{muntblokjeopschijf}
+\end{image}
+
+\begin{oplossing}
+	De middelpuntzoekende kracht die nodig is om de objecten te laten ronddraaien, wordt door de wrijvingskracht geleverd. De maximale grootte hiervan wordt gegeven door $\mu F_n$. De hoeksnelheid die we nog net kunnen aanhouden zonder dat de massa's schuiven, vinden we met de tweede wet van Newton, $\vec{F}=m\vec{a}$:
+	\begin{eqnarray*}
+%		\vec{F}&=&m\vec{a}\\
+%		&\Downarrow&\\
+		\mu mg&=&mr\omega^2
+		%\Leftrightarrow\omega&=&\sqrt{\frac{\mu g}{r}}
+	\end{eqnarray*}
+	of
+	\begin{eqnarray*}
+		\omega=\sqrt{\frac{\mu g}{r}}
+	\end{eqnarray*}
+	Hierin hebben we gebruikt dat de massa's in de verticale richting niet versnellen en dus de normaalkracht op de massa's even groot is als de zwaartekracht op die massa's. Ook hebben we gebruikt dat de versnelling van een object dat een eenparig cirkelvormige beweging uitvoert, gegeven wordt door $a=r\omega^2$.
+
+	Omdat de massa geen rol\footnote{De massa speelt geen rol omdat hij niet in de formule voorkomt. Dat is een hard wiskundig argument. Een kwalitatieve uitleg is dat voor een grotere massa weliswaar een grotere middelpuntzoekende kracht nodig is maar dat de normaalkracht ook evenredig groter wordt met de massa, en dus ook de wrijvingskracht.} speelt in deze formule, bepaalt de kleinste $\mu$ de maximale hoeksnelheid:
+	\begin{eqnarray*}
+		\omega=\sqrt{\frac{\mu g}{r}}=\SI{6,52}{rad/s}
+	\end{eqnarray*}
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+
+Een bestuurder van een auto met een massa van \SI{1000}{kg} rijdt aan een snelheid in grootte gelijk aan \SI{10}{m/s}. Hij probeert een horizontale bocht, met een straal van \SI{100}{m} te nemen. De maximale wrijvingskracht tussen de banden en de baan is \SI{900}{N}. Kan de auto deze bocht nemen of zal hij beginnen slippen?
+
+\begin{oplossing}
+    De auto zal slippen in de bocht. Omdat we de snelheid en de straal kennen, kunnen we de versnelling van de gewenste cirkelbeweging berekenen. Met de tweede wet van Newton vinden we de (middelpuntzoekende) kracht nodig om deze versnelling te kunnen veroorzaken:
+    \begin{eqnarray*}
+        F&=&ma\\
+        &=&\frac{mv^2}{r}\\
+        &=&\SI{1000}{N}
+    \end{eqnarray*}
+    Dit is meer dan wat de grond maximaal op de wielen kan uitoefenen. De auto zal dus beginnen slippen.
+
+    Realiseer je dat de wrijvingskracht door de grond op de auto wordt uitgeoefend en de resulterende kracht vormt. Het is dan ook de middelpuntzoekende kracht. 
+    \begin{image}
+        \includegraphics[width=0.5\textwidth]{auto_bocht_horizontaal}
+    \end{image}
+    De auto duwt met zijn wielen dwars ten opzichte van de snelheid tegen de grond en de grond duwt terug. In de figuur beweegt de auto het vlak van de tekening in en neemt de auto een bocht naar links (in de richting van de wrijvingskracht).
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+
+Een cirkelvormige renbaan is onder een helling van \SI{30}{\degree} gebouwd. De straal van de cirkel is \SI{50}{m}. Met welke snelheid moet een auto rijden om in de baan te blijven? Veronderstel dat de baan spekglad is.
+
+\begin{oplossing}
+De krachten die op de auto aangrijpen, zijn de zwaartekracht en de normaalkracht. In de $y$-richting is er geen versnelling omdat de auto in een horizontaal vlak beweegt. We kiezen dan ook een assenstelsel met de $y$-as verticaal georiënteerd. De $x$-as kunnen we in de richting van het centrum van de cirkel nemen. 
+\begin{image}
+    \centering\includegraphics[width=0.6\textwidth]{renbaan}
+\end{image}
+De $y$-component van de normaalkracht moet dus even groot zijn als de zwaartekracht. De $x$-component van de normaalkracht is dan ook de resulterende kracht en levert de middelpuntzoekende kracht. De $x$-component van de normaalkracht kunnen we m.b.v. de hoek en de zwaartekracht schrijven.
+
+De $x$-component van de normaalkracht:
+\begin{eqnarray*}
+    \tan{\varphi}&=&\frac{F_{n,x}}{F_{n,y}}\\
+    &\Updownarrow&\\
+    F_{n,x}&=&F_{n,y}\tan{\varphi}\\
+    &=&mg\tan{\varphi}
+\end{eqnarray*}
+We passen de tweede wet van Newton toe:
+\begin{eqnarray*}
+    \vec{F}&=&m\vec{a}\\
+    &\Downarrow&\\
+    F_{n,x}&=&ma\\
+    mg\tan{\varphi}&=&\frac{mv^2}{r}\\
+    %&\Downarrow&\\
+    v&=&\sqrt{gr\tan{\varphi}}
+\end{eqnarray*}
+De gegevens invullen levert een snelheid van \SI{17}{m/s}.
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+
+Op een draaitafel draait met een constante hoeksnelheid een grammofoonplaat. Twee muntstukken A en B zijn op zo'n plaats van het middelpunt van de draaitafel geplaatst dat zij nog net niet wegschuiven. Voor muntstuk A bedraagt de afstand tot de rotatieas dan \SI{6}{cm} en voor B is het dan \SI{12}{cm}. $m_a$ en $m_b$ zijn de massa's van respectievelijk de muntstukken A en B. $\mu_a$ en $\mu_b$ zijn de wrijvingsfactoren tussen de muntstukken en de grammofoonplaat.
+
+Welke gevolgtrekking m.b.t. de massa's en de wrijvingsfactoren is juist?
+
+\begin{multipleChoice}
+    \choice[correct]{$\mu_a=\frac{\mu_b}{2}$}
+    \choice{$ m_a=2m_b$}
+    \choice{$ m_a=\frac{m_b}{2}$}
+    \choice{$\frac{m_a}{\mu_a}=2\frac{m_b}{\mu_b}$}
+\end{multipleChoice}
+
+\begin{oplossing}
+    De wrijvingskracht tussen de muntjes en de draaitafel moet voor de middelpuntzoekende kracht op de muntjes zorgen. Als de muntjes nog nét niet wegschuiven, mogen we de formule $F_w=\mu F_n$ voor de wrijvingskracht gebruiken. Dit levert, met $F_n=F_z=mg$:
+    \begin{eqnarray*}
+        F&=&ma\\
+        &\Downarrow&\\
+        \mu mg&=&mr\omega^2\\
+        &\Downarrow&\\
+        \frac{\mu_a}{\mu_b}&=&\frac{r_a\omega^2}{g}\cdot\frac{g}{r_b\omega^2}\\
+        &=&\frac{r_a}{r_b}\\
+        &=&\frac{1}{2}
+    \end{eqnarray*}
+\end{oplossing}
+\end{exercise}
+
+% Bron: ...?
+
+\begin{exercise}
+
+Een speelgoedwagentje beweegt in een horizontale cirkel met straal $2l$ en heeft een tijd $T$ nodig om een volledige cirkel te beschrijven. Dit kan omdat aan het wagentje een veer vastgemaakt is. De lengte van de veer in niet uitgerekte toestand is $l$. Het wagentje versnelt waarbij de straal van de beschreven cirkel gelijk wordt aan $3l$.
+
+De tijd die het wagentje nu nodig heeft om een volledige cirkel te beschrijven is dan gelijk aan:
+\begin{multipleChoice}
+    \choice{$T$}
+    \choice{$\frac{3}{4}T$}
+    \choice[correct]{$\sqrt{\frac{3}{4}}T$}
+    \choice{$\sqrt{\frac{4}{3}}T$}
+\end{multipleChoice}
+
+\begin{oplossing}
+    De veerkracht zorgt voor de middelpuntzoekende kracht. We leiden hieruit een uitdrukking af voor de periode:
+    \begin{eqnarray*}
+        F&=&ma\\
+        &\Downarrow&\\
+        k\Delta l &=& mr\omega^2\\
+        &=&  mr\left(\frac{2\pi}{T}\right)^2\\
+        &\Updownarrow&\\
+        T^2&=&\frac{4\pi^2mr}{k\Delta l}
+    \end{eqnarray*}
+    De verhouding van het kwadraat van de periodes wordt dan:
+    \begin{eqnarray*}
+        \frac{T'^2}{T^2}&=&\frac{4\pi^2mr'}{k\Delta l'}\cdot\frac{k\Delta l}{4\pi^2mr}\\
+        &&\\
+        &=&\frac{3l(2l-l)}{(3l-l)2l}\\
+        &&\\
+        &=&\frac{3}{4}\\
+        &\Downarrow&\\
+        T'&=&\sqrt{\frac{3}{4}}\,T
+    \end{eqnarray*}
+\end{oplossing}
+\end{exercise}
+
+% Bron: ...?
+
+\begin{exercise}
+
+Een jongeman neemt plaats tegen de wand van een cilindervormige ton met straal $R$. De ton begint te draaien. Als de ton een bepaalde hoeksnelheid $\omega$ heeft bereikt, zakt de bodem van de ton. De jongeman glijdt hierbij niet naar beneden. 
+\begin{image}
+	\includegraphics[width=.5\linewidth]{jongemaninton}
+\end{image}
+De minimale wrijvingsfactor $\mu$ tussen de wand van de ton en de jongeman wordt gegeven door:
+\begin{multipleChoice}
+	\choice{$\mu=\frac{g\omega^2}{R}$}
+	\choice{$\mu=\frac{R\omega^2}{g}$}
+	\choice{$\mu=\frac{\omega^2}{gR}$}
+	\choice[correct]{$\mu=\frac{g}{R\omega^2}$}
+\end{multipleChoice}
+% BRON: 16e VFO 2004
+
+\begin{oplossing}
+	Op de jongeman moet een resulterende kracht naar het centrum aangrijpen, wil hij een eenparige cirkelbeweging maken. Wie levert die kracht? ... De ton moet hem 'steeds naar het centrum duwen'. Dus \textit{de normaalkracht door de wand van de ton op de man uitgeoefend, is de middelpuntzoekende kracht}. De zwaartekracht zal de man naar beneden trekken, dus moet er een wrijvingskracht tussen de man en de wand van de ton zijn, wil de man niet vallen. Deze wrijvingskracht moet even groot zijn als de zwaartekracht en verticaal omhoog zijn gericht. Als de man nog nét niet valt, geldt $F_w=\mu F_n$.
+	\begin{eqnarray*}
+		F&=&ma\\
+		&\Downarrow&\\
+		\frac{F_w}{\mu}&=&mr\omega^2\\
+		&\Updownarrow&\\
+		\frac{mg}{\mu}&=&mr\omega^2\\
+		&\Updownarrow&\\
+		\mu&=&\frac{g}{r\omega^2}
+	\end{eqnarray*}
+	Zou $\mu$ kleiner zijn dan deze waarde, dan zou de maximale wrijvingskracht kleiner zijn dan de zwaartekracht en zou de man vallen.
+\end{oplossing}
+
+\end{exercise}
+
+\end{document}
+
+%%\input{./lib/dyn_ECB_II_1.tex} % Probleem: figuur is van Fysica Vandaag = te vervangen ... Oplossing matcht niet met de vraag ...

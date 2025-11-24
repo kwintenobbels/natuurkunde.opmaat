@@ -1,27 +1,24 @@
-
 \begin{exercise}
-
-% !TEX root = ../main.tex
-
-
-
-
-\pt{5}\begin{minipage}[t]{.7\textwidth}
-(\emph{Toestel van Atwood}) Twee verschillende massa's zijn via een katrol van te verwaarlozen massa met elkaar verbonden zoals in de figuur. De wrijving is eveneens te verwaarlozen. 
-\newline
-\newline
-Bepaal de grootte van de versnelling van beide massa's en de spankracht in het touw.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{.2\textwidth}
-\flushright
-	\raisebox{1ex-\height}{%
-		\includegraphics[height=4cm]{dyn/exercises/toestelatwood}
-	}
-\end{minipage}
-
+Een blok van \SI{4,0}{kg} heeft een beginsnelheid van \SI{8,0}{m/s} aan de voet van een helling van \SI{30,0}{\degree}. De wrijvingskracht die de beweging afremt is \SI{15}{N} groot.
+\begin{enumerate}
+    \item Teken en benoem de krachten die op het blok aangrijpen.
+    \item Welke afstand zal het blok afleggen eer het tot rust komt?
+    \item Zal het daarna terug naar beneden glijden?
+    \item Hoe groot is de wrijvingsfactor?
+\end{enumerate}
 \begin{oplossing}
-$a=\frac{m_2-m_1}{m_1+m_2}g \quad F_s=\frac{2m_1m_2}{m_1+m_2}g$
-\end{oplossing}
+    De krachtendiagrammen/het systeem vrijgemaakt:
+    \begin{image}
+        \includegraphics[width=0.49\textwidth]{blok_helling_2}
+        \includegraphics[width=0.49\textwidth]{blok_helling_2componenten}
+    \end{image}
 
+    $a=-\frac{F_w+mg\sin\varphi}{m}=\SI{-8,66}{m/s^2}$
+    \newline
+    $x=-\frac{v_0^2}{2a}=\frac{mv_0^2}{2(F_w+mg\sin\varphi)}=\SI{3,70}{m}$
+    \newline
+    $F_{zx}>F_w$ zodat het blok terug naar beneden komt. 
+    \newline
+    $\mu=\frac{F_w}{mg\cos\varphi}=0,44$
+\end{oplossing}
 \end{exercise}
