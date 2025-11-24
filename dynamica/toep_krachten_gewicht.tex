@@ -17,32 +17,6 @@ Let op! Het gewicht van een voorwerp grijpt niet aan op het voorwerp zelf, maar 
 Er is geen vaste formule voor gewicht, maar de grootte moet je bepalen met de wetten van Newton (vaak combinatie 3\textsuperscript{de} wet met 1\textsuperscript{ste} of 2\textsuperscript{de}). 
 In eenvoudige situaties draait het vaak uit dat \(G = F_{z}\) , maar dit mag je niet algemeen aannemen! De wetten van Newton brengen altijd uitsluitsel!
 
-\begin{image}
-	\begin{tikzpicture}
-		\def\W{2.0} % ground width
-		\def\D{0.2} % ground depth
-		\def\h{0.6} % mass height
-		\def\w{0.8} % mass width
-		
-		% Ground
-		\draw[ground] (-\W/2,0) rectangle++ (\W,-\D);
-		\draw (-\W/2,0) --++ (\W,0);
-		
-		% Mass
-		\draw[mass] (-\w/2,0) rectangle++ (\w,\h) node[midway] {$m$};
-		
-		% Forces
-		% Normal force (up) on mass
-		\draw[force] (-0.2*\w,0) --++ (0, 1.3*\h) node[left] {$\vbF_n$};
-		% Gravity (down) on mass
-		\draw[force] (-0.2*\w,0.5*\h) --++ (0, -1.3*\h) node[right, pos=0.8] {$\vbF_z$};
-		
-		% Weight (down) on ground
-		\draw[force] (0.2*\w,0) --++ (0, -1.3*\h) node[right] {$\vb{G}$};
-	\end{tikzpicture}
-\end{image}
-\captionof{figure}{Het gewicht $\vb{G}$ grijpt aan op de steun, de normaalkracht $\vbF_n$ en zwaartekracht $\vbF_z$ op het voorwerp.}
-
 
 
 
