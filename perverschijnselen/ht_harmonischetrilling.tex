@@ -1,0 +1,38 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{De harmonische trilling}{}
+    \xmsource\xmuitleg
+
+De verschillende parameters die in de oplossing $x(t)=A \sin(\omega t + \varphi)$ van de differentiaalvergelijking (\ref{opl_diffvgl_ht}) voorkomen, willen we fysisch kunnen interpreteren. We willen hun betekenis kennen. Het gemakkelijkste is misschien terug te grijpen naar de algemene sinusfunctie. Daar stond de parameter $a$ voor de amplitude. Dat is dus hier voor $A$ niet anders; $A$ stelt de amplitude van de trilling voor. Voor de parameter $b$ hebben we de gelijkheid $b=\frac{2\pi}{p}$ waarin $p$ de periode van de functie is. Omdat onze onafhankelijke variabele de tijd is, is de fysische interpretatie van $p$ de tijd van één cyclus -- waarvoor we het symbool $T$ gebruiken. 
+% \begin{image}
+%     \includegraphics[width=.7\textwidth]{ht_tijd}
+% \end{image}
+
+Voor de parameter $\omega$, die we de pulsatie noemen, geldt dus
+\begin{eqnarray*}
+\omega=\frac{2\pi}{T}
+\end{eqnarray*}
+De pulsatie bepaalt dus de frequentie waarmee de massa trilt. Aangezien voor het massa-veersysteem geldt dat $\omega=\sqrt{k/m}$, kunnen we een uitdrukking voor periode en de frequentie vinden:
+\begin{eqnarray*}
+T=2\pi\sqrt{\frac{m}{k}},\quad f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}
+\end{eqnarray*}
+De frequentie wordt bepaald door de sterkte van de veer en de grootte van de massa. Een grotere massa levert een kleinere frequentie op (de traagheid is groter) en een sterkere veer zorgt voor een grotere frequentie (de massa krijgt een grotere versnelling). De amplitude speelt blijkbaar geen rol.
+
+De parameter $\varphi$ is iets lastiger om inzichtelijk te kunnen duiden. Net zoals de amplitude wordt ze bepaald door de \emph{beginvoorwaarden}. Zo is de amplitude afhankelijk van bijvoorbeeld de afstand uit de evenwichtspositie waarop we de massa vanuit rust loslaten of van de snelheid die we ze bij initiatie van de beweging meegeven. De parameter $\varphi$ wordt bepaald door de positie van de massa op het tijdstip $t=0$. Immers is $x_0=x(t=0)=A\sin(\varphi)$. Het argument van de sinus\footnote{Het argument van de sinus is hetgeen waarvan de sinus wordt genomen/hetgeen dat tussen haakjes staat.} $\omega t+\varphi$ noemen we ook wel de \emph{fase} van de trilling zodat $\varphi$ de \emph{beginfase} wordt genoemd. De fase drukken we natuurlijk uit in radialen. De fase bepaalt waar we ons in de cyclus bevinden. 
+
+De beginfase bepaalt dan ook de beginpositie. Zo is bijvoorbeeld de functie maximaal wanneer het argument $\pi/2$ is, wat betekent dat de massa op haar maximale uitwijking is. Is dus de beginfase gelijk aan $\pi/2$, dan begint de trilling vanuit haar maximale uitwijking. Een beginfase van $3\pi/2$ komt overeen met een minimale waarde bij het begin. In figuur \ref{beginposbeginfase} zie je verschillende mogelijkheden voor de beginfase, hier weergegeven als $\varphi_0$.
+
+\begin{image}
+	Figuren met verschillende beginposities en bijbehorende beginfases.
+	% \includegraphics[width=.9\textwidth]{trillendeveer_a}
+	% \includegraphics[width=.9\textwidth]{trillendeveer_b}
+	% \includegraphics[width=.9\textwidth]{trillendeveer_c}
+	% \includegraphics[width=.9\textwidth]{trillendeveer_d}
+\end{image}
+\captionof{figure}{Relatie tussen beginpositie en beginfase}
+
+\end{document}
