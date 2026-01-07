@@ -10,9 +10,137 @@
 
 
 \begin{exercise}
-	Kan ...?
+	Een lichaam dat een harmonische trilling uitvoert met een amplitude van \SI{7,00}{cm}, bezit een snelheid van \SI{70,0}{cm/s} op het ogenblik dat de uitwijking \SI{5,00}{cm} is. 
+    \begin{enumerate}
+        \item Schets voor de situatie een mogelijke grafiek van de positie in functie van de tijd met daaronder een grafiek van de snelheid in functie van de tijd. Zorg voor eenzelfde ijk van de tijdsas en duid de gegevens van het vraagstuk aan in de grafieken.
+        \item Bepaal de periode van de trilling.
+    \end{enumerate}
+
+    \begin{oplossing}
+        Een eerste manier om dit vraagstuk op te lossen is het vinden van een uitdrukking voor de tijdstippen waarop de trilling de gegeven uitwijking bereikt en deze uitdrukking te gebruiken in de snelheidsfunctie. 
+
+        Een tweede en snellere manier is de volgende. De uitwijking en de snelheid van een HT worden gegeven door:
+        \begin{eqnarray*}
+            x&=&A\sin{(\omega t+\varphi)}\\
+            v=\frac{dx}{dt}&=&\omega A\cos{(\omega t+\varphi)}
+        \end{eqnarray*}
+        Door de snelheid te delen door $\omega$ en vervolgens beide leden te kwadrateren en lid aan lid op te tellen, kunnen we de onbekende tijd en de sinus en cosinus weg krijgen:
+        \begin{eqnarray*}
+            x^2+\left(\frac{v}{\omega}\right)^2&=&A^2(\sin^2{(\omega t+\varphi)}+\cos^2{(\omega t+\varphi)})=A^2
+        \end{eqnarray*}
+        Door dit uit te werken vind je met $\omega=\frac{2\pi}{T}$ voor de periode:
+        \begin{eqnarray*}
+            T&=&2\pi\sqrt{\frac{A^2-x^2}{v^2}}=\SI{0,440}{s}
+        \end{eqnarray*}
+    \end{oplossing}
 \end{exercise}
 
+\begin{exercise}
+    Een massa van \SI{200}{g} die aan het uiteinde van een horizontale opgestelde veer met veerconstante \SI{8,4}{N/m} vastzit, krijgt een tik met een hamer waardoor ze een beginsnelheid van $1,26\rm\,m/s$ heeft. Bereken% voor de beweging de periode en de amplitude.
+    \begin{enumerate}
+    \item de periode en de frequentie;
+    \item de amplitude;
+    \item de maximale versnelling;
+    \item de uitwijking als functie van de tijd;
+    \item de totale energie;
+    \item de kinetische energie op het moment dat $x=0,40\cdot A$ met $A$ de amplitude.
+    \end{enumerate}
 
+    \begin{oplossing}
+        $T=\SI{0,9695}{s}$ 
+        
+        $A=v_0\sqrt{m/k}=\SI{0,194}{m}$ 
+
+        $a_{max}=v_0\sqrt{k/m}=0,45\rm\,m/s^2$ 
+        
+        $E_t=1/2mv_0^2=515,97\rm\,J$
+        
+        $E_k=(1-0,4^2)E_t=433,41\rm\,J$ want $E_p=\frac{1}{2}k(0,4A)^2=(0,4)^2E_t$
+    \end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+    Een massa van \SI{7,00}{kg} wordt aan een verticaal opgestelde veer gehangen. Vanuit de nieuwe evenwichtspositie wordt de massa \SI{3,00}{cm} opgetild en losgelaten. De massa blijkt een trilling met een periode van \SI{2,60}{s} uit te voeren. Bepaal
+    \begin{enumerate}
+        \item de veerconstante van de veer;
+        \item de uitwijking $y(t)$ (neem de $y$-as naar beneden);
+        \item de maximale snelheid;
+        \item de tijdstippen waarop de massa haar maximale snelheid bereikt.
+    \end{enumerate}
+    \begin{oplossing}
+    \begin{enumerate}
+        \item Omdat we de periode en de massa kennen, kunnen we a.d.h.v. de pulsatie de veerconstante bepalen:
+        \begin{eqnarray*}
+            \omega^2=\frac{k}{m}\Rightarrow k=\frac{4\pi^2m}{T^2}=\SI{40,9}{N/m}
+        \end{eqnarray*}
+        \item De uitwijking als functie van de tijd voor een harmonische trilling wordt gegeven door
+        \begin{eqnarray*}
+            y(t)&=&A\sin{(\omega t + \varphi)}
+        \end{eqnarray*}
+        Hierin nemen in dit geval de constanten de volgende waardes aan:
+        \begin{eqnarray*}
+            A&=&3,00\rm\,cm\\
+            \omega&=&\frac{2\pi}{T}=\frac{2\pi}{2,60\rm\,s}=2,42\rm\,rad/s\\
+            \varphi&=&\frac{3\pi}{2}
+        \end{eqnarray*}
+        Verwar de beginfase niet met de uitwijking op het tijdstip $t=0$. Dit zijn nl. twee verschillende dingen! De beginfase zorgt voor een verschuiving van de sinusfunctie zodat ze aan de randvoorwaarden kan voldoen.
+        \item De snelheidsfunctie vinden we door de plaatsfunctie af te leiden:
+        \begin{eqnarray*}
+           v=\frac{dy}{dt}=\omega A\cos{(\omega t + \varphi)}
+        \end{eqnarray*}
+        De snelheid wordt dus maximaal als de cosinus gelijk is aan 1 (of -1, dan bereikt de snelheid in absolute waarde ook haar maximumwaarde) zodat:
+        \begin{equation*}
+            v_{max}=\omega A=\frac{2\pi A}{T}=\SI{7,25}{cm/s}  
+        \end{equation*}
+        \item De tijdstippen waarop de massa haar maximale snelheid bereikt, zijn de tijdstippen waarop ze door de evenwichtstoestand vliegt. Het zijn immers de tijdstippen waarop de afgeleide van de snelheid gelijk is aan 0 of waar met andere woorden de versnelling 0 is. De versnelling wordt gegeven door $a(t)=-\omega^2A\sin{(\omega t+\varphi)}$ zodat deze nul is wanneer de sinus gelijk is aan nul. De positie wordt gegeven door $y(t)=A\sin{(\omega t+\varphi)}$ en dus is de versnelling gelijk aan nul in de evenwichtspositie. Dit is niet verwonderlijk aangezien hier de veer geen kracht uitoefent en er dus ook geen versnelling is.
+        \begin{eqnarray*}
+            &&\sin{(\omega t+\varphi)}=0\\
+            &\Leftrightarrow&\omega t+\varphi=k\pi\qquad k\in\mathbb{Z}\\
+            &\Leftrightarrow&t=\frac{-\varphi}{\omega}+k\frac{\pi}{\omega}\qquad k\in\mathbb{Z}\\
+            &\Rightarrow&t=-\frac{3}{4}T+k\frac{T}{2}\qquad k\in\mathbb{Z}\\
+            &\Rightarrow&t=\frac{T}{4}+k\frac{T}{2}\qquad k\in\mathbb{Z}\\
+        \end{eqnarray*}
+        Om de halve periode bereikt de massa m.a.w. haar maximale snelheid.
+    \end{enumerate}
+    \end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+    Een massa $m_0$ aan het einde van een veert oscilleert met een frequentie van $f_0=\SI{0,88}{Hz}$. Wordt $m_0$ met een extra massa van $m=\SI{800}{g}$ verzwaard, dan wordt de frequentie $f=\SI{0,48}{Hz}$. Hoe groot is $m_0$?
+    \begin{oplossing}
+        Omdat $\omega^2=\frac{k}{m}$ is $k=(2\pi)^2f^2m$. De veer is in beide gevallen gelijk zodat:
+        \begin{eqnarray*}
+            (2\pi)^2f_0^2m_0&=&(2\pi)^2f^2(m_0+m)\\
+            &\Updownarrow&\\
+            m_0&=&\frac{f^2}{f_0^2-f^2}m=\SI{339}{g}
+        \end{eqnarray*}
+    \end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+    Een veer rekt $\SI{10}{cm}$ uit op aarde door er een massa aan te hangen van $\SI{10}{kg}$ Wat is de eigenfrequentie van die veer op de maan?
+    %\item Een veer wordt door een massa van $10,0\rm\,kg$ over $10,0\rm\,cm$ uitgerekt. Bereken de eigenfrequentie van de trilling door deze massa om haar evenwichtsstand uitgevoerd. Is deze frequentie dezelfde aan de polen en aan de evenaar? En op de maan?
+
+    \begin{oplossing}
+        Uit het feit dat de veer over een afstand van $\SI{10,0}{cm}$ uitrekt door er een massa van $\SI{10,0}{kg}$ aan te hangen, kunnen we de veerconstante bepalen. Immers is voor deze evenwichtspositie de veerkracht die de massa omhoogtrekt even groot als de zwaartekracht $kd=mg$, zodat (zie ook vraag \ref{vraag_ht_hooke_verticaal})
+        \begin{equation*}
+            k=\frac{mg}{d}
+        \end{equation*}
+        Substitutie hiervan in de uitdrukking voor de frequentie van een trillend massa-veersysteem levert:
+        \begin{align}
+            f={}&\frac{1}{2\pi}\sqrt{\frac{k}{m}}\label{frequentie_verticalemassa_1}\\
+            ={}&\frac{1}{2\pi}\sqrt{\frac{g}{d}}\label{frequentie_verticalemassa_2}
+            %&=&1,58\rm\,Hz\nonumber
+        \end{align}
+        De waarde hiervan is $\SI{1,58}{Hz}$.
+
+        De frequentie is op de maan hetzelfde als op de aarde. Dat blijkt uit formule (\ref{frequentie_verticalemassa_1}). De veerconstante en de massa blijven namelijk gelijk. Je zou valselijk uit formule (\ref{frequentie_verticalemassa_2}) kunnen besluiten dat die verschillend zou zijn omdat in deze formule $g$ voorkomt en de waarder ervan verschilt voor de verschillende gegeven plaatsen. De afstand $d$ echter waarover de veer uitrekt door het gewicht van de massa is evenzeer verschillend voor deze plaatsen en dus op die manier dat de verhouding gelijk blijft \ldots! 
+
+        Het feit dat de frequentie van het massa-veersysteem onafhankelijk van de veldsterkte is, wordt gebruikt om de massa van astronauten in het internationaal ruimtestation te meten. Door de frequentie te meten van de trilling die een astronaut ondergaat aan een veer met gekende veerconstante, is via formule (\ref{frequentie_verticalemassa_1}) zijn massa te bepalen. Zie bijvoorbeeld:
+        \begin{center}
+            \youtube{oU3pp_4n84U}
+        \end{center}
+    \end{oplossing}
+\end{exercise}
 	
 \end{document}
