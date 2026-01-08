@@ -1,0 +1,183 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Denkvragen}{}
+    \xmsource\xmuitleg
+
+
+
+\begin{exercise}
+	Beantwoord kwalitatief\footnote{Met een kwalitatieve redenering kan men een natuurkundig verschijnsel begrijpelijk maken zonder het (kwantitatief) door te rekenen.} de volgende vragen over een massa-veersysteem:
+	\begin{enumerate}
+		\item Waarom voert de massa een trilling uit als je hem een uitwijking geeft en loslaat?
+		\item Waarom heeft de amplitude geen invloed op de periode van de trilling van het systeem?
+	\end{enumerate}
+
+	\begin{oplossing}
+	\begin{enumerate}
+		\item De veer zorgt voor een terugroepkracht. Een trilling is een heen- en weer gaande beweging op een lijn. De kracht versnelt de massa naar de evenwichtsstand als de beweging in die zin is en vertraagt de massa indien de beweging weg van de evenwichtsstand is. 
+		\item Omdat de massa, ook al legt hij bij een grotere amplitude meer afstand af, gemiddeld sneller zal bewegen. Dat komt doordat de kracht groter is naarmate de uitwijking groter is.
+	\end{enumerate}
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Welke waarde heeft de beginfase bij de volgende harmonische trillingen?
+
+	\begin{enumerate}
+		\item $x=A\cos{\omega t}$
+		\item $x=-A\sin{\omega t}$
+	\end{enumerate}
+
+	\begin{oplossing}
+	\begin{enumerate}
+		\item De beginfase is $\varphi=\frac{\pi}{2}$ want $x=A\cos{\omega t}=A\sin{(\omega t+\frac{\pi}{2})}$.
+		\item De beginfase is $\varphi=\pi$ want $x=-A\sin{\omega t}=A\sin{(\omega t+\pi)}$.
+	\end{enumerate}
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Hoe kan je de massa aan een veer in beweging brengen zodat de beginfase van de trilling gelijk is aan respectievelijk $0$ en $\frac{\pi}{2}$?
+	\begin{oplossing}
+		Een harmonische trilling met beginfase nul van een massa aan een veer kan je verkrijgen door bij de start de massa in de evenwichtspositie een initiële snelheid mee te geven. Een beginfase van $\frac{\pi}{2}$ krijg je door bijvoorbeeld de massa uit te rekken en los te laten bij de start.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	\begin{enumerate}
+		\item Waar kan je de fase van een harmonische trilling aflezen bij een fasor?
+		\item Toon met een berekening aan dat een faseverschil van $\frac{\pi}{2}$ tussen twee harmonische trillingen overeenkomt met een tijdsverschil van een kwart van de periode.
+	\end{enumerate}
+
+	\begin{oplossing}
+		% De fase is het argument van de sinusfunctie die een harmonische trilling beschrijft. Dat argument is te schrijven als $\omega t+\varphi$. Hierin is $\varphi$ de beginfase. De verhouding $\frac{\varphi}{2\pi}$ geeft het deel van de cyclus van de trilling van waaruit gestart wordt. Zo start bijvoorbeeld te trilling voor $\varphi=\frac{\pi}{2}$ in haar maximale uitwijking -- de trilling start vanuit een kwart van de cyclus.
+		Je kan de fase aflezen bij een fasor als de hoek die de fasor maakt met de $x$-as.
+
+		Dat een faseverschil van $\frac{\pi}{2}$ overeenkomt met een verschuiving in de tijd van een vierde van de periode, kunnen we aantonen met volgende berekening:
+		\begin{eqnarray*}
+			\omega t+\varphi = \omega\left(t+\frac{\varphi}{\omega}\right)=\omega\left(t+\frac{\varphi}{2\pi}T\right)\underset{\varphi=\frac{\pi}{2}}{=}\omega\left(t+\frac{T}{4}\right)
+		\end{eqnarray*}
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Een massa $m$ oscilleert vrij aan een verticaal opgestelde veer met een periode $T$. Een onbekende massa $m'$ oscilleert aan dezelfde veer met een periode $T'$. Druk de onbekende massa $m'$ uit in functie van de gegeven grootheden.
+
+	\begin{oplossing}
+		$m'=\left(\frac{T'}{T}\right)^2m$
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Beoordeel de volgende uitspraak en licht ze toe: `Bij een harmonische trilling is de versnelling in absolute waarde het kleinst als de snelheid in absolute waarde het grootst is.'
+\end{exercise}
+
+\begin{exercise}
+	Zijn volgende uitspraken voor een harmonische trilling waar of vals?% Licht je antwoord toe.
+	\begin{enumerate}
+		\item Het faseverschil tussen de uitwijking en de versnelling is altijd $\pi$ (op een veelvoud van $2\pi$ na).
+		\item De uitwijking kan zowel beschreven worden door een sinus- als door een cosinusfunctie.
+		\item De uitwijking, de snelheid en de versnelling veranderen met eenzelfde frequentie.
+	\end{enumerate}
+
+	\begin{oplossing}
+		(a) Juist. De versnelling wordt gegeven door $a=\omega^2A\sin(\omega t+\varphi)\underset{\sin(\alpha+\pi)=-\sin(\alpha)}{=}\omega^2A\sin(\omega t+\varphi+\pi)$. De versnelling is dus in tegenfase met de positie.
+		\newline
+		(b) Juist. Voor complementaire hoeken geldt: $\sin(\alpha)=\cos(\alpha-\frac{\pi}{2})$.
+		\newline
+		(c) Juist. In zowel de positie, als de snelheid en de versnelling is de pulsatie $\omega$ gelijk. En op $2\pi$ na is dat de frequentie, want $omega = 2\pi f$.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Een punt van een voorwerp voert een harmonische trilling uit. Als de amplitude en de periode verdubbelen, zal de maximale snelheid van het voorwerp:
+	\begin{multipleChoice}
+		\choice{vier keer kleiner zijn.}
+		\choice{halveren.}
+		\choice[correct]{niet veranderen.}
+		\choice{verdubbelen.}
+		\choice{vier keer groter zijn.}
+	\end{multipleChoice}
+\end{exercise}
+
+\begin{exercise}
+	Een punt van een voorwerp voert een harmonische trilling uit. Als de amplitude en de periode verdubbelen, zal de maximale versnelling van het voorwerp:
+	\begin{multipleChoice}
+		\choice{vier keer kleiner zijn.}
+		\choice[correct]{halveren.}
+		\choice{niet veranderen.}
+		\choice{verdubbelen.}
+		\choice{vier keer groter zijn.}
+	\end{multipleChoice}
+\end{exercise}
+
+\begin{exercise}
+	Toon aan dat je de \emph{grootte} van de snelheid als functie van de uitwijking $x$ voor een harmonische trilling kan schrijven als:
+	\begin{equation*}
+		v=v_{max}\sqrt{1-\left(\frac{x}{A}\right)^2}
+	\end{equation*}
+	Hierin is $A$ de amplitude en $v_{max}$ de maximale snelheid van de trilling.%  Geef ook een grafiek van deze functie.
+
+	\begin{oplossing}
+		Je kan dit op verschillende manieren aantonen, bijvoorbeeld met het beginsel van behoud van energie. De
+		totale mechanische energie is op elk moment de som van de kinetische en de potentiële energie (we veronderstellen een massa-veersysteem):
+		\begin{eqnarray*}
+			\frac{1}{2}kA^2&=&\frac{mv^2}{2}+\frac{1}{2}kx^2
+		\end{eqnarray*}
+		Met $k=m\omega^2$ wordt dat:
+		\begin{eqnarray*}
+			\frac{1}{2}m\omega^2A^2&=&\frac{mv^2}{2}+\frac{1}{2}m\omega^2x^2
+		\end{eqnarray*}
+		Zodat:
+		\begin{eqnarray*}
+			v^2&=&\omega^2A^2-\omega^2x^2\\
+			&=&\omega^2A^2\left(1-\left(\frac{x}{A}\right)^2\right)\\
+		\end{eqnarray*}
+		Of nog:
+		\begin{eqnarray*}
+			v&=&v_{max}\sqrt{1-\left(\frac{x}{A}\right)^2}
+		\end{eqnarray*}
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+\begin{enumerate}
+	\item Toon aan dat de evenwichtslengte van een verticaal opgehangen veer waaraan een massa $m$ hangt een waarde $d=\frac{mg}{k}$ groter is dan de evenwichtslengte van diezelfde veer in horizontale positie. Hierin is $k$ de veerconstante.
+
+	\begin{oplossing}
+		We hangen de veer verticaal op. Als we er vervolgens een massa aan bevestigen, zal door het gewicht de veer uitrekken. Daar waar de massa in rust verkeert, bevindt zich de nieuwe evenwichtspositie.
+		\begin{image}
+			\includegraphics{verticaleveer_1}
+		\end{image}
+		Kiezen we een $x$-as naar beneden met de oorsprong ter hoogte van de originele evenwichtsstand, dan is $d$ de positie van het nieuwe evenwicht. Een waarde voor deze positie vinden we met de tweede wet van Newton. De massa heeft geen versnelling in de evenwichtspositie zodat de twee inwerkende krachten, de zwaartekracht en de veerkracht, elkaar moeten opheffen. De groottes moeten dus aan elkaar gelijk zijn: $F_z=F_v$. Omdat de grootte van de veerkracht volgens de wet van Hooke $kd$ is en de grootte van de  zwaartekracht $mg$, vinden we voor de uitrekking:
+		\begin{eqnarray*}
+			d=\frac{mg}{k}
+		\end{eqnarray*}
+	\end{oplossing}
+
+	\item Toon aan dat voor een verticaal opgehangen veer de resulterende kracht kan geschreven worden als $F=-kx$ met $x$ de uitwijking.
+
+	\begin{oplossing}
+	We kiezen in eerste instantie een $x$-as naar beneden met de oorsprong ter hoogte van de rustlengte van de veer (zie de as (a) in de figuur). Dat is dezelfde keuze als in vraag (a).
+	\begin{image}
+			\includegraphics{verticaleveer_2}
+	\end{image}
+
+	Voor een willekeurige positie $x$ wordt de component van de resulterende kracht dan gegeven door:
+	\begin{eqnarray*}
+		F_{z,x}+F_{v,x}&=&mg-kx\\
+		&=&-k\left(x-\frac{mq}{k}\right)\\
+		&=&-k(x-d)
+	\end{eqnarray*}
+	Hierin kunnen we $x-d$ herkennen als de uitwijking, de positie ten opzichte van de evenwichtspositie. Maken we nu een andere keuze voor de $x$-as, nl. met de oorsprong ter hoogte van de evenwichtspositie van het verticaal opgehangen massa-veersysteem (zie (b) in de figuur), dan komt de $x$-co\"ordinaat ten opzichte van deze as overeen met de uitwijking. Voor deze nieuwe keuze van de as, voldoet de resulterende kracht dus aan $F=-kx$.
+
+	Omdat de resulterende kracht in de verticale positie aan dezelfde formule voldoet als die in horizontale positie, krijgen we exact dezelfde beweging.
+	\end{oplossing}
+\end{enumerate}
+\end{exercise}
+	
+\end{document}
