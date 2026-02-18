@@ -1,0 +1,93 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Het arbeid-energietheorema}{}
+    \xmsource\xmuitleg
+
+Indien op een voorwerp een resulterende kracht inwerkt, moet de snelheid ervan veranderen. Volgens de tweede wet van Newton krijgt het immers een versnelling. Indien kracht en verplaatsing dezelfde zin hebben, is er een snelheidstoename en is de arbeid door de kracht geleverd positief. Er moet dus misschien een verband bestaan tussen de geleverde arbeid en de verandering in snelheid \ldots
+
+\begin{definition}
+{\textbf{Kinetische energie.}}
+	De kinetische energie \( E_k \) is de energie die een voorwerp bezit door zijn beweging. Voor een voorwerp met massa \( m \) en snelheid \( v \) wordt de kinetische energie gedefinieerd als:
+	\[
+		E_k = \frac{mv^2}{2}
+	\]
+\end{definition}
+
+\begin{definition}
+{\textbf{Het arbeid-energietheorema.}}
+	Het arbeid-energietheorema stelt dat de arbeid verricht door de netto-kracht op een voorwerp gelijk is aan de verandering in kinetische energie van dat voorwerp:
+	\[
+		W = \Delta E_k
+	\]
+	Hierbij is $W$ de arbeid verricht door de netto-kracht, en \( \Delta E_k = E_{k,e} - E_{k,b} \) de verandering in kinetische energie.
+\end{definition}
+
+\emph{Bewijs van het arbeid-energietheorema}
+
+Beschouw een voorwerp met massa \( m \) dat langs een rechte lijn beweegt onder invloed van een netto-kracht \( F \). De arbeid verricht door die netto-kracht terwijl het voorwerp van positie \( x_b \) naar \( x_e \) beweegt, is:
+\[
+W = \int_{x_b}^{x_e} F \, dx
+\]
+
+Volgens de tweede wet van Newton is \( F = ma \), dus:
+\[
+W = \int_{x_b}^{x_e} ma \, dx
+\]
+
+Met de kettingregel kunnen we de versnelling \( a \) schrijven als:
+\[
+a = \frac{dv}{dt} = \frac{dv}{dx} \cdot \frac{dx}{dt} = v \frac{dv}{dx}
+\]
+
+Substitueren we dit in de integraal:
+\[
+W = \int_{x_b}^{x_e} m \left( v \frac{dv}{dx} \right) \, dx = m \int_{x_b}^{x_e} v \frac{dv}{dx} \, dx
+\]
+
+Stel \( u = v \), dan is \( du = \frac{dv}{dx} dx \). De integraal wordt:
+\[
+W = m \int_{v_b}^{v_e} v \, dv
+\]
+
+Uitwerken van de integraal geeft:
+\[
+W = m \left[ \frac{v^2}{2} \right]_{v_b}^{v_e} = \frac{1}{2}mv_e^2 - \frac{1}{2}mv_b^2 = \Delta E_k
+\]
+
+Zo is aangetoond dat de arbeid verricht door de netto-kracht gelijk is aan de verandering in kinetische energie:
+\[
+W = \Delta E_k
+\]
+
+
+Opmerkingen bij het arbeid-energietheorema
+
+\begin{remark}{Betekenis van energie.}
+	Deze stelling geeft een fysische betekenis aan het begrip energie. De arbeid die op een voorwerp wordt verricht — hoeveel energie er wordt overgedragen — komt overeen met de toename van de kinetische energie. Energie is dus de capaciteit om arbeid te verrichten.
+\end{remark}
+
+\begin{remark}{Resulterende kracht.}
+	De stelling geldt voor de arbeid verricht door de netto-kracht op het voorwerp. Als er meerdere krachten werken, telt alleen de arbeid van de netto-kracht mee voor de verandering in kinetische energie.
+\end{remark}
+
+\begin{remark}{Totale arbeid telt.}
+	Enkel de totale hoeveelheid arbeid is van belang, niet de manier waarop die arbeid wordt geleverd. Of de kracht nu constant is of varieert, of de baan recht of krom — alleen de netto-arbeid bepaalt de verandering in kinetische energie.
+\end{remark}
+
+	
+\begin{exercise}
+	Een horizontaal liggende veer op tafel heeft een veerconstante $k=\SI{360}{N/m}$ en wordt $\SI{11,0}{cm}$ ingedrukt. Een blok van $\SI{1,85}{kg}$ wordt tegen de gespannen veer gelegd en losgelaten. De wrijvingscoëfficiënt tussen het blok en de tafel is $\SI{0,38}{}$.
+	\begin{enumerate}
+		\item Hoeveel arbeid levert de veerkracht vanaf de ingedrukte toestand tot in zijn evenwichtstoestand?
+		\item Hoeveel arbeid levert de wrijvingskracht over hetzelfde traject?
+		\item Hoe groot is de nettoarbeid?
+		\item Welke snelheid heeft het blok wanneer het zich in de evenwichtstoestand van de veer losmaakt?
+	\end{enumerate}
+\end{exercise}
+
+
+\end{document}
