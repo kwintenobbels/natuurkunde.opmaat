@@ -7,46 +7,33 @@
 	\xmtitle{Potentiële energie}{}
     \xmsource\xmuitleg
 
-
-
-	\subsection{Potentiële energie}
-
-	Uit de drie voorbeelden blijkt dat in het algemeen de potentiële
-	energie een plaatsafhankelijke functie moet zijn waarvan het
-	verschil tussen twee punten overeenkomt met de geleverde arbeid door
-	de kracht geassocieerd met deze functie. Noemen we deze functie
-	$U(x)$, dan moet gelden:
-	\begin{eqnarray*}
-	W=\int_{x_a}^{x_b}F(x)~{\rm d}x &=&-(U(x_b)-U(x_a))\\
+Uit de drie voorbeelden blijkt dat in het algemeen de potentiële energie een plaatsafhankelijke functie moet zijn waarvan het verschil tussen twee punten overeenkomt met de geleverde arbeid door de kracht geassocieerd met deze functie. Noemen we deze functie $U(x)$, dan moet gelden:
+\begin{eqnarray*}
+	W=\int_{x_a}^{x_b}F(x)\,dx &=&-(U(x_b)-U(x_a))\\
 	&\Updownarrow&\\
-	\int_{x_a}^{x_b}-F(x)~{\rm d}x &=&U(x_b)-U(x_a)\\
-	\end{eqnarray*}
-	Als $U(x)$ een primitieve functie voor $-F(x)$ is (dus een functie
-	waarvan de afgeleide de functie $-F(x)$ is: $U'(x)=-F(x)$) dan is
-	aan deze voorwaarde voldaan. Immers geldt dan:
+	\int_{x_a}^{x_b}-F(x)\,dx &=&U(x_b)-U(x_a)\\
+\end{eqnarray*}
+Als $U(x)$ een primitieve functie voor $-F(x)$ is (dus een functie waarvan de afgeleide de functie $-F(x)$ is: $U'(x)=-F(x)$) dan is aan deze voorwaarde voldaan. Immers geldt dan:
+\begin{eqnarray*}
+	\int_{x_a}^{x_b}-F(x)\,dx=\int_{x_a}^{x_b}\frac{dU}{dx}\, dx=U(x_b)-U(x_a)
+\end{eqnarray*}
+Algemeen geldt dan ook voor de potentiële energie:
+\begin{definition}
+	Indien er voor een plaatsafhankelijke kracht $F(x)$ een functie $U(x)$ bestaat waarvoor de afgeleide op een minteken na de kracht is,
 	\begin{eqnarray*}
-	\int_{x_a}^{x_b}-F(x)~{\rm d}x=\int_{x_a}^{x_b}\frac{d}{dx}U(x)~{\rm d}x&=&U(x_b)-U(x_a)\\
+		F(x)&=&-\frac{d}{dx}U(x)
 	\end{eqnarray*}
-	Algemeen geldt dan ook voor de potentiële energie:
-	
-	\kader{Indien er voor een plaatsafhankelijke kracht $F(x)$ een functie $U(x)$ bestaat
-	waarvoor de afgeleide op een minteken na de kracht is,
-	\begin{eqnarray}
-	F(x)&=&-\frac{d}{dx}U(x)\nonumber
-	\end{eqnarray}
-	dan wordt $U(x)$ de \textit{potentiële energie} genoemd.}
-	
-	De potentiële energie is dus een functie waarvoor de negatieve afgeleide de kracht is. Waarom een minteken? Een positieve afgeleide betekent een toename van de potentiële energie. Om naar een hogere energie te gaan moet \textit{tegen} de kracht in worden bewogen. De kracht moet dus tegengesteld zijn aan de richting waarin de potentiële enrgie toeneemt.
-	
-	Zie ook dat de potentiële energie inderdaad tot op een constante na is ge\-de\-fi\-ni\-eerd. Bij het afleiden valt immers een constante weg.
-	
-	Een kracht waarvoor een potentiaalfunctie bestaat, levert arbeid die enkel bepaald wordt door begin- en eindpunt. De arbeid is dus onafhankelijk van de gevolgde weg. Zo'n kracht wordt conservatief genoemd. Enkel voor conservatieve krachten bestaat dus een potentiële energie.
-	
-	Ga na dat de energiefuncties die we bij de drie voorbeelden (\ref{gravitationele potentiele energie}), (\ref{elastische potentiele energie}) en (\ref{gravitationele potentiele energie
-	alg}) vonden, voldoen aan deze definitie en dus potentiële energiefuncties zijn.
-	
-	%%%\newpage
-	
-	
+	dan wordt $U(x)$ de \textit{potentiële energie} genoemd.
+\end{definition}
+
+
+De potentiële energie is dus een functie waarvoor de negatieve afgeleide de kracht is. Waarom een minteken? Een positieve afgeleide betekent een toename van de potentiële energie. Om naar een hogere energie te gaan moet \textit{tegen} de kracht in worden bewogen. De kracht moet dus tegengesteld zijn aan de richting waarin de potentiële energie toeneemt.
+
+Zie ook dat de potentiële energie inderdaad tot op een constante na is gedefinieerd. Bij het afleiden valt immers een constante weg.
+
+Een kracht waarvoor een potentiaalfunctie bestaat, levert arbeid die enkel bepaald wordt door begin- en eindpunt. De arbeid is dus onafhankelijk van de gevolgde weg. Zo'n kracht wordt conservatief genoemd. Enkel voor conservatieve krachten bestaat dus een potentiële energie.
+
+Ga na dat de energiefuncties die we bij de drie voorbeelden (\ref{gravitationele potentiele energie}), (\ref{elastische potentiele energie}) en (\ref{gravitationele potentiele energie alg}) vonden, voldoen aan deze definitie en dus potentiële energiefuncties zijn.
+
 	
 \end{document}
