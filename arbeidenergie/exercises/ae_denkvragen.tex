@@ -1,0 +1,104 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Denkvragen}{}
+    \xmsource\xmuitleg
+
+\begin{exercise}
+	Toon aan dat $ma=\frac{d}{dx}\left(\frac{mv^2}{2}\right)$.
+\end{exercise}
+
+\begin{exercise}
+	Waarom staat er een min in de uitdrukking $W=-\Delta E_p$?
+
+	\begin{oplossing}
+		Het verschil in energie $\Delta E_p=E_{p,b}-E_{p,a}$, stelt de \textit{toename} van de potentiële energie voor (eindenergie min beginenergie). Levert een voorwerp arbeid, dan moet dat ten koste gaan van zijn energie. Is dus de geleverde arbeid positief dan moet de potentiële energie afnemen. Het tegengestelde van de toename is de afname: $-\Delta E_p=-(E_{p,b}-E_{p,a})=E_{p,a}-E_{p,b}$.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Wat is volgens de conventie het teken van de potentiële energie van de gravitatiekracht
+	\begin{enumerate}
+		\item op \SI{10}{m} onder de grond,
+		\item op \SI{20}{m} boven de grond.
+	\end{enumerate}
+	Antwoordalternatieven:
+	\begin{enumerate}
+		\item (a) negatief
+		\newline
+		(b) positief
+		\item (a) negatief
+		\newline
+		(b) negatief
+		\item niet te bepalen uit deze gegevens.
+	\end{enumerate}
+
+	\begin{oplossing}
+		Het juist antwoord is (b). De potentiële energie van de universele gravitatiekracht, wordt gegeven door $E_p(x)=-G\frac{m_1m_2}{x}$. Eventueel met een constante, $E_p(x)=-G\frac{m_1m_2}{x}+cte$, omdat potentiële energie een relatief begrip is en de waarde dus afhangt van welk referentiepunt (daar waar de energie 0 is) wordt gekozen. Volgens de conventie (per afspraak) -- in dit geval betekent dat het meest gebruikelijke -- wordt de constante nul genomen, wat inhoudt dat het referentiepunt oneindig ver weg ligt. `Op oneindig' is de potentiële energie nul.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	De aarde beweegt op een ellipsvormige baan rond de zon. In de winter staat de aarde het dichtst bij de zon. Wanneer is de gravitatie-potentiële energie het grootst? Hoe zit dat met de kracht, wanneer is die het grootst? Kan je iets zeggen over de relatie tussen de kracht op de aarde en de potentiële energie van de aarde?
+
+	\begin{oplossing}
+		De gravitationele potentiële energie is het grootst in de zomer, wanneer de aarde het verst van de zon verwijderd is. De formule voor de energie is immers:
+		\[
+			E_p=-\frac{Gmm'}{r}
+		\]
+		en hoe groter $r$ is, hoe minder negatief de uitdrukking. Fysisch is dit te verklaren doordat de aarde van een grotere afstand meer arbeid kan leveren.
+
+		Voor de kracht geldt echter het omgekeerde; hoe verder de aarde verwijderd is van de zon, hoe kleiner (in absolute waarde -- het gaat over de grootte) de gravitatiekracht op de aarde. De formule voor de (grootte van) gravitatiekracht is immers:
+		\[
+			F=\frac{Gmm'}{r^2}
+		\]
+		(Let op, je mag en kan hieruit niet besluiten dat kracht en energie omgekeerd evenredig zijn. Voor een massaveersysteem neemt de potentiële energie zelfs toe naarmate de veerkracht groter wordt.)
+
+		De relatie tussen kracht en arbeid wordt gegeven door de formule $W=-\Delta E_p$. De geleverde arbeid, door de kracht, is gelijk aan de afname van de potentiële energie. (De berekening
+		\[
+			W=\int_{x_a}^{x_b}F(x)dx=\cdots=\left(-\frac{Gmm'}{x_a}\right)-\left(-\frac{Gmm'}{x_b}\right)=E_{p,a}-E_{p,b}
+		\]
+		toont dit aan.)
+
+		\emph{Opmerking}
+
+		Omwille van behoud van energie gaat de aarde in de winter een grotere kinetische energie hebben.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Een elektron wordt op een afstand $d$ van een proton vanuit rust losgelaten. Toon aan dat de arbeid verricht door de coulombkracht bij een verplaatsing tot een afstand $d/2$ wordt gegeven door $W=\frac{ke^2}{d}$.
+\end{exercise}
+
+\begin{exercise}
+	Geef de grafiek van de elastische potentiële energie van een veer. Doe dit voor zowel de samengedrukte als de uitgerekte toestand.
+
+	\begin{oplossing}
+		De potentiële energie van een veer wordt gegeven door
+		$E_p(x)=\frac{1}{2}kx^2$. Ze is dus kwadratisch afhankelijk van de plaats. Vergelijk met $y(x)=ax^2,\,a\in\mathbb{R}$. De grafiek is dus een parabool.
+	\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+	Twee gladde banen van gelijke lengte hebben `deuken': bij A omhoog en bij B omlaag. Ze hebben dezelfde kromming.
+	\begin{image}
+		\includegraphics{knikkerbanen}
+	\end{image}
+
+	Als twee identieke ballen gelijktijdig en met dezelfde beginsnelheid starten, dan:
+	\begin{enumerate}
+		\item zal bal a eerst aankomen;
+		\item zal bal b eerst aankomen;
+		\item zullen de ballen gelijktijdig aankomen;
+		\item zal er niet kunnen voorspeld worden welke bal er eerst aankomt.
+	\end{enumerate}
+
+	\begin{oplossing}
+		Het juist antwoord is (b). Beide ballen hebben voor en na de deuken dezelfde snelheid aangezien ze zich hier op dezelfde hoogte bevinden. Bal a zal over de deuk gemiddeld een kleinere snelheid dan zijn oorspronkelijke snelheid hebben, bal b zal in de kuil gemiddeld een grotere snelheid hebben dan zijn oorspronkelijke snelheid.
+	\end{oplossing}
+\end{exercise}
+
+\end{document}
