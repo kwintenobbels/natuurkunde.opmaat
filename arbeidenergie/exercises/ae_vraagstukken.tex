@@ -1,0 +1,293 @@
+\documentclass{ximera}
+
+%\addPrintStyle{..}
+
+\begin{document}
+	\author{Bart Lambregs}
+	\xmtitle{Vraagstukken}{}
+    \xmsource\xmuitleg
+
+\begin{exercise}
+Een massa van \SI{6,4}{kg} wordt met een touw over een afstand van \SI{2,0}{m} omhoog getrokken. De spankracht in het touw is \SI{80,0}{N}
+\begin{enumerate}
+	\item Bereken de arbeid door de spankracht geleverd.
+	\item Bereken de arbeid door de zwaartekracht geleverd
+	\item Hoe groot is de snelheid van de massa na deze afstand, als ze vanuit rust vertrekt?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Een blokje met massa \SI{3,0}{kg} wordt op een helling bevestigd aan een veer met veerconstante \SI{300}{N/m}. De helling maakt een hoek van $15^{\circ}$ met de horizontale. De wrijvingscoëfficiënt tussen blok en helling is $0,2$. Bepaal de afstand waarover het blok schuift totdat het even tot rust komt als het blok losgelaten wordt vanuit de positie waar de veer geen kracht uitoefent. 
+\begin{oplossing}
+\begin{eqnarray*}
+E_{p,a}+E_{k,a}&=&E_{p,b}+E_{k,b}+E_w\\
+&\Downarrow&\\
+mgh&=&\frac{1}{2}kx^2+|F_wx|\\
+&&\\
+mgx\sin\varphi&=&\frac{1}{2}kx^2+\mu mg\cos\varphi x\\
+&&\\
+x=0\quad\vee\quad x&=&\frac{2mg(\sin\varphi-\mu\cos\varphi)}{k}=\SI{0,0129}{m}
+\end{eqnarray*}
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+Stel dat de kracht die nodig is om een horizontale veer een afstand $x$ in te drukken, wordt gegeven door $F(x)=150x+12x^3$, met $x$ in meter en $F$ in Newton. Als de veer \SI{2,0}{m} is samengedrukt, terwijl er een bal van \SI{3,0}{kg} tegenaan ligt, welke snelheid krijgt de bal dan wanneer de veer wordt losgelaten?
+\end{exercise}
+
+\begin{exercise}
+Een bal van \SI{1,0}{kg} aan het einde van een dun massaloos koord beschrijft een verticale cirkel met een straal van \SI{0,80}{m}. Op het moment dat het koord een hoek van $\frac{\pi}{6}$\SI{}{\radian} met de horizontaal maakt, heeft de bal een snelheid van \SI{6,0}{m/s}. Er is geen wrijving.
+
+Bereken in het laagste punt van de cirkel
+\begin{enumerate}
+	\item de snelheid van de bal,
+	\item de spankracht in het koord (maak een krachtendiagram).
+	\newline
+	\newline
+	Stel nu dat de gemiddelde luchtweerstandskracht tussen het moment dat het koord een hoek van $\frac{\pi}{6}$\SI{}{\radian} met de horizontaal maakt en het laagste punt, \SI{5,0}{N} bedraagt. Bereken de arbeid verricht door:
+	\item de spankracht,
+	\item door de luchtweerstandskracht.
+	\item Bereken de snelheid van de bal in het laagste punt, rekeninghoudend met de luchtweerstand.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Een bal wordt vanop een torengebouw, \SI{40}{m} hoog, losgelaten. Op welke hoogte boven de grond is de kinetische energie van de bal gelijk aan driemaal de gravitatie-potentiële energie ervan?
+\end{exercise}
+
+\begin{exercise}
+\footnote{bron: VFO 17-1}Een wagen heeft een snelheid van \SI{50}{km/h} en een kinetische energie gelijk aan \SI{100}{kJ}. Bij een snelheid van \SI{100}{km/h} heeft dezelfde wagen een kinetische energie gelijk aan:
+\begin{enumerate}
+	\item \SI{50}{kJ}
+	\item \SI{100}{kJ}
+	\item \SI{200}{kJ}
+	\item \SI{400}{kJ}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+\footnote{bron: VFO 17-1}In een pretpark rijdt een wagentje over een spoor. In een punt A is zijn snelheid \SI{10}{m/s}.
+\begin{image}
+	\includegraphics{pretparkspoor}
+\end{image}
+
+Als je alle wrijving mag verwaarlozen, kan je zeggen dat zijn snelheid in het punt B
+\begin{enumerate}
+	\item gelijk is aan \SI{20}{m/s}.
+	\item gelijk is aan \SI{22}{m/s}.
+	\item gelijk is aan \SI{30}{m/s}.
+	\item niet kan worden berekend, omdat de massa van het wagentje niet gegeven is.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Op een deeltje met een massa van \SI{2,00}{kg} dat op de $x$-as beweegt, werkt een resulterende kracht in met als getalcomponent
+\begin{eqnarray*}
+F(x)=3x^2-4x+5,2
+\end{eqnarray*}
+\begin{enumerate}
+\item Bereken de arbeid op het deeltje geleverd als het zich verplaatst van $x=\SI{1,0}{m}$ tot $x=\SI{3,0}{m}$.
+\item Als de snelheid van het deeltje in $x=\SI{1,0}{m}$ gelijk is aan \SI{5,2}{m/s}, hoe groot is ze dan in $x=\SI{3,0}{m}$?
+\end{enumerate}
+\begin{oplossing}
+	\begin{enumerate}
+		\item De arbeid door de kracht geleverd is volgens de definitie van de arbeid de integraal van de component van de kracht volgens de verplaatsing van de beginpositie tot de eindpositie:
+		\begin{align*}
+			\int_{x_a}^{x_b}(3x^2-4x+5,2)\,dx &= \left[x^3-2x^2+5,2x\right]_{x_a}^{x_b}\\
+			&= \left[x^3-2x^2+5,2x\right]_{1,0}^{3,0}\\
+			&=\SI{20,4}{J}
+		\end{align*}
+		\item Omdat de gegeven kracht de resulterende kracht is, kunnen we het arbeid-energietheorema, $W = \Delta E_k$, gebruiken:
+		\begin{align*}
+			 W &= E_{k,b}-E_{k,a}\\
+			 &=\frac{mv_b^2}{2}-\frac{mv_a^2}{2}\\
+			 &\Updownarrow\\
+			 v_b &=\sqrt{\frac{2W}{m}+v_a^2}
+		\end{align*}
+		De grootte van de gevraagde snelheid is dan \SI{6,89}{m/s}.
+	\end{enumerate}
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+Op een bevroren vijver krijgt een slede een trap, waardoor ze rechtlijnig beweegt met een beginsnelheid van \SI{2,3}{m/s}. De wrijvingsfactor tussen de slede en het ijs is \SI{0,012}{}. Welke afstand legt de slede af voor ze tot rust komt?\footnote{Los dit vraagstuk op m.b.v. de theorie over arbeid en energie.}
+
+\begin{oplossing}
+Kiezen we een $x$-as volgens de beginsnelheid van de slede dan is de resulterende kracht volgens die richting de wrijvingskracht. De zin is tegengesteld aan die van de as. De component wordt dan ook gegeven door $-F_w=-\mu F_n=-\mu mg$. In de $y$-richting heeft de slee geen versnelling en moeten dus de zwaartekracht en de normaalkracht even groot zijn.
+\begin{image}
+	\includegraphics{hockeypuck2}
+\end{image}
+
+Uit het arbeid-energie theorema halen we snel de gevraagde afstand omdat de kracht een constante is en de berekening van de arbeid dus gemakkelijk:
+		\begin{align*}
+			 W &=\frac{mv_b^2}{2}-\frac{mv_a^2}{2}\\
+			 &\Downarrow\\
+			 -\mu mg \Delta x &=0-\frac{mv_0^2}{2}\\
+			 &\Updownarrow\\
+			 \Delta x&=\frac{v_0^2}{2\mu g}
+		\end{align*}
+De afstand is dan $22\,\text{m}$.
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+Het stuk AB is een kwadrant van een cirkel met een straal van \SI{2,0}{m} en is wrijvingsloos. Het stuk van B naar C (\SI{3,0}{m}) is horizontaal en heeft een wrijvingscoëfficiënt van $0,25$. Het stuk CD onder
+de veer is weer wrijvingsloos. Een blok met een massa van \SI{1,0}{kg} wordt losgelaten in punt A. Het blok glijdt langs het beschreven traject en drukt de veer tenslotte \SI{0,20}{m} in.
+\begin{image}
+	\includegraphics{blokhellingveer}
+\end{image}
+
+Bereken:
+\begin{enumerate}
+	\item De snelheid van het blok in punt B.
+	\item De snelheid van het blok in punt C.
+	\item De veerconstante $k$ van de veer.
+\end{enumerate}
+
+\begin{oplossing}
+	\begin{enumerate}
+		\item $v=\sqrt{2gr}=\SI{6,26}{m/s}$. %Zie analoge afleiding (\ref{Torricelli}).
+		\item We gebruiken het arbeid-energietheorema \footnote{Realiseer je dat hier mechanische energie verloren gaat door de wrijving in de vorm van warmte.}:
+		\begin{eqnarray*}
+			W&=&\Delta E_k\\
+			&\Downarrow&\\
+			\vec{F_w}\cdot\vec{\Delta x}&=&\frac{mv_c^2}{2}-\frac{mv_b^2}{2}\\
+			&\Downarrow&\\
+			-\mu mg\Delta x&=&\frac{mv_c^2}{2}-\frac{mv_b^2}{2}\\
+			&\Downarrow&\\
+			v_c&=&\sqrt{2g(r-\mu\Delta x)}\\
+			&=&\SI{4,95}{m/s}
+		\end{eqnarray*}
+		\item De kinetische energie die het blok bij C heeft wordt volledig gebruikt om de veer in te drukken en dus omgezet in potentiële energie van de veer.
+		\begin{eqnarray*}
+			E_{k,1}+E_{p,1}&=&E_{k,2}+E_{p,2}\\
+			&\Downarrow&\\
+			\frac{mv_c^2}{2}+0&=&0+\frac{1}{2}kd^2\\
+			&\Updownarrow&\\
+			k&=&\frac{mv_c^2}{d^2}\\
+			&=&\frac{2mg(r-\mu\Delta x)}{d^2}\\
+			&=&613\rm\,N/m
+		\end{eqnarray*}
+	\end{enumerate}
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+Een blok van \SI{4,0}{kg} heeft een beginsnelheid van \SI{8,0}{m/s} aan de voet van een helling van \SI{30,0}{\degree}. De wrijvingskracht die de beweging afremt is \SI{15}{N} groot.
+\begin{enumerate}
+	%\item Teken en benoem de krachten die op het blok aangrijpen.
+	\item Maak het systeem vrij. Teken en benoem m.a.w. de krachten die op het blok aangrijpen.
+	\item Welke afstand zal het blok afleggen vooraleer het tot rust komt?
+	\item Zal het daarna terug naar beneden glijden?
+\end{enumerate}
+\begin{oplossing}
+\begin{enumerate}
+\item Het krachtendiagram op het blok en de zwaartekracht ontbonden in een assenstelsel waarvoor de $x$-as evenwijdig is met de helling:
+\begin{image}
+	\includegraphics{blok_helling_2}
+	\includegraphics{blok_helling_2componenten}
+\end{image}
+\item %Omdat er in dit vraagstuk een wrijvingskracht voorkomt, geldt de wet van behoud van mechanische energie niet. Voor de wrijvingskracht kunnen we geen potentiële energie defini\"eren. Door de wrijving wordt een stuk van de mechanische energie omgezet in warmte. In een dergelijk geval kan het arbeid-energietheorema ons verder helpen.
+Het arbeid-energie theorema is geschikt om deze oefening op te lossen. Omdat de krachten constant zijn, kunnen we bovendien het speciaal geval van de definitie van de arbeid gebruiken waarin die arbeid reduceert tot $W=F\cdot\Delta x$.
+
+De resulterende kracht op het blok ligt volgens de $x$-as en bestaat uit de wrijvingskracht (tegengesteld aan de $x$-as) en de component van de zwaartekracht volgens de $x$-as, $F_{z,x}=-mg\sin\varphi$. De normaalkracht en de component van de zwaartekracht volgens de $y$-as zijn even groot en tegengesteld, ze heffen elkaar op. Volgens de $y$-as is er immers geen beweging en dus ook geen versnelling.
+\begin{eqnarray*}
+	W&=&\Delta E_k\\
+	&\Downarrow&\\
+	-(F_w+mg\sin\varphi)\Delta x&=&\frac{mv^2}{2}-\frac{mv_0^2}{2}\\
+	&=&-\frac{mv_0^2}{2}\\
+	&\Updownarrow&\\
+	\Delta x&=&\frac{mv_0^2}{2(F_w+mg\sin\varphi)}\\
+	&=&\SI{3,7}{m}
+\end{eqnarray*}
+\item Ja, het blok zal terug naar beneden schuiven. Immers is $|F_{z,x}|>F_w$.
+\end{enumerate}
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+Een blok vastgemaakt aan een veer wordt op een wrijvingsloos hellend vlak geplaatst. De veer met veerconstante
+$k$, bevestigd in $P$, is daarbij niet uitgerekt (zie figuur). Men laat het blok los.
+\begin{image}
+	\includegraphics{blok_helling}
+\end{image}
+
+Vind een uitdrukking voor de maximale uitrekking van de veer.
+\end{exercise}
+
+\begin{exercise}
+Een voorwerp met een massa $M$ van \SI{0,50}{kg} wordt vastgehecht aan een veer die aan het plafond hangt. De veerconstante $k$ is gelijk aan \SI{25}{N/m}. Het systeem wordt losgelaten vanuit de positie waarbij de veer niet uitgerekt is. Het voorwerp zal op en neer dansen.
+
+\begin{image}
+	\includegraphics{15VFO-vers-web3}
+\end{image}
+
+De maximale uitrekking van de veer is $2A$. Als de uitrekking van de veer gelijk is aan $A$, is $E_k$ de waarde van de kinetische energie. Dan is:
+\begin{enumerate}
+	\item $A=\SI{20}{cm}$ en $E_k=\SI{0,50}{J}$.
+	\item $A=\SI{20}{cm}$ en $E_k=\SI{1,5}{J}$.
+	\item $A=\SI{40}{cm}$ en $E_k=\SI{0,50}{J}$.
+	\item $A=\SI{40}{cm}$ en $E_k=\SI{1,5}{J}$.
+\end{enumerate}
+
+\begin{oplossing}
+	Het juist antwoord is (a). We vergelijken eerst de positie waarin de veer nog niet is uitgerekt en de positie waarop ze maximaal is uitgerekt. We kiezen het referentiepunt op de hoogte waar het voorwerp vertrekt.
+	\begin{eqnarray*}
+		E_{k,a}+E_{p,a}&=&E_{k,b}+E_{p,b}\\
+		&\Downarrow&\\
+		0+mg\cdot0+\frac{1}{2}k\cdot0^2&=&0+mg(-2A)+\frac{1}{2}k(-2A)^2\\
+		&\Updownarrow&\\
+		mg2A&=&\frac{1}{2}k(2A)^2\\
+		&\Updownarrow&\\
+		A&=&\frac{mg}{k}=\SI{20}{cm}
+	\end{eqnarray*}
+	Voor de kinetische energie halverwege vergelijken we de beginpositie en de positie halverwege. Voor $A$ gebruiken we de uitdrukking die we net gevonden hebben.
+	\begin{eqnarray*}
+		E_{k,a}+E_{p,a}&=&E_{k,b}+E_{p,b}\\
+		&\Downarrow&\\
+		0+0+0&=&mg(-A)+\frac{1}{2}k(-A)^2+E_k\\
+		&\Downarrow&\\
+		E_k&=&mg\left(\frac{mg}{k}\right)-\frac{1}{2}k\left(\frac{mg}{k}\right)^2\\
+		&=&\frac{m^2g^2}{2k}=\SI{0,50}{J}
+	\end{eqnarray*}
+\end{oplossing}
+\end{exercise}
+
+\begin{exercise}
+Bereken de snelheid waarmee je een lichaam moet afschieten vanop het aardoppervlak opdat het niet meer terugvalt. Deze snelheid wordt de \emph{ontsnappingssnelheid} van de aarde genoemd.
+%\begin{enumerate}
+%\item Met welke snelheid zou een lichaam, dat van oneindig ver vanuit rust naar de aarde valt, op het aardoppervlak aankomen?
+%\item Hangt die snelheid van de massa van het lichaam af? Leg uit
+%\end{enumerate}
+
+\begin{oplossing}
+Uit het beginsel van behoud van energie ($E_{p,a}+E_{k,a}=E_{p,b}+E_{k,b}$) volgt:
+\begin{eqnarray*}
+%E_{p,a}+E_{k,a}&=&E_{p,b}+E_{k,b}\\
+%&\Downarrow&\\
+\frac{mv_0^2}{2}-G\frac{m_am}{r_a}&=&\lim_{x\rightarrow+\infty}\left(-G\frac{m_am}{x}\right)+0
+%&\Downarrow&\scriptstyle v_a=0,\,x_b=r_a\,\mathrm{straal\,van\,de\,aarde}\\
+%0+0&=&\frac{mv_b^2}{2}-G\frac{m_am}{r_a}\\
+%&\Downarrow&\\
+%v_b&=&\sqrt{\frac{2Gm_a}{r_a}}=11,2\cdot10^\SI{3}{m/s}
+\end{eqnarray*}
+%\item De snelheid is onafhankelijk van de massa. De massa komt niet voor in de uitdrukking voor de snelheid.
+%\end{enumerate}
+
+Hierin is $v_0$ de gezochte ontsnappingssnelheid en $r_a=\SI{6370}{km}$ de aardstraal. $E_{p,a}=-G\frac{m_am}{r_a}$ is de potentiële energie van het object aan het aardoppervlak. Voor de tweede situatie nemen we de limiet van de positie gaande naar oneindig.
+
+Aangezien het behoud van energie voor eender welke twee posities in de beweging van het object moet gelden, moet ze ook gelden in de limiet voor de tweede positie gaande naar oneindig. De limiet van de potentiële energie van de universele gravitatiekracht is nul. Aangezien de minimale snelheid gevraagd wordt, moeten we voor de kinetische energie in de limiet \SI{0}{J} te nemen. Meer dan nul mag, maar dan wordt het object harder dan noodzakelijk afgeschoten.
+
+Realiseer je ook dat voor eender welke tweede positie van het object, de kinetische energie niet nul mag zijn. De gravitatiekracht zou dan immers, hoe klein ze ook is, het object terug doen versnellen richting de aarde. Het object zou dan niet `ontsnappen'.
+
+Lossen we de vergelijking naar $v_0$ op, dan krijgen we (met de massa van de aarde $m_a=\SI{5,972e24}{kg}$):
+\begin{equation*}
+	v_0=\sqrt{\frac{2Gm_a}{r_a}}=\SI{11,2e3}{m/s}
+\end{equation*}
+Merk op dat de massa van het object er niet toe doet.
+\end{oplossing}
+\end{exercise}
+
+\end{document}
+
+
